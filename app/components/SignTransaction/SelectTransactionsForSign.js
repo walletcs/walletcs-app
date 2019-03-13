@@ -16,10 +16,13 @@ class SelectTransactionsForSign extends Component {
     this.props.next();
   }
 
-  getTransactions = () => this.props.transactions.filter(t => this.props.transactionsToSign.includes(t.file)) || [];
+  getTransactions = () => {
+    return this.props.transactions.filter(
+      t => this.props.transactionsToSign.includes(t.file) && t.foundKey
+    ) || [];
+  }
 
   signTransactions = async () => {
-    const privateKeyDef = this.props.keys.find(item => item.found);
     const drive = this.props.drives.emptyDrive;
     const transactions = this.getTransactions();
 
@@ -27,16 +30,16 @@ class SelectTransactionsForSign extends Component {
       const { transaction: data } = fullTransaction;
   
       const signedTransactionsData = await Promise.all(data.transactions.map(async tr => {
-        const transactionData = tr.transaction;
-        const signature = await EtherTransaction.sign(privateKeyDef.privateKey, transactionData);
+        const signature = await EtherTransaction.sign(fullTransaction.privateKey, tr.transaction);
+
         return { transaction: signature };
       }));
   
       const signedTransaction = { ...fullTransaction.transaction, transactions: signedTransactionsData };
       const filename = fullTransaction.file.replace(TRANSACTION_PREFIX, '');
-  
+
       const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`
-  
+
       writeFile(path, JSON.stringify(signedTransaction));
     });
   }

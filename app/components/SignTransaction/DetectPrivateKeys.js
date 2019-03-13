@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import Button from '../Button';
 
-import { setPrivateKeys } from '../../actions/account';
+import { setTransactions } from '../../actions/account';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.css';
@@ -25,7 +25,7 @@ class DetectPrivateKeys extends Component {
       console.error(error);
     }
 
-    const res = dir.filter(file => file.includes(PRIVATE_KEY_PREFIX)).map(file => {
+    const privateKeys = dir.filter(file => file.includes(PRIVATE_KEY_PREFIX)).map(file => {
       let privateKey;
 
       try {
@@ -34,56 +34,62 @@ class DetectPrivateKeys extends Component {
         console.error(error);
       }
 
-      const found = this.props.transactions.some(item => {
-        const { transaction } = item;
-        return EtherKeyPair.checkPair(transaction.pub_key, privateKey);
-      })
+      return privateKey;
+    }).filter(f => !!f);
+
+    const transactionsWithKeys = this.props.transactions.map(item => {
+      const { transaction } = item;
+
+      const privateKey = privateKeys.find(k => {
+        return EtherKeyPair.checkPair(transaction.pub_key, k);
+      });
 
       return {
+        transaction,
+        file: item.file,
         privateKey,
-        found,
-        account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
+        foundKey: !!privateKey
       }
-    });
+    }).filter(t => this.props.transactionsToSign.includes(t.file));
 
-    this.props.setPrivateKeys(res);
+    this.props.setTransactions(transactionsWithKeys);
   }
 
   render() {
-    const keys = this.props.keys || [];
-    const isKeysExists = !!keys.length;
+    const { transactions = [] } = this.props;
+    const isTransactionsExists = !!transactions.length;
 
     return (
       <Fragment>
         <div>
-          {isKeysExists ?
+          {isTransactionsExists ?
             <Fragment>
               <div className={styles.tableRow}>
-                <div className={styles.tableCell} />
+                {/* <div className={styles.tableCell} /> */}
                 <div className={styles.tableCell} style={{ color: '#ABABAB' }}>ACCOUNT</div>
                 <div className={styles.tableCell} style={{ color: '#ABABAB' }}>TIME</div>
                 <div className={styles.tableCell} style={{ color: '#ABABAB' }}>KEY FOUND</div>
               </div>
               <Fragment>
-                {keys.map(item => (
+                {transactions.map(item => (
                   <div className={styles.tableRow}>
+                    {/* <div className={styles.tableCell} /> */}
+                    <div className={styles.tableCell}>{item.file}</div>
                     <div className={styles.tableCell} />
-                    <div className={styles.tableCell}>{item.account}</div>
-                    <div className={styles.tableCell} />
-                    <div className={styles.tableCell}>{item.found ? 'Yes' : 'No'}</div>
+                    <div className={styles.tableCell}>{item.foundKey ? 'Yes' : 'No'}</div>
                   </div>
                 ))}
               </Fragment>
             </Fragment>
           :
-            <div className={styles.message}>Private keys not found</div>
+            <div className={styles.message}>Private keys for signing transactions not found</div>
           }
         </div>
         <div className={styles.rowControls}>
           <Button onClick={this.props.onCancel}>
             Cancel
           </Button>
-          {isKeysExists &&
+          {isTransactionsExists &&
             <Button onClick={this.props.next} primary>
               Sign
             </Button>
@@ -96,15 +102,15 @@ class DetectPrivateKeys extends Component {
 
 const mapStateToProps = state => {
   return {
-    keys: state.account.keys,
     drives: state.drive.drives,
-    transactions: state.account.transactions
+    transactions: state.account.transactions,
+    transactionsToSign: state.account.transactionsToSign
   };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setPrivateKeys: keys => dispatch(setPrivateKeys(keys))
+    setTransactions: keys => dispatch(setTransactions(keys))
   };
 }
 

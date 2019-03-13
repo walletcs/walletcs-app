@@ -14,7 +14,8 @@ const Final = props => {
     props.onCancel();
   }
 
-  const { transactionsToSign } = props;
+  const { transactionsToSign, transactions } = props;
+  const signed = transactions.filter(t => transactionsToSign.includes(t.file) && t.foundKey)
 
   return (
     <Fragment>
@@ -24,11 +25,11 @@ const Final = props => {
           className={styles.icon}
           alt=''
         />
-        {transactionsToSign.length ?
+        {signed.length ?
           <Fragment>
-            <div className={styles.message}>You have successfully signed {transactionsToSign.length} transactions</div>
-            {transactionsToSign.map(item => (
-              <div className={styles.message}>{item}</div>
+            <div className={styles.message}>You have successfully signed {signed.length} transactions</div>
+            {signed.map(item => (
+              <div className={styles.message}>{item.file}</div>
             ))}
           </Fragment>
         :
@@ -46,6 +47,7 @@ const Final = props => {
 
 const mapStateToProps = state => {
   return {
+    transactions: state.account.transactions,
     transactionsToSign: state.account.transactionsToSign
   };
 }
