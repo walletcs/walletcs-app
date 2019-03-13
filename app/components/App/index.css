@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'Avenir';
+  src:url('../../assets/Avenir.ttf');
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 310px;
+  font-family: 'Avenir';
+}
+
+.app {
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  background-color: #FFF;
+}
+
+.logo {
+  display: flex;
+}
+
+.icon {
+  margin: 0 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1;
+  background-color: #6894BC;
+}
+
+.content {
+  display: flex;
+  flex: 6 6;
+  background-color: #FFF;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerText {
+  font-family: 'Avenir';
+  font-size: 24px;
+  color: #FFF;
+}
+
+.container {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.icons {
+  flex: 4;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+
+.icon {
+  margin: 15px;
+}
+
+.controls {
+  flex: 1;
+  align-items: center;
+}
+
+.insertPrivate {
+  margin: 20px;
+}
+
+.rowControls {
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.private {
+  font-weight: 600;
+}
+
+.inputWrapper {
+  background-color: #F3F3F3;
+  border-bottom: 2px solid #6894BC;
+  padding: 5px;
+}
+
+.input {
+  width: 100%;
+  color: #4F4F4F;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  height: 20px;
+  border: none;
+  background-color: #F3F3F3;
+}
+
+.label {
+  color: #828282;
+  font-size: 12px
+}
+
+.privateTextGen {
+  color: #4F4F4F;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.publicPoints {
+  color: #FFF;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tableRow {
+  display: flex;
+  border-top: 0.5px solid #E8E8E8;
+  padding: 7px;
+}
+
+.tableRow:last-child {
+  border-bottom: 0.5px solid #E8E8E8;
+}
+
+.tableCell {
+  width: 200px;
+  color: #4F4F4F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+
+.generateCheckboxContainer {
+  margin: 15px;
+}
+
+.message {
+  font-weight: 500;
+  font-size: 16px;
+  color: #4F4F4F;
+}
