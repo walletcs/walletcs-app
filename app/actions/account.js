@@ -51,3 +51,19 @@ export const setTransactions = transactions => {
     }
   };
 }
+
+export const setTransactionToSign = (transaction, checked) => {
+  return {
+    type: 'SET_TRANSACTIONS_TO_SIGN',
+    payload: {
+      transaction,
+      checked
+    }
+  };
+}
+
+export const resetAccount = () => {
+  return {
+    type: 'RESET'
+  };
+}

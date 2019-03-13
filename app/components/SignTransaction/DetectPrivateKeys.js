@@ -34,8 +34,10 @@ class DetectPrivateKeys extends Component {
         console.error(error);
       }
 
-      const { transaction } = this.props.transactions[0];
-      const found = EtherKeyPair.checkPair(transaction.pub_key, privateKey);
+      const found = this.props.transactions.some(item => {
+        const { transaction } = item;
+        return EtherKeyPair.checkPair(transaction.pub_key, privateKey);
+      })
 
       return {
         privateKey,

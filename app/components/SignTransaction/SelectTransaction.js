@@ -3,18 +3,19 @@ import fs from 'fs';
 import { connect } from 'react-redux';
 
 import Button from '../Button';
+import SelectTableItem from './SelectTableItem';
 
-import { setTransactions } from '../../actions/account';
+import { setTransactions, setTransactionToSign } from '../../actions/account';
 import { TRANSACTION_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.css';
 
 class SelectTransaction extends Component {
   componentWillMount() {
-    this.getTransactions();
+    this.setupTransactions();
   }
 
-  getTransactions = () => {
+  setupTransactions = () => {
     let dir = [];
     const drive = this.props.drives.emptyDrive;
   
@@ -42,6 +43,10 @@ class SelectTransaction extends Component {
     this.props.setTransactions(transactions);
   }
 
+  checkTransaction = (file, checked) => {
+    this.props.setTransactionToSign(file, checked);
+  }
+
   render() {
     const transactions = this.props.transactions || [];
     const isKeysExists = !!transactions.length;
@@ -60,12 +65,7 @@ class SelectTransaction extends Component {
               </div>
               <Fragment>
                 {transactions.map(item => (
-                  <div className={styles.tableRow}>
-                    <div className={styles.tableCell} />
-                    <div className={styles.tableCell}>{item.file}</div>
-                    <div className={styles.tableCell} />
-                    <div className={styles.tableCell} />
-                  </div>
+                  <SelectTableItem item={item} onCheck={this.checkTransaction} />
                 ))}
               </Fragment>
             </Fragment>
@@ -97,7 +97,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setTransactions: items => dispatch(setTransactions(items))
+    setTransactions: items => dispatch(setTransactions(items)),
+    setTransactionToSign: (file, checked) => dispatch(setTransactionToSign(file, checked))
   };
 }
 

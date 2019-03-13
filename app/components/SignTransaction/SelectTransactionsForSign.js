@@ -16,31 +16,33 @@ class SelectTransactionsForSign extends Component {
     this.props.next();
   }
 
+  getTransactions = () => this.props.transactions.filter(t => this.props.transactionsToSign.includes(t.file)) || [];
+
   signTransactions = async () => {
     const privateKeyDef = this.props.keys.find(item => item.found);
     const drive = this.props.drives.emptyDrive;
+    const transactions = this.getTransactions();
 
-    const fullTransaction = this.props.transactions[0];
-    const { transaction: data } = fullTransaction;
-
-    const signedTransactionsData = await Promise.all(data.transactions.map(async tr => {
-      const transactionData = tr.transaction;
-      const signature = await EtherTransaction.sign(privateKeyDef.privateKey, transactionData);
-      return { transaction: signature };
-    }));
-
-    const signedTransaction = { ...fullTransaction.transaction, transactions: signedTransactionsData };
-    const filename = fullTransaction.replace(TRANSACTION_PREFIX, '');
-
-    const signedTransactionFile = `${SIGNED_TRANSACTION_PREFIX}${filename}`;
-    const path = `${drive}/${signedTransactionFile}`
-    this.signedTransactions = [signedTransactionFile];
-
-    writeFile(path, JSON.stringify(signedTransaction));
+    transactions.forEach(async fullTransaction => {
+      const { transaction: data } = fullTransaction;
+  
+      const signedTransactionsData = await Promise.all(data.transactions.map(async tr => {
+        const transactionData = tr.transaction;
+        const signature = await EtherTransaction.sign(privateKeyDef.privateKey, transactionData);
+        return { transaction: signature };
+      }));
+  
+      const signedTransaction = { ...fullTransaction.transaction, transactions: signedTransactionsData };
+      const filename = fullTransaction.file.replace(TRANSACTION_PREFIX, '');
+  
+      const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`
+  
+      writeFile(path, JSON.stringify(signedTransaction));
+    });
   }
 
   render() {
-    const transactions = [this.props.transactions[0]] || [];
+    const transactions = this.getTransactions();
     const isTransactionsExists = !!transactions.length;
 
     return (
@@ -55,7 +57,7 @@ class SelectTransactionsForSign extends Component {
                 <div className={styles.tableCell} style={{ color: '#ABABAB' }}>DETAILS</div>
               </div>
               <Fragment>
-                {transactions.map((item, index) => (
+                {transactions.map(item => (
                   <div className={styles.tableRow}>
                     <div className={styles.tableCell} />
                     <div className={styles.tableCell}>{item.file}</div>
@@ -88,7 +90,8 @@ const mapStateToProps = state => {
   return {
     keys: state.account.keys,
     drives: state.drive.drives,
-    transactions: state.account.transactions
+    transactions: state.account.transactions,
+    transactionsToSign: state.account.transactionsToSign
   };
 }
 

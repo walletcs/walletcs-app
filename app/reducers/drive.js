@@ -1,7 +1,5 @@
 const initialState = {
-  drives: {
-    emptyDrive: '/media/arnage/912D-1AE3'
-  }
+  drives: {}
 };
 
 export const driveReducer = (state = initialState, action) => {
