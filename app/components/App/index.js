@@ -8,8 +8,6 @@ import Backup from '../Backup';
 import SignTransaction from '../SignTransaction';
 import USBListener from '../USBListener';
 
-import '../../assets/Avenir.ttf';
-
 import walletcsLogo from '../../assets/wallet_logo.svg';
 import walletcsLabel from '../../assets/wallet_label.svg';
 
