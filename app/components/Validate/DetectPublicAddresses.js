@@ -54,7 +54,7 @@ class DetectPublicAddresses extends Component {
     }
 
     const publicKeys = publicKeysFiles
-      .filter(f => f.includes(PUBLIC_KEY_PREFIX))
+      .filter(f => f.startsWith(PUBLIC_KEY_PREFIX))
       .map(pkfile => {
         let res;
 
@@ -69,7 +69,7 @@ class DetectPublicAddresses extends Component {
 
     const preparedPublicKeys = this.props.keys.map(item => ({
       ...item,
-      found: publicKeys.includes(item.publicKey)
+      found: publicKeys.startsWith(item.publicKey)
     }));
 
     this.props.setPublicKeys(preparedPublicKeys);

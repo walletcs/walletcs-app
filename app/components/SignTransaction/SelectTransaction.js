@@ -26,7 +26,7 @@ class SelectTransaction extends Component {
     }
 
     const transactions = dir
-      .filter(file => file.includes(TRANSACTION_PREFIX))
+      .filter(file => file.startsWith(TRANSACTION_PREFIX))
       .map(file => {
         let transaction = {};
 
@@ -35,6 +35,7 @@ class SelectTransaction extends Component {
             fs.readFileSync(`${drive}/${file}`, 'utf-8')
           );
         } catch (error) {
+          console.error(`error while reading ${drive}/${file}`);
           console.error(error);
           return null;
         }

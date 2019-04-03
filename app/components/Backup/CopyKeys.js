@@ -27,7 +27,7 @@ class CopyKeys extends Component {
     }
 
     const res = dir
-      .filter(file => file.includes(PRIVATE_KEY_PREFIX))
+      .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
       .map(file => {
         let privateKey;
 

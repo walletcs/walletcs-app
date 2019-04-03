@@ -26,7 +26,7 @@ class DetectPrivateKeys extends Component {
     }
 
     const privateKeys = dir
-      .filter(file => file.includes(PRIVATE_KEY_PREFIX))
+      .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
       .map(file => {
         let privateKey;
 
@@ -55,7 +55,7 @@ class DetectPrivateKeys extends Component {
           foundKey: !!privateKey
         };
       })
-      .filter(t => this.props.transactionsToSign.includes(t.file));
+      .filter(t => this.props.transactionsToSign.startsWith(t.file));
 
     this.props.setTransactions(transactionsWithKeys);
   };

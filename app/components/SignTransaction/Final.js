@@ -16,7 +16,7 @@ const Final = props => {
 
   const { transactionsToSign, transactions } = props;
   const signed = transactions.filter(
-    t => transactionsToSign.includes(t.file) && t.foundKey
+    t => transactionsToSign.startsWith(t.file) && t.foundKey
   );
 
   return (
@@ -45,18 +45,14 @@ const Final = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    transactions: state.account.transactions,
-    transactionsToSign: state.account.transactionsToSign
-  };
-};
+const mapStateToProps = state => ({
+  transactions: state.account.transactions,
+  transactionsToSign: state.account.transactionsToSign
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    resetAccount: () => dispatch(resetAccount())
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  resetAccount: () => dispatch(resetAccount())
+});
 
 export default connect(
   mapStateToProps,
