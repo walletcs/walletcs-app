@@ -15,16 +15,8 @@ import styles from './index.css';
 
 const Logo = props => (
   <div className={styles.logo}>
-    <img
-      src={walletcsLogo}
-      className={styles.icon}
-      alt=''
-    />
-    <img
-      src={walletcsLabel}
-      className={styles.icon}
-      alt=''
-    />
+    <img src={walletcsLogo} className={styles.icon} alt="" />
+    <img src={walletcsLabel} className={styles.icon} alt="" />
   </div>
 );
 
@@ -32,35 +24,35 @@ export default class App extends Component {
   state = {
     screen: null,
     screenName: null
-  }
+  };
 
   setAccountScreen = () => {
     this.setState({
       screen: Account,
       screenName: 'Generate Account'
-    })
-  }
+    });
+  };
 
   setValidateScreen = () => {
     this.setState({
       screen: Validate,
       screenName: 'Validate / Generate Address'
-    })
-  }
+    });
+  };
 
   setBackupScreen = () => {
     this.setState({
       screen: Backup,
       screenName: 'Backup Private Key Drive'
-    })
-  }
+    });
+  };
 
   setSignTransactionScreen = () => {
     this.setState({
       screen: SignTransaction,
       screenName: 'Sign Transaction'
-    })
-  }
+    });
+  };
 
   renderMenu = () => (
     <div>
@@ -83,8 +75,8 @@ export default class App extends Component {
     this.setState({
       screen: null,
       screenName: null
-    })
-  }
+    });
+  };
 
   render() {
     let content;
@@ -93,7 +85,7 @@ export default class App extends Component {
       content = this.renderMenu();
     } else {
       const Screen = this.state.screen;
-      content = <Screen onCancel={this.setDefaultScreen} />
+      content = <Screen onCancel={this.setDefaultScreen} />;
     }
 
     return (
@@ -105,12 +97,10 @@ export default class App extends Component {
             </div>
           </div>
           <div className={styles.content}>
-            <USBListener>
-              {content}
-            </USBListener>
+            <USBListener>{content}</USBListener>
           </div>
         </div>
       </Provider>
-    )
+    );
   }
 }

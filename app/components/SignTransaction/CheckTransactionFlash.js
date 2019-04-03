@@ -19,38 +19,24 @@ const CheckTransactionFlash = ({ drives, onCancel, next }) => {
   return (
     <Fragment>
       <div className={styles.icons}>
-        <img
-          src={transactionFlash}
-          className={styles.icon}
-          alt=''
-        />
-        <img
-          src={arrow}
-          className={styles.icon}
-          alt=''
-        />
-        <img
-          src={device}
-          className={styles.icon}
-          alt=''
-        />
+        <img src={transactionFlash} className={styles.icon} alt="" />
+        <img src={arrow} className={styles.icon} alt="" />
+        <img src={device} className={styles.icon} alt="" />
       </div>
-      <div className={styles.insertPrivate}>Insert flash drive with Transactions to sign</div>
+      <div className={styles.insertPrivate}>
+        Insert flash drive with Transactions to sign
+      </div>
       <div className={styles.controls}>
-        <Button onClick={onCancel}>
-          Cancel
-        </Button>
+        <Button onClick={onCancel}>Cancel</Button>
       </div>
     </Fragment>
-  )
+  );
 };
 
 const mapStateToProps = state => {
   return {
     drives: state.drive.drives
   };
-}
+};
 
-export default connect(
-  mapStateToProps
-)(CheckTransactionFlash);
+export default connect(mapStateToProps)(CheckTransactionFlash);

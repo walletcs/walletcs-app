@@ -9,7 +9,7 @@ class USBListener extends Component {
   state = {
     activeStep: 0,
     loadingMsg: null
-  }
+  };
 
   setDrives = async interval => {
     const drives = await getDrives();
@@ -18,7 +18,7 @@ class USBListener extends Component {
       this.props.setDrivesToStorage(drives);
       interval && clearInterval(interval);
     }
-  }
+  };
 
   async componentWillMount() {
     await this.setDrives();
@@ -43,13 +43,13 @@ const mapStateToProps = state => {
   return {
     path: state.drive.path
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     setDrivesToStorage: path => dispatch(setDrivesToStorage(path))
   };
-}
+};
 
 export default connect(
   mapStateToProps,

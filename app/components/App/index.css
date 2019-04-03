@@ -1,9 +1,10 @@
 @font-face {
   font-family: 'Avenir';
-  src:url('../../assets/Avenir.ttf');
+  src: url('../../assets/Avenir.ttf');
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -16,7 +17,7 @@ html, body {
   flex-direction: column;
   height: 100%;
   display: flex;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .logo {
@@ -32,13 +33,13 @@ html, body {
   justify-content: center;
   align-items: center;
   flex: 1 1;
-  background-color: #6894BC;
+  background-color: #6894bc;
 }
 
 .content {
   display: flex;
   flex: 6 6;
-  background-color: #FFF;
+  background-color: #fff;
   justify-content: center;
   align-items: center;
 }
@@ -46,7 +47,7 @@ html, body {
 .headerText {
   font-family: 'Avenir';
   font-size: 24px;
-  color: #FFF;
+  color: #fff;
 }
 
 .container {
@@ -93,36 +94,36 @@ html, body {
 }
 
 .inputWrapper {
-  background-color: #F3F3F3;
-  border-bottom: 2px solid #6894BC;
+  background-color: #f3f3f3;
+  border-bottom: 2px solid #6894bc;
   padding: 5px;
 }
 
 .input {
   width: 100%;
-  color: #4F4F4F;
+  color: #4f4f4f;
   font-weight: 500;
   font-size: 16px;
   outline: none;
   height: 20px;
   border: none;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 .label {
   color: #828282;
-  font-size: 12px
+  font-size: 12px;
 }
 
 .privateTextGen {
-  color: #4F4F4F;
+  color: #4f4f4f;
   font-weight: 500;
   font-size: 16px;
   margin: 15px 0;
 }
 
 .publicPoints {
-  color: #FFF;
+  color: #fff;
   font-size: 16px;
   padding-left: 20px;
   padding-right: 20px;
@@ -130,17 +131,17 @@ html, body {
 
 .tableRow {
   display: flex;
-  border-top: 0.5px solid #E8E8E8;
+  border-top: 0.5px solid #e8e8e8;
   padding: 7px;
 }
 
 .tableRow:last-child {
-  border-bottom: 0.5px solid #E8E8E8;
+  border-bottom: 0.5px solid #e8e8e8;
 }
 
 .tableCell {
   width: 200px;
-  color: #4F4F4F;
+  color: #4f4f4f;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -154,5 +155,5 @@ html, body {
 .message {
   font-weight: 500;
   font-size: 16px;
-  color: #4F4F4F;
+  color: #4f4f4f;
 }

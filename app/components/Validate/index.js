@@ -13,10 +13,8 @@ const steps = [
   CheckPublicFlash,
   DetectPublicAddresses,
   Final
-]
+];
 
-const Validate = props => (
-  <StepHandler {...props} steps={steps} />
-);
+const Validate = props => <StepHandler {...props} steps={steps} />;
 
 export default Validate;

@@ -1,9 +1,6 @@
 import fs from 'fs';
 
-import {
-  PRIVATE_KEY_PREFIX,
-  PUBLIC_KEY_PREFIX
-} from './constants';
+import { PRIVATE_KEY_PREFIX, PUBLIC_KEY_PREFIX } from './constants';
 
 const drivelist = require('drivelist');
 
@@ -12,33 +9,38 @@ export const getDrives = async () => {
   const drives = drivesList.filter(item => item.busType === 'USB');
   const result = {};
 
-  drives.map(driveItem => {
-    let dir = [];
-    const { path } = (driveItem.mountpoints[0] || {});
+  drives
+    .map(driveItem => {
+      let dir = [];
+      const { path } = driveItem.mountpoints[0] || {};
 
-    if (path) {
-      try {
-        dir = fs.readdirSync(path) || [];
-      } catch (error) {
-        console.error(error);
+      if (path) {
+        try {
+          dir = fs.readdirSync(path) || [];
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        return null;
       }
-    } else {
-      return null;
-    }
 
-    let rawDriveType;
+      let rawDriveType;
 
-    if (dir.some(file => file.includes(PUBLIC_KEY_PREFIX))) {
-      rawDriveType = 'publicDrive'
-    } else if (dir.some(file => file.includes(PRIVATE_KEY_PREFIX))) {
-      rawDriveType = 'privateDrive'
-    }
+      if (dir.some(file => file.includes(PUBLIC_KEY_PREFIX))) {
+        rawDriveType = 'publicDrive';
+      } else if (dir.some(file => file.includes(PRIVATE_KEY_PREFIX))) {
+        rawDriveType = 'privateDrive';
+      }
 
-    return { path, driveType: rawDriveType || 'emptyDrive' };
-  }).filter(f => !!f).forEach(d => { result[d.driveType] = d.path });
+      return { path, driveType: rawDriveType || 'emptyDrive' };
+    })
+    .filter(f => !!f)
+    .forEach(d => {
+      result[d.driveType] = d.path;
+    });
 
   return result;
-}
+};
 
 export const writeFile = (path, data) => {
   let fd;
@@ -51,4 +53,4 @@ export const writeFile = (path, data) => {
   } finally {
     fs.closeSync(fd);
   }
-}
+};

@@ -5,7 +5,10 @@ import { EtherTransaction } from 'walletcs/src/index';
 
 import Button from '../Button';
 
-import { SIGNED_TRANSACTION_PREFIX, TRANSACTION_PREFIX } from '../../utils/constants';
+import {
+  SIGNED_TRANSACTION_PREFIX,
+  TRANSACTION_PREFIX
+} from '../../utils/constants';
 
 import styles from '../App/index.css';
 import { writeFile } from '../../utils/helpers';
@@ -14,13 +17,15 @@ class SelectTransactionsForSign extends Component {
   next = async () => {
     await this.signTransactions();
     this.props.next();
-  }
+  };
 
   getTransactions = () => {
-    return this.props.transactions.filter(
-      t => this.props.transactionsToSign.includes(t.file) && t.foundKey
-    ) || [];
-  }
+    return (
+      this.props.transactions.filter(
+        t => this.props.transactionsToSign.includes(t.file) && t.foundKey
+      ) || []
+    );
+  };
 
   signTransactions = async () => {
     const drive = this.props.drives.emptyDrive;
@@ -28,21 +33,29 @@ class SelectTransactionsForSign extends Component {
 
     transactions.forEach(async fullTransaction => {
       const { transaction: data } = fullTransaction;
-  
-      const signedTransactionsData = await Promise.all(data.transactions.map(async tr => {
-        const signature = await EtherTransaction.sign(fullTransaction.privateKey, tr.transaction);
 
-        return { transaction: signature };
-      }));
-  
-      const signedTransaction = { ...fullTransaction.transaction, transactions: signedTransactionsData };
+      const signedTransactionsData = await Promise.all(
+        data.transactions.map(async tr => {
+          const signature = await EtherTransaction.sign(
+            fullTransaction.privateKey,
+            tr.transaction
+          );
+
+          return { transaction: signature };
+        })
+      );
+
+      const signedTransaction = {
+        ...fullTransaction.transaction,
+        transactions: signedTransactionsData
+      };
       const filename = fullTransaction.file.replace(TRANSACTION_PREFIX, '');
 
-      const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`
+      const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`;
 
       writeFile(path, JSON.stringify(signedTransaction));
     });
-  }
+  };
 
   render() {
     const transactions = this.getTransactions();
@@ -51,13 +64,19 @@ class SelectTransactionsForSign extends Component {
     return (
       <Fragment>
         <div>
-          {isTransactionsExists ?
+          {isTransactionsExists ? (
             <Fragment>
               <div className={styles.tableRow}>
                 <div className={styles.tableCell} />
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>FILE</div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>TIME</div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>DETAILS</div>
+                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+                  FILE
+                </div>
+                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+                  TIME
+                </div>
+                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+                  DETAILS
+                </div>
               </div>
               <Fragment>
                 {transactions.map(item => (
@@ -70,19 +89,17 @@ class SelectTransactionsForSign extends Component {
                 ))}
               </Fragment>
             </Fragment>
-          :
+          ) : (
             <div className={styles.message}>Private keys not found</div>
-          }
+          )}
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>
-            Cancel
-          </Button>
-          {isTransactionsExists &&
+          <Button onClick={this.props.onCancel}>Cancel</Button>
+          {isTransactionsExists && (
             <Button onClick={this.next} primary>
               Save
             </Button>
-          }
+          )}
         </div>
       </Fragment>
     );
@@ -96,6 +113,6 @@ const mapStateToProps = state => {
     transactions: state.account.transactions,
     transactionsToSign: state.account.transactionsToSign
   };
-}
+};
 
 export default connect(mapStateToProps)(SelectTransactionsForSign);

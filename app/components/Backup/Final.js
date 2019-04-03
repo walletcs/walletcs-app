@@ -25,18 +25,16 @@ class Final extends Component {
 
       writeFile(path, privateKey);
     });
-  }
+  };
 
   render() {
     return (
       <Fragment>
         <div className={styles.container}>
-          <img
-            src={success}
-            className={styles.icon}
-            alt=''
-          />
-          <div className={styles.message}>You have successfully created backed up your PRIVATE key Drive</div>
+          <img src={success} className={styles.icon} alt="" />
+          <div className={styles.message}>
+            You have successfully created backed up your PRIVATE key Drive
+          </div>
         </div>
         <div className={styles.rowControls}>
           <Button onClick={this.props.onCancel} primary>
@@ -44,7 +42,7 @@ class Final extends Component {
           </Button>
         </div>
       </Fragment>
-    )
+    );
   }
 }
 
@@ -53,8 +51,6 @@ const mapStateToProps = state => {
     keys: state.account.keys,
     drives: state.drive.drives
   };
-}
+};
 
-export default connect(
-  mapStateToProps
-)(Final);
+export default connect(mapStateToProps)(Final);

@@ -16,7 +16,7 @@
   border-radius: 3px;
   transform: scale(1);
   vertical-align: middle;
-  border: 1px solid #9098A9;
+  border: 1px solid #9098a9;
   transition: all 0.2s ease;
 }
 .cbx span:first-child svg {
@@ -24,7 +24,7 @@
   top: 3px;
   left: 2px;
   fill: none;
-  stroke: #FFF;
+  stroke: #fff;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -35,10 +35,10 @@
   transform: translate3d(0, 0, 0);
 }
 .cbx span:first-child::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
-  background: #6894BC;
+  background: #6894bc;
   display: block;
   transform: scale(0);
   opacity: 1;
@@ -48,7 +48,7 @@
   padding-left: 8px;
 }
 .cbx:hover span:first-child {
-  border-color: #6894BC;
+  border-color: #6894bc;
 }
 
 .inpcbx {
@@ -56,8 +56,8 @@
 }
 
 .inpcbx:checked + .cbx span:first-child {
-  background: #6894BC;
-  border-color: #6894BC;
+  background: #6894bc;
+  border-color: #6894bc;
   animation: wave 0.4s ease;
 }
 .inpcbx:checked + .cbx span:first-child svg {

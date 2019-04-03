@@ -1,14 +1,10 @@
-export const setDrivesToStorage = drives => {
-  return {
-    type: 'SET_DRIVES',
-    payload: {
-      drives
-    }
-  };
-}
+export const setDrivesToStorage = drives => ({
+  type: 'SET_DRIVES',
+  payload: {
+    drives
+  }
+});
 
-export const resetDrives = () => {
-  return {
-    type: 'RESET_DRIVES'
-  };
-}
+export const resetDrives = () => ({
+  type: 'RESET_DRIVES'
+});

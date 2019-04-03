@@ -13,10 +13,8 @@ const steps = [
   CheckPublicFlash,
   GeneratePublic,
   Final
-]
+];
 
-const Account = props => (
-  <StepHandler {...props} steps={steps} />
-);
+const Account = props => <StepHandler {...props} steps={steps} />;
 
 export default Account;

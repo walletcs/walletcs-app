@@ -5,7 +5,7 @@ import styles from '../App/index.css';
 export default class StepHandler extends Component {
   state = {
     activeStep: 0
-  }
+  };
 
   render() {
     const { activeStep } = this.state;

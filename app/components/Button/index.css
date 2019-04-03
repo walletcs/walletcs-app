@@ -1,7 +1,7 @@
 .button {
   display: flex;
   justify-content: center;
-  border: 1px solid #6894BC;
+  border: 1px solid #6894bc;
   border-radius: 8px;
   height: 42px;
   min-width: 154px;
@@ -14,19 +14,19 @@
 }
 
 .primary {
-  background-color: #6894BC;
+  background-color: #6894bc;
 }
 
 .primary:hover {
-  background-color: #5484B5;
+  background-color: #5484b5;
 }
 
 .default {
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .default:hover {
-  background-color: #EFEFEF;
+  background-color: #efefef;
 }
 
 .text {
@@ -35,9 +35,9 @@
 }
 
 .defaultText {
-  color: #6894BC;
+  color: #6894bc;
 }
 
 .primaryText {
-  color: #FFF;
+  color: #fff;
 }

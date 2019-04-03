@@ -25,26 +25,28 @@ class DetectPrivateKeys extends Component {
       console.error(error);
     }
 
-    const res = dir.filter(file => file.includes(PRIVATE_KEY_PREFIX)).map(file => {
-      let privateKey;
-      let publicKey;
+    const res = dir
+      .filter(file => file.includes(PRIVATE_KEY_PREFIX))
+      .map(file => {
+        let privateKey;
+        let publicKey;
 
-      try {
-        privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
-        publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
-      } catch (error) {
-        console.error(error);
-      }
+        try {
+          privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
+        } catch (error) {
+          console.error(error);
+        }
 
-      return {
-        privateKey,
-        publicKey,
-        account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
-      }
-    });
+        return {
+          privateKey,
+          publicKey,
+          account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
+        };
+      });
 
     this.props.setPrivateKeys(res);
-  }
+  };
 
   render() {
     const { keys = [] } = this.props;
@@ -53,26 +55,26 @@ class DetectPrivateKeys extends Component {
     return (
       <Fragment>
         <div>
-          {isKeysExists ?
+          {isKeysExists ? (
             <Fragment>
-              <div className={styles.tableCell}App={{ color: '#ABABAB' }}>ADDRESS</div>
+              <div className={styles.tableCell} App={{ color: '#ABABAB' }}>
+                ADDRESS
+              </div>
               {keys.map(item => (
                 <div className={styles.tableCell}>{item.publicKey}</div>
               ))}
             </Fragment>
-          :
+          ) : (
             <div className={styles.message}>Private keys not found</div>
-          }
+          )}
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>
-            Cancel
-          </Button>
-          {isKeysExists &&
+          <Button onClick={this.props.onCancel}>Cancel</Button>
+          {isKeysExists && (
             <Button onClick={this.props.next} primary>
               Next
             </Button>
-          }
+          )}
         </div>
       </Fragment>
     );
@@ -84,13 +86,13 @@ const mapStateToProps = state => {
     keys: state.account.keys,
     drives: state.drive.drives
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     setPrivateKeys: keys => dispatch(setPrivateKeys(keys))
   };
-}
+};
 
 export default connect(
   mapStateToProps,

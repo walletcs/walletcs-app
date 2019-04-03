@@ -7,12 +7,12 @@ export const driveReducer = (state = initialState, action) => {
     case 'SET_DRIVES':
       return {
         drives: action.payload.drives
-      }
+      };
     case 'RESET_DRIVES':
       return {
         drives: {}
-      }
+      };
     default:
-      return state
+      return state;
   }
 };

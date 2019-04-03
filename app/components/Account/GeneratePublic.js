@@ -13,7 +13,7 @@ import styles from '../App/index.css';
 class GeneratePublic extends Component {
   state = {
     loadingMsg: null
-  }
+  };
 
   savePublicKey = () => {
     const { publicDrive, emptyDrive } = this.props.drives;
@@ -25,17 +25,35 @@ class GeneratePublic extends Component {
     writeFile(path, address);
     this.props.resetDrives();
     this.props.next();
-  }
+  };
 
   render() {
     return (
       <Fragment>
         <div style={{ flex: 4 }}>
-          <div style={{ backgroundColor: '#27AE60', borderRadius: 2, padding: 20 }}>
-            <div style={{ color: '#FFF', fontSize: 18, textAlign: 'center', padding: 5 }}>
-              After press 'Save address' button this drive will contain file with public address of your account.
+          <div
+            style={{ backgroundColor: '#27AE60', borderRadius: 2, padding: 20 }}
+          >
+            <div
+              style={{
+                color: '#FFF',
+                fontSize: 18,
+                textAlign: 'center',
+                padding: 5
+              }}
+            >
+              After press 'Save address' button this drive will contain file
+              with public address of your account.
             </div>
-            <div style={{ color: '#FFF', fontSize: 18, textAlign: 'center', padding: 5, fontWeight: '600' }}>
+            <div
+              style={{
+                color: '#FFF',
+                fontSize: 18,
+                textAlign: 'center',
+                padding: 5,
+                fontWeight: '600'
+              }}
+            >
               You can safely distribute this address
             </div>
           </div>
@@ -47,18 +65,16 @@ class GeneratePublic extends Component {
           </div>
         </div>
         <div className={styles.rowControls}>
-          {this.props.loadingMsg ?
+          {this.props.loadingMsg ? (
             <div>{this.props.loadingMsg}</div>
-          :
+          ) : (
             <Fragment>
-              <Button onClick={this.props.onCancel}>
-                Cancel
-              </Button>
+              <Button onClick={this.props.onCancel}>Cancel</Button>
               <Button onClick={this.savePublicKey} primary>
                 Save address
               </Button>
             </Fragment>
-          }
+          )}
         </div>
       </Fragment>
     );
@@ -70,13 +86,13 @@ const mapStateToProps = state => {
     drives: state.drive.drives,
     account: state.account
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     resetDrives: path => dispatch(resetDrives(path))
   };
-}
+};
 
 export default connect(
   mapStateToProps,

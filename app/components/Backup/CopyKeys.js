@@ -26,39 +26,37 @@ class CopyKeys extends Component {
       console.error(error);
     }
 
-    const res = dir.filter(file => file.includes(PRIVATE_KEY_PREFIX)).map(file => {
-      let privateKey;
+    const res = dir
+      .filter(file => file.includes(PRIVATE_KEY_PREFIX))
+      .map(file => {
+        let privateKey;
 
-      try {
-        privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
-      } catch (error) {
-        console.error(error);
-      }
+        try {
+          privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+        } catch (error) {
+          console.error(error);
+        }
 
-      return {
-        privateKey,
-        account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
-      }
-    });
+        return {
+          privateKey,
+          account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
+        };
+      });
 
     this.props.setPrivateKeys(res);
-  }
+  };
 
   render() {
     return (
       <Fragment>
         <div className={styles.icons}>
-          <img
-            src={keys}
-            className={styles.icon}
-            alt=''
-          />
+          <img src={keys} className={styles.icon} alt="" />
         </div>
-        <div className={styles.insertPrivate}>Private Key flash drive copied</div>
+        <div className={styles.insertPrivate}>
+          Private Key flash drive copied
+        </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>
-            Cancel
-          </Button>
+          <Button onClick={this.props.onCancel}>Cancel</Button>
           <Button onClick={this.props.next} primary>
             Next
           </Button>
@@ -73,13 +71,13 @@ const mapStateToProps = state => {
     keys: state.account.keys,
     drives: state.drive.drives
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     setPrivateKeys: keys => dispatch(setPrivateKeys(keys))
   };
-}
+};
 
 export default connect(
   mapStateToProps,

@@ -12,29 +12,29 @@ const Final = props => {
   const done = () => {
     props.resetAccount();
     props.onCancel();
-  }
+  };
 
   const { transactionsToSign, transactions } = props;
-  const signed = transactions.filter(t => transactionsToSign.includes(t.file) && t.foundKey)
+  const signed = transactions.filter(
+    t => transactionsToSign.includes(t.file) && t.foundKey
+  );
 
   return (
     <Fragment>
       <div className={styles.container}>
-        <img
-          src={success}
-          className={styles.icon}
-          alt=''
-        />
-        {signed.length ?
+        <img src={success} className={styles.icon} alt="" />
+        {signed.length ? (
           <Fragment>
-            <div className={styles.message}>You have successfully signed {signed.length} transactions</div>
+            <div className={styles.message}>
+              You have successfully signed {signed.length} transactions
+            </div>
             {signed.map(item => (
               <div className={styles.message}>{item.file}</div>
             ))}
           </Fragment>
-        :
+        ) : (
           <div className={styles.message}>Transactions not signed</div>
-        }
+        )}
       </div>
       <div className={styles.rowControls}>
         <Button onClick={done} primary>
@@ -43,19 +43,22 @@ const Final = props => {
       </div>
     </Fragment>
   );
-}
+};
 
 const mapStateToProps = state => {
   return {
     transactions: state.account.transactions,
     transactionsToSign: state.account.transactionsToSign
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     resetAccount: () => dispatch(resetAccount())
   };
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Final);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Final);

@@ -6,11 +6,13 @@ import styles from './index.css';
 const Button = props => (
   <div
     {...props}
-    className={cx(styles.button, {
-      [styles.primary]: props.primary,
-      [styles.default]: !props.primary
-    },
-    props.className
+    className={cx(
+      styles.button,
+      {
+        [styles.primary]: props.primary,
+        [styles.default]: !props.primary
+      },
+      props.className
     )}
   >
     <div

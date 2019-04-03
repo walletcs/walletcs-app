@@ -15,21 +15,21 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
   return (
     <Fragment>
       <div className={styles.container}>
-        <img
-          src={success}
-          className={styles.icon}
-          alt=''
-        />
-        {accounts.length ?
+        <img src={success} className={styles.icon} alt="" />
+        {accounts.length ? (
           <Fragment>
-            <div className={styles.message}>{accounts.length} PUBLIC ADDRESSES generated:</div>
+            <div className={styles.message}>
+              {accounts.length} PUBLIC ADDRESSES generated:
+            </div>
             {accounts.map(item => (
-              <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${item.account}.txt`}</div>
+              <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${
+                item.account
+              }.txt`}</div>
             ))}
           </Fragment>
-        :
+        ) : (
           <div className={styles.message}>There is no keys for restore.</div>
-        }
+        )}
       </div>
       <div className={styles.rowControls}>
         <Button onClick={onCancel} primary>
@@ -37,16 +37,14 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
         </Button>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
 const mapStateToProps = state => {
   return {
     publicKeys: state.account.publicKeys,
     generatedFlag: state.account.generatedFlag
   };
-}
+};
 
-export default connect(
-  mapStateToProps
-)(Final);
+export default connect(mapStateToProps)(Final);

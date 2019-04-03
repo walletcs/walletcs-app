@@ -14,22 +14,22 @@ import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 import styles from '../App/index.css';
 
 class DetectPublicAddresses extends Component {
-  state = { generate: true }
+  state = { generate: true };
 
   componentWillMount() {
     this.setupPublicKeys();
   }
 
   onGenerateChange = () => {
-    this.setState({ generate: !this.state.generate })
-  }
+    this.setState({ generate: !this.state.generate });
+  };
 
   restorePublicKeys = () => {
     if (this.state.generate) {
       const keysForGenerate = this.props.publicKeys.filter(f => !f.found);
       const { publicDrive, emptyDrive } = this.props.drives;
       const drive = publicDrive || emptyDrive;
-  
+
       keysForGenerate.forEach(k => {
         const address = EtherKeyPair.recoveryPublicKey(k.privateKey);
         const { account } = k;
@@ -40,7 +40,7 @@ class DetectPublicAddresses extends Component {
 
     this.props.setGeneratedFlag(this.state.generate);
     this.props.next();
-  }
+  };
 
   setupPublicKeys = () => {
     let publicKeysFiles = [];
@@ -48,30 +48,32 @@ class DetectPublicAddresses extends Component {
     const drive = publicDrive || emptyDrive;
 
     try {
-      publicKeysFiles = fs.readdirSync(drive) || []
+      publicKeysFiles = fs.readdirSync(drive) || [];
     } catch (error) {
       console.error(error);
     }
 
-    const publicKeys = publicKeysFiles.filter(f => f.includes(PUBLIC_KEY_PREFIX)).map(pkfile => {
-      let res;
+    const publicKeys = publicKeysFiles
+      .filter(f => f.includes(PUBLIC_KEY_PREFIX))
+      .map(pkfile => {
+        let res;
 
-      try {
-        res = fs.readFileSync(`${drive}/${pkfile}`, 'utf-8');
-      } catch (error) {
-        console.error(error);
-      }
+        try {
+          res = fs.readFileSync(`${drive}/${pkfile}`, 'utf-8');
+        } catch (error) {
+          console.error(error);
+        }
 
-      return res;
-    })
+        return res;
+      });
 
     const preparedPublicKeys = this.props.keys.map(item => ({
       ...item,
       found: publicKeys.includes(item.publicKey)
-    }))
+    }));
 
     this.props.setPublicKeys(preparedPublicKeys);
-  }
+  };
 
   render() {
     const keys = this.props.publicKeys || [];
@@ -80,16 +82,24 @@ class DetectPublicAddresses extends Component {
       <Fragment>
         <div>
           <div className={styles.tableRow}>
-            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>ACCOUNT</div>
-            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>ADDRESS</div>
-            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>FOUND</div>
+            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+              ACCOUNT
+            </div>
+            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+              ADDRESS
+            </div>
+            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+              FOUND
+            </div>
           </div>
           <Fragment>
             {keys.map(item => (
               <div className={styles.tableRow}>
                 <div className={styles.tableCell}>{item.account}</div>
                 <div className={styles.tableCell}>{item.publicKey}</div>
-                <div className={styles.tableCell}>{item.found ? 'Yes' : 'No' }</div>
+                <div className={styles.tableCell}>
+                  {item.found ? 'Yes' : 'No'}
+                </div>
               </div>
             ))}
           </Fragment>
@@ -102,9 +112,7 @@ class DetectPublicAddresses extends Component {
           />
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>
-            Cancel
-          </Button>
+          <Button onClick={this.props.onCancel}>Cancel</Button>
           <Button onClick={this.restorePublicKeys} primary>
             Next
           </Button>
@@ -120,14 +128,14 @@ const mapStateToProps = state => {
     keys: state.account.keys,
     drives: state.drive.drives
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     setPublicKeys: keys => dispatch(setPublicKeys(keys)),
     setGeneratedFlag: flag => dispatch(setGeneratedFlag(flag))
   };
-}
+};
 
 export default connect(
   mapStateToProps,

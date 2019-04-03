@@ -10,7 +10,9 @@ import styles from '../App/index.css';
 
 const CheckPrivateFlash = props => {
   const { drives, next } = props;
-  const drive = props.onlyPrivate ? drives.privateDrive : (drives.privateDrive || drives.emptyDrive);
+  const drive = props.onlyPrivate
+    ? drives.privateDrive
+    : drives.privateDrive || drives.emptyDrive;
 
   if (drive) {
     next();
@@ -19,36 +21,24 @@ const CheckPrivateFlash = props => {
   return (
     <Fragment>
       <div className={styles.icons}>
-        <img
-          src={privateFlash}
-          className={styles.icon}
-          alt=''
-        />
-        <img
-          src={arrow}
-          className={styles.icon}
-          alt=''
-        />
-        <img
-          src={device}
-          className={styles.icon}
-          alt=''
-        />
+        <img src={privateFlash} className={styles.icon} alt="" />
+        <img src={arrow} className={styles.icon} alt="" />
+        <img src={device} className={styles.icon} alt="" />
       </div>
-      <div className={styles.insertPrivate}>Insert <span className={styles.private}>Private</span> key flash drive</div>
+      <div className={styles.insertPrivate}>
+        Insert <span className={styles.private}>Private</span> key flash drive
+      </div>
       <div className={styles.controls}>
-        <Button onClick={props.onCancel}>
-          Cancel
-        </Button>
+        <Button onClick={props.onCancel}>Cancel</Button>
       </div>
     </Fragment>
   );
-}
+};
 
 const mapStateToProps = state => {
   return {
     drives: state.drive.drives
   };
-}
+};
 
 export default connect(mapStateToProps)(CheckPrivateFlash);

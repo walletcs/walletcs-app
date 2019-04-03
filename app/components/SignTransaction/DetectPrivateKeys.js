@@ -25,35 +25,40 @@ class DetectPrivateKeys extends Component {
       console.error(error);
     }
 
-    const privateKeys = dir.filter(file => file.includes(PRIVATE_KEY_PREFIX)).map(file => {
-      let privateKey;
+    const privateKeys = dir
+      .filter(file => file.includes(PRIVATE_KEY_PREFIX))
+      .map(file => {
+        let privateKey;
 
-      try {
-        privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
-      } catch (error) {
-        console.error(error);
-      }
+        try {
+          privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+        } catch (error) {
+          console.error(error);
+        }
 
-      return privateKey;
-    }).filter(f => !!f);
+        return privateKey;
+      })
+      .filter(f => !!f);
 
-    const transactionsWithKeys = this.props.transactions.map(item => {
-      const { transaction } = item;
+    const transactionsWithKeys = this.props.transactions
+      .map(item => {
+        const { transaction } = item;
 
-      const privateKey = privateKeys.find(k => {
-        return EtherKeyPair.checkPair(transaction.pub_key, k);
-      });
+        const privateKey = privateKeys.find(k => {
+          return EtherKeyPair.checkPair(transaction.pub_key, k);
+        });
 
-      return {
-        transaction,
-        file: item.file,
-        privateKey,
-        foundKey: !!privateKey
-      }
-    }).filter(t => this.props.transactionsToSign.includes(t.file));
+        return {
+          transaction,
+          file: item.file,
+          privateKey,
+          foundKey: !!privateKey
+        };
+      })
+      .filter(t => this.props.transactionsToSign.includes(t.file));
 
     this.props.setTransactions(transactionsWithKeys);
-  }
+  };
 
   render() {
     const { transactions = [] } = this.props;
@@ -62,13 +67,19 @@ class DetectPrivateKeys extends Component {
     return (
       <Fragment>
         <div>
-          {isTransactionsExists ?
+          {isTransactionsExists ? (
             <Fragment>
               <div className={styles.tableRow}>
                 {/* <div className={styles.tableCell} /> */}
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>ACCOUNT</div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>TIME</div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>KEY FOUND</div>
+                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+                  ACCOUNT
+                </div>
+                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+                  TIME
+                </div>
+                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
+                  KEY FOUND
+                </div>
               </div>
               <Fragment>
                 {transactions.map(item => (
@@ -76,24 +87,26 @@ class DetectPrivateKeys extends Component {
                     {/* <div className={styles.tableCell} /> */}
                     <div className={styles.tableCell}>{item.file}</div>
                     <div className={styles.tableCell} />
-                    <div className={styles.tableCell}>{item.foundKey ? 'Yes' : 'No'}</div>
+                    <div className={styles.tableCell}>
+                      {item.foundKey ? 'Yes' : 'No'}
+                    </div>
                   </div>
                 ))}
               </Fragment>
             </Fragment>
-          :
-            <div className={styles.message}>Private keys for signing transactions not found</div>
-          }
+          ) : (
+            <div className={styles.message}>
+              Private keys for signing transactions not found
+            </div>
+          )}
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>
-            Cancel
-          </Button>
-          {isTransactionsExists &&
+          <Button onClick={this.props.onCancel}>Cancel</Button>
+          {isTransactionsExists && (
             <Button onClick={this.props.next} primary>
               Sign
             </Button>
-          }
+          )}
         </div>
       </Fragment>
     );
@@ -106,13 +119,13 @@ const mapStateToProps = state => {
     transactions: state.account.transactions,
     transactionsToSign: state.account.transactionsToSign
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     setTransactions: keys => dispatch(setTransactions(keys))
   };
-}
+};
 
 export default connect(
   mapStateToProps,
