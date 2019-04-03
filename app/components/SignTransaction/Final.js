@@ -16,7 +16,7 @@ const Final = props => {
 
   const { transactionsToSign, transactions } = props;
   const signed = transactions.filter(
-    t => transactionsToSign.startsWith(t.file) && t.foundKey
+    t => transactionsToSign.includes(t.file) && t.foundKey
   );
 
   return (

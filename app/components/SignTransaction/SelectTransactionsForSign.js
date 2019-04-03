@@ -22,7 +22,7 @@ class SelectTransactionsForSign extends Component {
   getTransactions = () => {
     return (
       this.props.transactions.filter(
-        t => this.props.transactionsToSign.startsWith(t.file) && t.foundKey
+        t => this.props.transactionsToSign.includes(t.file) && t.foundKey
       ) || []
     );
   };

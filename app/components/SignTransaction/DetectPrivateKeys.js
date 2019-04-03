@@ -55,7 +55,7 @@ class DetectPrivateKeys extends Component {
           foundKey: !!privateKey
         };
       })
-      .filter(t => this.props.transactionsToSign.startsWith(t.file));
+      .filter(t => this.props.transactionsToSign.includes(t.file));
 
     this.props.setTransactions(transactionsWithKeys);
   };

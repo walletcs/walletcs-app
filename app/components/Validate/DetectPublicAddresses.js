@@ -69,7 +69,7 @@ class DetectPublicAddresses extends Component {
 
     const preparedPublicKeys = this.props.keys.map(item => ({
       ...item,
-      found: publicKeys.startsWith(item.publicKey)
+      found: publicKeys.includes(item.publicKey)
     }));
 
     this.props.setPublicKeys(preparedPublicKeys);
