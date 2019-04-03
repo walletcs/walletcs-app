@@ -28,19 +28,23 @@ class SelectTransaction extends Component {
     const transactions = dir
       .filter(file => file.includes(TRANSACTION_PREFIX))
       .map(file => {
-        let transaction;
+        let transaction = {};
 
         try {
-          transaction = fs.readFileSync(`${drive}/${file}`, 'utf-8');
+          transaction = JSON.parse(
+            fs.readFileSync(`${drive}/${file}`, 'utf-8')
+          );
         } catch (error) {
           console.error(error);
+          return null;
         }
 
         return {
-          transaction: JSON.parse(transaction),
+          transaction,
           file
         };
-      });
+      })
+      .filter(t => !!t);
 
     this.props.setTransactions(transactions);
   };
