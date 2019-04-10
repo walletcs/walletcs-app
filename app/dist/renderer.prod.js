@@ -66,6 +66,10 @@ module.exports = (function(e) {
     e.exports =
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAACWCAMAAAAFWj36AAAC+lBMVEUAAAAA//+AgIBVqqqAgL9mmcxVgKptkrZgn79xjsZmmbNdi7lqlb9incRtkrZmmbtwj79plsNjjrhrlLxmmb9tkrZol7lkkLxqlb9mmbhsk7pol71kkr9qlblmkbtrlL1ol79kk7lplrxmkr1qlb9nkbpllLxplr5mk7lqlbtnkrxrlL5ol7lmk7tplrxnkr5qlbpokrtmlL1plr5nk7pqlbxokr1mlL5pkrtnlLxqlb1ok7pmlbtpkrxnlL1plrpok7tqlbxok71nlLppkrxnlLxqlb1ok7tnlbxpk71nlL5plrtolLxnlb1pk75nlLtpk7xolL1nlbtok7tnlbxpk71olLtnk7xolLxnlb1pk7tolbxpk7xolL1nlbtplLxolb1pk71olLtnk7xplL1olbtplLxolbxnk71olLtnlbxplLxolb1nk7tolLxnk7xplL1olbtnlLxolbxnk71plLtok7xplL1olbtnlLxplLxok71plLtolbxnlLxolb1ok7tplLxok7xnlL1olbtolLxplLxok71nlLxolbxnlLxplbtolLxplLxok71nlLtolbxolLxplL1ok7tnlLxok7xolL1plbtolLxnlLxok71olLxplbxolLxnlLtolLxolLxpk7xolLtnlbxolL1ok7tolLxplbxolL1olbxolLxolLxpk71olLxnlbxolLxolLtplLxolLxnk7xolLtolbxplLxolLxnk7tolLxolbxolL1olLxnlLxolLxolLxolbxplLxolLtolLxolLxok7xplLtolLxolLxolLxolLxolbxnlLxolLxolLxolLxok71nlLxolLxolLxolL1olLxnlLxolbxolLtolLxolLxplLxolLxolLxolLxolLxolLxolLxolLxok7xolLxolLxolLxolL1olLxolLxolLxolLxnlLxolLxolLxolLxolLxplLxolLxolLxolLxolLxolLxolLxolLxolLxolLxolLxolLz///+G4Ps6AAAA/HRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6Wmp6ipqqusra6vsLGys7S1tre4ubq7vL2+v8HCw8TFxsfIysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vv8/f6yByGiAAAAAWJLR0T9SwmT6QAAC1dJREFUGBm1wXtgVOWdBuB3MklIEEjAgCDUiKAgQQWDokusUhQBwXYX0aIoUJAWoWC7WouyktRaqyAabEsRl4sigmbR0HrlJlpBuVm5SIIIiAhyESS3mcy8f+zvzDnnm/nOnDOZSeLzIGX9HymvPHny5M5Xp+Tjh5Pxyz1UwutH4AcyaC91H16BH0DWX8J0Cj7sQ3PruJluyrLRvLp8QVNobcmkUXfP3UfLxlZoTjmfMqL28R8hwjdgJU1vZ6D5ZK5hxLpLEHXTXkYs9aHZ/I0Rf/cjVs4GRsxCc7k5TEMJHLLLaQheheZx7tc0zEGcjLU07MlGs1hEw5t+xOuwn4bH0RwKQhSHc+HmyiBFoCuaQRkNQ+HuzzQsRtMVhChehYfWhygCXdFkyykCF8HLGBoWoqny6igWwVN6JUVdHproNxR1F8DbeBqmo4m2UJQhgRZHKDajafrQMByJzKbhMjRJCcWxDCRSSMPjaJJ/UTyHxHZT7ERT5AQphiGxEhq6ovH8Y2kYe30vP9y06j181KhRgyfQ8Gs0Ts5P531cRdv3Gx67Lh2xek1fcYix3kIjpA1ZWUunE3N7wnZ/BZ2Cr97iR2rSRn9GV+Hy/jAVfkMXB6dmIQUDd9DbKx0R0a2Cbg6PRbLaLGNCJ+9ERIcddPXWBUhK3wo25IVsGLp8RVfHByIJI86yYZs6wNDnDF0FJqFBE+qZjH35MAyrp7sH0YB7QkzO3o4wzKGHGUjolnoma2tLiOzP6S58FxLoforJWwZDUYjuaq6Fp8ztTMUkGObTw/428PIUU1LVHaJjNT0sg4fLg0xNOQzz6eUGuHuXqboJolM1PWxPg5vr6OW5G+98+SxdfATDwFEPvnKMbkbCzRuMU/PMBor/AdB6wi7GK4IlbeC7jPcBXFwUotNHPfASRSkMLR4L0KkMUSOPMk5fxCuh04stgLkUa2AadJYOdW0R1XU3neYh3m46rPADuJvi+3SYBpyhwwTE6LiPDgd8cOpJh23ZEAU0FMJyDx1WIVbPajr0hdO91NUXwuA/TTEdtuXUHfch1m/pMA1OS6hbDtNqihWwdaunrhdiZe6nbgmctlB3DUy/pTjqh+016m6HZjp1n8LpNDWHfTD1pmEQbCOpexSaTiFqghnQtaNuFWyVFC/Adh51i6D7jLo86C6k7o+wzaE4mQnbAWrKoHuJum7Q9aZuPGz9aRgB26fUrIFuNnVXQncFdROh7KFYAdtmatZA9wfqroWuG3W/hjKTInghLLuo+Sd0z1J3KXTnUfcslPMDFM/BlBmgZiV05dSdB116gJpPEPUyRVUeIi6j7mnovqIuEw57qAm2h9KfhmJEPErddGj6UncQTuXUFSNqLcXxHAj/PuoGQTOHutfh9Ah1x1pBuYGGeRDjqAvnIlbbM9Q9CqcBdFiAqPUU9X2B3IPU7YRmKR2GwSnzNHXhW6FcGaL4KA3L6PAkYv2cDqezEGcxHaqHQFlEw71P0mkAYgyqosNSxBtMp7oJPlg6nqII0KnSh6hbquk0DPH8XzDO+gJYfkVXM6C0XxKm0/50uJjCeOE1t7WDyLz6GF183x6Wwr9+x3iT4ablN3R1bN++o3V09QSEf9HKtV/TzddZcDWBKTreDuJuepkGd74NTM04iPRKetiQBg+X1zAV76dBjKaH2kvhaQpTcKwzRHYFPTwIb77lTFrgJzDMoYelPiSQ8Q6TFLodhh+H6K7cj4Ta7mRSwv8NQ9YuutuRiwbk1zEJ4Skw+FbQ3bcd0JDuTMKJIYiYSw/BHDRkEhu2tQciJtLTcDRkJRsSKM5AxJggPT2LBvhPMbH6BV1gKg7T2y40oJAJVS+8HCbf43RRV0NTuBMSe4jKjPErTjBW7epxbWFLKyr9iprwjqeHnrOYljFI7D0q+YD/mvVUZp8DXdpV/8sYd0DcRcsSJNSylrbdMHxEpRfi5DPGMxAdwjQd8SGRwVTmQbStp+0gXFQw6t8wbKelNxJ5isoIiP+kshgu5jMq3AliDi33I5GttAVaQ/yNyp1wMZIxxkAMoWU1Emgfpm0jDBW0hTvARW49oxZDtKyl6UwGvN1BZRZEVyrb4Wozo76CYT0t18HbQir/AXEvlafg6k+M0RPiEVqK4e1L2r5Lh1hJ5Sa4+gljTIXoT8sH8NSdyusQacdpq86CqxZVjFoF4T9JU7ANvEymMgWiH5X34OEdRn2XDvF/tIyAl9eoXAIxg8rv4OFBxrgG4j5aSuHBf4q2/TCso9IHHvoyxkyIS2jZCQ8XUFkEkV1D27dp8JB2nFHrYDhEU7gTPHxM2x0QQ6i8DE+vMKquFcQLtNwDD7+iJXQuxBwq4+FpImMMhRhNy4vwkFNF0xYYdlDpDE/5jDEHIi9E09c+eFhC058hOoVp24UEKhi1HYZttBTAw3U0DYK4i0opEpjPqHBHiNm0TIeXXTRUZUEsoTIcCYxkjNEQQ2hZDS+/p+E9GA7SFmiDBHK2Mep5iFZ1NJ1Oh4cOAYoHIHpR2YCEWrxA5QAM62gpgpcyiisgplOZiQZMCtB2McQjtBTDyzCSR3wQ/6DSHw0p+oaWyRBX0/IBvKQdIJdBtDhL2wk/GtRlM01lEP4TNAXbwEsJOR7ix1TKkISsxYw45Ycoo2UEvPQgL4AooXIfkuGbGaKhEGIqLXPh4cIt3A3DJioXITnXH6V4GOJiWnbC3eBvyXkQ7epp24dk/egTkmth2E9LF7i5P0DypxA/o/I8ktaTZE0WxCJa7kK83NUUgdYQ86mMRNJmUQyG+DktSxHnsgoaNsJQSVt9LpLlP0TxJEReiKbDPjiMr2HEoxAXUdmEpA2nYQsM22jpBU3mAlquhZhE5TEkrZyGUHuI2bRMh+YtWk5nQLxC5QYk6/wgI26DGErL69AsoGUVRNpx2r7PRLJm0fQ8RMtams5kIFaPEE33QfSjshrJ8h+i6UsY1tEyAJo3aboYYgaVaUjWcNq6QTxMSzE0NzHiCxjWUbkUySqn7ZcQV9OyEbrtNCyEOKeOtoNIVn49bSsh/CdoCraB5hc03A4xhMoiJKuYyvE0iDJahkOTfYxkuAPEbCpjkKx+lVT6QkyhZS50s0h+AsOntIXykLTsUtoegriYls+ga19NPgHRKUzbNqRi5Cma3oXhC1o6Q7eQHAQxhspTSEn+vxhRkw2xkJa7oevDmmyIxVRuRmqy/sqIgRB30rIYmty3+Q6E7zBt1VlI1Y1HKJ6AyAvRdNiHGD33kg9AFFB5F6nr8DbJj2HYSksvRA04SrIvxDQqD6ERMk6S9bkQT9MyFcq0IMkjPoh/UumDRriR4jaIm2kphyVjAQ3LIFqcpe2oD43wEsV8iJa1NJ3JQET79xkxDuJ6KsvQCLnVFBUwrKVlAAy9KmnqDPFHKuPQCBMZ0RXiYVpmQdx6hqZdMGyi0hmNsJEREyGuouV9AA/V01IK0a6etl1ohB40LYfwn6Ap2AY3U7kV4mdUnkMjFNP0jQ9iFS1D8SxtgdYQ86ncgtT5D9HSB2IyLc/gM9reh6GSttpzkLpBtD0A0Z2Wf6OctmKIfCob0QhLaHsThgM0vYHsD2m5BmISlZlIXZsq2qpaQCxkxIdZQN5eRpz0Q7xKpT9SN4FRAyHuoOHzcyEKvqPhDYi0b2k7lY7UrWfUHyDOC5M8VYCIohqKyRBXUXkNjfAWozbBsJWsKYJlbJjkf/kA/J7KZDTCbxgVzAHyp+5jeCyUEoojS0bnraHSHY3QgzF+V7KNohhRvhcZEQrR9OXsfmiUfrMPULfUhxj+ckZ9XlyAJigo3suocj80rbfRVFlcgCYrKK6kaVtrOJx/kOTh0kI0k8LSwyQPno84vfeUFqWhGaUVle4pgO3/AcOq5wx88xyOAAAAAElFTkSuQmCC';
   },
+  './app/assets/arrow.svg': function(e, t) {
+    e.exports =
+      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNi41NzU5IDE4LjE3MjdMMTUuMjAyNiA5LjU0NTk3TDE1LjIwMjYgMTcuNDY1NkwxNy4xODI1IDE3LjQ2NTZWNi4xNTE4Nkg1Ljg2ODc5TDUuODY4NzkgOC4xMzE3NkwxMy43ODg0IDguMTMxNzZMNS4xNjE2OSAxNi43NTg1TDYuNTc1OSAxOC4xNzI3WiIgZmlsbD0iIzAxMEQxNyIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwIj4KPHJlY3Qgd2lkdGg9IjE3IiBoZWlnaHQ9IjE2IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjMuMzM0NSAxMS4zMTM3KSByb3RhdGUoMTM1KSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=';
+  },
   './app/assets/empty_drive.png': function(e, t) {
     e.exports =
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAB1CAMAAADgB+h1AAAB7FBMVEUAAAAA//+AgICAgL9mmcxVgKptkrZgn79mmbNdi7lqlb9tkrZmmbtplsNjjrhmmb9kkLxqlb9sk7pol71qlblmkbtrlL1kk7lplrxmkr1qlb9mk7lsk7lmk7tokrtmlL1plr5nk7pqlbxokr1nlLxmlbtpkrxnlLpnlLxok7tnlbxnlL5olLxnlb1pk75nlbtnlbxpk71nk7xolLxnlb1pk7xplLxplLxolbxnk71olLtolb1nk7xolbtnlLxok7xplL1olbtplLxnlLxolb1plL1nlLxolbxplbtok71olLxplL1vmb5olLxok71olLxnlLtul79vmMBolLxymsFolLxplbxolL1olLxolLxpk71olLxnlbxolLxolLtolLxolbxvmb9wmsBolLxolbx0nMFplLxolLxok7xplLtolLxolLxolLxolLxnlLxolL1vmb9olLxnlLxolbxolLtolLxzm8BolLxolLxolLxolLxolLxolLxolLxolL1olLxslr5tl75nlLxolLxvmL9+pMZolLx8osVolLx6ocRplLxolLxxmsF4n8Ogu9VxmsB1nsJolLxolLxvmb9wmb9umL5olLxrlr5olLxolLxplbxolLxolLxolLy90OLD1OTR3+vh6vLw9Pj////R8JgpAAAAnXRSTlMAAQIEBQYHCAoLDA4PERIUFxgaGx0eHyEiIyQoKC0xMjM0NTY5PD1DRUdISkxNTlJUVVdYWVxfZmdoaWxvcXJ2d3h6fn+DiImLjpGSlpiam56goaSkp6ipq6ytrq+wsbO2vL2/wsLDxsfIysvMzdTX19jZ2tvc3N3g4eLk5+nq6+zt7/Dw8PHy8/P09fX19fb29/j4+Pn6+vv8/P3+RzH8TQAAAAFiS0dEo8fa7xoAAAI2SURBVFjD7Zj7X9JQHIZPpkhqYLPLuljLblqZWRpaKWgFZYVdje5a2sUkKy90pxtEQZZYhslbFP9oZ5MJI7YdfjPd88M++748H7Z9OWfsjBCR1pfQwreDzLJsGto8TrsCBogWwIJyVwgiq1OhVaoqVdwzXwKBwKcbqdD2lVbvX6u4534lk8lEn+yO0erPuznsnv4WiUQmemT3O60+v1JxyzgRSyo0S1X5Ahw7TG4lnju1QDTtFj3Smcce2TTxfNURlxbt63jeJP5Yl6bAQsxTSk4h6mMhik7S7+MJC2vgV/RDr3GGa7iGOw/dMiGFVd+tle9KNhbX75bYyuJ6mc93brgjtRKmPHrGsbhPbBLm+dizfNywV+JsHv31GnPecA3XcP8rN45FTGqBb5iEUMLkliJInmE5k7sST0kvtjG51bhJOnGQyW3BSbIPV5jc62gkq/CmWJlaevooJ5ShOShe1z3sUcbcRCKR+DmqDBtwh24P4HaWG6EL7t9Z7l3sp9slflTrujV4If092zFYpOOaHqJlZgU5CJfC/UFfUnx4kBkdxf3Cmb0tsfjOjA8KpaeztRnJrvjkZnnfjpCg0VrhI1rT1XGEalTV7SF0ZB7Wg3Gbito8jguLFaOzA7jK5TArrgHHCrLCvUG8PbQ0K7Qcpml9jm/wAOHzu9NPp9b6rjDQxeU8s02X6bJ6eqjb7XS63N1DcWDq4kbVS65ouxWbXWlP9to57XFasqGuyeFwNNWt/2ce/gXVzwjB6UY28gAAAABJRU5ErkJggg==';
@@ -86,25 +90,22 @@ module.exports = (function(e) {
     e.exports =
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAABxCAMAAAB/Y3peAAABIFBMVEUAAAD///+/v7+2tra/v7+5ubnExMS7u7u8vLzCwsK5ubm6urq7u7u8vLy9vb2/v7+8vLy7u7u/v7++vr6/v7+8vLy8vLy9vb2+vr68vLy+vr6+vr6+vr6+vr69vb28vLy8vLy+vr6+vr6+vr69vb29vb29vb28vLy8vLy9vb29vb29vb2+vr69vb29vb29vb2+vr6+vr69vb29vb29vb29vb29vb29vb29vb29vb29vb2+vr69vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb29vb2+vr7AwMDBwcHCwsLDw8PExMTFxcXGxsbHx8fJycnKysrNzc3R0dHS0tLX19fi4uLl5eXr6+vy8vL5+fn////zNhgSAAAASnRSTlMAAQQHCAsNDxMVFhoeIiMkKi0wMzg5PUJDSEpLTlJVW1xeZm54e4iJkZOam6Snq663u73ExczO0dXY4eLk6Onr8PHy9vf4+fr9/i0YeCEAAAABYktHRF9z0VEtAAABRklEQVRYw+3YV1PCQBSG4Q8QETUqKvaCvfdeIKKiuGoEG6LB/P9/IRsjiWvYnAuHC933bjfPDAlMMjkA1eI6k7WDWj1MXiNk8Yl37xw17NWjr3yzeKYjy/bq/Z/I2wLPcOSNvbpr2G+kpFwm5DDnsIimdczMyZrUNC0CpC4Ypdw4dEYrA0ZNSSWV/GPyueL2KpUly80M/vSSVSGep5JKymWx/KLuYiWVVPK3ZZ4I88gSZRaHRHmEDaLcxDxRLmCEKEcROxe2DJMnvAawyxZgRdgr2K8B4vN7rTrL9JPkEB97tglyL8Rl8ipYDn7OUouBctmZupp2vbvX9h8MD96t/ejXHNeZln6VJwl35OuWTV5nA/DUdVwX6kl8q3W9Dtxqh1BoIuN3ilNh/Kx5Wryw09k4/AsPLx3UWHo1FYWsWO8Yr69NPPAB7/jMmHnEu0sAAAAASUVORK5CYII=';
   },
-  './app/assets/wallet_label.svg': function(e, t) {
-    e.exports =
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMTQwIDIwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTUuNzgzMiAxMi42MDk2TDE3Ljk0OTEgMS4wMjE3OEgyMi40NjIzTDE4LjQ1NDggMTkuNTAxNEgxMy43MzQxTDExLjIwNTIgOC45NjcwMUw4LjcyODExIDE5LjUwMTRINC4wMjAzOEwwIDEuMDIxNzhINC41MjYxN0w2LjY5MTk5IDEyLjYwOTZMOS4yODU3OCAxLjAyMTc4SDEzLjE1MDVMMTUuNzgzMiAxMi42MDk2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTM0LjM5MzcgMTYuMDQ5MkgyOC4xNTU2TDI3LjA2NjIgMTkuNTAxNEgyMi4yMDI5TDI5LjEyODMgMS4wMjE3OEgzMy40MDgxTDQwLjM4NTQgMTkuNTAxNEgzNS40OTYxTDM0LjM5MzcgMTYuMDQ5MlpNMjkuMjQ1IDEyLjYwOTZIMzMuMzA0M0wzMS4yNjgyIDYuMjAwMTRMMjkuMjQ1IDEyLjYwOTZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDYuMzI1MiAxNi4wNzQ2SDU0LjI0OTJWMTkuNTAxNEg0MS43NzNWMS4wMjE3OEg0Ni4zMjUyVjE2LjA3NDZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNjAuNzIwNyAxNi4wNzQ2SDY4LjY0NDdWMTkuNTAxNEg1Ni4xNjg2VjEuMDIxNzhINjAuNzIwN1YxNi4wNzQ2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTgyLjI3NTEgMTEuNjcwNEg3NS4xMTYzVjE2LjA3NDZIODMuNTcyVjE5LjUwMTRINzAuNTY0MlYxLjAyMTc4SDgzLjU5OFY0LjQ2MTMzSDc1LjExNjNWOC4zNTc3OUg4Mi4yNzUxVjExLjY3MDRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTAwLjUwOSA0LjQ2MTMzSDk0Ljg0MjFWMTkuNTAxNEg5MC4yODk5VjQuNDYxMzNIODQuNzI2M1YxLjAyMTc4SDEwMC41MDlWNC40NjEzM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMjMuNTU1IDEzLjI0NDJDMTIzLjQ5NSAxNC41MzA0IDEyMy4xNCAxNS42Njg0IDEyMi40OTIgMTYuNjU4NEMxMjEuODQzIDE3LjYzOTkgMTIwLjkzMSAxOC40MDE0IDExOS43NTUgMTguOTQzQzExOC41ODggMTkuNDg0NSAxMTcuMjUyIDE5Ljc1NTIgMTE1Ljc0OCAxOS43NTUyQzExMy4yNjcgMTkuNzU1MiAxMTEuMzEzIDE4Ljk2NDEgMTA5Ljg4NiAxNy4zODE4QzEwOC40NTkgMTUuNzk5NiAxMDcuNzQ2IDEzLjU2NTggMTA3Ljc0NiAxMC42ODA0VjkuNzY2NjFDMTA3Ljc0NiA3Ljk1NTg3IDEwOC4wNjYgNi4zNzM2IDEwOC43MDYgNS4wMTk3OEMxMDkuMzU0IDMuNjU3NSAxMTAuMjg0IDIuNjA4MjkgMTExLjQ5NCAxLjg3MjE1QzExMi43MDUgMS4xMjc1NSAxMTQuMTA1IDAuNzU1MjQ5IDExNS42OTYgMC43NTUyNDlDMTE3Ljk4NyAwLjc1NTI0OSAxMTkuODI5IDEuMzQ3NTQgMTIxLjIyMSAyLjUzMjE0QzEyMi42MTMgMy43MDgyNyAxMjMuNDA0IDUuMzMyODUgMTIzLjU5NCA3LjQwNTg4SDExOS4wNTVDMTE5LjAyMSA2LjI4MDUyIDExOC43MzEgNS40NzI0NiAxMTguMTg2IDQuOTgxN0MxMTcuNjQyIDQuNDkwOTQgMTE2LjgxMSA0LjI0NTU2IDExNS42OTYgNC4yNDU1NkMxMTQuNTY0IDQuMjQ1NTYgMTEzLjczNCA0LjY2MDE3IDExMy4yMDYgNS40ODkzOEMxMTIuNjc5IDYuMzE4NiAxMTIuNDAyIDcuNjQyOCAxMTIuMzc2IDkuNDYyVjEwLjc2OTNDMTEyLjM3NiAxMi43NDA4IDExMi42MjcgMTQuMTQ5NiAxMTMuMTI4IDE0Ljk5NTdDMTEzLjYzOCAxNS44NDE5IDExNC41MTIgMTYuMjY0OSAxMTUuNzQ4IDE2LjI2NDlDMTE2Ljc5NCAxNi4yNjQ5IDExNy41OTQgMTYuMDIzOCAxMTguMTQ3IDE1LjU0MTVDMTE4LjcwMSAxNS4wNTkyIDExOC45OTUgMTQuMjkzNCAxMTkuMDI5IDEzLjI0NDJIMTIzLjU1NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzUuNDQ4IDE0LjU4OTZDMTM1LjQ0OCAxMy45MzgxIDEzNS4yMSAxMy40MzA0IDEzNC43MzUgMTMuMDY2NUMxMzQuMjY4IDEyLjcwMjcgMTMzLjQ0MiAxMi4zMjYyIDEzMi4yNTggMTEuOTM2OUMxMzEuMDczIDExLjU0NzcgMTMwLjEwNSAxMS4xNzEyIDEyOS4zNTIgMTAuODA3NEMxMjYuOTA2IDkuNjMxMjIgMTI1LjY4MiA4LjAxNTEgMTI1LjY4MiA1Ljk1ODk5QzEyNS42ODIgNC45MzUxNiAxMjUuOTg1IDQuMDM0MDMgMTI2LjU5IDMuMjU1NThDMTI3LjIwNCAyLjQ2ODY4IDEyOC4wNjkgMS44NTk0NiAxMjkuMTg0IDEuNDI3OTNDMTMwLjI5OSAwLjk4NzkzNyAxMzEuNTUzIDAuNzY3OTQxIDEzMi45NDUgMC43Njc5NDFDMTM0LjMwMiAwLjc2Nzk0MSAxMzUuNTE3IDEuMDA0ODYgMTM2LjU4OSAxLjQ3ODdDMTM3LjY3IDEuOTUyNTMgMTM4LjUwOSAyLjYyOTQ0IDEzOS4xMDUgMy41MDk0MkMxMzkuNzAyIDQuMzgwOTQgMTQwIDUuMzc5MzkgMTQwIDYuNTA0NzVIMTM1LjQ2MUMxMzUuNDYxIDUuNzUxNjkgMTM1LjIyMyA1LjE2Nzg1IDEzNC43NDggNC43NTMyNUMxMzQuMjgxIDQuMzM4NjQgMTMzLjY0NSA0LjEzMTMzIDEzMi44NDEgNC4xMzEzM0MxMzIuMDI4IDQuMTMxMzMgMTMxLjM4NCA0LjMwOTAyIDEzMC45MDkgNC42NjQ0QzEzMC40NDIgNS4wMTEzMiAxMzAuMjA4IDUuNDU1NTQgMTMwLjIwOCA1Ljk5NzA3QzEzMC4yMDggNi40NzA5IDEzMC40NjggNi45MDI0MyAxMzAuOTg3IDcuMjkxNjZDMTMxLjUwNSA3LjY3MjQyIDEzMi40MTcgOC4wNzAxIDEzMy43MjMgOC40ODQ3MUMxMzUuMDI5IDguODkwODUgMTM2LjEwMSA5LjMzMDg0IDEzNi45MzkgOS44MDQ2OEMxMzguOTggMTAuOTU1NCAxNDAgMTIuNTQxOSAxNDAgMTQuNTY0MkMxNDAgMTYuMTgwMyAxMzkuMzc3IDE3LjQ0OTUgMTM4LjEzMiAxOC4zNzE4QzEzNi44ODcgMTkuMjk0MSAxMzUuMTggMTkuNzU1MiAxMzMuMDEgMTkuNzU1MkMxMzEuNDc5IDE5Ljc1NTIgMTMwLjA5MiAxOS40ODg3IDEyOC44NDcgMTguOTU1NkMxMjcuNjEgMTguNDE0MSAxMjYuNjc3IDE3LjY3OCAxMjYuMDQ1IDE2Ljc0NzJDMTI1LjQyMyAxNS44MDggMTI1LjExMiAxNC43MjkyIDEyNS4xMTIgMTMuNTEwOEgxMjkuNjc3QzEyOS42NzcgMTQuNTAwNyAxMjkuOTM2IDE1LjIzMjYgMTMwLjQ1NSAxNS43MDY1QzEzMC45ODIgMTYuMTcxOSAxMzEuODM0IDE2LjQwNDUgMTMzLjAxIDE2LjQwNDVDMTMzLjc2MiAxNi40MDQ1IDEzNC4zNTQgMTYuMjQ4IDEzNC43ODYgMTUuOTM0OUMxMzUuMjI3IDE1LjYxMzQgMTM1LjQ0OCAxNS4xNjUgMTM1LjQ0OCAxNC41ODk2WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==';
-  },
-  './app/assets/wallet_logo.svg': function(e, t) {
-    e.exports =
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iMzQiIHZpZXdCb3g9IjAgMCA1MiAzNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgNS4wMDA3OFYyOC43NTQ1QzAgMzEuNTE2MyAyLjIzODkzIDMzLjc1NTMgNS4wMDA3OCAzMy43NTUzSDQ2Ljg4MjNDNDkuNjQ0MiAzMy43NTUzIDUxLjg4MzEgMzEuNTE2MyA1MS44ODMxIDI4Ljc1NDVWNS4wMDA3OEM1MS44ODMxIDIuMjM4OTMgNDkuNjQ0MiAwIDQ2Ljg4MjMgMEg1LjAwMDc4QzIuMjM4OTMgMCAwIDIuMjM4OTMgMCA1LjAwMDc4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMwLjAwNDggMTMuNzUyMkMzMC4wMDQ4IDEwLjI5OTkgMzIuNDgzNiA3LjUwMTIyIDM1LjU0MTMgNy41MDEyMkg0OS4zODI4VjI2LjI1NDJIMzUuNTQxM0MzMi40ODM2IDI2LjI1NDIgMzAuMDA0OCAyMy40NTU1IDMwLjAwNDggMjAuMDAzMlYxMy43NTIyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTUxLjg4MzQgNy41MDEySDMwLjAwNDlDMjcuNTg4MyA3LjUwMTIgMjUuNjI5MiA5LjQ2MDI2IDI1LjYyOTIgMTEuODc2OVYyMi41MDM1QzI1LjYyOTIgMjQuOTIwMiAyNy41ODgzIDI2Ljg3OTIgMzAuMDA0OSAyNi44NzkySDUxLjg2NzdNNTEuODY3NyAyNy41MDQzSDMwLjAwNDlDMjcuMjQzMSAyNy41MDQzIDI1LjAwNDIgMjUuMjY1NCAyNS4wMDQyIDIyLjUwMzVWMTEuODc2OUMyNS4wMDQyIDkuMTE1MDIgMjcuMjQzMSA2Ljg3NjEgMzAuMDA0OSA2Ljg3NjFINTEuODgzNCIgc3Ryb2tlPSIjNUI5QkQ1IiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00NC40NjM0IDE2Ljg3NzZDNDQuMTE4MiAxNi44Nzc2IDQzLjg0MjMgMTYuNTk2NCA0My44MDA0IDE2LjI1MzdDNDMuNTE3OSAxMy45NDU2IDQxLjY4OCAxMi4xMTU4IDM5LjM3OTkgMTEuODMzMkMzOS4wMzcyIDExLjc5MTMgMzguNzU2IDExLjUxNTQgMzguNzU2IDExLjE3MDJWMTAuNjI2N0MzOC43NTYgMTAuMjgxNCAzOS4wMzY4IDkuOTk4NTggMzkuMzgwNiAxMC4wMjk1QzQyLjY3OTcgMTAuMzI2NiA0NS4zMDcgMTIuOTUzOSA0NS42MDQxIDE2LjI1M0M0NS42MzUgMTYuNTk2OCA0NS4zNTIyIDE2Ljg3NzYgNDUuMDA3IDE2Ljg3NzZINDQuNDYzNFoiIGZpbGw9IiM1QjlCRDUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zOC4xMzA5IDExLjE3MDJDMzguMTMwOSAxMS41MTU0IDM3Ljg0OTcgMTEuNzkxMyAzNy41MDcgMTEuODMzMkMzNS4xOTg5IDEyLjExNTggMzMuMzY5MSAxMy45NDU2IDMzLjA4NjUgMTYuMjUzN0MzMy4wNDQ2IDE2LjU5NjQgMzIuNzY4NyAxNi44Nzc2IDMyLjQyMzUgMTYuODc3NkgzMS44Nzk5QzMxLjUzNDcgMTYuODc3NiAzMS4yNTE5IDE2LjU5NjggMzEuMjgyOCAxNi4yNTNDMzEuNTc5OSAxMi45NTM5IDM0LjIwNzIgMTAuMzI2NiAzNy41MDYzIDEwLjAyOTVDMzcuODUwMSA5Ljk5ODU4IDM4LjEzMDkgMTAuMjgxNCAzOC4xMzA5IDEwLjYyNjdWMTEuMTcwMloiIGZpbGw9IiM1QjlCRDUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zOC43NTYgMjMuMjEwMkMzOC43NTYgMjIuODY0OSAzOS4wMzcyIDIyLjU4OTEgMzkuMzc5OSAyMi41NDcxQzQxLjY4OCAyMi4yNjQ2IDQzLjUxNzkgMjAuNDM0NyA0My44MDA0IDE4LjEyNjdDNDMuODQyMyAxNy43ODQgNDQuMTE4MiAxNy41MDI3IDQ0LjQ2MzQgMTcuNTAyN0g0NS4wMDdDNDUuMzUyMiAxNy41MDI3IDQ1LjYzNSAxNy43ODM1IDQ1LjYwNDEgMTguMTI3NEM0NS4zMDcgMjEuNDI2NSA0Mi42Nzk3IDI0LjA1MzggMzkuMzgwNiAyNC4zNTA4QzM5LjAzNjggMjQuMzgxOCAzOC43NTYgMjQuMDk5IDM4Ljc1NiAyMy43NTM3VjIzLjIxMDJaIiBmaWxsPSIjNUI5QkQ1Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzIuNDIzNSAxNy41MDI3QzMyLjc2ODcgMTcuNTAyNyAzMy4wNDQ2IDE3Ljc4NCAzMy4wODY1IDE4LjEyNjdDMzMuMzY5MSAyMC40MzQ3IDM1LjE5ODkgMjIuMjY0NiAzNy41MDcgMjIuNTQ3MUMzNy44NDk3IDIyLjU4OTEgMzguMTMwOSAyMi44NjQ5IDM4LjEzMDkgMjMuMjEwMlYyMy43NTM3QzM4LjEzMDkgMjQuMDk5IDM3Ljg1MDEgMjQuMzgxOCAzNy41MDYzIDI0LjM1MDhDMzQuMjA3MiAyNC4wNTM4IDMxLjU3OTkgMjEuNDI2NSAzMS4yODI4IDE4LjEyNzRDMzEuMjUxOSAxNy43ODM1IDMxLjUzNDcgMTcuNTAyNyAzMS44Nzk5IDE3LjUwMjdIMzIuNDIzNVoiIGZpbGw9IiM1QjlCRDUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zOC40NDM0IDE4Ljc1MjlDMzkuMzA2NSAxOC43NTI5IDQwLjAwNjIgMTguMDUzMiA0MC4wMDYyIDE3LjE5MDFDNDAuMDA2MiAxNi4zMjcxIDM5LjMwNjUgMTUuNjI3NCAzOC40NDM0IDE1LjYyNzRDMzcuNTgwNCAxNS42Mjc0IDM2Ljg4MDcgMTYuMzI3MSAzNi44ODA3IDE3LjE5MDFDMzYuODgwNyAxOC4wNTMyIDM3LjU4MDQgMTguNzUyOSAzOC40NDM0IDE4Ljc1MjlaTTM4LjQ0MzQgMjAuMDAzMUMzOS45OTcgMjAuMDAzMSA0MS4yNTY0IDE4Ljc0MzcgNDEuMjU2NCAxNy4xOTAxQzQxLjI1NjQgMTUuNjM2NiAzOS45OTcgMTQuMzc3MiAzOC40NDM0IDE0LjM3NzJDMzYuODg5OSAxNC4zNzcyIDM1LjYzMDUgMTUuNjM2NiAzNS42MzA1IDE3LjE5MDFDMzUuNjMwNSAxOC43NDM3IDM2Ljg4OTkgMjAuMDAzMSAzOC40NDM0IDIwLjAwMzFaIiBmaWxsPSIjNUI5QkQ1Ii8+Cjwvc3ZnPgo=';
+  './app/assets/wallet_logo.svg': function(e, t, r) {
+    e.exports = r.p + '05b861766d355ea4505df8213746caf2.svg';
   },
   './app/components/App/index.css': function(e, t, r) {
     e.exports = {
       app: 'index__app__2t4eT',
-      logo: 'index__logo__2rpLk',
-      icon: 'index__icon__1cC0L',
-      header: 'index__header__2O-PD',
-      content: 'index__content__2tCQq',
+      whiteTheme: 'index__whiteTheme__3Skt-',
+      flexHeader: 'index__flexHeader__reTcZ',
+      staticHeader: 'index__staticHeader__3tdSE',
       headerText: 'index__headerText__2plJC',
-      container: 'index__container__29E1O',
+      content: 'index__content__2tCQq',
+      row: 'index__row__15mk-',
+      rowMenu: 'index__rowMenu__3l1AG',
       icons: 'index__icons__3TI_A',
-      controls: 'index__controls__3ixyj',
+      icon: 'index__icon__1cC0L',
+      container: 'index__container__29E1O',
       insertPrivate: 'index__insertPrivate__R0OqC',
       rowControls: 'index__rowControls__2fzPX',
       private: 'index__private__20aER',
@@ -113,10 +114,10 @@ module.exports = (function(e) {
       label: 'index__label__2cIVh',
       privateTextGen: 'index__privateTextGen__3REL_',
       publicPoints: 'index__publicPoints__1X36Q',
-      tableRow: 'index__tableRow__AmBz1',
-      tableCell: 'index__tableCell__2kkad',
       generateCheckboxContainer: 'index__generateCheckboxContainer__1YYkr',
-      message: 'index__message__etC4S'
+      message: 'index__message__etC4S',
+      infoText: 'index__infoText__wTk7H',
+      bold: 'index__bold__21SZI'
     };
   },
   './app/components/Button/index.css': function(e, t, r) {
@@ -136,6 +137,23 @@ module.exports = (function(e) {
       wave: 'index__wave__3oQJJ'
     };
   },
+  './app/components/MenuItem/index.css': function(e, t, r) {
+    e.exports = {
+      menuItem: 'index__menuItem__3MBVe',
+      primary: 'index__primary__dvrH_',
+      text: 'index__text__3vaMd',
+      arrow: 'index__arrow__3tq3w'
+    };
+  },
+  './app/components/Table/index.css': function(e, t, r) {
+    e.exports = {
+      tableRow: 'index__tableRow__8ThcD',
+      tableDataRow: 'index__tableDataRow__3gAzh',
+      tableHeader: 'index__tableHeader__3r2s6',
+      tableCell: 'index__tableCell__2OopK',
+      tableCheckbox: 'index__tableCheckbox__2gM32'
+    };
+  },
   './app/index.js': function(e, t, r) {
     'use strict';
     r.r(t);
@@ -147,10 +165,54 @@ module.exports = (function(e) {
       u = r('react-redux'),
       l = r('classnames'),
       c = r.n(l),
-      d = r('./app/components/Button/index.css'),
-      f = r.n(d);
-    function h() {
-      return (h =
+      d = r('./app/assets/arrow.svg'),
+      f = r.n(d),
+      h = r('./app/components/MenuItem/index.css'),
+      p = r.n(h);
+    function m(e, t, r, n) {
+      o ||
+        (o =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var s = e && e.defaultProps,
+        i = arguments.length - 3;
+      if ((t || 0 === i || (t = { children: void 0 }), t && s))
+        for (var a in s) void 0 === t[a] && (t[a] = s[a]);
+      else t || (t = s || {});
+      if (1 === i) t.children = n;
+      else if (i > 1) {
+        for (var u = new Array(i), l = 0; l < i; l++) u[l] = arguments[l + 3];
+        t.children = u;
+      }
+      return {
+        $$typeof: o,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var _,
+      y = e =>
+        m(
+          'div',
+          {
+            className: c()(p.a.menuItem, e.className, {
+              [p.a.primary]: e.primary
+            }),
+            onClick: e.onClick
+          },
+          void 0,
+          m('img', { src: f.a, className: p.a.arrow }),
+          m('div', { className: p.a.text }, void 0, e.children)
+        ),
+      v = r('./app/components/Button/index.css'),
+      g = r.n(v);
+    function b() {
+      return (b =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -161,37 +223,37 @@ module.exports = (function(e) {
           return e;
         }).apply(this, arguments);
     }
-    var p,
-      m = e =>
+    var j,
+      w = e =>
         s.a.createElement(
           'div',
-          h({}, e, {
+          b({}, e, {
             className: c()(
-              f.a.button,
-              { [f.a.primary]: e.primary, [f.a.default]: !e.primary },
+              g.a.button,
+              { [g.a.primary]: e.primary, [g.a.default]: !e.primary },
               e.className
             )
           }),
-          (function(e, t, r, n) {
-            o ||
-              (o =
+          (function(e, t, r, o) {
+            _ ||
+              (_ =
                 ('function' == typeof Symbol &&
                   Symbol.for &&
                   Symbol.for('react.element')) ||
                 60103);
-            var s = e && e.defaultProps,
-              i = arguments.length - 3;
-            if ((t || 0 === i || (t = { children: void 0 }), t && s))
-              for (var a in s) void 0 === t[a] && (t[a] = s[a]);
-            else t || (t = s || {});
-            if (1 === i) t.children = n;
-            else if (i > 1) {
-              for (var u = new Array(i), l = 0; l < i; l++)
-                u[l] = arguments[l + 3];
-              t.children = u;
+            var n = e && e.defaultProps,
+              s = arguments.length - 3;
+            if ((t || 0 === s || (t = { children: void 0 }), t && n))
+              for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+            else t || (t = n || {});
+            if (1 === s) t.children = o;
+            else if (s > 1) {
+              for (var a = new Array(s), u = 0; u < s; u++)
+                a[u] = arguments[u + 3];
+              t.children = a;
             }
             return {
-              $$typeof: o,
+              $$typeof: _,
               type: e,
               key: void 0 === r ? null : '' + r,
               ref: null,
@@ -201,26 +263,26 @@ module.exports = (function(e) {
           })(
             'div',
             {
-              className: c()(f.a.text, {
-                [f.a.primaryText]: e.primary,
-                [f.a.defaultText]: !e.primary
+              className: c()(g.a.text, {
+                [g.a.primaryText]: e.primary,
+                [g.a.defaultText]: !e.primary
               })
             },
             void 0,
             e.children
           )
         ),
-      _ = r('./app/assets/private_flash.png'),
-      y = r.n(_),
-      v = r('./app/assets/Arrow.png'),
-      g = r.n(v),
-      b = r('./app/assets/Device.png'),
-      j = r.n(b),
-      w = r('./app/components/App/index.css'),
-      x = r.n(w);
-    function A(e, t, r, o) {
-      p ||
-        (p =
+      x = r('./app/assets/private_flash.png'),
+      A = r.n(x),
+      k = r('./app/assets/Arrow.png'),
+      S = r.n(k),
+      E = r('./app/assets/Device.png'),
+      M = r.n(E),
+      N = r('./app/components/App/index.css'),
+      P = r.n(N);
+    function T(e, t, r, o) {
+      j ||
+        (j =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -236,7 +298,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: p,
+        $$typeof: j,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -244,46 +306,43 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var M,
-      E = Object(u.connect)(e => ({ drives: e.drive.drives }))(e => {
+    var I,
+      O = Object(u.connect)(e => ({ drives: e.drive.drives }))(e => {
         const { drives: t, next: r } = e;
         return (
           (e.onlyPrivate ? t.privateDrive : t.privateDrive || t.emptyDrive) &&
             r(),
-          A(
+          T(
             n.Fragment,
             {},
             void 0,
-            A(
+            T(
               'div',
-              { className: x.a.icons },
+              { className: P.a.icons },
               void 0,
-              A('img', { src: y.a, className: x.a.icon, alt: '' }),
-              A('img', { src: g.a, className: x.a.icon, alt: '' }),
-              A('img', { src: j.a, className: x.a.icon, alt: '' })
+              T('img', { src: A.a, className: P.a.icon, alt: '' }),
+              T('img', { src: S.a, className: P.a.icon, alt: '' }),
+              T('img', { src: M.a, className: P.a.icon, alt: '' })
             ),
-            A(
+            T(
               'div',
-              { className: x.a.insertPrivate },
+              { className: P.a.insertPrivate },
               void 0,
-              'Insert ',
-              A('span', { className: x.a.private }, void 0, 'Private'),
-              ' key flash drive'
+              'Insert',
+              ' ',
+              T('span', { className: P.a.private }, void 0, 'Private'),
+              ' ',
+              'key flash drive'
             ),
-            A(
-              'div',
-              { className: x.a.controls },
-              void 0,
-              A(m, { onClick: e.onCancel }, void 0, 'Cancel')
-            )
+            T(w, { onClick: e.onCancel }, void 0, 'Cancel')
           )
         );
       }),
-      k = r('./app/assets/public_flash.png'),
-      S = r.n(k);
-    function N(e, t, r, o) {
-      M ||
-        (M =
+      R = r('./app/assets/public_flash.png'),
+      L = r.n(R);
+    function C(e, t, r, o) {
+      I ||
+        (I =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -299,7 +358,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: M,
+        $$typeof: I,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -307,73 +366,62 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var I = Object(u.connect)(e => ({ drives: e.drive.drives }))(e => {
+    var D = Object(u.connect)(e => ({ drives: e.drive.drives }))(e => {
         const { drives: t, next: r } = e;
         return (
           (t.publicDrive || t.emptyDrive) && r(),
-          N(
+          C(
             n.Fragment,
             {},
             void 0,
-            N(
+            C(
               'div',
-              { className: x.a.icons },
+              { className: P.a.icons },
               void 0,
-              N('img', { src: S.a, className: x.a.icon, alt: '' }),
-              N('img', { src: g.a, className: x.a.icon, alt: '' }),
-              N('img', { src: j.a, className: x.a.icon, alt: '' })
+              C('img', { src: L.a, className: P.a.icon, alt: '' }),
+              C('img', { src: S.a, className: P.a.icon, alt: '' }),
+              C('img', { src: M.a, className: P.a.icon, alt: '' })
             ),
-            N(
+            C(
               'div',
-              {
-                style: {
-                  backgroundColor: '#95b4d0',
-                  padding: 10,
-                  bottom: '10%'
-                }
-              },
+              { style: { padding: 10, bottom: '10%' } },
               void 0,
-              N(
+              C(
                 'div',
-                { className: x.a.publicPoints },
+                { className: P.a.publicPoints },
                 void 0,
                 '1. Remove PRIVATE key flash drive'
               ),
-              N(
+              C(
                 'div',
-                { className: x.a.publicPoints },
+                { className: P.a.publicPoints },
                 void 0,
                 '2. Make sure you choose the right flash drive'
               ),
-              N(
+              C(
                 'div',
-                { className: x.a.publicPoints },
+                { className: P.a.publicPoints },
                 void 0,
                 '3. Insert Public Address flash drive'
               )
             ),
-            N(
-              'div',
-              { className: x.a.controls },
-              void 0,
-              N(m, { onClick: e.onCancel }, void 0, 'Cancel')
-            )
+            C(w, { onClick: e.onCancel }, void 0, 'Cancel')
           )
         );
       }),
-      T = r('./node_modules/walletcs/src/index.js');
-    const O = e => ({ type: 'SET_PRIVATE_KEYS', payload: { keys: e } }),
-      D = e => ({ type: 'SET_TRANSACTIONS', payload: { transactions: e } });
+      B = r('./node_modules/walletcs/src/index.js');
+    const F = e => ({ type: 'SET_PRIVATE_KEYS', payload: { keys: e } }),
+      U = e => ({ type: 'SET_TRANSACTIONS', payload: { transactions: e } });
     r('./node_modules/core-js/modules/web.dom.iterable.js');
-    var P = r('fs'),
-      R = r.n(P);
-    const L = 'prv-',
-      C = 'addr-',
-      B = 'tr-',
-      F = 'signed-',
-      U = r('drivelist'),
-      z = async () => {
-        const e = (await U.list()).filter(e => 'USB' === e.busType),
+    var H = r('fs'),
+      q = r.n(H);
+    const G = 'prv-',
+      z = 'addr-',
+      W = 'tr-',
+      V = 'signed-',
+      K = r('drivelist'),
+      J = async () => {
+        const e = (await K.list()).filter(e => 'USB' === e.busType),
           t = {};
         return (
           e
@@ -382,15 +430,15 @@ module.exports = (function(e) {
               const { path: r } = e.mountpoints[0] || {};
               if (!r) return null;
               try {
-                t = R.a.readdirSync(r) || [];
+                t = q.a.readdirSync(r) || [];
               } catch (e) {
                 console.error(e);
               }
               let o;
               return (
-                t.some(e => e.includes(C))
+                t.some(e => e.includes(z))
                   ? (o = 'publicDrive')
-                  : t.some(e => e.includes(L)) && (o = 'privateDrive'),
+                  : t.some(e => e.includes(G)) && (o = 'privateDrive'),
                 { path: r, driveType: o || 'emptyDrive' }
               );
             })
@@ -401,21 +449,21 @@ module.exports = (function(e) {
           t
         );
       },
-      H = (e, t) => {
+      X = (e, t) => {
         let r;
         try {
-          (r = R.a.openSync(e, 'wx+')),
-            R.a.writeFileSync(e, t, { flag: 'rs+' });
+          (r = q.a.openSync(e, 'wx+')),
+            q.a.writeFileSync(e, t, { flag: 'rs+' });
         } catch (e) {
           console.error(e);
         } finally {
-          R.a.closeSync(r);
+          q.a.closeSync(r);
         }
       };
-    var G;
-    function q(e, t, r, o) {
-      G ||
-        (G =
+    var Z;
+    function $(e, t, r, o) {
+      Z ||
+        (Z =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -431,7 +479,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: G,
+        $$typeof: Z,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -439,8 +487,8 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var W,
-      V = Object(u.connect)(
+    var Y,
+      Q = Object(u.connect)(
         e => ({ drives: e.drive.drives }),
         e => ({
           setAccountName: t =>
@@ -466,7 +514,7 @@ module.exports = (function(e) {
                 const {
                   address: e,
                   privateKey: t
-                } = T.EtherKeyPair.generatePair();
+                } = B.EtherKeyPair.generatePair();
                 return new Promise(r => r({ address: e, privateKey: t }));
               }),
               (this.savePrivateKey = async () => {
@@ -475,43 +523,43 @@ module.exports = (function(e) {
                 this.setState({ loadingMsg: 'Generating private key...' });
                 const { privateDrive: t, emptyDrive: r } = this.props.drives,
                   o = await this.generatePair(),
-                  n = `${t || r}/${L}${this.state.addressName}.txt`;
-                H(n, o.privateKey),
+                  n = `${t || r}/${G}${this.state.addressName}.txt`;
+                X(n, o.privateKey),
                   this.props.setAddress(o.address),
                   this.props.resetDrives(),
                   this.setState({ loadingMsg: null });
               });
           }
           render() {
-            return q(
+            return $(
               n.Fragment,
               {},
               void 0,
-              q(
+              $(
                 'div',
                 { style: { flex: 4 } },
                 void 0,
-                q(
+                $(
                   'div',
-                  { className: x.a.inputWrapper },
+                  { className: P.a.inputWrapper },
                   void 0,
-                  q('div', { className: x.a.label }, void 0, 'Account name'),
-                  q('input', {
+                  $('div', { className: P.a.label }, void 0, 'Account name'),
+                  $('input', {
                     type: 'text',
                     disabled: this.props.loadingMsg,
-                    className: x.a.input,
+                    className: P.a.input,
                     onChange: e => this.handleChange(e.target.value),
-                    addressName:
+                    defaultValue:
                       this.state.addressName || this.props.inputaddressName
                   })
                 ),
-                q(
+                $(
                   'div',
-                  { className: x.a.privateTextGen },
+                  { className: P.a.privateTextGen },
                   void 0,
                   'Private key is used to transfer funds or perform secure operations from your account. It must be kept secure at all times.'
                 ),
-                q(
+                $(
                   'div',
                   {
                     style: {
@@ -521,7 +569,7 @@ module.exports = (function(e) {
                     }
                   },
                   void 0,
-                  q(
+                  $(
                     'div',
                     {
                       style: {
@@ -536,19 +584,19 @@ module.exports = (function(e) {
                   )
                 )
               ),
-              q(
+              $(
                 'div',
-                { className: x.a.rowControls },
+                { className: P.a.rowControls },
                 void 0,
                 this.props.loadingMsg
-                  ? q('div', {}, void 0, this.props.loadingMsg)
-                  : q(
+                  ? $('div', {}, void 0, this.props.loadingMsg)
+                  : $(
                       n.Fragment,
                       {},
                       void 0,
-                      q(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                      q(
-                        m,
+                      $(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                      $(
+                        w,
                         { onClick: this.onSave, primary: !0 },
                         void 0,
                         'Save private key'
@@ -559,9 +607,9 @@ module.exports = (function(e) {
           }
         }
       );
-    function K(e, t, r, o) {
-      W ||
-        (W =
+    function ee(e, t, r, o) {
+      Y ||
+        (Y =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -577,7 +625,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: W,
+        $$typeof: Y,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -585,8 +633,8 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var Q,
-      Y = Object(u.connect)(
+    var te,
+      re = Object(u.connect)(
         e => ({ drives: e.drive.drives, account: e.account }),
         e => ({ resetDrives: t => e({ type: 'RESET_DRIVES' }) })
       )(
@@ -598,84 +646,63 @@ module.exports = (function(e) {
                 const { publicDrive: e, emptyDrive: t } = this.props.drives,
                   { address: r, name: o } = this.props.account;
                 this.setState({ loadingMsg: 'Calculating public key...' }),
-                  H(`${e || t}/${C}${o}.txt`, r),
+                  X(`${e || t}/${z}${o}.txt`, r),
                   this.props.resetDrives(),
                   this.props.next();
               });
           }
           render() {
-            return K(
+            return ee(
               n.Fragment,
               {},
               void 0,
-              K(
+              ee(
                 'div',
-                { style: { flex: 4 } },
+                {},
                 void 0,
-                K(
+                ee(
                   'div',
-                  {
-                    style: {
-                      backgroundColor: '#27AE60',
-                      borderRadius: 2,
-                      padding: 20
-                    }
-                  },
+                  {},
                   void 0,
-                  K(
+                  ee(
                     'div',
-                    {
-                      style: {
-                        color: '#FFF',
-                        fontSize: 18,
-                        textAlign: 'center',
-                        padding: 5
-                      }
-                    },
+                    { className: P.a.infoText },
                     void 0,
                     "After press 'Save address' button this drive will contain file with public address of your account."
                   ),
-                  K(
+                  ee(
                     'div',
-                    {
-                      style: {
-                        color: '#FFF',
-                        fontSize: 18,
-                        textAlign: 'center',
-                        padding: 5,
-                        fontWeight: '600'
-                      }
-                    },
+                    { className: c()(P.a.infoText, P.a.bold) },
                     void 0,
                     'You can safely distribute this address'
                   )
                 ),
-                K(
+                ee(
                   'div',
                   { style: { color: '#828282', fontSize: 14, marginTop: 15 } },
                   void 0,
                   'File to be created:'
                 ),
-                K(
+                ee(
                   'div',
                   { style: { color: '#4F4F4F', fontSize: 16 } },
                   void 0,
                   `addr-${this.props.account.name}.txt`
                 )
               ),
-              K(
+              ee(
                 'div',
-                { className: x.a.rowControls },
+                { className: P.a.rowControls },
                 void 0,
                 this.props.loadingMsg
-                  ? K('div', {}, void 0, this.props.loadingMsg)
-                  : K(
+                  ? ee('div', {}, void 0, this.props.loadingMsg)
+                  : ee(
                       n.Fragment,
                       {},
                       void 0,
-                      K(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                      K(
-                        m,
+                      ee(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                      ee(
+                        w,
                         { onClick: this.savePublicKey, primary: !0 },
                         void 0,
                         'Save address'
@@ -686,11 +713,11 @@ module.exports = (function(e) {
           }
         }
       ),
-      J = r('./app/assets/success.png'),
-      X = r.n(J);
-    function Z(e, t, r, o) {
-      Q ||
-        (Q =
+      oe = r('./app/assets/success.png'),
+      ne = r.n(oe);
+    function se(e, t, r, o) {
+      te ||
+        (te =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -706,7 +733,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: Q,
+        $$typeof: te,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -714,9 +741,9 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var $;
-    function ee() {
-      return (ee =
+    var ie;
+    function ae() {
+      return (ae =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -727,7 +754,7 @@ module.exports = (function(e) {
           return e;
         }).apply(this, arguments);
     }
-    class te extends n.Component {
+    class ue extends n.Component {
       constructor(...e) {
         super(...e), (this.state = { activeStep: 0 });
       }
@@ -735,8 +762,8 @@ module.exports = (function(e) {
         const { activeStep: e } = this.state,
           t = this.props.steps[e];
         return (function(e, t, r, o) {
-          $ ||
-            ($ =
+          ie ||
+            (ie =
               ('function' == typeof Symbol &&
                 Symbol.for &&
                 Symbol.for('react.element')) ||
@@ -753,7 +780,7 @@ module.exports = (function(e) {
             t.children = a;
           }
           return {
-            $$typeof: $,
+            $$typeof: ie,
             type: e,
             key: void 0 === r ? null : '' + r,
             ref: null,
@@ -762,11 +789,11 @@ module.exports = (function(e) {
           };
         })(
           'div',
-          { className: x.a.container },
+          { className: P.a.container },
           void 0,
           s.a.createElement(
             t,
-            ee({}, this.props, {
+            ae({}, this.props, {
               next: () =>
                 this.setState({ activeStep: this.state.activeStep + 1 })
             })
@@ -774,8 +801,8 @@ module.exports = (function(e) {
         );
       }
     }
-    function re() {
-      return (re =
+    function le() {
+      return (le =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -786,22 +813,22 @@ module.exports = (function(e) {
           return e;
         }).apply(this, arguments);
     }
-    const oe = [
-      E,
-      V,
-      I,
-      Y,
+    const ce = [
+      O,
+      Q,
+      D,
+      re,
       Object(u.connect)(e => ({ accountName: e.account.name }))(e =>
-        Z(
+        se(
           n.Fragment,
           {},
           void 0,
-          Z(
+          se(
             'div',
-            { className: x.a.container },
+            { className: P.a.container },
             void 0,
-            Z('img', { src: X.a, className: x.a.icon, alt: '' }),
-            Z(
+            se('img', { src: ne.a, className: P.a.icon, alt: '' }),
+            se(
               'div',
               {
                 style: {
@@ -814,7 +841,7 @@ module.exports = (function(e) {
               void 0,
               `You have successfully created an account: ${e.accountName}`
             ),
-            Z(
+            se(
               'div',
               {
                 style: {
@@ -829,22 +856,17 @@ module.exports = (function(e) {
               'Please remember to securely store you private key flash drive'
             )
           ),
-          Z(
-            'div',
-            { className: x.a.rowControls },
-            void 0,
-            Z(m, { onClick: e.onCancel, primary: !0 }, void 0, 'Done')
-          )
+          se(w, { onClick: e.onCancel, primary: !0 }, void 0, 'Done')
         )
       )
     ];
-    var ne,
-      se = e => s.a.createElement(te, re({}, e, { steps: oe })),
-      ie = r('./app/components/Checkbox/index.css'),
-      ae = r.n(ie);
-    function ue(e, t, r, o) {
-      ne ||
-        (ne =
+    var de,
+      fe = e => s.a.createElement(ue, le({}, e, { steps: ce })),
+      he = r('./app/components/Checkbox/index.css'),
+      pe = r.n(he);
+    function me(e, t, r, o) {
+      de ||
+        (de =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -860,7 +882,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: ne,
+        $$typeof: de,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -868,40 +890,44 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var le = ue(
+    var _e = me(
       'svg',
       { width: '12px', height: '10px', viewBox: '0 0 12 10' },
       void 0,
-      ue('polyline', { points: '1.5 6 4.5 9 10.5 1' })
+      me('polyline', { points: '1.5 6 4.5 9 10.5 1' })
     );
-    var ce,
-      de = e =>
-        ue(
+    var ye,
+      ve,
+      ge = e =>
+        me(
           n.Fragment,
           {},
           void 0,
-          ue('input', {
+          me('input', {
             type: 'checkbox',
             checked: e.checked,
-            className: ae.a.inpcbx,
+            className: pe.a.inpcbx,
             readOnly: !0
           }),
-          ue(
+          me(
             'label',
-            { className: ae.a.cbx },
+            { className: pe.a.cbx },
             void 0,
-            ue('span', { onClick: () => e.onChange(!e.checked) }, void 0, le),
-            ue(
+            me('span', { onClick: () => e.onChange(!e.checked) }, void 0, _e),
+            me(
               'span',
               { onClick: () => e.onChange(!e.checked) },
               void 0,
               e.label
             )
           )
-        );
-    function fe(e, t, r, o) {
-      ce ||
-        (ce =
+        ),
+      be = (r('./node_modules/prop-types/index.js'),
+      r('./app/components/Table/index.css')),
+      je = r.n(be);
+    function we(e, t, r, o) {
+      ye ||
+        (ye =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -917,7 +943,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: ce,
+        $$typeof: ye,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -925,8 +951,141 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var he,
-      pe = Object(u.connect)(
+    class xe extends n.Component {
+      constructor(...e) {
+        super(...e),
+          (this.state = { checked: !1 }),
+          (this.handleCheck = () => {
+            this.setState({ checked: !this.state.checked }),
+              this.props.onCheck(this.props.item.id, !this.state.checked);
+          });
+      }
+      render() {
+        const e = !!this.props.onCheck;
+        return we(
+          'tr',
+          {
+            className: c()(je.a.tableRow, {
+              [je.a.tableDataRow]: !!this.props.onCheck
+            }),
+            onClick: this.handleCheck
+          },
+          void 0,
+          e &&
+            we(
+              'td',
+              { className: c()(je.a.tableCell, je.a.tableCheckbox) },
+              void 0,
+              we(ge, {
+                checked: this.state.checked,
+                onChange: this.handleCheck
+              })
+            ),
+          this.props.item.fields.map(e =>
+            we('td', { className: je.a.tableCell }, e, e)
+          )
+        );
+      }
+    }
+    function Ae(e, t, r, o) {
+      ve ||
+        (ve =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: ve,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var ke,
+      Se = class extends n.Component {
+        render() {
+          const e = !!this.props.onCheck;
+          return Ae(
+            'table',
+            { style: { width: '100%' } },
+            void 0,
+            Ae(
+              'tbody',
+              {},
+              void 0,
+              Ae(
+                'tr',
+                { className: je.a.tableRow },
+                void 0,
+                e &&
+                  Ae('td', {
+                    className: c()(
+                      je.a.tableCell,
+                      je.a.tableHeader,
+                      je.a.tableCheckbox
+                    )
+                  }),
+                this.props.headers.map(e =>
+                  Ae(
+                    'td',
+                    { className: c()(je.a.tableCell, je.a.tableHeader) },
+                    e,
+                    e
+                  )
+                )
+              ),
+              Ae(
+                n.Fragment,
+                {},
+                void 0,
+                this.props.data.map(e =>
+                  Ae(xe, { item: e, onCheck: this.props.onCheck }, e.id)
+                )
+              )
+            )
+          );
+        }
+      };
+    function Ee(e, t, r, o) {
+      ke ||
+        (ke =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: ke,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var Me,
+      Ne = Object(u.connect)(
         e => ({
           publicKeys: e.account.publicKeys,
           keys: e.account.keys,
@@ -952,9 +1111,9 @@ module.exports = (function(e) {
                     { publicDrive: t, emptyDrive: r } = this.props.drives,
                     o = t || r;
                   e.forEach(e => {
-                    const t = T.EtherKeyPair.recoveryPublicKey(e.privateKey),
+                    const t = B.EtherKeyPair.recoveryPublicKey(e.privateKey),
                       { account: r } = e;
-                    H(`${o}/${C}${r}.txt`, t);
+                    X(`${o}/${z}${r}.txt`, t);
                   });
                 }
                 this.props.setGeneratedFlag(this.state.generate),
@@ -965,16 +1124,16 @@ module.exports = (function(e) {
                 const { publicDrive: t, emptyDrive: r } = this.props.drives,
                   o = t || r;
                 try {
-                  e = R.a.readdirSync(o) || [];
+                  e = q.a.readdirSync(o) || [];
                 } catch (e) {
                   console.error(e);
                 }
                 const n = e
-                    .filter(e => e.startsWith(C))
+                    .filter(e => e.startsWith(z))
                     .map(e => {
                       let t;
                       try {
-                        t = R.a.readFileSync(`${o}/${e}`, 'utf-8');
+                        t = q.a.readFileSync(`${o}/${e}`, 'utf-8');
                       } catch (e) {
                         console.error(e);
                       }
@@ -991,86 +1150,32 @@ module.exports = (function(e) {
             this.setupPublicKeys();
           }
           render() {
-            const e = this.props.publicKeys || [];
-            return fe(
+            const e = (this.props.publicKeys || []).map(e => {
+              const t = e.found ? 'Yes' : 'No';
+              return { id: e.publicKey, fields: [e.account, e.publicKey, t] };
+            });
+            return Ee(
               n.Fragment,
               {},
               void 0,
-              fe(
+              Ee(Se, { data: e, headers: ['ACCOUNT', 'ADDRESS', 'FOUND'] }),
+              Ee(
                 'div',
-                {},
+                { className: P.a.generateCheckboxContainer },
                 void 0,
-                fe(
-                  'div',
-                  { className: x.a.tableRow },
-                  void 0,
-                  fe(
-                    'div',
-                    { className: x.a.tableCell, style: { color: '#ABABAB' } },
-                    void 0,
-                    'ACCOUNT'
-                  ),
-                  fe(
-                    'div',
-                    { className: x.a.tableCell, style: { color: '#ABABAB' } },
-                    void 0,
-                    'ADDRESS'
-                  ),
-                  fe(
-                    'div',
-                    { className: x.a.tableCell, style: { color: '#ABABAB' } },
-                    void 0,
-                    'FOUND'
-                  )
-                ),
-                fe(
-                  n.Fragment,
-                  {},
-                  void 0,
-                  e.map(e =>
-                    fe(
-                      'div',
-                      { className: x.a.tableRow },
-                      void 0,
-                      fe(
-                        'div',
-                        { className: x.a.tableCell },
-                        void 0,
-                        e.account
-                      ),
-                      fe(
-                        'div',
-                        { className: x.a.tableCell },
-                        void 0,
-                        e.publicKey
-                      ),
-                      fe(
-                        'div',
-                        { className: x.a.tableCell },
-                        void 0,
-                        e.found ? 'Yes' : 'No'
-                      )
-                    )
-                  )
-                )
-              ),
-              fe(
-                'div',
-                { className: x.a.generateCheckboxContainer },
-                void 0,
-                fe(de, {
+                Ee(ge, {
                   checked: this.state.generate,
                   onChange: this.onGenerateChange,
                   label: 'Generate missing keys'
                 })
               ),
-              fe(
+              Ee(
                 'div',
-                { className: x.a.rowControls },
+                { className: P.a.rowControls },
                 void 0,
-                fe(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                fe(
-                  m,
+                Ee(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                Ee(
+                  w,
                   { onClick: this.restorePublicKeys, primary: !0 },
                   void 0,
                   'Next'
@@ -1080,315 +1185,7 @@ module.exports = (function(e) {
           }
         }
       );
-    function me(e, t, r, o) {
-      he ||
-        (he =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: he,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    var _e;
-    function ye(e, t, r, o) {
-      _e ||
-        (_e =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: _e,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    function ve() {
-      return (ve =
-        Object.assign ||
-        function(e) {
-          for (var t = 1; t < arguments.length; t++) {
-            var r = arguments[t];
-            for (var o in r)
-              Object.prototype.hasOwnProperty.call(r, o) && (e[o] = r[o]);
-          }
-          return e;
-        }).apply(this, arguments);
-    }
-    const ge = [
-      E,
-      Object(u.connect)(
-        e => ({ keys: e.account.keys, drives: e.drive.drives }),
-        e => ({ setPrivateKeys: t => e(O(t)) })
-      )(
-        class extends n.Component {
-          constructor(...e) {
-            super(...e),
-              (this.setupPrivateKeys = () => {
-                let e = [];
-                const { privateDrive: t } = this.props.drives;
-                try {
-                  e = R.a.readdirSync(t) || [];
-                } catch (e) {
-                  console.error(e);
-                }
-                const r = e
-                  .filter(e => e.startsWith(L))
-                  .map(e => {
-                    let r, o;
-                    try {
-                      (r = R.a.readFileSync(`${t}/${e}`, 'utf-8')),
-                        (o = T.EtherKeyPair.recoveryPublicKey(r));
-                    } catch (e) {
-                      console.error(e);
-                    }
-                    return {
-                      privateKey: r,
-                      publicKey: o,
-                      account: e.replace(L, '').replace('.txt', '')
-                    };
-                  });
-                this.props.setPrivateKeys(r);
-              });
-          }
-          componentWillMount() {
-            this.setupPrivateKeys();
-          }
-          render() {
-            const { keys: e = [] } = this.props,
-              t = !!e.length;
-            return me(
-              n.Fragment,
-              {},
-              void 0,
-              me(
-                'div',
-                {},
-                void 0,
-                t
-                  ? me(
-                      n.Fragment,
-                      {},
-                      void 0,
-                      me(
-                        'div',
-                        { className: x.a.tableCell, App: { color: '#ABABAB' } },
-                        void 0,
-                        'ADDRESS'
-                      ),
-                      e.map(e =>
-                        me(
-                          'div',
-                          { className: x.a.tableCell },
-                          void 0,
-                          e.publicKey
-                        )
-                      )
-                    )
-                  : me(
-                      'div',
-                      { className: x.a.message },
-                      void 0,
-                      'Private keys not found'
-                    )
-              ),
-              me(
-                'div',
-                { className: x.a.rowControls },
-                void 0,
-                me(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                t &&
-                  me(
-                    m,
-                    { onClick: this.props.next, primary: !0 },
-                    void 0,
-                    'Next'
-                  )
-              )
-            );
-          }
-        }
-      ),
-      I,
-      pe,
-      Object(u.connect)(e => ({
-        publicKeys: e.account.publicKeys,
-        generatedFlag: e.account.generatedFlag
-      }))(({ publicKeys: e, onCancel: t, generatedFlag: r }) => {
-        const o = r ? e.filter(e => !e.found) : [];
-        return ye(
-          n.Fragment,
-          {},
-          void 0,
-          ye(
-            'div',
-            { className: x.a.container },
-            void 0,
-            ye('img', { src: X.a, className: x.a.icon, alt: '' }),
-            o.length
-              ? ye(
-                  n.Fragment,
-                  {},
-                  void 0,
-                  ye(
-                    'div',
-                    { className: x.a.message },
-                    void 0,
-                    o.length,
-                    ' PUBLIC ADDRESSES generated:'
-                  ),
-                  o.map(e =>
-                    ye(
-                      'div',
-                      { className: x.a.message },
-                      void 0,
-                      `${C}${e.account}.txt`
-                    )
-                  )
-                )
-              : ye(
-                  'div',
-                  { className: x.a.message },
-                  void 0,
-                  'There is no keys for restore.'
-                )
-          ),
-          ye(
-            'div',
-            { className: x.a.rowControls },
-            void 0,
-            ye(m, { onClick: t, primary: !0 }, void 0, 'Done')
-          )
-        );
-      })
-    ];
-    var be,
-      je = e => s.a.createElement(te, ve({}, e, { steps: ge })),
-      we = r('./app/assets/Keys.png'),
-      xe = r.n(we);
-    function Ae(e, t, r, o) {
-      be ||
-        (be =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: be,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    var Me,
-      Ee = Object(u.connect)(
-        e => ({ keys: e.account.keys, drives: e.drive.drives }),
-        e => ({ setPrivateKeys: t => e(O(t)) })
-      )(
-        class extends n.Component {
-          constructor(...e) {
-            super(...e),
-              (this.setupPrivateKeys = () => {
-                let e = [];
-                const { privateDrive: t } = this.props.drives;
-                try {
-                  e = R.a.readdirSync(t) || [];
-                } catch (e) {
-                  console.error(e);
-                }
-                const r = e
-                  .filter(e => e.startsWith(L))
-                  .map(e => {
-                    let r;
-                    try {
-                      r = R.a.readFileSync(`${t}/${e}`, 'utf-8');
-                    } catch (e) {
-                      console.error(e);
-                    }
-                    return {
-                      privateKey: r,
-                      account: e.replace(L, '').replace('.txt', '')
-                    };
-                  });
-                this.props.setPrivateKeys(r);
-              });
-          }
-          componentWillMount() {
-            this.setupPrivateKeys();
-          }
-          render() {
-            return Ae(
-              n.Fragment,
-              {},
-              void 0,
-              Ae(
-                'div',
-                { className: x.a.icons },
-                void 0,
-                Ae('img', { src: xe.a, className: x.a.icon, alt: '' })
-              ),
-              Ae(
-                'div',
-                { className: x.a.insertPrivate },
-                void 0,
-                'Private Key flash drive copied'
-              ),
-              Ae(
-                'div',
-                { className: x.a.rowControls },
-                void 0,
-                Ae(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                Ae(m, { onClick: this.props.next, primary: !0 }, void 0, 'Next')
-              )
-            );
-          }
-        }
-      ),
-      ke = r('./app/assets/empty_drive.png'),
-      Se = r.n(ke);
-    function Ne(e, t, r, o) {
+    function Pe(e, t, r, o) {
       Me ||
         (Me =
           ('function' == typeof Symbol &&
@@ -1414,10 +1211,10 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var Ie;
-    function Te(e, t, r, o) {
-      Ie ||
-        (Ie =
+    var Te;
+    function Ie(e, t, r, o) {
+      Te ||
+        (Te =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -1433,7 +1230,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: Ie,
+        $$typeof: Te,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -1453,325 +1250,75 @@ module.exports = (function(e) {
           return e;
         }).apply(this, arguments);
     }
-    const De = [
-      E,
-      Ee,
-      Object(u.connect)(e => ({ drives: e.drive.drives }))(e => {
-        const { drives: t, next: r } = e;
-        return (
-          t.emptyDrive && r(),
-          Ne(
-            n.Fragment,
-            {},
-            void 0,
-            Ne(
-              'div',
-              { className: x.a.icons },
-              void 0,
-              Ne('img', { src: Se.a, className: x.a.icon, alt: '' }),
-              Ne('img', { src: g.a, className: x.a.icon, alt: '' }),
-              Ne('img', { src: j.a, className: x.a.icon, alt: '' })
-            ),
-            Ne(
-              'div',
-              {
-                style: {
-                  backgroundColor: '#95b4d0',
-                  padding: 10,
-                  bottom: '10%'
-                }
-              },
-              void 0,
-              Ne(
-                'div',
-                { className: x.a.publicPoints },
-                void 0,
-                '1. Remove PRIVATE key flash drive'
-              ),
-              Ne(
-                'div',
-                { className: x.a.publicPoints },
-                void 0,
-                '2. Make sure you choose the right flash drive'
-              ),
-              Ne(
-                'div',
-                { className: x.a.publicPoints },
-                void 0,
-                '3. insert Empty flash drive'
-              )
-            ),
-            Ne(
-              'div',
-              { className: x.a.insertPrivate },
-              void 0,
-              'Insert ',
-              Ne('span', { className: x.a.private }, void 0, 'Empty'),
-              ' key flash drive'
-            ),
-            Ne(
-              'div',
-              { className: x.a.controls },
-              void 0,
-              Ne(m, { onClick: e.onCancel }, void 0, 'Cancel')
-            )
-          )
-        );
-      }),
-      Object(u.connect)(e => ({
-        keys: e.account.keys,
-        drives: e.drive.drives
-      }))(
-        class extends n.Component {
-          constructor(...e) {
-            super(...e),
-              (this.backupPrivateKeys = () => {
-                const { emptyDrive: e } = this.props.drives;
-                this.props.keys.forEach(t => {
-                  const { account: r, privateKey: o } = t;
-                  H(`${e}/${L}${r}.txt`, o);
-                });
-              });
-          }
-          componentWillMount() {
-            this.backupPrivateKeys();
-          }
-          render() {
-            return Te(
-              n.Fragment,
-              {},
-              void 0,
-              Te(
-                'div',
-                { className: x.a.container },
-                void 0,
-                Te('img', { src: X.a, className: x.a.icon, alt: '' }),
-                Te(
-                  'div',
-                  { className: x.a.message },
-                  void 0,
-                  'You have successfully created backed up your PRIVATE key Drive'
-                )
-              ),
-              Te(
-                'div',
-                { className: x.a.rowControls },
-                void 0,
-                Te(
-                  m,
-                  { onClick: this.props.onCancel, primary: !0 },
-                  void 0,
-                  'Done'
-                )
-              )
-            );
-          }
-        }
-      )
-    ];
-    var Pe,
-      Re,
-      Le = e =>
-        s.a.createElement(te, Oe({}, e, { steps: De, onlyPrivate: !0 }));
-    function Ce(e, t, r, o) {
-      Pe ||
-        (Pe =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: Pe,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    class Be extends n.Component {
-      constructor(...e) {
-        super(...e),
-          (this.state = { checked: !1 }),
-          (this.handleCheck = e => {
-            this.setState({ checked: !this.state.checked }),
-              this.props.onCheck(this.props.item.file, e);
-          });
-      }
-      render() {
-        return Ce(
-          'div',
-          { className: x.a.tableRow },
-          void 0,
-          Ce(
-            'div',
-            { className: x.a.tableCell },
-            void 0,
-            Ce(de, { checked: this.state.checked, onChange: this.handleCheck })
-          ),
-          Ce('div', { className: x.a.tableCell }, void 0, this.props.item.file),
-          Ce('div', { className: x.a.tableCell }),
-          Ce('div', { className: x.a.tableCell })
-        );
-      }
-    }
-    function Fe(e, t, r, o) {
-      Re ||
-        (Re =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: Re,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    var Ue,
-      ze = Object(u.connect)(
-        e => ({ drives: e.drive.drives, transactions: e.account.transactions }),
-        e => ({
-          setTransactions: t => e(D(t)),
-          setTransactionToSign: (t, r) =>
-            e(
-              ((e, t) => ({
-                type: 'SET_TRANSACTIONS_TO_SIGN',
-                payload: { transaction: e, checked: t }
-              }))(t, r)
-            )
-        })
+    const Re = [
+      O,
+      Object(u.connect)(
+        e => ({ keys: e.account.keys, drives: e.drive.drives }),
+        e => ({ setPrivateKeys: t => e(F(t)) })
       )(
         class extends n.Component {
           constructor(...e) {
             super(...e),
-              (this.setupTransactions = () => {
+              (this.setupPrivateKeys = () => {
                 let e = [];
-                const t = this.props.drives.emptyDrive;
+                const { privateDrive: t } = this.props.drives;
+                if (!t) return;
                 try {
-                  e = R.a.readdirSync(t) || [];
+                  e = q.a.readdirSync(t) || [];
                 } catch (e) {
                   console.error(e);
                 }
                 const r = e
-                  .filter(e => e.startsWith(B))
+                  .filter(e => e.startsWith(G))
                   .map(e => {
-                    let r = {};
+                    let r, o;
                     try {
-                      r = JSON.parse(R.a.readFileSync(`${t}/${e}`, 'utf-8'));
-                    } catch (r) {
-                      return (
-                        console.error(`error while reading ${t}/${e}`),
-                        console.error(r),
-                        null
-                      );
+                      (r = q.a.readFileSync(`${t}/${e}`, 'utf-8')),
+                        (o = B.EtherKeyPair.recoveryPublicKey(r));
+                    } catch (e) {
+                      console.error(e);
                     }
-                    return { transaction: r, file: e };
-                  })
-                  .filter(e => !!e);
-                this.props.setTransactions(r);
-              }),
-              (this.checkTransaction = (e, t) => {
-                this.props.setTransactionToSign(e, t);
+                    return {
+                      privateKey: r,
+                      publicKey: o,
+                      account: e.replace(G, '').replace('.txt', '')
+                    };
+                  });
+                this.props.setPrivateKeys(r);
               });
           }
           componentWillMount() {
-            this.setupTransactions();
+            this.setupPrivateKeys();
           }
           render() {
-            const e = this.props.transactions || [],
-              t = !!e.length;
-            return Fe(
+            const { keys: e = [] } = this.props,
+              t = !!e.length,
+              r = e.map(e => ({ id: e.publicKey, fields: [e.publicKey] }));
+            return Pe(
               n.Fragment,
               {},
               void 0,
-              Fe(
+              Pe(
                 'div',
                 {},
                 void 0,
                 t
-                  ? Fe(
-                      n.Fragment,
-                      {},
-                      void 0,
-                      Fe(
-                        'div',
-                        { style: { fontSize: 16 } },
-                        void 0,
-                        'Select transaction to sign'
-                      ),
-                      Fe(
-                        'div',
-                        { className: x.a.tableRow },
-                        void 0,
-                        Fe('div', { className: x.a.tableCell }),
-                        Fe(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'FILE'
-                        ),
-                        Fe(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'TIME'
-                        ),
-                        Fe('div', { className: x.a.tableCell })
-                      ),
-                      Fe(
-                        n.Fragment,
-                        {},
-                        void 0,
-                        e.map(e =>
-                          Fe(Be, { item: e, onCheck: this.checkTransaction })
-                        )
-                      )
-                    )
-                  : Fe(
+                  ? Pe(Se, { data: r, headers: ['ADDRESS'] })
+                  : Pe(
                       'div',
-                      { className: x.a.message },
+                      { className: P.a.message },
                       void 0,
-                      'Transactions not found'
+                      'Private keys not found'
                     )
               ),
-              Fe(
+              Pe(
                 'div',
-                { className: x.a.rowControls },
+                { className: P.a.rowControls },
                 void 0,
-                Fe(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                Pe(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
                 t &&
-                  Fe(
-                    m,
+                  Pe(
+                    w,
                     { onClick: this.props.next, primary: !0 },
                     void 0,
                     'Next'
@@ -1781,9 +1328,156 @@ module.exports = (function(e) {
           }
         }
       ),
-      He = r('./app/assets/transaction_drive.png'),
-      Ge = r.n(He);
-    function qe(e, t, r, o) {
+      D,
+      Ne,
+      Object(u.connect)(e => ({
+        publicKeys: e.account.publicKeys,
+        generatedFlag: e.account.generatedFlag
+      }))(({ publicKeys: e, onCancel: t, generatedFlag: r }) => {
+        const o = r ? e.filter(e => !e.found) : [];
+        return Ie(
+          n.Fragment,
+          {},
+          void 0,
+          Ie(
+            'div',
+            { className: P.a.container },
+            void 0,
+            Ie('img', { src: ne.a, className: P.a.icon, alt: '' }),
+            o.length
+              ? Ie(
+                  n.Fragment,
+                  {},
+                  void 0,
+                  Ie(
+                    'div',
+                    { className: P.a.message },
+                    void 0,
+                    o.length,
+                    ' PUBLIC ADDRESSES generated:'
+                  ),
+                  o.map(e =>
+                    Ie(
+                      'div',
+                      { className: P.a.message },
+                      void 0,
+                      `${z}${e.account}.txt`
+                    )
+                  )
+                )
+              : Ie(
+                  'div',
+                  { className: P.a.message },
+                  void 0,
+                  'There is no keys for restore.'
+                )
+          ),
+          Ie(
+            'div',
+            { className: P.a.rowControls },
+            void 0,
+            Ie(w, { onClick: t, primary: !0 }, void 0, 'Done')
+          )
+        );
+      })
+    ];
+    var Le,
+      Ce = e => s.a.createElement(ue, Oe({}, e, { steps: Re })),
+      De = r('./app/assets/Keys.png'),
+      Be = r.n(De);
+    function Fe(e, t, r, o) {
+      Le ||
+        (Le =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: Le,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var Ue,
+      He = Object(u.connect)(
+        e => ({ keys: e.account.keys, drives: e.drive.drives }),
+        e => ({ setPrivateKeys: t => e(F(t)) })
+      )(
+        class extends n.Component {
+          constructor(...e) {
+            super(...e),
+              (this.setupPrivateKeys = () => {
+                let e = [];
+                const { privateDrive: t } = this.props.drives;
+                try {
+                  e = q.a.readdirSync(t) || [];
+                } catch (e) {
+                  console.error(e);
+                }
+                const r = e
+                  .filter(e => e.startsWith(G))
+                  .map(e => {
+                    let r;
+                    try {
+                      r = q.a.readFileSync(`${t}/${e}`, 'utf-8');
+                    } catch (e) {
+                      console.error(e);
+                    }
+                    return {
+                      privateKey: r,
+                      account: e.replace(G, '').replace('.txt', '')
+                    };
+                  });
+                this.props.setPrivateKeys(r);
+              });
+          }
+          componentWillMount() {
+            this.setupPrivateKeys();
+          }
+          render() {
+            return Fe(
+              n.Fragment,
+              {},
+              void 0,
+              Fe(
+                'div',
+                { className: P.a.icons },
+                void 0,
+                Fe('img', { src: Be.a, className: P.a.icon, alt: '' })
+              ),
+              Fe(
+                'div',
+                { className: P.a.insertPrivate },
+                void 0,
+                'Private Key flash drive copied'
+              ),
+              Fe(
+                'div',
+                { className: P.a.rowControls },
+                void 0,
+                Fe(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                Fe(w, { onClick: this.props.next, primary: !0 }, void 0, 'Next')
+              )
+            );
+          }
+        }
+      ),
+      qe = r('./app/assets/empty_drive.png'),
+      Ge = r.n(qe);
+    function ze(e, t, r, o) {
       Ue ||
         (Ue =
           ('function' == typeof Symbol &&
@@ -1809,41 +1503,8 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var We,
-      Ve = Object(u.connect)(e => ({ drives: e.drive.drives }))(
-        ({ drives: e, onCancel: t, next: r }) => {
-          const { emptyDrive: o } = e;
-          return (
-            o && r(),
-            qe(
-              n.Fragment,
-              {},
-              void 0,
-              qe(
-                'div',
-                { className: x.a.icons },
-                void 0,
-                qe('img', { src: Ge.a, className: x.a.icon, alt: '' }),
-                qe('img', { src: g.a, className: x.a.icon, alt: '' }),
-                qe('img', { src: j.a, className: x.a.icon, alt: '' })
-              ),
-              qe(
-                'div',
-                { className: x.a.insertPrivate },
-                void 0,
-                'Insert flash drive with Transactions to sign'
-              ),
-              qe(
-                'div',
-                { className: x.a.controls },
-                void 0,
-                qe(m, { onClick: t }, void 0, 'Cancel')
-              )
-            )
-          );
-        }
-      );
-    function Ke(e, t, r, o) {
+    var We;
+    function Ve(e, t, r, o) {
       We ||
         (We =
           ('function' == typeof Symbol &&
@@ -1869,62 +1530,8 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    var Qe;
-    function Ye(e, t, r, o) {
-      Qe ||
-        (Qe =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: Qe,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    var Je;
-    function Xe(e, t, r, o) {
-      Je ||
-        (Je =
-          ('function' == typeof Symbol &&
-            Symbol.for &&
-            Symbol.for('react.element')) ||
-          60103);
-      var n = e && e.defaultProps,
-        s = arguments.length - 3;
-      if ((t || 0 === s || (t = { children: void 0 }), t && n))
-        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
-      else t || (t = n || {});
-      if (1 === s) t.children = o;
-      else if (s > 1) {
-        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
-        t.children = a;
-      }
-      return {
-        $$typeof: Je,
-        type: e,
-        key: void 0 === r ? null : '' + r,
-        ref: null,
-        props: t,
-        _owner: null
-      };
-    }
-    function Ze() {
-      return (Ze =
+    function Ke() {
+      return (Ke =
         Object.assign ||
         function(e) {
           for (var t = 1; t < arguments.length; t++) {
@@ -1935,388 +1542,343 @@ module.exports = (function(e) {
           return e;
         }).apply(this, arguments);
     }
-    const $e = [
-      Ve,
-      ze,
-      E,
-      Object(u.connect)(
-        e => ({
-          drives: e.drive.drives,
-          transactions: e.account.transactions,
-          transactionsToSign: e.account.transactionsToSign
-        }),
-        e => ({ setTransactions: t => e(D(t)) })
-      )(
-        class extends n.Component {
-          constructor(...e) {
-            super(...e),
-              (this.setupPrivateKeys = () => {
-                let e = [];
-                const { privateDrive: t } = this.props.drives;
-                try {
-                  e = R.a.readdirSync(t) || [];
-                } catch (e) {
-                  console.error(e);
-                }
-                const r = e
-                    .filter(e => e.startsWith(L))
-                    .map(e => {
-                      let r;
-                      try {
-                        r = R.a.readFileSync(`${t}/${e}`, 'utf-8');
-                      } catch (e) {
-                        console.error(e);
-                      }
-                      return r;
-                    })
-                    .filter(e => !!e),
-                  o = this.props.transactions
-                    .map(e => {
-                      const { transaction: t } = e,
-                        o = r.find(e => T.EtherKeyPair.checkPair(t.pub_key, e));
-                      return {
-                        transaction: t,
-                        file: e.file,
-                        privateKey: o,
-                        foundKey: !!o
-                      };
-                    })
-                    .filter(e =>
-                      this.props.transactionsToSign.includes(e.file)
-                    );
-                this.props.setTransactions(o);
-              });
-          }
-          componentWillMount() {
-            this.setupPrivateKeys();
-          }
-          render() {
-            const { transactions: e = [] } = this.props,
-              t = !!e.length;
-            return Ke(
-              n.Fragment,
-              {},
+    const Je = [
+      O,
+      He,
+      Object(u.connect)(e => ({ drives: e.drive.drives }))(e => {
+        const { drives: t, next: r } = e;
+        return (
+          t.emptyDrive && r(),
+          ze(
+            n.Fragment,
+            {},
+            void 0,
+            ze(
+              'div',
+              { className: P.a.icons },
               void 0,
-              Ke(
+              ze('img', { src: Ge.a, className: P.a.icon, alt: '' }),
+              ze('img', { src: S.a, className: P.a.icon, alt: '' }),
+              ze('img', { src: M.a, className: P.a.icon, alt: '' })
+            ),
+            ze(
+              'div',
+              {
+                style: {
+                  backgroundColor: '#95b4d0',
+                  padding: 10,
+                  bottom: '10%'
+                }
+              },
+              void 0,
+              ze(
                 'div',
-                {},
+                { className: P.a.publicPoints },
                 void 0,
-                t
-                  ? Ke(
-                      n.Fragment,
-                      {},
-                      void 0,
-                      Ke(
-                        'div',
-                        { className: x.a.tableRow },
-                        void 0,
-                        Ke(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'ACCOUNT'
-                        ),
-                        Ke(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'TIME'
-                        ),
-                        Ke(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'KEY FOUND'
-                        )
-                      ),
-                      Ke(
-                        n.Fragment,
-                        {},
-                        void 0,
-                        e.map(e =>
-                          Ke(
-                            'div',
-                            { className: x.a.tableRow },
-                            void 0,
-                            Ke(
-                              'div',
-                              { className: x.a.tableCell },
-                              void 0,
-                              e.file
-                            ),
-                            Ke('div', { className: x.a.tableCell }),
-                            Ke(
-                              'div',
-                              { className: x.a.tableCell },
-                              void 0,
-                              e.foundKey ? 'Yes' : 'No'
-                            )
-                          )
-                        )
-                      )
-                    )
-                  : Ke(
-                      'div',
-                      { className: x.a.message },
-                      void 0,
-                      'Private keys for signing transactions not found'
-                    )
+                '1. Remove PRIVATE key flash drive'
               ),
-              Ke(
+              ze(
                 'div',
-                { className: x.a.rowControls },
+                { className: P.a.publicPoints },
                 void 0,
-                Ke(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                t &&
-                  Ke(
-                    m,
-                    { onClick: this.props.next, primary: !0 },
-                    void 0,
-                    'Sign'
-                  )
+                '2. Make sure you choose the right flash drive'
+              ),
+              ze(
+                'div',
+                { className: P.a.publicPoints },
+                void 0,
+                '3. insert Empty flash drive'
               )
-            );
-          }
-        }
-      ),
-      Ve,
+            ),
+            ze(
+              'div',
+              { className: P.a.insertPrivate },
+              void 0,
+              'Insert',
+              ' ',
+              ze('span', { className: P.a.private }, void 0, 'Empty'),
+              ' ',
+              'key flash drive'
+            ),
+            ze(w, { onClick: e.onCancel }, void 0, 'Cancel')
+          )
+        );
+      }),
       Object(u.connect)(e => ({
         keys: e.account.keys,
-        drives: e.drive.drives,
-        transactions: e.account.transactions,
-        transactionsToSign: e.account.transactionsToSign
+        drives: e.drive.drives
       }))(
         class extends n.Component {
           constructor(...e) {
             super(...e),
-              (this.next = async () => {
-                await this.signTransactions(), this.props.next();
-              }),
-              (this.getTransactions = () =>
-                this.props.transactions.filter(
-                  e =>
-                    this.props.transactionsToSign.includes(e.file) && e.foundKey
-                ) || []),
-              (this.signTransactions = async () => {
-                const e = this.props.drives.emptyDrive;
-                this.getTransactions().forEach(async t => {
-                  const { transaction: r } = t,
-                    o = await Promise.all(
-                      r.transactions.map(async e => ({
-                        transaction: await T.EtherTransaction.sign(
-                          t.privateKey,
-                          e.transaction
-                        )
-                      }))
-                    ),
-                    n = { ...t.transaction, transactions: o },
-                    s = t.file.replace(B, '');
-                  H(`${e}/${F}${s}`, JSON.stringify(n));
+              (this.backupPrivateKeys = () => {
+                const { emptyDrive: e } = this.props.drives;
+                this.props.keys.forEach(t => {
+                  const { account: r, privateKey: o } = t;
+                  X(`${e}/${G}${r}.txt`, o);
                 });
               });
           }
+          componentWillMount() {
+            this.backupPrivateKeys();
+          }
           render() {
-            const e = this.getTransactions(),
-              t = !!e.length;
-            return Ye(
+            return Ve(
               n.Fragment,
               {},
               void 0,
-              Ye(
+              Ve(
                 'div',
-                {},
+                { className: P.a.container },
                 void 0,
-                t
-                  ? Ye(
-                      n.Fragment,
-                      {},
-                      void 0,
-                      Ye(
-                        'div',
-                        { className: x.a.tableRow },
-                        void 0,
-                        Ye('div', { className: x.a.tableCell }),
-                        Ye(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'FILE'
-                        ),
-                        Ye(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'TIME'
-                        ),
-                        Ye(
-                          'div',
-                          {
-                            className: x.a.tableCell,
-                            style: { color: '#ABABAB' }
-                          },
-                          void 0,
-                          'DETAILS'
-                        )
-                      ),
-                      Ye(
-                        n.Fragment,
-                        {},
-                        void 0,
-                        e.map(e =>
-                          Ye(
-                            'div',
-                            { className: x.a.tableRow },
-                            void 0,
-                            Ye('div', { className: x.a.tableCell }),
-                            Ye(
-                              'div',
-                              { className: x.a.tableCell },
-                              void 0,
-                              e.file
-                            ),
-                            Ye('div', { className: x.a.tableCell }),
-                            Ye('div', { className: x.a.tableCell })
-                          )
-                        )
-                      )
-                    )
-                  : Ye(
-                      'div',
-                      { className: x.a.message },
-                      void 0,
-                      'Private keys not found'
-                    )
+                Ve('img', { src: ne.a, className: P.a.icon, alt: '' }),
+                Ve(
+                  'div',
+                  { className: P.a.message },
+                  void 0,
+                  'You have successfully created backed up your PRIVATE key Drive'
+                )
               ),
-              Ye(
+              Ve(
                 'div',
-                { className: x.a.rowControls },
+                { className: P.a.rowControls },
                 void 0,
-                Ye(m, { onClick: this.props.onCancel }, void 0, 'Cancel'),
-                t && Ye(m, { onClick: this.next, primary: !0 }, void 0, 'Save')
+                Ve(
+                  w,
+                  { onClick: this.props.onCancel, primary: !0 },
+                  void 0,
+                  'Done'
+                )
               )
             );
           }
         }
-      ),
-      Object(u.connect)(
-        e => ({
-          transactions: e.account.transactions,
-          transactionsToSign: e.account.transactionsToSign
-        }),
-        e => ({ resetAccount: () => e({ type: 'RESET' }) })
-      )(e => {
-        const { transactionsToSign: t, transactions: r } = e,
-          o = r.filter(e => t.includes(e.file) && e.foundKey);
-        return Xe(
-          n.Fragment,
-          {},
-          void 0,
-          Xe(
-            'div',
-            { className: x.a.container },
-            void 0,
-            Xe('img', { src: X.a, className: x.a.icon, alt: '' }),
-            o.length
-              ? Xe(
-                  n.Fragment,
-                  {},
-                  void 0,
-                  Xe(
-                    'div',
-                    { className: x.a.message },
-                    void 0,
-                    'You have successfully signed ',
-                    o.length,
-                    ' transactions'
-                  ),
-                  o.map(e =>
-                    Xe('div', { className: x.a.message }, void 0, e.file)
-                  )
-                )
-              : Xe(
-                  'div',
-                  { className: x.a.message },
-                  void 0,
-                  'Transactions not signed'
-                )
-          ),
-          Xe(
-            'div',
-            { className: x.a.rowControls },
-            void 0,
-            Xe(
-              m,
-              {
-                onClick: () => {
-                  e.resetAccount(), e.onCancel();
-                },
-                primary: !0
-              },
-              void 0,
-              'Done'
-            )
-          )
-        );
-      })
+      )
     ];
-    var et = e =>
-        s.a.createElement(te, Ze({}, e, { steps: $e, onlyPrivate: !0 })),
-      tt = r('usb'),
-      rt = r.n(tt);
-    var ot,
-      nt = Object(u.connect)(
-        e => ({ path: e.drive.path }),
+    var Xe,
+      Ze = e =>
+        s.a.createElement(ue, Ke({}, e, { steps: Je, onlyPrivate: !0 }));
+    function $e(e, t, r, o) {
+      Xe ||
+        (Xe =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: Xe,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var Ye,
+      Qe = Object(u.connect)(
+        e => ({ drives: e.drive.drives, transactions: e.account.transactions }),
         e => ({
-          setDrivesToStorage: t =>
-            e((e => ({ type: 'SET_DRIVES', payload: { drives: e } }))(t))
+          setTransactions: t => e(U(t)),
+          setTransactionToSign: (t, r) =>
+            e(
+              ((e, t) => ({
+                type: 'SET_TRANSACTIONS_TO_SIGN',
+                payload: { transaction: e, checked: t }
+              }))(t, r)
+            ),
+          setRawTransactions: t =>
+            e(
+              (e => ({
+                type: 'SET_RAW_TRANSACTIONS',
+                payload: { rawTransactions: e }
+              }))(t)
+            )
         })
       )(
         class extends n.Component {
           constructor(...e) {
             super(...e),
-              (this.state = { activeStep: 0, loadingMsg: null }),
-              (this.setDrives = async e => {
-                const t = await z();
-                Object.keys(t).length &&
-                  (this.props.setDrivesToStorage(t), e && clearInterval(e));
+              (this.setupTransactions = () => {
+                let e = [];
+                const t = this.props.drives.emptyDrive;
+                try {
+                  e = q.a.readdirSync(t) || [];
+                } catch (e) {
+                  console.error(e);
+                }
+                const r = e
+                    .filter(e => e.startsWith(W))
+                    .map(e => {
+                      let r = {};
+                      try {
+                        r = JSON.parse(q.a.readFileSync(`${t}/${e}`, 'utf-8'));
+                      } catch (r) {
+                        return (
+                          console.error(`error while reading ${t}/${e}`),
+                          console.error(r),
+                          null
+                        );
+                      }
+                      return { transaction: r, file: e };
+                    })
+                    .filter(e => !!e),
+                  o = [];
+                r.forEach(e => {
+                  e.transaction.transactions.forEach(t => {
+                    let r = {},
+                      n = [],
+                      s = { name: 'transfer' };
+                    if (t.contract) {
+                      n = (r =
+                        e.transaction.contracts.find(
+                          e => e.contract === t.contract
+                        ) || {}).abi;
+                      try {
+                        B.EtherTransactionDecoder.addABI(n),
+                          (s = B.EtherTransactionDecoder.decodeMethodContract(
+                            t.transaction.data
+                          ));
+                      } catch (e) {
+                        console.error(e);
+                      }
+                    }
+                    const i = t.contract ? '=>' : 'ETH',
+                      a = `${e.file} (${t.transaction.nonce})`;
+                    o.push({
+                      ...t.transaction,
+                      extra: {
+                        pub_key: e.transaction.pub_key,
+                        file: e.file,
+                        filename: a,
+                        type: i,
+                        method: s.name
+                      }
+                    });
+                  });
+                }),
+                  this.props.setTransactions(o),
+                  this.props.setRawTransactions(r);
+              }),
+              (this.checkTransaction = (e, t) => {
+                this.props.setTransactionToSign(e, t);
               });
           }
-          async componentWillMount() {
-            await this.setDrives(),
-              rt.a.on('attach', async () => {
-                const e = setInterval(async () => {
-                  await this.setDrives(e);
-                }, 1e3);
-              }),
-              rt.a.on('detach', async () => {
-                this.props.setDrivesToStorage({});
-              });
+          componentWillMount() {
+            this.setupTransactions();
           }
           render() {
-            return this.props.children;
+            const e = !!this.props.transactions.length,
+              t = this.props.transactions.map(e => ({
+                id: e.data,
+                fields: [
+                  e.extra.file,
+                  e.extra.type,
+                  e.to,
+                  e.extra.method,
+                  e.amount
+                ]
+              }));
+            return $e(
+              n.Fragment,
+              {},
+              void 0,
+              e
+                ? $e(Se, {
+                    data: t,
+                    headers: ['FILE', 'TYPE', 'TO', 'METHOD', 'AMOUNT'],
+                    onCheck: this.checkTransaction
+                  })
+                : $e(
+                    'div',
+                    { className: P.a.message },
+                    void 0,
+                    'Transactions not found'
+                  ),
+              $e(
+                'div',
+                { className: P.a.rowControls },
+                void 0,
+                $e(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                e &&
+                  $e(
+                    w,
+                    { onClick: this.props.next, primary: !0 },
+                    void 0,
+                    'Next'
+                  )
+              )
+            );
           }
         }
       ),
-      st = r('./app/assets/wallet_logo.svg'),
-      it = r.n(st),
-      at = r('./app/assets/wallet_label.svg'),
-      ut = r.n(at);
-    function lt(e, t, r, o) {
+      et = r('./app/assets/transaction_drive.png'),
+      tt = r.n(et);
+    function rt(e, t, r, o) {
+      Ye ||
+        (Ye =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: Ye,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var ot,
+      nt = Object(u.connect)(e => ({ drives: e.drive.drives }))(
+        ({ drives: e, onCancel: t, next: r }) => {
+          const { emptyDrive: o } = e;
+          return (
+            o && r(),
+            rt(
+              n.Fragment,
+              {},
+              void 0,
+              rt(
+                'div',
+                { className: P.a.icons },
+                void 0,
+                rt('img', { src: tt.a, className: P.a.icon, alt: '' }),
+                rt('img', { src: S.a, className: P.a.icon, alt: '' }),
+                rt('img', { src: M.a, className: P.a.icon, alt: '' })
+              ),
+              rt(
+                'div',
+                { className: P.a.insertPrivate },
+                void 0,
+                'Insert flash drive with Transactions to sign'
+              ),
+              rt(w, { onClick: t }, void 0, 'Cancel')
+            )
+          );
+        }
+      );
+    function st(e, t, r, o) {
       ot ||
         (ot =
           ('function' == typeof Symbol &&
@@ -2342,92 +1904,98 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    const ct = e =>
-      lt(
-        'div',
-        { className: x.a.logo },
-        void 0,
-        lt('img', { src: it.a, className: x.a.icon, alt: '' }),
-        lt('img', { src: ut.a, className: x.a.icon, alt: '' })
-      );
-    var dt = lt(ct, {});
-    var ft = r('redux'),
-      ht = r('redux-thunk'),
-      pt = r.n(ht),
-      mt = r('history'),
-      _t = r('./node_modules/connected-react-router/lib/index.js');
-    r('./node_modules/redux-logger/dist/redux-logger.js');
-    const yt = { drives: {} },
-      vt = (e = yt, t) => {
-        switch (t.type) {
-          case 'SET_DRIVES':
-            return { drives: t.payload.drives };
-          case 'RESET_DRIVES':
-            return { drives: {} };
-          default:
-            return e;
-        }
-      },
-      gt = {
-        name: '',
-        address: null,
-        keys: [],
-        transactions: [],
-        transactionsToSign: []
-      },
-      bt = (e = gt, t) => {
-        switch (t.type) {
-          case 'SET_ACCOUNT_NAME':
-            return { ...e, name: t.payload.name };
-          case 'SET_ADDRESS':
-            return { ...e, address: t.payload.address };
-          case 'SET_PRIVATE_KEYS':
-            return { ...e, keys: t.payload.keys };
-          case 'SET_PUBLIC_KEYS':
-            return { ...e, publicKeys: t.payload.keys };
-          case 'SET_GENERATED_FLAG':
-            return { ...e, generatedFlag: t.payload.flag };
-          case 'SET_TRANSACTIONS':
-            return { ...e, transactions: t.payload.transactions };
-          case 'SET_TRANSACTIONS_TO_SIGN':
-            let r = e.transactionsToSign.slice(0);
-            return (
-              t.payload.checked
-                ? r.push(t.payload.transaction)
-                : (r = r.filter(e => e !== t.payload.transaction)),
-              { ...e, transactionsToSign: r }
+    var it,
+      at = Object(u.connect)(
+        e => ({
+          drives: e.drive.drives,
+          transactions: e.account.transactions,
+          transactionsToSign: e.account.transactionsToSign
+        }),
+        e => ({ setTransactions: t => e(U(t)) })
+      )(
+        class extends n.Component {
+          constructor(...e) {
+            super(...e),
+              (this.setupPrivateKeys = () => {
+                let e = [];
+                const { privateDrive: t } = this.props.drives;
+                try {
+                  e = q.a.readdirSync(t) || [];
+                } catch (e) {
+                  console.error(e);
+                }
+                const r = e
+                    .filter(e => e.startsWith(G))
+                    .map(e => {
+                      let r;
+                      try {
+                        r = q.a.readFileSync(`${t}/${e}`, 'utf-8');
+                      } catch (e) {
+                        console.error(e);
+                      }
+                      return r;
+                    })
+                    .filter(e => !!e),
+                  o = this.props.transactions
+                    .filter(e => this.props.transactionsToSign.includes(e.data))
+                    .map(e => {
+                      const t = r.find(t =>
+                        B.EtherKeyPair.checkPair(e.extra.pub_key, t)
+                      );
+                      return {
+                        ...e,
+                        key: { privateKey: t, foundKey: t ? 'Yes' : 'No' }
+                      };
+                    })
+                    .filter(e =>
+                      this.props.transactionsToSign.includes(e.data)
+                    );
+                this.props.setTransactions(o);
+              });
+          }
+          componentWillMount() {
+            this.setupPrivateKeys();
+          }
+          render() {
+            const { transactions: e = [] } = this.props,
+              t = !!e.length,
+              r = e.map(e => ({
+                fields: [e.extra.file, (e.key || {}).foundKey]
+              }));
+            return st(
+              n.Fragment,
+              {},
+              void 0,
+              t
+                ? st(Se, { data: r, headers: ['FILE', 'KEY FOUND'] })
+                : st(
+                    'div',
+                    { className: P.a.message },
+                    void 0,
+                    'Private keys for signing transactions not found'
+                  ),
+              st(
+                'div',
+                { className: P.a.rowControls },
+                void 0,
+                st(w, { onClick: this.props.onCancel }, void 0, 'Cancel'),
+                t &&
+                  st(
+                    w,
+                    { onClick: this.props.next, primary: !0 },
+                    void 0,
+                    'Sign'
+                  )
+              )
             );
-          case 'RESET':
-            return gt;
-          default:
-            return e;
+          }
         }
-      };
-    function jt(e) {
-      return Object(ft.combineReducers)({
-        router: Object(_t.connectRouter)(e),
-        drive: vt,
-        account: bt
-      });
-    }
-    const wt = Object(mt.createHashHistory)();
-    jt(wt);
-    const xt = Object(mt.createHashHistory)(),
-      At = jt(xt),
-      Mt = Object(_t.routerMiddleware)(xt),
-      Et = Object(ft.applyMiddleware)(pt.a, Mt);
-    const kt = {
-        configureStore: function(e) {
-          return Object(ft.createStore)(At, e, Et);
-        },
-        history: xt
-      },
-      { configureStore: St } = kt,
-      { history: Nt } = kt;
-    var It;
-    function Tt(e, t, r, o) {
-      It ||
-        (It =
+      ),
+      ut = r('lodash.omit'),
+      lt = r.n(ut);
+    function ct(e, t, r, o) {
+      it ||
+        (it =
           ('function' == typeof Symbol &&
             Symbol.for &&
             Symbol.for('react.element')) ||
@@ -2443,7 +2011,7 @@ module.exports = (function(e) {
         t.children = a;
       }
       return {
-        $$typeof: It,
+        $$typeof: it,
         type: e,
         key: void 0 === r ? null : '' + r,
         ref: null,
@@ -2451,60 +2019,364 @@ module.exports = (function(e) {
         _owner: null
       };
     }
-    const Ot = St();
+    function dt() {
+      return (dt =
+        Object.assign ||
+        function(e) {
+          for (var t = 1; t < arguments.length; t++) {
+            var r = arguments[t];
+            for (var o in r)
+              Object.prototype.hasOwnProperty.call(r, o) && (e[o] = r[o]);
+          }
+          return e;
+        }).apply(this, arguments);
+    }
+    const ft = [
+      nt,
+      Qe,
+      O,
+      at,
+      nt,
+      Object(u.connect)(
+        e => ({
+          drives: e.drive.drives,
+          transactions: e.account.transactions,
+          transactionsToSign: e.account.transactionsToSign,
+          rawTransactions: e.account.rawTransactions
+        }),
+        e => ({ resetAccount: () => e({ type: 'RESET' }) })
+      )(
+        class extends n.Component {
+          constructor(...e) {
+            super(...e),
+              (this.state = { signed: !1 }),
+              (this.componentWillMount = () => {
+                this.signTransactions();
+              }),
+              (this.done = () => {
+                this.props.resetAccount(), this.props.onCancel();
+              }),
+              (this.getTransactions = () =>
+                this.props.transactions.filter(e => e.key.privateKey) || []),
+              (this.signTransactions = async () => {
+                const e = this.props.drives.emptyDrive,
+                  t = this.getTransactions();
+                await this.props.rawTransactions.forEach(async r => {
+                  const { transaction: o } = r,
+                    n = await Promise.all(
+                      o.transactions.map(async e => {
+                        const r = t.find(t => t.data === e.transaction.data);
+                        let o;
+                        if (r) {
+                          const e = lt()(r, 'key', 'extra');
+                          o = await B.EtherTransaction.sign(
+                            r.key.privateKey,
+                            e
+                          );
+                        }
+                        return { transaction: o || e };
+                      })
+                    ),
+                    s = { ...r.transaction, transactions: n },
+                    i = r.file.replace(W, '').replace(/\(d?\)/, '');
+                  X(`${e}/${V}${i}`, JSON.stringify(s));
+                }),
+                  this.setState({ signed: !0 });
+              });
+          }
+          render() {
+            const e = this.getTransactions();
+            return this.state.signed
+              ? ct(
+                  n.Fragment,
+                  {},
+                  void 0,
+                  ct(
+                    'div',
+                    { className: P.a.container },
+                    void 0,
+                    ct('img', { src: ne.a, className: P.a.icon, alt: '' }),
+                    e.length
+                      ? ct(
+                          n.Fragment,
+                          {},
+                          void 0,
+                          ct(
+                            'div',
+                            { className: P.a.message },
+                            void 0,
+                            'You have successfully signed ',
+                            e.length,
+                            ' transactions'
+                          ),
+                          e.map(e =>
+                            ct(
+                              'div',
+                              { className: P.a.message },
+                              void 0,
+                              e.file
+                            )
+                          )
+                        )
+                      : ct(
+                          'div',
+                          { className: P.a.message },
+                          void 0,
+                          'Transactions not signed'
+                        )
+                  ),
+                  ct(
+                    'div',
+                    { className: P.a.rowControls },
+                    void 0,
+                    ct(w, { onClick: this.done, primary: !0 }, void 0, 'Done')
+                  )
+                )
+              : ct(
+                  'div',
+                  { className: P.a.container },
+                  void 0,
+                  ct('div', { className: P.a.message }, void 0, 'Signing...')
+                );
+          }
+        }
+      )
+    ];
+    var ht = e =>
+        s.a.createElement(ue, dt({}, e, { steps: ft, onlyPrivate: !0 })),
+      pt = r('usb'),
+      mt = r.n(pt);
+    var _t,
+      yt = Object(u.connect)(
+        e => ({ path: e.drive.path }),
+        e => ({
+          setDrivesToStorage: t =>
+            e((e => ({ type: 'SET_DRIVES', payload: { drives: e } }))(t))
+        })
+      )(
+        class extends n.Component {
+          constructor(...e) {
+            super(...e),
+              (this.state = { activeStep: 0, loadingMsg: null }),
+              (this.setDrives = async e => {
+                const t = await J();
+                Object.keys(t).length &&
+                  (this.props.setDrivesToStorage(t), e && clearInterval(e));
+              });
+          }
+          async componentWillMount() {
+            await this.setDrives(),
+              mt.a.on('attach', async () => {
+                const e = setInterval(async () => {
+                  await this.setDrives(e);
+                }, 1e3);
+              }),
+              mt.a.on('detach', async () => {
+                this.props.setDrivesToStorage({});
+              });
+          }
+          render() {
+            return this.props.children;
+          }
+        }
+      ),
+      vt = r('./app/assets/wallet_logo.svg');
+    function gt(e, t, r, o) {
+      _t ||
+        (_t =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: _t,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    var bt = gt('img', { src: r.n(vt).a, alt: '' });
+    var jt = gt(() => bt, {});
+    var wt = r('redux'),
+      xt = r('redux-thunk'),
+      At = r.n(xt),
+      kt = r('history'),
+      St = r('./node_modules/connected-react-router/lib/index.js');
+    r('./node_modules/redux-logger/dist/redux-logger.js');
+    const Et = { drives: {} },
+      Mt = (e = Et, t) => {
+        switch (t.type) {
+          case 'SET_DRIVES':
+            return { drives: t.payload.drives };
+          case 'RESET_DRIVES':
+            return { drives: {} };
+          default:
+            return e;
+        }
+      },
+      Nt = {
+        name: '',
+        address: null,
+        keys: [],
+        transactions: [],
+        transactionsToSign: [],
+        rawTransactions: []
+      },
+      Pt = (e = Nt, t) => {
+        switch (t.type) {
+          case 'SET_ACCOUNT_NAME':
+            return { ...e, name: t.payload.name };
+          case 'SET_ADDRESS':
+            return { ...e, address: t.payload.address };
+          case 'SET_PRIVATE_KEYS':
+            return { ...e, keys: t.payload.keys };
+          case 'SET_PUBLIC_KEYS':
+            return { ...e, publicKeys: t.payload.keys };
+          case 'SET_GENERATED_FLAG':
+            return { ...e, generatedFlag: t.payload.flag };
+          case 'SET_TRANSACTIONS':
+            return { ...e, transactions: t.payload.transactions };
+          case 'SET_RAW_TRANSACTIONS':
+            return { ...e, rawTransactions: t.payload.rawTransactions };
+          case 'SET_TRANSACTIONS_TO_SIGN':
+            let r = e.transactionsToSign.slice(0);
+            return (
+              t.payload.checked
+                ? r.push(t.payload.transaction)
+                : (r = r.filter(e => e !== t.payload.transaction)),
+              { ...e, transactionsToSign: r }
+            );
+          case 'RESET':
+            return Nt;
+          default:
+            return e;
+        }
+      };
+    function Tt(e) {
+      return Object(wt.combineReducers)({
+        router: Object(St.connectRouter)(e),
+        drive: Mt,
+        account: Pt
+      });
+    }
+    const It = Object(kt.createHashHistory)();
+    Tt(It);
+    const Ot = Object(kt.createHashHistory)(),
+      Rt = Tt(Ot),
+      Lt = Object(St.routerMiddleware)(Ot),
+      Ct = Object(wt.applyMiddleware)(At.a, Lt);
+    const Dt = {
+        configureStore: function(e) {
+          return Object(wt.createStore)(Rt, e, Ct);
+        },
+        history: Ot
+      },
+      { configureStore: Bt } = Dt,
+      { history: Ft } = Dt;
+    var Ut;
+    function Ht(e, t, r, o) {
+      Ut ||
+        (Ut =
+          ('function' == typeof Symbol &&
+            Symbol.for &&
+            Symbol.for('react.element')) ||
+          60103);
+      var n = e && e.defaultProps,
+        s = arguments.length - 3;
+      if ((t || 0 === s || (t = { children: void 0 }), t && n))
+        for (var i in n) void 0 === t[i] && (t[i] = n[i]);
+      else t || (t = n || {});
+      if (1 === s) t.children = o;
+      else if (s > 1) {
+        for (var a = new Array(s), u = 0; u < s; u++) a[u] = arguments[u + 3];
+        t.children = a;
+      }
+      return {
+        $$typeof: Ut,
+        type: e,
+        key: void 0 === r ? null : '' + r,
+        ref: null,
+        props: t,
+        _owner: null
+      };
+    }
+    const qt = Bt();
     Object(i.render)(
-      Tt(
+      Ht(
         a.AppContainer,
         {},
         void 0,
-        Tt(
+        Ht(
           class extends n.Component {
             constructor(...e) {
               super(...e),
                 (this.state = { screen: null, screenName: null }),
                 (this.setAccountScreen = () => {
-                  this.setState({ screen: se, screenName: 'Generate Account' });
+                  this.setState({ screen: fe, screenName: 'Generate Account' });
                 }),
                 (this.setValidateScreen = () => {
                   this.setState({
-                    screen: je,
+                    screen: Ce,
                     screenName: 'Validate / Generate Address'
                   });
                 }),
                 (this.setBackupScreen = () => {
                   this.setState({
-                    screen: Le,
+                    screen: Ze,
                     screenName: 'Backup Private Key Drive'
                   });
                 }),
                 (this.setSignTransactionScreen = () => {
-                  this.setState({ screen: et, screenName: 'Sign Transaction' });
+                  this.setState({ screen: ht, screenName: 'Sign Transaction' });
                 }),
                 (this.renderMenu = () =>
-                  lt(
-                    'div',
+                  gt(
+                    n.Fragment,
                     {},
                     void 0,
-                    lt(
-                      m,
-                      { primary: !0, onClick: () => this.setAccountScreen() },
+                    gt(
+                      y,
+                      { onClick: () => this.setAccountScreen() },
                       void 0,
                       'Generate Account'
                     ),
-                    lt(
-                      m,
-                      { primary: !0, onClick: () => this.setBackupScreen() },
+                    gt(
+                      'div',
+                      { className: P.a.row },
                       void 0,
-                      'Backup Private Key Drive'
+                      gt(
+                        y,
+                        {
+                          className: P.a.rowMenu,
+                          onClick: () => this.setBackupScreen()
+                        },
+                        void 0,
+                        'Backup Private Key Drive'
+                      ),
+                      gt(
+                        y,
+                        {
+                          className: P.a.rowMenu,
+                          onClick: () => this.setValidateScreen()
+                        },
+                        void 0,
+                        'Validate / Generate Address'
+                      )
                     ),
-                    lt(
-                      m,
-                      { primary: !0, onClick: () => this.setValidateScreen() },
-                      void 0,
-                      'Validate / Generate Address'
-                    ),
-                    lt(
-                      m,
+                    gt(
+                      y,
                       {
                         primary: !0,
                         onClick: () => this.setSignTransactionScreen()
@@ -2519,41 +2391,47 @@ module.exports = (function(e) {
             }
             render() {
               let e;
+              const t = !!this.state.screen;
               return (
-                (e = this.state.screen
-                  ? lt(this.state.screen, { onCancel: this.setDefaultScreen })
+                (e = t
+                  ? gt(this.state.screen, { onCancel: this.setDefaultScreen })
                   : this.renderMenu()),
-                lt(
+                gt(
                   u.Provider,
                   { store: this.props.store },
                   void 0,
-                  lt(
+                  gt(
                     'div',
-                    { className: x.a.app },
+                    { className: c()(P.a.app, { [P.a.whiteTheme]: t }) },
                     void 0,
-                    lt(
+                    gt(
                       'div',
-                      { className: x.a.header },
+                      {
+                        className: c()({
+                          [P.a.flexHeader]: !t,
+                          [P.a.staticHeader]: t
+                        })
+                      },
                       void 0,
-                      lt(
+                      gt(
                         'div',
-                        { className: x.a.headerText },
+                        { className: P.a.headerText },
                         void 0,
-                        this.state.screenName || dt
+                        this.state.screenName || jt
                       )
                     ),
-                    lt(
+                    gt(
                       'div',
-                      { className: x.a.content },
+                      { className: P.a.content },
                       void 0,
-                      lt(nt, {}, void 0, e)
+                      gt(yt, {}, void 0, e)
                     )
                   )
                 )
               );
             }
           },
-          { store: Ot, history: Nt }
+          { store: qt, history: Ft }
         )
       ),
       document.getElementById('root')
@@ -2760,10 +2638,10 @@ module.exports = (function(e) {
       function A(e, t, r) {
         return (e = N(e)) >= t && e <= r;
       }
-      function M(e) {
+      function k(e) {
         return '[object Array]' == Object.prototype.toString.call(e);
       }
-      function E(e, t, r) {
+      function S(e, t, r) {
         for (var o, n, s = [0], i = 0, a = e.length; i < a; ) {
           for (n = s.length; n--; s[n] *= t);
           for (s[(o = 0)] += p.indexOf(e.charAt(i++)); o < s.length; o++)
@@ -2774,14 +2652,14 @@ module.exports = (function(e) {
         }
         return s.reverse();
       }
-      function k(e, t) {
+      function E(e, t) {
         return (
           (e.length > 1 ? e.charAt(0) + '.' + e.slice(1) : e) +
           (t < 0 ? 'e' : 'e+') +
           t
         );
       }
-      function S(e, t) {
+      function M(e, t) {
         var r, o;
         if (t < 0) {
           for (o = '0.'; ++t; o += '0');
@@ -2800,21 +2678,21 @@ module.exports = (function(e) {
           o,
           n,
           s,
-          I,
+          P,
           T,
-          O,
-          D = 0,
-          P = Q.prototype,
-          R = new Q(1),
-          L = 20,
-          C = 4,
+          I,
+          O = 0,
+          R = J.prototype,
+          L = new J(1),
+          C = 20,
+          D = 4,
           B = -7,
           F = 21,
           U = -1e7,
-          z = 1e7,
-          H = !0,
-          G = Z,
-          q = !1,
+          H = 1e7,
+          q = !0,
+          G = Y,
+          z = !1,
           W = 1,
           V = 100,
           K = {
@@ -2825,7 +2703,7 @@ module.exports = (function(e) {
             fractionGroupSeparator: ' ',
             fractionGroupSize: 0
           };
-        function Q(e, t) {
+        function J(e, t) {
           var r,
             o,
             n,
@@ -2833,11 +2711,11 @@ module.exports = (function(e) {
             i,
             l,
             c = this;
-          if (!(c instanceof Q))
-            return H && ee(26, 'constructor call without new', e), new Q(e, t);
-          if (null != t && G(t, 2, 64, D, 'base')) {
+          if (!(c instanceof J))
+            return q && ee(26, 'constructor call without new', e), new J(e, t);
+          if (null != t && G(t, 2, 64, O, 'base')) {
             if (((l = e + ''), 10 == (t |= 0)))
-              return te((c = new Q(e instanceof Q ? e : l)), L + c.e + 1, C);
+              return te((c = new J(e instanceof J ? e : l)), C + c.e + 1, D);
             if (
               ((s = 'number' == typeof e) && 0 * e != 0) ||
               !new RegExp(
@@ -2848,22 +2726,22 @@ module.exports = (function(e) {
               return a(c, l, s, t);
             s
               ? ((c.s = 1 / e < 0 ? ((l = l.slice(1)), -1) : 1),
-                H && l.replace(/^0\.0*|\./, '').length > 15 && ee(D, h, e),
+                q && l.replace(/^0\.0*|\./, '').length > 15 && ee(O, h, e),
                 (s = !1))
               : (c.s = 45 === l.charCodeAt(0) ? ((l = l.slice(1)), -1) : 1),
-              (l = Y(l, 10, t, c.s));
+              (l = X(l, 10, t, c.s));
           } else {
-            if (e instanceof Q)
+            if (e instanceof J)
               return (
                 (c.s = e.s),
                 (c.e = e.e),
                 (c.c = (e = e.c) ? e.slice() : e),
-                void (D = 0)
+                void (O = 0)
               );
             if ((s = 'number' == typeof e) && 0 * e == 0) {
               if (((c.s = 1 / e < 0 ? ((e = -e), -1) : 1), e === ~~e)) {
                 for (o = 0, n = e; n >= 10; n /= 10, o++);
-                return (c.e = o), (c.c = [e]), void (D = 0);
+                return (c.e = o), (c.c = [e]), void (O = 0);
               }
               l = e + '';
             } else {
@@ -2886,8 +2764,8 @@ module.exports = (function(e) {
           if ((l = l.slice(n, i + 1)))
             if (
               ((i = l.length),
-              s && H && i > 15 && ee(D, h, c.s * e),
-              (o = o - n - 1) > z)
+              s && q && i > 15 && ee(O, h, c.s * e),
+              (o = o - n - 1) > H)
             )
               c.c = c.e = null;
             else if (o < U) c.c = [(c.e = 0)];
@@ -2907,9 +2785,9 @@ module.exports = (function(e) {
               c.c.push(+l);
             }
           else c.c = [(c.e = 0)];
-          D = 0;
+          O = 0;
         }
-        function Y(e, t, o, n) {
+        function X(e, t, o, n) {
           var s,
             i,
             a,
@@ -2918,19 +2796,19 @@ module.exports = (function(e) {
             c,
             d,
             f = e.indexOf('.'),
-            h = L,
-            m = C;
+            h = C,
+            m = D;
           for (
             o < 37 && (e = e.toLowerCase()),
               f >= 0 &&
                 ((a = V),
                 (V = 0),
                 (e = e.replace('.', '')),
-                (l = (d = new Q(o)).pow(e.length - f)),
+                (l = (d = new J(o)).pow(e.length - f)),
                 (V = a),
-                (d.c = E(S(w(l.c), l.e), 10, t)),
+                (d.c = S(M(w(l.c), l.e), 10, t)),
                 (d.e = d.c.length)),
-              i = a = (c = E(e, o, t)).length;
+              i = a = (c = S(e, o, t)).length;
             0 == c[--a];
             c.pop()
           );
@@ -2958,42 +2836,42 @@ module.exports = (function(e) {
                       m == (l.s < 0 ? 8 : 7)))),
             s < 1 || !c[0])
           )
-            e = u ? S('1', -h) : '0';
+            e = u ? M('1', -h) : '0';
           else {
             if (((c.length = s), u))
               for (--t; ++c[--s] > t; ) (c[s] = 0), s || (++i, c.unshift(1));
             for (a = c.length; !c[--a]; );
             for (f = 0, e = ''; f <= a; e += p.charAt(c[f++]));
-            e = S(e, i);
+            e = M(e, i);
           }
           return e;
         }
-        function J(e, t, r, o) {
+        function Z(e, t, r, o) {
           var n, s, i, a, u;
-          if (((r = null != r && G(r, 0, 8, o, f) ? 0 | r : C), !e.c))
+          if (((r = null != r && G(r, 0, 8, o, f) ? 0 | r : D), !e.c))
             return e.toString();
           if (((n = e.c[0]), (i = e.e), null == t))
             (u = w(e.c)),
-              (u = 19 == o || (24 == o && i <= B) ? k(u, i) : S(u, i));
+              (u = 19 == o || (24 == o && i <= B) ? E(u, i) : M(u, i));
           else if (
-            ((s = (e = te(new Q(e), t, r)).e),
+            ((s = (e = te(new J(e), t, r)).e),
             (a = (u = w(e.c)).length),
             19 == o || (24 == o && (t <= s || s <= B)))
           ) {
             for (; a < t; u += '0', a++);
-            u = k(u, s);
-          } else if (((t -= i), (u = S(u, s)), s + 1 > a)) {
+            u = E(u, s);
+          } else if (((t -= i), (u = M(u, s)), s + 1 > a)) {
             if (--t > 0) for (u += '.'; t--; u += '0');
           } else if ((t += s - a) > 0)
             for (s + 1 == a && (u += '.'); t--; u += '0');
           return e.s < 0 && n ? '-' + u : u;
         }
-        function X(e, t) {
+        function $(e, t) {
           var r,
             o,
             n = 0;
-          for (M(e[0]) && (e = e[0]), r = new Q(e[0]); ++n < e.length; ) {
-            if (!(o = new Q(e[n])).s) {
+          for (k(e[0]) && (e = e[0]), r = new J(e[0]); ++n < e.length; ) {
+            if (!(o = new J(e[n])).s) {
               r = o;
               break;
             }
@@ -3001,7 +2879,7 @@ module.exports = (function(e) {
           }
           return r;
         }
-        function Z(e, t, r, o, n) {
+        function Y(e, t, r, o, n) {
           return (
             (e < t || e > r || e != N(e)) &&
               ee(
@@ -3013,11 +2891,11 @@ module.exports = (function(e) {
             !0
           );
         }
-        function $(e, t, r) {
+        function Q(e, t, r) {
           for (var o = 1, n = t.length; !t[--n]; t.pop());
           for (n = t[0]; n >= 10; n /= 10, o++);
           return (
-            (r = o + r * _ - 1) > z
+            (r = o + r * _ - 1) > H
               ? (e.c = e.e = null)
               : r < U
               ? (e.c = [(e.e = 0)])
@@ -3061,7 +2939,7 @@ module.exports = (function(e) {
               ': ' +
               r
           );
-          throw ((o.name = 'BigNumber Error'), (D = 0), o);
+          throw ((o.name = 'BigNumber Error'), (O = 0), o);
         }
         function te(e, t, r, o) {
           var n,
@@ -3136,23 +3014,23 @@ module.exports = (function(e) {
                 }
               for (s = h.length; 0 === h[--s]; h.pop());
             }
-            e.e > z ? (e.c = e.e = null) : e.e < U && (e.c = [(e.e = 0)]);
+            e.e > H ? (e.c = e.e = null) : e.e < U && (e.c = [(e.e = 0)]);
           }
           return e;
         }
         return (
-          (Q.another = e),
-          (Q.ROUND_UP = 0),
-          (Q.ROUND_DOWN = 1),
-          (Q.ROUND_CEIL = 2),
-          (Q.ROUND_FLOOR = 3),
-          (Q.ROUND_HALF_UP = 4),
-          (Q.ROUND_HALF_DOWN = 5),
-          (Q.ROUND_HALF_EVEN = 6),
-          (Q.ROUND_HALF_CEIL = 7),
-          (Q.ROUND_HALF_FLOOR = 8),
-          (Q.EUCLID = 9),
-          (Q.config = function() {
+          (J.another = e),
+          (J.ROUND_UP = 0),
+          (J.ROUND_DOWN = 1),
+          (J.ROUND_CEIL = 2),
+          (J.ROUND_FLOOR = 3),
+          (J.ROUND_HALF_UP = 4),
+          (J.ROUND_HALF_DOWN = 5),
+          (J.ROUND_HALF_EVEN = 6),
+          (J.ROUND_HALF_CEIL = 7),
+          (J.ROUND_HALF_FLOOR = 8),
+          (J.EUCLID = 9),
+          (J.config = function() {
             var e,
               t,
               r = 0,
@@ -3168,38 +3046,38 @@ module.exports = (function(e) {
                       if (n.length > r) return null != (e = n[r++]);
                     };
             return (
-              a((t = 'DECIMAL_PLACES')) && G(e, 0, b, 2, t) && (L = 0 | e),
-              (o[t] = L),
-              a((t = 'ROUNDING_MODE')) && G(e, 0, 8, 2, t) && (C = 0 | e),
+              a((t = 'DECIMAL_PLACES')) && G(e, 0, b, 2, t) && (C = 0 | e),
               (o[t] = C),
+              a((t = 'ROUNDING_MODE')) && G(e, 0, 8, 2, t) && (D = 0 | e),
+              (o[t] = D),
               a((t = 'EXPONENTIAL_AT')) &&
-                (M(e)
+                (k(e)
                   ? G(e[0], -b, 0, 2, t) &&
                     G(e[1], 0, b, 2, t) &&
                     ((B = 0 | e[0]), (F = 0 | e[1]))
                   : G(e, -b, b, 2, t) && (B = -(F = 0 | (e < 0 ? -e : e)))),
               (o[t] = [B, F]),
               a((t = 'RANGE')) &&
-                (M(e)
+                (k(e)
                   ? G(e[0], -b, -1, 2, t) &&
                     G(e[1], 1, b, 2, t) &&
-                    ((U = 0 | e[0]), (z = 0 | e[1]))
+                    ((U = 0 | e[0]), (H = 0 | e[1]))
                   : G(e, -b, b, 2, t) &&
                     (0 | e
-                      ? (U = -(z = 0 | (e < 0 ? -e : e)))
-                      : H && ee(2, t + ' cannot be zero', e))),
-              (o[t] = [U, z]),
+                      ? (U = -(H = 0 | (e < 0 ? -e : e)))
+                      : q && ee(2, t + ' cannot be zero', e))),
+              (o[t] = [U, H]),
               a((t = 'ERRORS')) &&
                 (e === !!e || 1 === e || 0 === e
-                  ? ((D = 0), (G = (H = !!e) ? Z : A))
-                  : H && ee(2, t + d, e)),
-              (o[t] = H),
+                  ? ((O = 0), (G = (q = !!e) ? Y : A))
+                  : q && ee(2, t + d, e)),
+              (o[t] = q),
               a((t = 'CRYPTO')) &&
                 (e === !!e || 1 === e || 0 === e
-                  ? ((q = !(!e || !i || 'object' != typeof i)),
-                    e && !q && H && ee(2, 'crypto unavailable', i))
-                  : H && ee(2, t + d, e)),
-              (o[t] = q),
+                  ? ((z = !(!e || !i || 'object' != typeof i)),
+                    e && !z && q && ee(2, 'crypto unavailable', i))
+                  : q && ee(2, t + d, e)),
+              (o[t] = z),
               a((t = 'MODULO_MODE')) && G(e, 0, 9, 2, t) && (W = 0 | e),
               (o[t] = W),
               a((t = 'POW_PRECISION')) && G(e, 0, b, 2, t) && (V = 0 | e),
@@ -3207,18 +3085,18 @@ module.exports = (function(e) {
               a((t = 'FORMAT')) &&
                 ('object' == typeof e
                   ? (K = e)
-                  : H && ee(2, t + ' not an object', e)),
+                  : q && ee(2, t + ' not an object', e)),
               (o[t] = K),
               o
             );
           }),
-          (Q.max = function() {
-            return X(arguments, P.lt);
+          (J.max = function() {
+            return $(arguments, R.lt);
           }),
-          (Q.min = function() {
-            return X(arguments, P.gt);
+          (J.min = function() {
+            return $(arguments, R.gt);
           }),
-          (Q.random = ((o =
+          (J.random = ((o =
             (9007199254740992 * Math.random()) & 2097151
               ? function() {
                   return c(9007199254740992 * Math.random());
@@ -3237,9 +3115,9 @@ module.exports = (function(e) {
               a,
               u = 0,
               d = [],
-              f = new Q(R);
+              f = new J(L);
             if (
-              ((e = null != e && G(e, 0, b, 14) ? 0 | e : L), (s = l(e / _)), q)
+              ((e = null != e && G(e, 0, b, 14) ? 0 | e : C), (s = l(e / _)), z)
             )
               if (i && i.getRandomValues) {
                 for (t = i.getRandomValues(new Uint32Array((s *= 2))); u < s; )
@@ -3262,7 +3140,7 @@ module.exports = (function(e) {
                     ? i.randomBytes(7).copy(t, u)
                     : (d.push(a % 1e14), (u += 7));
                 u = s / 7;
-              } else H && ee(14, 'crypto unavailable', i);
+              } else q && ee(14, 'crypto unavailable', i);
             if (!u) for (; u < s; ) (a = o()) < 9e15 && (d[u++] = a % 1e14);
             for (
               s = d[--u],
@@ -3334,54 +3212,54 @@ module.exports = (function(e) {
                 w,
                 x,
                 A,
-                M,
-                E,
                 k,
                 S,
+                E,
+                M,
                 N = o.s == n.s ? 1 : -1,
-                I = o.c,
+                P = o.c,
                 T = n.c;
-              if (!(I && I[0] && T && T[0]))
-                return new Q(
-                  o.s && n.s && (I ? !T || I[0] != T[0] : T)
-                    ? (I && 0 == I[0]) || !T
+              if (!(P && P[0] && T && T[0]))
+                return new J(
+                  o.s && n.s && (P ? !T || P[0] != T[0] : T)
+                    ? (P && 0 == P[0]) || !T
                       ? 0 * N
                       : N / 0
                     : NaN
                 );
               for (
-                g = (v = new Q(N)).c = [],
+                g = (v = new J(N)).c = [],
                   N = s + (l = o.e - n.e) + 1,
                   a ||
                     ((a = m), (l = j(o.e / _) - j(n.e / _)), (N = (N / _) | 0)),
                   d = 0;
-                T[d] == (I[d] || 0);
+                T[d] == (P[d] || 0);
                 d++
               );
-              if ((T[d] > (I[d] || 0) && l--, N < 0)) g.push(1), (f = !0);
+              if ((T[d] > (P[d] || 0) && l--, N < 0)) g.push(1), (f = !0);
               else {
                 for (
-                  M = I.length,
-                    k = T.length,
+                  k = P.length,
+                    E = T.length,
                     d = 0,
                     N += 2,
                     (h = c(a / (T[0] + 1))) > 1 &&
                       ((T = e(T, h, a)),
-                      (I = e(I, h, a)),
-                      (k = T.length),
-                      (M = I.length)),
-                    A = k,
-                    w = (b = I.slice(0, k)).length;
-                  w < k;
+                      (P = e(P, h, a)),
+                      (E = T.length),
+                      (k = P.length)),
+                    A = E,
+                    w = (b = P.slice(0, E)).length;
+                  w < E;
                   b[w++] = 0
                 );
-                (S = T.slice()).unshift(0), (E = T[0]), T[1] >= a / 2 && E++;
+                (M = T.slice()).unshift(0), (S = T[0]), T[1] >= a / 2 && S++;
                 do {
-                  if (((h = 0), (u = t(T, b, k, w)) < 0)) {
+                  if (((h = 0), (u = t(T, b, E, w)) < 0)) {
                     if (
                       ((x = b[0]),
-                      k != w && (x = x * a + (b[1] || 0)),
-                      (h = c(x / E)) > 1)
+                      E != w && (x = x * a + (b[1] || 0)),
+                      (h = c(x / S)) > 1)
                     )
                       for (
                         h >= a && (h = a - 1),
@@ -3390,7 +3268,7 @@ module.exports = (function(e) {
                         1 == t(p, b, y, w);
 
                       )
-                        h--, r(p, k < y ? S : T, y, a), (y = p.length), (u = 1);
+                        h--, r(p, E < y ? M : T, y, a), (y = p.length), (u = 1);
                     else 0 == h && (u = h = 1), (y = (p = T.slice()).length);
                     if (
                       (y < w && p.unshift(0),
@@ -3398,12 +3276,12 @@ module.exports = (function(e) {
                       (w = b.length),
                       -1 == u)
                     )
-                      for (; t(T, b, k, w) < 1; )
-                        h++, r(b, k < w ? S : T, w, a), (w = b.length);
+                      for (; t(T, b, E, w) < 1; )
+                        h++, r(b, E < w ? M : T, w, a), (w = b.length);
                   } else 0 === u && (h++, (b = [0]));
                   (g[d++] = h),
-                    b[0] ? (b[w++] = I[A] || 0) : ((b = [I[A]]), (w = 1));
-                } while ((A++ < M || null != b[0]) && N--);
+                    b[0] ? (b[w++] = P[A] || 0) : ((b = [P[A]]), (w = 1));
+                } while ((A++ < k || null != b[0]) && N--);
                 (f = null != b[0]), g[0] || g.shift();
               }
               if (a == m) {
@@ -3415,12 +3293,12 @@ module.exports = (function(e) {
           })()),
           (n = /^(-?)0([xbo])/i),
           (s = /^([^.]+)\.$/),
-          (I = /^\.([^.]+)$/),
+          (P = /^\.([^.]+)$/),
           (T = /^-?(Infinity|NaN)$/),
-          (O = /^\s*\+|^\s+|\s+$/g),
+          (I = /^\s*\+|^\s+|\s+$/g),
           (a = function(e, t, r, o) {
             var i,
-              a = r ? t : t.replace(O, '');
+              a = r ? t : t.replace(I, '');
             if (T.test(a)) e.s = isNaN(a) ? null : a < 0 ? -1 : 1;
             else {
               if (
@@ -3431,26 +3309,26 @@ module.exports = (function(e) {
                     o && o != i ? e : t
                   );
                 })),
-                o && ((i = o), (a = a.replace(s, '$1').replace(I, '0.$1'))),
+                o && ((i = o), (a = a.replace(s, '$1').replace(P, '0.$1'))),
                 t != a)
               )
-                return new Q(a, i);
-              H && ee(D, 'not a' + (o ? ' base ' + o : '') + ' number', t),
+                return new J(a, i);
+              q && ee(O, 'not a' + (o ? ' base ' + o : '') + ' number', t),
                 (e.s = null);
             }
-            (e.c = e.e = null), (D = 0);
+            (e.c = e.e = null), (O = 0);
           }),
-          (P.absoluteValue = P.abs = function() {
-            var e = new Q(this);
+          (R.absoluteValue = R.abs = function() {
+            var e = new J(this);
             return e.s < 0 && (e.s = 1), e;
           }),
-          (P.ceil = function() {
-            return te(new Q(this), this.e + 1, 2);
+          (R.ceil = function() {
+            return te(new J(this), this.e + 1, 2);
           }),
-          (P.comparedTo = P.cmp = function(e, t) {
-            return (D = 1), x(this, new Q(e, t));
+          (R.comparedTo = R.cmp = function(e, t) {
+            return (O = 1), x(this, new J(e, t));
           }),
-          (P.decimalPlaces = P.dp = function() {
+          (R.decimalPlaces = R.dp = function() {
             var e,
               t,
               r = this.c;
@@ -3459,65 +3337,65 @@ module.exports = (function(e) {
               for (; t % 10 == 0; t /= 10, e--);
             return e < 0 && (e = 0), e;
           }),
-          (P.dividedBy = P.div = function(e, t) {
-            return (D = 3), r(this, new Q(e, t), L, C);
+          (R.dividedBy = R.div = function(e, t) {
+            return (O = 3), r(this, new J(e, t), C, D);
           }),
-          (P.dividedToIntegerBy = P.divToInt = function(e, t) {
-            return (D = 4), r(this, new Q(e, t), 0, 1);
+          (R.dividedToIntegerBy = R.divToInt = function(e, t) {
+            return (O = 4), r(this, new J(e, t), 0, 1);
           }),
-          (P.equals = P.eq = function(e, t) {
-            return (D = 5), 0 === x(this, new Q(e, t));
+          (R.equals = R.eq = function(e, t) {
+            return (O = 5), 0 === x(this, new J(e, t));
           }),
-          (P.floor = function() {
-            return te(new Q(this), this.e + 1, 3);
+          (R.floor = function() {
+            return te(new J(this), this.e + 1, 3);
           }),
-          (P.greaterThan = P.gt = function(e, t) {
-            return (D = 6), x(this, new Q(e, t)) > 0;
+          (R.greaterThan = R.gt = function(e, t) {
+            return (O = 6), x(this, new J(e, t)) > 0;
           }),
-          (P.greaterThanOrEqualTo = P.gte = function(e, t) {
-            return (D = 7), 1 === (t = x(this, new Q(e, t))) || 0 === t;
+          (R.greaterThanOrEqualTo = R.gte = function(e, t) {
+            return (O = 7), 1 === (t = x(this, new J(e, t))) || 0 === t;
           }),
-          (P.isFinite = function() {
+          (R.isFinite = function() {
             return !!this.c;
           }),
-          (P.isInteger = P.isInt = function() {
+          (R.isInteger = R.isInt = function() {
             return !!this.c && j(this.e / _) > this.c.length - 2;
           }),
-          (P.isNaN = function() {
+          (R.isNaN = function() {
             return !this.s;
           }),
-          (P.isNegative = P.isNeg = function() {
+          (R.isNegative = R.isNeg = function() {
             return this.s < 0;
           }),
-          (P.isZero = function() {
+          (R.isZero = function() {
             return !!this.c && 0 == this.c[0];
           }),
-          (P.lessThan = P.lt = function(e, t) {
-            return (D = 8), x(this, new Q(e, t)) < 0;
+          (R.lessThan = R.lt = function(e, t) {
+            return (O = 8), x(this, new J(e, t)) < 0;
           }),
-          (P.lessThanOrEqualTo = P.lte = function(e, t) {
-            return (D = 9), -1 === (t = x(this, new Q(e, t))) || 0 === t;
+          (R.lessThanOrEqualTo = R.lte = function(e, t) {
+            return (O = 9), -1 === (t = x(this, new J(e, t))) || 0 === t;
           }),
-          (P.minus = P.sub = function(e, t) {
+          (R.minus = R.sub = function(e, t) {
             var r,
               o,
               n,
               s,
               i = this,
               a = i.s;
-            if (((D = 10), (t = (e = new Q(e, t)).s), !a || !t))
-              return new Q(NaN);
+            if (((O = 10), (t = (e = new J(e, t)).s), !a || !t))
+              return new J(NaN);
             if (a != t) return (e.s = -t), i.plus(e);
             var u = i.e / _,
               l = e.e / _,
               c = i.c,
               d = e.c;
             if (!u || !l) {
-              if (!c || !d) return c ? ((e.s = -t), e) : new Q(d ? i : NaN);
+              if (!c || !d) return c ? ((e.s = -t), e) : new J(d ? i : NaN);
               if (!c[0] || !d[0])
                 return d[0]
                   ? ((e.s = -t), e)
-                  : new Q(c[0] ? i : 3 == C ? -0 : 0);
+                  : new J(c[0] ? i : 3 == D ? -0 : 0);
             }
             if (((u = j(u)), (l = j(l)), (c = c.slice()), (a = u - l))) {
               for (
@@ -3552,20 +3430,20 @@ module.exports = (function(e) {
             }
             for (; 0 == c[0]; c.shift(), --l);
             return c[0]
-              ? $(e, c, l)
-              : ((e.s = 3 == C ? -1 : 1), (e.c = [(e.e = 0)]), e);
+              ? Q(e, c, l)
+              : ((e.s = 3 == D ? -1 : 1), (e.c = [(e.e = 0)]), e);
           }),
-          (P.modulo = P.mod = function(e, t) {
+          (R.modulo = R.mod = function(e, t) {
             var o,
               n,
               s = this;
             return (
-              (D = 11),
-              (e = new Q(e, t)),
+              (O = 11),
+              (e = new J(e, t)),
               !s.c || !e.s || (e.c && !e.c[0])
-                ? new Q(NaN)
+                ? new J(NaN)
                 : !e.c || (s.c && !s.c[0])
-                ? new Q(s)
+                ? new J(s)
                 : (9 == W
                     ? ((n = e.s),
                       (e.s = 1),
@@ -3576,24 +3454,24 @@ module.exports = (function(e) {
                   s.minus(o.times(e)))
             );
           }),
-          (P.negated = P.neg = function() {
-            var e = new Q(this);
+          (R.negated = R.neg = function() {
+            var e = new J(this);
             return (e.s = -e.s || null), e;
           }),
-          (P.plus = P.add = function(e, t) {
+          (R.plus = R.add = function(e, t) {
             var r,
               o = this,
               n = o.s;
-            if (((D = 12), (t = (e = new Q(e, t)).s), !n || !t))
-              return new Q(NaN);
+            if (((O = 12), (t = (e = new J(e, t)).s), !n || !t))
+              return new J(NaN);
             if (n != t) return (e.s = -t), o.minus(e);
             var s = o.e / _,
               i = e.e / _,
               a = o.c,
               u = e.c;
             if (!s || !i) {
-              if (!a || !u) return new Q(n / 0);
-              if (!a[0] || !u[0]) return u[0] ? e : new Q(a[0] ? o : 0 * n);
+              if (!a || !u) return new J(n / 0);
+              if (!a[0] || !u[0]) return u[0] ? e : new J(a[0] ? o : 0 * n);
             }
             if (((s = j(s)), (i = j(i)), (a = a.slice()), (n = s - i))) {
               for (
@@ -3611,9 +3489,9 @@ module.exports = (function(e) {
 
             )
               (n = ((a[--t] = a[t] + u[t] + n) / m) | 0), (a[t] %= m);
-            return n && (a.unshift(n), ++i), $(e, a, i);
+            return n && (a.unshift(n), ++i), Q(e, a, i);
           }),
-          (P.precision = P.sd = function(e) {
+          (R.precision = R.sd = function(e) {
             var t,
               r,
               o = this,
@@ -3623,7 +3501,7 @@ module.exports = (function(e) {
                 e !== !!e &&
                 1 !== e &&
                 0 !== e &&
-                (H && ee(13, 'argument' + d, e), e != !!e && (e = null)),
+                (q && ee(13, 'argument' + d, e), e != !!e && (e = null)),
               !n)
             )
               return null;
@@ -3633,29 +3511,29 @@ module.exports = (function(e) {
             }
             return e && o.e + 1 > t && (t = o.e + 1), t;
           }),
-          (P.round = function(e, t) {
-            var r = new Q(this);
+          (R.round = function(e, t) {
+            var r = new J(this);
             return (
               (null == e || G(e, 0, b, 15)) &&
                 te(
                   r,
                   ~~e + this.e + 1,
-                  null != t && G(t, 0, 8, 15, f) ? 0 | t : C
+                  null != t && G(t, 0, 8, 15, f) ? 0 | t : D
                 ),
               r
             );
           }),
-          (P.shift = function(e) {
+          (R.shift = function(e) {
             var t = this;
             return G(e, -y, y, 16, 'argument')
               ? t.times('1e' + N(e))
-              : new Q(
+              : new J(
                   t.c && t.c[0] && (e < -y || e > y)
                     ? t.s * (e < 0 ? 0 : 1 / 0)
                     : t
                 );
           }),
-          (P.squareRoot = P.sqrt = function() {
+          (R.squareRoot = R.sqrt = function() {
             var e,
               t,
               o,
@@ -3665,23 +3543,23 @@ module.exports = (function(e) {
               a = i.c,
               u = i.s,
               l = i.e,
-              c = L + 4,
-              d = new Q('0.5');
+              c = C + 4,
+              d = new J('0.5');
             if (1 !== u || !a || !a[0])
-              return new Q(!u || (u < 0 && (!a || a[0])) ? NaN : a ? i : 1 / 0);
+              return new J(!u || (u < 0 && (!a || a[0])) ? NaN : a ? i : 1 / 0);
             if (
               (0 == (u = Math.sqrt(+i)) || u == 1 / 0
                 ? (((t = w(a)).length + l) % 2 == 0 && (t += '0'),
                   (u = Math.sqrt(t)),
                   (l = j((l + 1) / 2) - (l < 0 || l % 2)),
-                  (o = new Q(
+                  (o = new J(
                     (t =
                       u == 1 / 0
                         ? '1e' + l
                         : (t = u.toExponential()).slice(0, t.indexOf('e') + 1) +
                           l)
                   )))
-                : (o = new Q(u + '')),
+                : (o = new J(u + '')),
               o.c[0])
             )
               for ((u = (l = o.e) + c) < 3 && (u = 0); ; )
@@ -3695,18 +3573,18 @@ module.exports = (function(e) {
                     '9999' != (t = t.slice(u - 3, u + 1)) && (n || '4999' != t))
                   ) {
                     (+t && (+t.slice(1) || '5' != t.charAt(0))) ||
-                      (te(o, o.e + L + 2, 1), (e = !o.times(o).eq(i)));
+                      (te(o, o.e + C + 2, 1), (e = !o.times(o).eq(i)));
                     break;
                   }
-                  if (!n && (te(s, s.e + L + 2, 0), s.times(s).eq(i))) {
+                  if (!n && (te(s, s.e + C + 2, 0), s.times(s).eq(i))) {
                     o = s;
                     break;
                   }
                   (c += 4), (u += 4), (n = 1);
                 }
-            return te(o, o.e + L + 1, C, e);
+            return te(o, o.e + C + 1, D, e);
           }),
-          (P.times = P.mul = function(e, t) {
+          (R.times = R.mul = function(e, t) {
             var r,
               o,
               n,
@@ -3724,7 +3602,7 @@ module.exports = (function(e) {
               v,
               b = this,
               w = b.c,
-              x = ((D = 17), (e = new Q(e, t))).c;
+              x = ((O = 17), (e = new J(e, t))).c;
             if (!(w && x && w[0] && x[0]))
               return (
                 !b.s || !e.s || (w && !w[0] && !x) || (x && !x[0] && !w)
@@ -3762,29 +3640,29 @@ module.exports = (function(e) {
                   (p[s--] = l % y);
               p[s] = r;
             }
-            return r ? ++o : p.shift(), $(e, p, o);
+            return r ? ++o : p.shift(), Q(e, p, o);
           }),
-          (P.toDigits = function(e, t) {
-            var r = new Q(this);
+          (R.toDigits = function(e, t) {
+            var r = new J(this);
             return (
               (e = null != e && G(e, 1, b, 18, 'precision') ? 0 | e : null),
-              (t = null != t && G(t, 0, 8, 18, f) ? 0 | t : C),
+              (t = null != t && G(t, 0, 8, 18, f) ? 0 | t : D),
               e ? te(r, e, t) : r
             );
           }),
-          (P.toExponential = function(e, t) {
-            return J(this, null != e && G(e, 0, b, 19) ? 1 + ~~e : null, t, 19);
+          (R.toExponential = function(e, t) {
+            return Z(this, null != e && G(e, 0, b, 19) ? 1 + ~~e : null, t, 19);
           }),
-          (P.toFixed = function(e, t) {
-            return J(
+          (R.toFixed = function(e, t) {
+            return Z(
               this,
               null != e && G(e, 0, b, 20) ? ~~e + this.e + 1 : null,
               t,
               20
             );
           }),
-          (P.toFormat = function(e, t) {
-            var r = J(
+          (R.toFormat = function(e, t) {
+            var r = Z(
               this,
               null != e && G(e, 0, b, 21) ? ~~e + this.e + 1 : null,
               t,
@@ -3821,7 +3699,7 @@ module.exports = (function(e) {
             }
             return r;
           }),
-          (P.toFraction = function(e) {
+          (R.toFraction = function(e) {
             var t,
               o,
               n,
@@ -3831,26 +3709,26 @@ module.exports = (function(e) {
               u,
               l,
               c,
-              d = H,
+              d = q,
               f = this,
               h = f.c,
-              p = new Q(R),
-              m = (o = new Q(R)),
-              y = (u = new Q(R));
+              p = new J(L),
+              m = (o = new J(L)),
+              y = (u = new J(L));
             if (
               (null != e &&
-                ((H = !1),
-                (a = new Q(e)),
-                (H = d),
-                ((d = a.isInt()) && !a.lt(R)) ||
-                  (H &&
+                ((q = !1),
+                (a = new J(e)),
+                (q = d),
+                ((d = a.isInt()) && !a.lt(L)) ||
+                  (q &&
                     ee(
                       22,
                       'max denominator ' +
                         (d ? 'out of range' : 'not an integer'),
                       e
                     ),
-                  (e = !d && a.c && te(a, a.e + 1, 1).gte(R) ? a : null))),
+                  (e = !d && a.c && te(a, a.e + 1, 1).gte(L) ? a : null))),
               !h)
             )
               return f.toString();
@@ -3859,9 +3737,9 @@ module.exports = (function(e) {
                 s = p.e = c.length - f.e - 1,
                 p.c[0] = v[(i = s % _) < 0 ? _ + i : i],
                 e = !e || a.cmp(p) > 0 ? (s > 0 ? p : m) : a,
-                i = z,
-                z = 1 / 0,
-                a = new Q(c),
+                i = H,
+                H = 1 / 0,
+                a = new J(c),
                 u.c[0] = 0;
               (l = r(a, p, 0, 1)), 1 != (n = o.plus(l.times(y))).cmp(e);
 
@@ -3878,25 +3756,25 @@ module.exports = (function(e) {
               (o = o.plus(n.times(y))),
               (u.s = m.s = f.s),
               (t =
-                r(m, y, (s *= 2), C)
+                r(m, y, (s *= 2), D)
                   .minus(f)
                   .abs()
                   .cmp(
-                    r(u, o, s, C)
+                    r(u, o, s, D)
                       .minus(f)
                       .abs()
                   ) < 1
                   ? [m.toString(), y.toString()]
                   : [u.toString(), o.toString()]),
-              (z = i),
+              (H = i),
               t
             );
           }),
-          (P.toNumber = function() {
+          (R.toNumber = function() {
             var e = this;
             return +e || (e.s ? 0 * e.s : NaN);
           }),
-          (P.toPower = P.pow = function(e) {
+          (R.toPower = R.pow = function(e) {
             var t,
               r,
               o = c(e < 0 ? -e : +e),
@@ -3907,8 +3785,8 @@ module.exports = (function(e) {
                 (o > y && (e /= 0)) ||
                 (parseFloat(e) != e && !(e = NaN)))
             )
-              return new Q(Math.pow(+n, e));
-            for (t = V ? l(V / _ + 2) : 0, r = new Q(R); ; ) {
+              return new J(Math.pow(+n, e));
+            for (t = V ? l(V / _ + 2) : 0, r = new J(L); ; ) {
               if (o % 2) {
                 if (!(r = r.times(n)).c) break;
                 t && r.c.length > t && (r.c.length = t);
@@ -3916,17 +3794,17 @@ module.exports = (function(e) {
               if (!(o = c(o / 2))) break;
               (n = n.times(n)), t && n.c && n.c.length > t && (n.c.length = t);
             }
-            return e < 0 && (r = R.div(r)), t ? te(r, V, C) : r;
+            return e < 0 && (r = L.div(r)), t ? te(r, V, D) : r;
           }),
-          (P.toPrecision = function(e, t) {
-            return J(
+          (R.toPrecision = function(e, t) {
+            return Z(
               this,
               null != e && G(e, 1, b, 24, 'precision') ? 0 | e : null,
               t,
               24
             );
           }),
-          (P.toString = function(e) {
+          (R.toString = function(e) {
             var t,
               r = this,
               o = r.s,
@@ -3939,22 +3817,22 @@ module.exports = (function(e) {
                 : ((t = w(r.c)),
                   (t =
                     null != e && G(e, 2, 64, 25, 'base')
-                      ? Y(S(t, n), 0 | e, 10, o)
+                      ? X(M(t, n), 0 | e, 10, o)
                       : n <= B || n >= F
-                      ? k(t, n)
-                      : S(t, n)),
+                      ? E(t, n)
+                      : M(t, n)),
                   o < 0 && r.c[0] && (t = '-' + t)),
               t
             );
           }),
-          (P.truncated = P.trunc = function() {
-            return te(new Q(this), this.e + 1, 1);
+          (R.truncated = R.trunc = function() {
+            return te(new J(this), this.e + 1, 1);
           }),
-          (P.valueOf = P.toJSON = function() {
+          (R.valueOf = R.toJSON = function() {
             return this.toString();
           }),
-          null != t && Q.config(t),
-          Q
+          null != t && J.config(t),
+          J
         );
       })()),
         void 0 ===
@@ -7516,20 +7394,20 @@ module.exports = (function(e) {
           (c.awrap = function(e) {
             return { __await: e };
           }),
-          M(E.prototype),
-          (E.prototype[a] = function() {
+          k(S.prototype),
+          (S.prototype[a] = function() {
             return this;
           }),
-          (c.AsyncIterator = E),
+          (c.AsyncIterator = S),
           (c.async = function(e, t, r, o) {
-            var n = new E(b(e, t, r, o));
+            var n = new S(b(e, t, r, o));
             return c.isGeneratorFunction(t)
               ? n
               : n.next().then(function(e) {
                   return e.done ? e.value : n.next();
                 });
           }),
-          M(g),
+          k(g),
           (g[u] = 'Generator'),
           (g[i] = function() {
             return this;
@@ -7552,8 +7430,8 @@ module.exports = (function(e) {
             );
           }),
           (c.values = T),
-          (I.prototype = {
-            constructor: I,
+          (P.prototype = {
+            constructor: P,
             reset: function(e) {
               if (
                 ((this.prev = 0),
@@ -7682,7 +7560,7 @@ module.exports = (function(e) {
       function b(e, t, r, o) {
         var n = t && t.prototype instanceof w ? t : w,
           s = Object.create(n.prototype),
-          i = new I(o || []);
+          i = new P(o || []);
         return (
           (s._invoke = (function(e, t, r) {
             var o = d;
@@ -7690,12 +7568,12 @@ module.exports = (function(e) {
               if (o === h) throw new Error('Generator is already running');
               if (o === p) {
                 if ('throw' === n) throw s;
-                return O();
+                return I();
               }
               for (r.method = n, r.arg = s; ; ) {
                 var i = r.delegate;
                 if (i) {
-                  var a = k(i, r);
+                  var a = E(i, r);
                   if (a) {
                     if (a === m) continue;
                     return a;
@@ -7730,14 +7608,14 @@ module.exports = (function(e) {
       function w() {}
       function x() {}
       function A() {}
-      function M(e) {
+      function k(e) {
         ['next', 'throw', 'return'].forEach(function(t) {
           e[t] = function(e) {
             return this._invoke(t, e);
           };
         });
       }
-      function E(e) {
+      function S(e) {
         function r(t, o, s, i) {
           var a = j(e[t], e, o);
           if ('throw' !== a.type) {
@@ -7771,7 +7649,7 @@ module.exports = (function(e) {
             return (o = o ? o.then(n, n) : n());
           });
       }
-      function k(e, t) {
+      function E(e, t) {
         var o = e.iterator[t.method];
         if (o === r) {
           if (((t.delegate = null), 'throw' === t.method)) {
@@ -7779,7 +7657,7 @@ module.exports = (function(e) {
               e.iterator.return &&
               ((t.method = 'return'),
               (t.arg = r),
-              k(e, t),
+              E(e, t),
               'throw' === t.method)
             )
               return m;
@@ -7807,7 +7685,7 @@ module.exports = (function(e) {
             (t.delegate = null),
             m);
       }
-      function S(e) {
+      function M(e) {
         var t = { tryLoc: e[0] };
         1 in e && (t.catchLoc = e[1]),
           2 in e && ((t.finallyLoc = e[2]), (t.afterLoc = e[3])),
@@ -7817,9 +7695,9 @@ module.exports = (function(e) {
         var t = e.completion || {};
         (t.type = 'normal'), delete t.arg, (e.completion = t);
       }
-      function I(e) {
+      function P(e) {
         (this.tryEntries = [{ tryLoc: 'root' }]),
-          e.forEach(S, this),
+          e.forEach(M, this),
           this.reset(!0);
       }
       function T(e) {
@@ -7837,9 +7715,9 @@ module.exports = (function(e) {
             return (s.next = s);
           }
         }
-        return { next: O };
+        return { next: I };
       }
-      function O() {
+      function I() {
         return { value: r, done: !0 };
       }
     })(
@@ -7924,10 +7802,10 @@ module.exports = (function(e) {
       function A(e, t, r) {
         return (e = N(e)) >= t && e <= r;
       }
-      function M(e) {
+      function k(e) {
         return '[object Array]' == Object.prototype.toString.call(e);
       }
-      function E(e, t, r) {
+      function S(e, t, r) {
         for (var o, n, s = [0], i = 0, a = e.length; i < a; ) {
           for (n = s.length; n--; s[n] *= t);
           for (s[(o = 0)] += p.indexOf(e.charAt(i++)); o < s.length; o++)
@@ -7938,14 +7816,14 @@ module.exports = (function(e) {
         }
         return s.reverse();
       }
-      function k(e, t) {
+      function E(e, t) {
         return (
           (e.length > 1 ? e.charAt(0) + '.' + e.slice(1) : e) +
           (t < 0 ? 'e' : 'e+') +
           t
         );
       }
-      function S(e, t) {
+      function M(e, t) {
         var r, o;
         if (t < 0) {
           for (o = '0.'; ++t; o += '0');
@@ -7964,21 +7842,21 @@ module.exports = (function(e) {
           o,
           n,
           s,
-          I,
+          P,
           T,
-          O,
-          D = 0,
-          P = Q.prototype,
-          R = new Q(1),
-          L = 20,
-          C = 4,
+          I,
+          O = 0,
+          R = J.prototype,
+          L = new J(1),
+          C = 20,
+          D = 4,
           B = -7,
           F = 21,
           U = -1e7,
-          z = 1e7,
-          H = !0,
-          G = Z,
-          q = !1,
+          H = 1e7,
+          q = !0,
+          G = Y,
+          z = !1,
           W = 1,
           V = 100,
           K = {
@@ -7989,7 +7867,7 @@ module.exports = (function(e) {
             fractionGroupSeparator: ' ',
             fractionGroupSize: 0
           };
-        function Q(e, t) {
+        function J(e, t) {
           var r,
             o,
             n,
@@ -7997,11 +7875,11 @@ module.exports = (function(e) {
             i,
             l,
             c = this;
-          if (!(c instanceof Q))
-            return H && ee(26, 'constructor call without new', e), new Q(e, t);
-          if (null != t && G(t, 2, 64, D, 'base')) {
+          if (!(c instanceof J))
+            return q && ee(26, 'constructor call without new', e), new J(e, t);
+          if (null != t && G(t, 2, 64, O, 'base')) {
             if (((l = e + ''), 10 == (t |= 0)))
-              return te((c = new Q(e instanceof Q ? e : l)), L + c.e + 1, C);
+              return te((c = new J(e instanceof J ? e : l)), C + c.e + 1, D);
             if (
               ((s = 'number' == typeof e) && 0 * e != 0) ||
               !new RegExp(
@@ -8012,22 +7890,22 @@ module.exports = (function(e) {
               return a(c, l, s, t);
             s
               ? ((c.s = 1 / e < 0 ? ((l = l.slice(1)), -1) : 1),
-                H && l.replace(/^0\.0*|\./, '').length > 15 && ee(D, h, e),
+                q && l.replace(/^0\.0*|\./, '').length > 15 && ee(O, h, e),
                 (s = !1))
               : (c.s = 45 === l.charCodeAt(0) ? ((l = l.slice(1)), -1) : 1),
-              (l = Y(l, 10, t, c.s));
+              (l = X(l, 10, t, c.s));
           } else {
-            if (e instanceof Q)
+            if (e instanceof J)
               return (
                 (c.s = e.s),
                 (c.e = e.e),
                 (c.c = (e = e.c) ? e.slice() : e),
-                void (D = 0)
+                void (O = 0)
               );
             if ((s = 'number' == typeof e) && 0 * e == 0) {
               if (((c.s = 1 / e < 0 ? ((e = -e), -1) : 1), e === ~~e)) {
                 for (o = 0, n = e; n >= 10; n /= 10, o++);
-                return (c.e = o), (c.c = [e]), void (D = 0);
+                return (c.e = o), (c.c = [e]), void (O = 0);
               }
               l = e + '';
             } else {
@@ -8050,8 +7928,8 @@ module.exports = (function(e) {
           if ((l = l.slice(n, i + 1)))
             if (
               ((i = l.length),
-              s && H && i > 15 && ee(D, h, c.s * e),
-              (o = o - n - 1) > z)
+              s && q && i > 15 && ee(O, h, c.s * e),
+              (o = o - n - 1) > H)
             )
               c.c = c.e = null;
             else if (o < U) c.c = [(c.e = 0)];
@@ -8071,9 +7949,9 @@ module.exports = (function(e) {
               c.c.push(+l);
             }
           else c.c = [(c.e = 0)];
-          D = 0;
+          O = 0;
         }
-        function Y(e, t, o, n) {
+        function X(e, t, o, n) {
           var s,
             i,
             a,
@@ -8082,19 +7960,19 @@ module.exports = (function(e) {
             c,
             d,
             f = e.indexOf('.'),
-            h = L,
-            m = C;
+            h = C,
+            m = D;
           for (
             o < 37 && (e = e.toLowerCase()),
               f >= 0 &&
                 ((a = V),
                 (V = 0),
                 (e = e.replace('.', '')),
-                (l = (d = new Q(o)).pow(e.length - f)),
+                (l = (d = new J(o)).pow(e.length - f)),
                 (V = a),
-                (d.c = E(S(w(l.c), l.e), 10, t)),
+                (d.c = S(M(w(l.c), l.e), 10, t)),
                 (d.e = d.c.length)),
-              i = a = (c = E(e, o, t)).length;
+              i = a = (c = S(e, o, t)).length;
             0 == c[--a];
             c.pop()
           );
@@ -8122,42 +8000,42 @@ module.exports = (function(e) {
                       m == (l.s < 0 ? 8 : 7)))),
             s < 1 || !c[0])
           )
-            e = u ? S('1', -h) : '0';
+            e = u ? M('1', -h) : '0';
           else {
             if (((c.length = s), u))
               for (--t; ++c[--s] > t; ) (c[s] = 0), s || (++i, c.unshift(1));
             for (a = c.length; !c[--a]; );
             for (f = 0, e = ''; f <= a; e += p.charAt(c[f++]));
-            e = S(e, i);
+            e = M(e, i);
           }
           return e;
         }
-        function J(e, t, r, o) {
+        function Z(e, t, r, o) {
           var n, s, i, a, u;
-          if (((r = null != r && G(r, 0, 8, o, f) ? 0 | r : C), !e.c))
+          if (((r = null != r && G(r, 0, 8, o, f) ? 0 | r : D), !e.c))
             return e.toString();
           if (((n = e.c[0]), (i = e.e), null == t))
             (u = w(e.c)),
-              (u = 19 == o || (24 == o && i <= B) ? k(u, i) : S(u, i));
+              (u = 19 == o || (24 == o && i <= B) ? E(u, i) : M(u, i));
           else if (
-            ((s = (e = te(new Q(e), t, r)).e),
+            ((s = (e = te(new J(e), t, r)).e),
             (a = (u = w(e.c)).length),
             19 == o || (24 == o && (t <= s || s <= B)))
           ) {
             for (; a < t; u += '0', a++);
-            u = k(u, s);
-          } else if (((t -= i), (u = S(u, s)), s + 1 > a)) {
+            u = E(u, s);
+          } else if (((t -= i), (u = M(u, s)), s + 1 > a)) {
             if (--t > 0) for (u += '.'; t--; u += '0');
           } else if ((t += s - a) > 0)
             for (s + 1 == a && (u += '.'); t--; u += '0');
           return e.s < 0 && n ? '-' + u : u;
         }
-        function X(e, t) {
+        function $(e, t) {
           var r,
             o,
             n = 0;
-          for (M(e[0]) && (e = e[0]), r = new Q(e[0]); ++n < e.length; ) {
-            if (!(o = new Q(e[n])).s) {
+          for (k(e[0]) && (e = e[0]), r = new J(e[0]); ++n < e.length; ) {
+            if (!(o = new J(e[n])).s) {
               r = o;
               break;
             }
@@ -8165,7 +8043,7 @@ module.exports = (function(e) {
           }
           return r;
         }
-        function Z(e, t, r, o, n) {
+        function Y(e, t, r, o, n) {
           return (
             (e < t || e > r || e != N(e)) &&
               ee(
@@ -8177,11 +8055,11 @@ module.exports = (function(e) {
             !0
           );
         }
-        function $(e, t, r) {
+        function Q(e, t, r) {
           for (var o = 1, n = t.length; !t[--n]; t.pop());
           for (n = t[0]; n >= 10; n /= 10, o++);
           return (
-            (r = o + r * _ - 1) > z
+            (r = o + r * _ - 1) > H
               ? (e.c = e.e = null)
               : r < U
               ? (e.c = [(e.e = 0)])
@@ -8225,7 +8103,7 @@ module.exports = (function(e) {
               ': ' +
               r
           );
-          throw ((o.name = 'BigNumber Error'), (D = 0), o);
+          throw ((o.name = 'BigNumber Error'), (O = 0), o);
         }
         function te(e, t, r, o) {
           var n,
@@ -8300,23 +8178,23 @@ module.exports = (function(e) {
                 }
               for (s = h.length; 0 === h[--s]; h.pop());
             }
-            e.e > z ? (e.c = e.e = null) : e.e < U && (e.c = [(e.e = 0)]);
+            e.e > H ? (e.c = e.e = null) : e.e < U && (e.c = [(e.e = 0)]);
           }
           return e;
         }
         return (
-          (Q.another = e),
-          (Q.ROUND_UP = 0),
-          (Q.ROUND_DOWN = 1),
-          (Q.ROUND_CEIL = 2),
-          (Q.ROUND_FLOOR = 3),
-          (Q.ROUND_HALF_UP = 4),
-          (Q.ROUND_HALF_DOWN = 5),
-          (Q.ROUND_HALF_EVEN = 6),
-          (Q.ROUND_HALF_CEIL = 7),
-          (Q.ROUND_HALF_FLOOR = 8),
-          (Q.EUCLID = 9),
-          (Q.config = function() {
+          (J.another = e),
+          (J.ROUND_UP = 0),
+          (J.ROUND_DOWN = 1),
+          (J.ROUND_CEIL = 2),
+          (J.ROUND_FLOOR = 3),
+          (J.ROUND_HALF_UP = 4),
+          (J.ROUND_HALF_DOWN = 5),
+          (J.ROUND_HALF_EVEN = 6),
+          (J.ROUND_HALF_CEIL = 7),
+          (J.ROUND_HALF_FLOOR = 8),
+          (J.EUCLID = 9),
+          (J.config = function() {
             var e,
               t,
               r = 0,
@@ -8332,38 +8210,38 @@ module.exports = (function(e) {
                       if (n.length > r) return null != (e = n[r++]);
                     };
             return (
-              a((t = 'DECIMAL_PLACES')) && G(e, 0, b, 2, t) && (L = 0 | e),
-              (o[t] = L),
-              a((t = 'ROUNDING_MODE')) && G(e, 0, 8, 2, t) && (C = 0 | e),
+              a((t = 'DECIMAL_PLACES')) && G(e, 0, b, 2, t) && (C = 0 | e),
               (o[t] = C),
+              a((t = 'ROUNDING_MODE')) && G(e, 0, 8, 2, t) && (D = 0 | e),
+              (o[t] = D),
               a((t = 'EXPONENTIAL_AT')) &&
-                (M(e)
+                (k(e)
                   ? G(e[0], -b, 0, 2, t) &&
                     G(e[1], 0, b, 2, t) &&
                     ((B = 0 | e[0]), (F = 0 | e[1]))
                   : G(e, -b, b, 2, t) && (B = -(F = 0 | (e < 0 ? -e : e)))),
               (o[t] = [B, F]),
               a((t = 'RANGE')) &&
-                (M(e)
+                (k(e)
                   ? G(e[0], -b, -1, 2, t) &&
                     G(e[1], 1, b, 2, t) &&
-                    ((U = 0 | e[0]), (z = 0 | e[1]))
+                    ((U = 0 | e[0]), (H = 0 | e[1]))
                   : G(e, -b, b, 2, t) &&
                     (0 | e
-                      ? (U = -(z = 0 | (e < 0 ? -e : e)))
-                      : H && ee(2, t + ' cannot be zero', e))),
-              (o[t] = [U, z]),
+                      ? (U = -(H = 0 | (e < 0 ? -e : e)))
+                      : q && ee(2, t + ' cannot be zero', e))),
+              (o[t] = [U, H]),
               a((t = 'ERRORS')) &&
                 (e === !!e || 1 === e || 0 === e
-                  ? ((D = 0), (G = (H = !!e) ? Z : A))
-                  : H && ee(2, t + d, e)),
-              (o[t] = H),
+                  ? ((O = 0), (G = (q = !!e) ? Y : A))
+                  : q && ee(2, t + d, e)),
+              (o[t] = q),
               a((t = 'CRYPTO')) &&
                 (e === !!e || 1 === e || 0 === e
-                  ? ((q = !(!e || !i || 'object' != typeof i)),
-                    e && !q && H && ee(2, 'crypto unavailable', i))
-                  : H && ee(2, t + d, e)),
-              (o[t] = q),
+                  ? ((z = !(!e || !i || 'object' != typeof i)),
+                    e && !z && q && ee(2, 'crypto unavailable', i))
+                  : q && ee(2, t + d, e)),
+              (o[t] = z),
               a((t = 'MODULO_MODE')) && G(e, 0, 9, 2, t) && (W = 0 | e),
               (o[t] = W),
               a((t = 'POW_PRECISION')) && G(e, 0, b, 2, t) && (V = 0 | e),
@@ -8371,18 +8249,18 @@ module.exports = (function(e) {
               a((t = 'FORMAT')) &&
                 ('object' == typeof e
                   ? (K = e)
-                  : H && ee(2, t + ' not an object', e)),
+                  : q && ee(2, t + ' not an object', e)),
               (o[t] = K),
               o
             );
           }),
-          (Q.max = function() {
-            return X(arguments, P.lt);
+          (J.max = function() {
+            return $(arguments, R.lt);
           }),
-          (Q.min = function() {
-            return X(arguments, P.gt);
+          (J.min = function() {
+            return $(arguments, R.gt);
           }),
-          (Q.random = ((o =
+          (J.random = ((o =
             (9007199254740992 * Math.random()) & 2097151
               ? function() {
                   return c(9007199254740992 * Math.random());
@@ -8401,9 +8279,9 @@ module.exports = (function(e) {
               a,
               u = 0,
               d = [],
-              f = new Q(R);
+              f = new J(L);
             if (
-              ((e = null != e && G(e, 0, b, 14) ? 0 | e : L), (s = l(e / _)), q)
+              ((e = null != e && G(e, 0, b, 14) ? 0 | e : C), (s = l(e / _)), z)
             )
               if (i && i.getRandomValues) {
                 for (t = i.getRandomValues(new Uint32Array((s *= 2))); u < s; )
@@ -8426,7 +8304,7 @@ module.exports = (function(e) {
                     ? i.randomBytes(7).copy(t, u)
                     : (d.push(a % 1e14), (u += 7));
                 u = s / 7;
-              } else H && ee(14, 'crypto unavailable', i);
+              } else q && ee(14, 'crypto unavailable', i);
             if (!u) for (; u < s; ) (a = o()) < 9e15 && (d[u++] = a % 1e14);
             for (
               s = d[--u],
@@ -8498,54 +8376,54 @@ module.exports = (function(e) {
                 w,
                 x,
                 A,
-                M,
-                E,
                 k,
                 S,
+                E,
+                M,
                 N = o.s == n.s ? 1 : -1,
-                I = o.c,
+                P = o.c,
                 T = n.c;
-              if (!(I && I[0] && T && T[0]))
-                return new Q(
-                  o.s && n.s && (I ? !T || I[0] != T[0] : T)
-                    ? (I && 0 == I[0]) || !T
+              if (!(P && P[0] && T && T[0]))
+                return new J(
+                  o.s && n.s && (P ? !T || P[0] != T[0] : T)
+                    ? (P && 0 == P[0]) || !T
                       ? 0 * N
                       : N / 0
                     : NaN
                 );
               for (
-                g = (v = new Q(N)).c = [],
+                g = (v = new J(N)).c = [],
                   N = s + (l = o.e - n.e) + 1,
                   a ||
                     ((a = m), (l = j(o.e / _) - j(n.e / _)), (N = (N / _) | 0)),
                   d = 0;
-                T[d] == (I[d] || 0);
+                T[d] == (P[d] || 0);
                 d++
               );
-              if ((T[d] > (I[d] || 0) && l--, N < 0)) g.push(1), (f = !0);
+              if ((T[d] > (P[d] || 0) && l--, N < 0)) g.push(1), (f = !0);
               else {
                 for (
-                  M = I.length,
-                    k = T.length,
+                  k = P.length,
+                    E = T.length,
                     d = 0,
                     N += 2,
                     (h = c(a / (T[0] + 1))) > 1 &&
                       ((T = e(T, h, a)),
-                      (I = e(I, h, a)),
-                      (k = T.length),
-                      (M = I.length)),
-                    A = k,
-                    w = (b = I.slice(0, k)).length;
-                  w < k;
+                      (P = e(P, h, a)),
+                      (E = T.length),
+                      (k = P.length)),
+                    A = E,
+                    w = (b = P.slice(0, E)).length;
+                  w < E;
                   b[w++] = 0
                 );
-                (S = T.slice()).unshift(0), (E = T[0]), T[1] >= a / 2 && E++;
+                (M = T.slice()).unshift(0), (S = T[0]), T[1] >= a / 2 && S++;
                 do {
-                  if (((h = 0), (u = t(T, b, k, w)) < 0)) {
+                  if (((h = 0), (u = t(T, b, E, w)) < 0)) {
                     if (
                       ((x = b[0]),
-                      k != w && (x = x * a + (b[1] || 0)),
-                      (h = c(x / E)) > 1)
+                      E != w && (x = x * a + (b[1] || 0)),
+                      (h = c(x / S)) > 1)
                     )
                       for (
                         h >= a && (h = a - 1),
@@ -8554,7 +8432,7 @@ module.exports = (function(e) {
                         1 == t(p, b, y, w);
 
                       )
-                        h--, r(p, k < y ? S : T, y, a), (y = p.length), (u = 1);
+                        h--, r(p, E < y ? M : T, y, a), (y = p.length), (u = 1);
                     else 0 == h && (u = h = 1), (y = (p = T.slice()).length);
                     if (
                       (y < w && p.unshift(0),
@@ -8562,12 +8440,12 @@ module.exports = (function(e) {
                       (w = b.length),
                       -1 == u)
                     )
-                      for (; t(T, b, k, w) < 1; )
-                        h++, r(b, k < w ? S : T, w, a), (w = b.length);
+                      for (; t(T, b, E, w) < 1; )
+                        h++, r(b, E < w ? M : T, w, a), (w = b.length);
                   } else 0 === u && (h++, (b = [0]));
                   (g[d++] = h),
-                    b[0] ? (b[w++] = I[A] || 0) : ((b = [I[A]]), (w = 1));
-                } while ((A++ < M || null != b[0]) && N--);
+                    b[0] ? (b[w++] = P[A] || 0) : ((b = [P[A]]), (w = 1));
+                } while ((A++ < k || null != b[0]) && N--);
                 (f = null != b[0]), g[0] || g.shift();
               }
               if (a == m) {
@@ -8579,12 +8457,12 @@ module.exports = (function(e) {
           })()),
           (n = /^(-?)0([xbo])/i),
           (s = /^([^.]+)\.$/),
-          (I = /^\.([^.]+)$/),
+          (P = /^\.([^.]+)$/),
           (T = /^-?(Infinity|NaN)$/),
-          (O = /^\s*\+|^\s+|\s+$/g),
+          (I = /^\s*\+|^\s+|\s+$/g),
           (a = function(e, t, r, o) {
             var i,
-              a = r ? t : t.replace(O, '');
+              a = r ? t : t.replace(I, '');
             if (T.test(a)) e.s = isNaN(a) ? null : a < 0 ? -1 : 1;
             else {
               if (
@@ -8595,26 +8473,26 @@ module.exports = (function(e) {
                     o && o != i ? e : t
                   );
                 })),
-                o && ((i = o), (a = a.replace(s, '$1').replace(I, '0.$1'))),
+                o && ((i = o), (a = a.replace(s, '$1').replace(P, '0.$1'))),
                 t != a)
               )
-                return new Q(a, i);
-              H && ee(D, 'not a' + (o ? ' base ' + o : '') + ' number', t),
+                return new J(a, i);
+              q && ee(O, 'not a' + (o ? ' base ' + o : '') + ' number', t),
                 (e.s = null);
             }
-            (e.c = e.e = null), (D = 0);
+            (e.c = e.e = null), (O = 0);
           }),
-          (P.absoluteValue = P.abs = function() {
-            var e = new Q(this);
+          (R.absoluteValue = R.abs = function() {
+            var e = new J(this);
             return e.s < 0 && (e.s = 1), e;
           }),
-          (P.ceil = function() {
-            return te(new Q(this), this.e + 1, 2);
+          (R.ceil = function() {
+            return te(new J(this), this.e + 1, 2);
           }),
-          (P.comparedTo = P.cmp = function(e, t) {
-            return (D = 1), x(this, new Q(e, t));
+          (R.comparedTo = R.cmp = function(e, t) {
+            return (O = 1), x(this, new J(e, t));
           }),
-          (P.decimalPlaces = P.dp = function() {
+          (R.decimalPlaces = R.dp = function() {
             var e,
               t,
               r = this.c;
@@ -8623,65 +8501,65 @@ module.exports = (function(e) {
               for (; t % 10 == 0; t /= 10, e--);
             return e < 0 && (e = 0), e;
           }),
-          (P.dividedBy = P.div = function(e, t) {
-            return (D = 3), r(this, new Q(e, t), L, C);
+          (R.dividedBy = R.div = function(e, t) {
+            return (O = 3), r(this, new J(e, t), C, D);
           }),
-          (P.dividedToIntegerBy = P.divToInt = function(e, t) {
-            return (D = 4), r(this, new Q(e, t), 0, 1);
+          (R.dividedToIntegerBy = R.divToInt = function(e, t) {
+            return (O = 4), r(this, new J(e, t), 0, 1);
           }),
-          (P.equals = P.eq = function(e, t) {
-            return (D = 5), 0 === x(this, new Q(e, t));
+          (R.equals = R.eq = function(e, t) {
+            return (O = 5), 0 === x(this, new J(e, t));
           }),
-          (P.floor = function() {
-            return te(new Q(this), this.e + 1, 3);
+          (R.floor = function() {
+            return te(new J(this), this.e + 1, 3);
           }),
-          (P.greaterThan = P.gt = function(e, t) {
-            return (D = 6), x(this, new Q(e, t)) > 0;
+          (R.greaterThan = R.gt = function(e, t) {
+            return (O = 6), x(this, new J(e, t)) > 0;
           }),
-          (P.greaterThanOrEqualTo = P.gte = function(e, t) {
-            return (D = 7), 1 === (t = x(this, new Q(e, t))) || 0 === t;
+          (R.greaterThanOrEqualTo = R.gte = function(e, t) {
+            return (O = 7), 1 === (t = x(this, new J(e, t))) || 0 === t;
           }),
-          (P.isFinite = function() {
+          (R.isFinite = function() {
             return !!this.c;
           }),
-          (P.isInteger = P.isInt = function() {
+          (R.isInteger = R.isInt = function() {
             return !!this.c && j(this.e / _) > this.c.length - 2;
           }),
-          (P.isNaN = function() {
+          (R.isNaN = function() {
             return !this.s;
           }),
-          (P.isNegative = P.isNeg = function() {
+          (R.isNegative = R.isNeg = function() {
             return this.s < 0;
           }),
-          (P.isZero = function() {
+          (R.isZero = function() {
             return !!this.c && 0 == this.c[0];
           }),
-          (P.lessThan = P.lt = function(e, t) {
-            return (D = 8), x(this, new Q(e, t)) < 0;
+          (R.lessThan = R.lt = function(e, t) {
+            return (O = 8), x(this, new J(e, t)) < 0;
           }),
-          (P.lessThanOrEqualTo = P.lte = function(e, t) {
-            return (D = 9), -1 === (t = x(this, new Q(e, t))) || 0 === t;
+          (R.lessThanOrEqualTo = R.lte = function(e, t) {
+            return (O = 9), -1 === (t = x(this, new J(e, t))) || 0 === t;
           }),
-          (P.minus = P.sub = function(e, t) {
+          (R.minus = R.sub = function(e, t) {
             var r,
               o,
               n,
               s,
               i = this,
               a = i.s;
-            if (((D = 10), (t = (e = new Q(e, t)).s), !a || !t))
-              return new Q(NaN);
+            if (((O = 10), (t = (e = new J(e, t)).s), !a || !t))
+              return new J(NaN);
             if (a != t) return (e.s = -t), i.plus(e);
             var u = i.e / _,
               l = e.e / _,
               c = i.c,
               d = e.c;
             if (!u || !l) {
-              if (!c || !d) return c ? ((e.s = -t), e) : new Q(d ? i : NaN);
+              if (!c || !d) return c ? ((e.s = -t), e) : new J(d ? i : NaN);
               if (!c[0] || !d[0])
                 return d[0]
                   ? ((e.s = -t), e)
-                  : new Q(c[0] ? i : 3 == C ? -0 : 0);
+                  : new J(c[0] ? i : 3 == D ? -0 : 0);
             }
             if (((u = j(u)), (l = j(l)), (c = c.slice()), (a = u - l))) {
               for (
@@ -8716,20 +8594,20 @@ module.exports = (function(e) {
             }
             for (; 0 == c[0]; c.shift(), --l);
             return c[0]
-              ? $(e, c, l)
-              : ((e.s = 3 == C ? -1 : 1), (e.c = [(e.e = 0)]), e);
+              ? Q(e, c, l)
+              : ((e.s = 3 == D ? -1 : 1), (e.c = [(e.e = 0)]), e);
           }),
-          (P.modulo = P.mod = function(e, t) {
+          (R.modulo = R.mod = function(e, t) {
             var o,
               n,
               s = this;
             return (
-              (D = 11),
-              (e = new Q(e, t)),
+              (O = 11),
+              (e = new J(e, t)),
               !s.c || !e.s || (e.c && !e.c[0])
-                ? new Q(NaN)
+                ? new J(NaN)
                 : !e.c || (s.c && !s.c[0])
-                ? new Q(s)
+                ? new J(s)
                 : (9 == W
                     ? ((n = e.s),
                       (e.s = 1),
@@ -8740,24 +8618,24 @@ module.exports = (function(e) {
                   s.minus(o.times(e)))
             );
           }),
-          (P.negated = P.neg = function() {
-            var e = new Q(this);
+          (R.negated = R.neg = function() {
+            var e = new J(this);
             return (e.s = -e.s || null), e;
           }),
-          (P.plus = P.add = function(e, t) {
+          (R.plus = R.add = function(e, t) {
             var r,
               o = this,
               n = o.s;
-            if (((D = 12), (t = (e = new Q(e, t)).s), !n || !t))
-              return new Q(NaN);
+            if (((O = 12), (t = (e = new J(e, t)).s), !n || !t))
+              return new J(NaN);
             if (n != t) return (e.s = -t), o.minus(e);
             var s = o.e / _,
               i = e.e / _,
               a = o.c,
               u = e.c;
             if (!s || !i) {
-              if (!a || !u) return new Q(n / 0);
-              if (!a[0] || !u[0]) return u[0] ? e : new Q(a[0] ? o : 0 * n);
+              if (!a || !u) return new J(n / 0);
+              if (!a[0] || !u[0]) return u[0] ? e : new J(a[0] ? o : 0 * n);
             }
             if (((s = j(s)), (i = j(i)), (a = a.slice()), (n = s - i))) {
               for (
@@ -8775,9 +8653,9 @@ module.exports = (function(e) {
 
             )
               (n = ((a[--t] = a[t] + u[t] + n) / m) | 0), (a[t] %= m);
-            return n && (a.unshift(n), ++i), $(e, a, i);
+            return n && (a.unshift(n), ++i), Q(e, a, i);
           }),
-          (P.precision = P.sd = function(e) {
+          (R.precision = R.sd = function(e) {
             var t,
               r,
               o = this,
@@ -8787,7 +8665,7 @@ module.exports = (function(e) {
                 e !== !!e &&
                 1 !== e &&
                 0 !== e &&
-                (H && ee(13, 'argument' + d, e), e != !!e && (e = null)),
+                (q && ee(13, 'argument' + d, e), e != !!e && (e = null)),
               !n)
             )
               return null;
@@ -8797,29 +8675,29 @@ module.exports = (function(e) {
             }
             return e && o.e + 1 > t && (t = o.e + 1), t;
           }),
-          (P.round = function(e, t) {
-            var r = new Q(this);
+          (R.round = function(e, t) {
+            var r = new J(this);
             return (
               (null == e || G(e, 0, b, 15)) &&
                 te(
                   r,
                   ~~e + this.e + 1,
-                  null != t && G(t, 0, 8, 15, f) ? 0 | t : C
+                  null != t && G(t, 0, 8, 15, f) ? 0 | t : D
                 ),
               r
             );
           }),
-          (P.shift = function(e) {
+          (R.shift = function(e) {
             var t = this;
             return G(e, -y, y, 16, 'argument')
               ? t.times('1e' + N(e))
-              : new Q(
+              : new J(
                   t.c && t.c[0] && (e < -y || e > y)
                     ? t.s * (e < 0 ? 0 : 1 / 0)
                     : t
                 );
           }),
-          (P.squareRoot = P.sqrt = function() {
+          (R.squareRoot = R.sqrt = function() {
             var e,
               t,
               o,
@@ -8829,23 +8707,23 @@ module.exports = (function(e) {
               a = i.c,
               u = i.s,
               l = i.e,
-              c = L + 4,
-              d = new Q('0.5');
+              c = C + 4,
+              d = new J('0.5');
             if (1 !== u || !a || !a[0])
-              return new Q(!u || (u < 0 && (!a || a[0])) ? NaN : a ? i : 1 / 0);
+              return new J(!u || (u < 0 && (!a || a[0])) ? NaN : a ? i : 1 / 0);
             if (
               (0 == (u = Math.sqrt(+i)) || u == 1 / 0
                 ? (((t = w(a)).length + l) % 2 == 0 && (t += '0'),
                   (u = Math.sqrt(t)),
                   (l = j((l + 1) / 2) - (l < 0 || l % 2)),
-                  (o = new Q(
+                  (o = new J(
                     (t =
                       u == 1 / 0
                         ? '1e' + l
                         : (t = u.toExponential()).slice(0, t.indexOf('e') + 1) +
                           l)
                   )))
-                : (o = new Q(u + '')),
+                : (o = new J(u + '')),
               o.c[0])
             )
               for ((u = (l = o.e) + c) < 3 && (u = 0); ; )
@@ -8859,18 +8737,18 @@ module.exports = (function(e) {
                     '9999' != (t = t.slice(u - 3, u + 1)) && (n || '4999' != t))
                   ) {
                     (+t && (+t.slice(1) || '5' != t.charAt(0))) ||
-                      (te(o, o.e + L + 2, 1), (e = !o.times(o).eq(i)));
+                      (te(o, o.e + C + 2, 1), (e = !o.times(o).eq(i)));
                     break;
                   }
-                  if (!n && (te(s, s.e + L + 2, 0), s.times(s).eq(i))) {
+                  if (!n && (te(s, s.e + C + 2, 0), s.times(s).eq(i))) {
                     o = s;
                     break;
                   }
                   (c += 4), (u += 4), (n = 1);
                 }
-            return te(o, o.e + L + 1, C, e);
+            return te(o, o.e + C + 1, D, e);
           }),
-          (P.times = P.mul = function(e, t) {
+          (R.times = R.mul = function(e, t) {
             var r,
               o,
               n,
@@ -8888,7 +8766,7 @@ module.exports = (function(e) {
               v,
               b = this,
               w = b.c,
-              x = ((D = 17), (e = new Q(e, t))).c;
+              x = ((O = 17), (e = new J(e, t))).c;
             if (!(w && x && w[0] && x[0]))
               return (
                 !b.s || !e.s || (w && !w[0] && !x) || (x && !x[0] && !w)
@@ -8926,29 +8804,29 @@ module.exports = (function(e) {
                   (p[s--] = l % y);
               p[s] = r;
             }
-            return r ? ++o : p.shift(), $(e, p, o);
+            return r ? ++o : p.shift(), Q(e, p, o);
           }),
-          (P.toDigits = function(e, t) {
-            var r = new Q(this);
+          (R.toDigits = function(e, t) {
+            var r = new J(this);
             return (
               (e = null != e && G(e, 1, b, 18, 'precision') ? 0 | e : null),
-              (t = null != t && G(t, 0, 8, 18, f) ? 0 | t : C),
+              (t = null != t && G(t, 0, 8, 18, f) ? 0 | t : D),
               e ? te(r, e, t) : r
             );
           }),
-          (P.toExponential = function(e, t) {
-            return J(this, null != e && G(e, 0, b, 19) ? 1 + ~~e : null, t, 19);
+          (R.toExponential = function(e, t) {
+            return Z(this, null != e && G(e, 0, b, 19) ? 1 + ~~e : null, t, 19);
           }),
-          (P.toFixed = function(e, t) {
-            return J(
+          (R.toFixed = function(e, t) {
+            return Z(
               this,
               null != e && G(e, 0, b, 20) ? ~~e + this.e + 1 : null,
               t,
               20
             );
           }),
-          (P.toFormat = function(e, t) {
-            var r = J(
+          (R.toFormat = function(e, t) {
+            var r = Z(
               this,
               null != e && G(e, 0, b, 21) ? ~~e + this.e + 1 : null,
               t,
@@ -8985,7 +8863,7 @@ module.exports = (function(e) {
             }
             return r;
           }),
-          (P.toFraction = function(e) {
+          (R.toFraction = function(e) {
             var t,
               o,
               n,
@@ -8995,26 +8873,26 @@ module.exports = (function(e) {
               u,
               l,
               c,
-              d = H,
+              d = q,
               f = this,
               h = f.c,
-              p = new Q(R),
-              m = (o = new Q(R)),
-              y = (u = new Q(R));
+              p = new J(L),
+              m = (o = new J(L)),
+              y = (u = new J(L));
             if (
               (null != e &&
-                ((H = !1),
-                (a = new Q(e)),
-                (H = d),
-                ((d = a.isInt()) && !a.lt(R)) ||
-                  (H &&
+                ((q = !1),
+                (a = new J(e)),
+                (q = d),
+                ((d = a.isInt()) && !a.lt(L)) ||
+                  (q &&
                     ee(
                       22,
                       'max denominator ' +
                         (d ? 'out of range' : 'not an integer'),
                       e
                     ),
-                  (e = !d && a.c && te(a, a.e + 1, 1).gte(R) ? a : null))),
+                  (e = !d && a.c && te(a, a.e + 1, 1).gte(L) ? a : null))),
               !h)
             )
               return f.toString();
@@ -9023,9 +8901,9 @@ module.exports = (function(e) {
                 s = p.e = c.length - f.e - 1,
                 p.c[0] = v[(i = s % _) < 0 ? _ + i : i],
                 e = !e || a.cmp(p) > 0 ? (s > 0 ? p : m) : a,
-                i = z,
-                z = 1 / 0,
-                a = new Q(c),
+                i = H,
+                H = 1 / 0,
+                a = new J(c),
                 u.c[0] = 0;
               (l = r(a, p, 0, 1)), 1 != (n = o.plus(l.times(y))).cmp(e);
 
@@ -9042,25 +8920,25 @@ module.exports = (function(e) {
               (o = o.plus(n.times(y))),
               (u.s = m.s = f.s),
               (t =
-                r(m, y, (s *= 2), C)
+                r(m, y, (s *= 2), D)
                   .minus(f)
                   .abs()
                   .cmp(
-                    r(u, o, s, C)
+                    r(u, o, s, D)
                       .minus(f)
                       .abs()
                   ) < 1
                   ? [m.toString(), y.toString()]
                   : [u.toString(), o.toString()]),
-              (z = i),
+              (H = i),
               t
             );
           }),
-          (P.toNumber = function() {
+          (R.toNumber = function() {
             var e = this;
             return +e || (e.s ? 0 * e.s : NaN);
           }),
-          (P.toPower = P.pow = function(e) {
+          (R.toPower = R.pow = function(e) {
             var t,
               r,
               o = c(e < 0 ? -e : +e),
@@ -9071,8 +8949,8 @@ module.exports = (function(e) {
                 (o > y && (e /= 0)) ||
                 (parseFloat(e) != e && !(e = NaN)))
             )
-              return new Q(Math.pow(+n, e));
-            for (t = V ? l(V / _ + 2) : 0, r = new Q(R); ; ) {
+              return new J(Math.pow(+n, e));
+            for (t = V ? l(V / _ + 2) : 0, r = new J(L); ; ) {
               if (o % 2) {
                 if (!(r = r.times(n)).c) break;
                 t && r.c.length > t && (r.c.length = t);
@@ -9080,17 +8958,17 @@ module.exports = (function(e) {
               if (!(o = c(o / 2))) break;
               (n = n.times(n)), t && n.c && n.c.length > t && (n.c.length = t);
             }
-            return e < 0 && (r = R.div(r)), t ? te(r, V, C) : r;
+            return e < 0 && (r = L.div(r)), t ? te(r, V, D) : r;
           }),
-          (P.toPrecision = function(e, t) {
-            return J(
+          (R.toPrecision = function(e, t) {
+            return Z(
               this,
               null != e && G(e, 1, b, 24, 'precision') ? 0 | e : null,
               t,
               24
             );
           }),
-          (P.toString = function(e) {
+          (R.toString = function(e) {
             var t,
               r = this,
               o = r.s,
@@ -9103,22 +8981,22 @@ module.exports = (function(e) {
                 : ((t = w(r.c)),
                   (t =
                     null != e && G(e, 2, 64, 25, 'base')
-                      ? Y(S(t, n), 0 | e, 10, o)
+                      ? X(M(t, n), 0 | e, 10, o)
                       : n <= B || n >= F
-                      ? k(t, n)
-                      : S(t, n)),
+                      ? E(t, n)
+                      : M(t, n)),
                   o < 0 && r.c[0] && (t = '-' + t)),
               t
             );
           }),
-          (P.truncated = P.trunc = function() {
-            return te(new Q(this), this.e + 1, 1);
+          (R.truncated = R.trunc = function() {
+            return te(new J(this), this.e + 1, 1);
           }),
-          (P.valueOf = P.toJSON = function() {
+          (R.valueOf = R.toJSON = function() {
             return this.toString();
           }),
-          null != t && Q.config(t),
-          Q
+          null != t && J.config(t),
+          J
         );
       })()),
         void 0 ===
@@ -9417,24 +9295,24 @@ module.exports = (function(e) {
         e('__ResetDependency__', x),
         e('__with__', A);
     })();
-    var M = void 0 === f ? 'undefined' : o(f);
-    function E(e, t) {
+    var k = void 0 === f ? 'undefined' : o(f);
+    function S(e, t) {
       Object.defineProperty(f, e, {
         value: t,
         enumerable: !1,
         configurable: !0
       });
     }
-    ('object' !== M && 'function' !== M) ||
+    ('object' !== k && 'function' !== k) ||
       !Object.isExtensible(f) ||
-      (E('__get__', j),
-      E('__GetDependency__', j),
-      E('__Rewire__', w),
-      E('__set__', w),
-      E('__reset__', x),
-      E('__ResetDependency__', x),
-      E('__with__', A),
-      E('__RewireAPI__', b)),
+      (S('__get__', j),
+      S('__GetDependency__', j),
+      S('__Rewire__', w),
+      S('__set__', w),
+      S('__reset__', x),
+      S('__ResetDependency__', x),
+      S('__with__', A),
+      S('__RewireAPI__', b)),
       (t.__get__ = j),
       (t.__GetDependency__ = j),
       (t.__Rewire__ = w),
@@ -9802,7 +9680,7 @@ module.exports = (function(e) {
         e('__with__', x);
     })();
     var A = void 0 === d ? 'undefined' : o(d);
-    function M(e, t) {
+    function k(e, t) {
       Object.defineProperty(d, e, {
         value: t,
         enumerable: !1,
@@ -9811,14 +9689,14 @@ module.exports = (function(e) {
     }
     ('object' !== A && 'function' !== A) ||
       !Object.isExtensible(d) ||
-      (M('__get__', b),
-      M('__GetDependency__', b),
-      M('__Rewire__', j),
-      M('__set__', j),
-      M('__reset__', w),
-      M('__ResetDependency__', w),
-      M('__with__', x),
-      M('__RewireAPI__', g)),
+      (k('__get__', b),
+      k('__GetDependency__', b),
+      k('__Rewire__', j),
+      k('__set__', j),
+      k('__reset__', w),
+      k('__ResetDependency__', w),
+      k('__with__', x),
+      k('__RewireAPI__', g)),
       (t.__get__ = b),
       (t.__GetDependency__ = b),
       (t.__Rewire__ = j),
@@ -9850,7 +9728,7 @@ module.exports = (function(e) {
     function i(e) {
       return e && e.__esModule ? e : { default: e };
     }
-    var a = I('createAll')(I('plainStructure')),
+    var a = P('createAll')(P('plainStructure')),
       u = a.LOCATION_CHANGE,
       l = a.CALL_HISTORY_METHOD,
       c = a.push,
@@ -9892,7 +9770,7 @@ module.exports = (function(e) {
       (t.createMatchSelector = j);
     var x,
       A = null;
-    function M() {
+    function k() {
       if (null === A) {
         var e = w();
         e.__$$GLOBAL_REWIRE_NEXT_MODULE_ID__ ||
@@ -9901,7 +9779,7 @@ module.exports = (function(e) {
       }
       return A;
     }
-    function E() {
+    function S() {
       var e = w();
       return (
         e.__$$GLOBAL_REWIRE_REGISTRY__ ||
@@ -9909,9 +9787,9 @@ module.exports = (function(e) {
         __$$GLOBAL_REWIRE_REGISTRY__
       );
     }
-    function k() {
-      var e = M(),
-        t = E(),
+    function E() {
+      var e = k(),
+        t = S(),
         r = t[e];
       return r || ((t[e] = Object.create(null)), (r = t[e])), r;
     }
@@ -9919,10 +9797,10 @@ module.exports = (function(e) {
       (x.__rewire_reset_all__ = function() {
         x.__$$GLOBAL_REWIRE_REGISTRY__ = Object.create(null);
       });
-    var S = '__INTENTIONAL_UNDEFINED__',
+    var M = '__INTENTIONAL_UNDEFINED__',
       N = {};
-    function I(e) {
-      var t = k();
+    function P(e) {
+      var t = E();
       if (void 0 === t[e])
         return (function(e) {
           switch (e) {
@@ -9934,27 +9812,27 @@ module.exports = (function(e) {
           return;
         })(e);
       var r = t[e];
-      return r === S ? void 0 : r;
+      return r === M ? void 0 : r;
     }
     function T(e, t) {
-      var r = k();
+      var r = E();
       if ('object' !== (void 0 === e ? 'undefined' : o(e)))
         return (
-          (r[e] = void 0 === t ? S : t),
+          (r[e] = void 0 === t ? M : t),
           function() {
-            O(e);
+            I(e);
           }
         );
       Object.keys(e).forEach(function(t) {
         r[t] = e[t];
       });
     }
-    function O(e) {
-      var t = k();
-      delete t[e], 0 == Object.keys(t).length && delete E()[M];
+    function I(e) {
+      var t = E();
+      delete t[e], 0 == Object.keys(t).length && delete S()[k];
     }
-    function D(e) {
-      var t = k(),
+    function O(e) {
+      var t = E(),
         r = Object.keys(e),
         o = {};
       function n() {
@@ -9978,19 +9856,19 @@ module.exports = (function(e) {
           configurable: !0
         });
       }
-      e('__get__', I),
-        e('__GetDependency__', I),
+      e('__get__', P),
+        e('__GetDependency__', P),
         e('__Rewire__', T),
         e('__set__', T),
-        e('__reset__', O),
-        e('__ResetDependency__', O),
-        e('__with__', D);
+        e('__reset__', I),
+        e('__ResetDependency__', I),
+        e('__with__', O);
     })(),
-      (t.__get__ = I),
-      (t.__GetDependency__ = I),
+      (t.__get__ = P),
+      (t.__GetDependency__ = P),
       (t.__Rewire__ = T),
       (t.__set__ = T),
-      (t.__ResetDependency__ = O),
+      (t.__ResetDependency__ = I),
       (t.__RewireAPI__ = N),
       (t.default = N);
   },
@@ -11582,28 +11460,28 @@ module.exports = (function(e) {
             })))
       ) {
         var A = new g(),
-          M = A[b](y ? {} : -0, 1) != A,
-          E = d(function() {
+          k = A[b](y ? {} : -0, 1) != A,
+          S = d(function() {
             A.has(1);
           }),
-          k = f(function(e) {
+          E = f(function(e) {
             new g(e);
           }),
-          S =
+          M =
             !y &&
             d(function() {
               for (var e = new g(), t = 5; t--; ) e[b](t, t);
               return !e.has(-0);
             });
-        k ||
+        E ||
           (((g = t(function(t, r) {
             l(t, g, e);
             var o = p(new v(), t, g);
             return null != r && u(r, _, o[b], o), o;
           })).prototype = j),
           (j.constructor = g)),
-          (E || S) && (x('delete'), x('has'), _ && x('get')),
-          (S || M) && x(b),
+          (S || M) && (x('delete'), x('has'), _ && x('get')),
+          (M || k) && x(b),
           y && j.clear && delete j.clear;
       } else
         (g = m.getConstructor(t, e, _, b)), i(g.prototype, r), (a.NEED = !0);
@@ -12156,7 +12034,7 @@ module.exports = (function(e) {
         g,
         b,
         j = function(e) {
-          if (!f && e in M) return M[e];
+          if (!f && e in k) return k[e];
           switch (e) {
             case 'keys':
             case 'values':
@@ -12171,37 +12049,37 @@ module.exports = (function(e) {
         w = t + ' Iterator',
         x = 'values' == m,
         A = !1,
-        M = e.prototype,
-        E = M[d] || M['@@iterator'] || (m && M[m]),
-        k = E || j(m),
-        S = m ? (x ? j('entries') : k) : void 0,
-        N = ('Array' == t && M.entries) || E;
+        k = e.prototype,
+        S = k[d] || k['@@iterator'] || (m && k[m]),
+        E = S || j(m),
+        M = m ? (x ? j('entries') : E) : void 0,
+        N = ('Array' == t && k.entries) || S;
       if (
         (N &&
           (b = c(N.call(new e()))) !== Object.prototype &&
           b.next &&
           (l(b, w, !0), o || 'function' == typeof b[d] || i(b, d, h)),
         x &&
-          E &&
-          'values' !== E.name &&
+          S &&
+          'values' !== S.name &&
           ((A = !0),
-          (k = function() {
-            return E.call(this);
+          (E = function() {
+            return S.call(this);
           })),
-        (o && !y) || (!f && !A && M[d]) || i(M, d, k),
-        (a[t] = k),
+        (o && !y) || (!f && !A && k[d]) || i(k, d, E),
+        (a[t] = E),
         (a[w] = h),
         m)
       )
         if (
           ((v = {
-            values: x ? k : j('values'),
-            keys: _ ? k : j('keys'),
-            entries: S
+            values: x ? E : j('values'),
+            keys: _ ? E : j('keys'),
+            entries: M
           }),
           y)
         )
-          for (g in v) g in M || s(M, g, v[g]);
+          for (g in v) g in k || s(k, g, v[g]);
         else n(n.P + n.F * (f || A), t, v);
       return v;
     };
@@ -13339,41 +13217,41 @@ module.exports = (function(e) {
         w = r('./node_modules/core-js/modules/_to-object.js'),
         x = r('./node_modules/core-js/modules/_is-array-iter.js'),
         A = r('./node_modules/core-js/modules/_object-create.js'),
-        M = r('./node_modules/core-js/modules/_object-gpo.js'),
-        E = r('./node_modules/core-js/modules/_object-gopn.js').f,
-        k = r('./node_modules/core-js/modules/core.get-iterator-method.js'),
-        S = r('./node_modules/core-js/modules/_uid.js'),
+        k = r('./node_modules/core-js/modules/_object-gpo.js'),
+        S = r('./node_modules/core-js/modules/_object-gopn.js').f,
+        E = r('./node_modules/core-js/modules/core.get-iterator-method.js'),
+        M = r('./node_modules/core-js/modules/_uid.js'),
         N = r('./node_modules/core-js/modules/_wks.js'),
-        I = r('./node_modules/core-js/modules/_array-methods.js'),
+        P = r('./node_modules/core-js/modules/_array-methods.js'),
         T = r('./node_modules/core-js/modules/_array-includes.js'),
-        O = r('./node_modules/core-js/modules/_species-constructor.js'),
-        D = r('./node_modules/core-js/modules/es6.array.iterator.js'),
-        P = r('./node_modules/core-js/modules/_iterators.js'),
-        R = r('./node_modules/core-js/modules/_iter-detect.js'),
-        L = r('./node_modules/core-js/modules/_set-species.js'),
-        C = r('./node_modules/core-js/modules/_array-fill.js'),
+        I = r('./node_modules/core-js/modules/_species-constructor.js'),
+        O = r('./node_modules/core-js/modules/es6.array.iterator.js'),
+        R = r('./node_modules/core-js/modules/_iterators.js'),
+        L = r('./node_modules/core-js/modules/_iter-detect.js'),
+        C = r('./node_modules/core-js/modules/_set-species.js'),
+        D = r('./node_modules/core-js/modules/_array-fill.js'),
         B = r('./node_modules/core-js/modules/_array-copy-within.js'),
         F = r('./node_modules/core-js/modules/_object-dp.js'),
         U = r('./node_modules/core-js/modules/_object-gopd.js'),
-        z = F.f,
-        H = U.f,
+        H = F.f,
+        q = U.f,
         G = n.RangeError,
-        q = n.TypeError,
+        z = n.TypeError,
         W = n.Uint8Array,
         V = Array.prototype,
         K = u.ArrayBuffer,
-        Q = u.DataView,
-        Y = I(0),
-        J = I(2),
-        X = I(3),
-        Z = I(4),
-        $ = I(5),
-        ee = I(6),
+        J = u.DataView,
+        X = P(0),
+        Z = P(2),
+        $ = P(3),
+        Y = P(4),
+        Q = P(5),
+        ee = P(6),
         te = T(!0),
         re = T(!1),
-        oe = D.values,
-        ne = D.keys,
-        se = D.entries,
+        oe = O.values,
+        ne = O.keys,
+        se = O.entries,
         ie = V.lastIndexOf,
         ae = V.reduce,
         ue = V.reduceRight,
@@ -13384,13 +13262,13 @@ module.exports = (function(e) {
         he = V.toLocaleString,
         pe = N('iterator'),
         me = N('toStringTag'),
-        _e = S('typed_constructor'),
-        ye = S('def_constructor'),
+        _e = M('typed_constructor'),
+        ye = M('def_constructor'),
         ve = a.CONSTR,
         ge = a.TYPED,
         be = a.VIEW,
-        je = I(1, function(e, t) {
-          return Ee(O(e, e[ye]), t);
+        je = P(1, function(e, t) {
+          return Se(I(e, e[ye]), t);
         }),
         we = s(function() {
           return 1 === new W(new Uint16Array([1]).buffer)[0];
@@ -13406,30 +13284,30 @@ module.exports = (function(e) {
           if (r < 0 || r % t) throw G('Wrong offset!');
           return r;
         },
-        Me = function(e) {
+        ke = function(e) {
           if (j(e) && ge in e) return e;
-          throw q(e + ' is not a typed array!');
-        },
-        Ee = function(e, t) {
-          if (!(j(e) && _e in e))
-            throw q('It is not a typed array constructor!');
-          return new e(t);
-        },
-        ke = function(e, t) {
-          return Se(O(e, e[ye]), t);
+          throw z(e + ' is not a typed array!');
         },
         Se = function(e, t) {
-          for (var r = 0, o = t.length, n = Ee(e, o); o > r; ) n[r] = t[r++];
+          if (!(j(e) && _e in e))
+            throw z('It is not a typed array constructor!');
+          return new e(t);
+        },
+        Ee = function(e, t) {
+          return Me(I(e, e[ye]), t);
+        },
+        Me = function(e, t) {
+          for (var r = 0, o = t.length, n = Se(e, o); o > r; ) n[r] = t[r++];
           return n;
         },
         Ne = function(e, t, r) {
-          z(e, t, {
+          H(e, t, {
             get: function() {
               return this._d[r];
             }
           });
         },
-        Ie = function(e) {
+        Pe = function(e) {
           var t,
             r,
             o,
@@ -13440,7 +13318,7 @@ module.exports = (function(e) {
             u = arguments.length,
             c = u > 1 ? arguments[1] : void 0,
             d = void 0 !== c,
-            f = k(a);
+            f = E(a);
           if (null != f && !x(f)) {
             for (i = f.call(a), o = [], t = 0; !(s = i.next()).done; t++)
               o.push(s.value);
@@ -13450,7 +13328,7 @@ module.exports = (function(e) {
             d && u > 2 && (c = l(c, arguments[2], 2)),
               t = 0,
               r = m(a.length),
-              n = Ee(this, r);
+              n = Se(this, r);
             r > t;
             t++
           )
@@ -13458,88 +13336,88 @@ module.exports = (function(e) {
           return n;
         },
         Te = function() {
-          for (var e = 0, t = arguments.length, r = Ee(this, t); t > e; )
+          for (var e = 0, t = arguments.length, r = Se(this, t); t > e; )
             r[e] = arguments[e++];
           return r;
         },
-        Oe =
+        Ie =
           !!W &&
           s(function() {
             he.call(new W(1));
           }),
-        De = function() {
-          return he.apply(Oe ? de.call(Me(this)) : Me(this), arguments);
+        Oe = function() {
+          return he.apply(Ie ? de.call(ke(this)) : ke(this), arguments);
         },
-        Pe = {
+        Re = {
           copyWithin: function(e, t) {
             return B.call(
-              Me(this),
+              ke(this),
               e,
               t,
               arguments.length > 2 ? arguments[2] : void 0
             );
           },
           every: function(e) {
-            return Z(Me(this), e, arguments.length > 1 ? arguments[1] : void 0);
+            return Y(ke(this), e, arguments.length > 1 ? arguments[1] : void 0);
           },
           fill: function(e) {
-            return C.apply(Me(this), arguments);
+            return D.apply(ke(this), arguments);
           },
           filter: function(e) {
-            return ke(
+            return Ee(
               this,
-              J(Me(this), e, arguments.length > 1 ? arguments[1] : void 0)
+              Z(ke(this), e, arguments.length > 1 ? arguments[1] : void 0)
             );
           },
           find: function(e) {
-            return $(Me(this), e, arguments.length > 1 ? arguments[1] : void 0);
+            return Q(ke(this), e, arguments.length > 1 ? arguments[1] : void 0);
           },
           findIndex: function(e) {
             return ee(
-              Me(this),
+              ke(this),
               e,
               arguments.length > 1 ? arguments[1] : void 0
             );
           },
           forEach: function(e) {
-            Y(Me(this), e, arguments.length > 1 ? arguments[1] : void 0);
+            X(ke(this), e, arguments.length > 1 ? arguments[1] : void 0);
           },
           indexOf: function(e) {
             return re(
-              Me(this),
+              ke(this),
               e,
               arguments.length > 1 ? arguments[1] : void 0
             );
           },
           includes: function(e) {
             return te(
-              Me(this),
+              ke(this),
               e,
               arguments.length > 1 ? arguments[1] : void 0
             );
           },
           join: function(e) {
-            return le.apply(Me(this), arguments);
+            return le.apply(ke(this), arguments);
           },
           lastIndexOf: function(e) {
-            return ie.apply(Me(this), arguments);
+            return ie.apply(ke(this), arguments);
           },
           map: function(e) {
             return je(
-              Me(this),
+              ke(this),
               e,
               arguments.length > 1 ? arguments[1] : void 0
             );
           },
           reduce: function(e) {
-            return ae.apply(Me(this), arguments);
+            return ae.apply(ke(this), arguments);
           },
           reduceRight: function(e) {
-            return ue.apply(Me(this), arguments);
+            return ue.apply(ke(this), arguments);
           },
           reverse: function() {
             for (
-              var e, t = Me(this).length, r = Math.floor(t / 2), o = 0;
+              var e, t = ke(this).length, r = Math.floor(t / 2), o = 0;
               o < r;
 
             )
@@ -13547,27 +13425,27 @@ module.exports = (function(e) {
             return this;
           },
           some: function(e) {
-            return X(Me(this), e, arguments.length > 1 ? arguments[1] : void 0);
+            return $(ke(this), e, arguments.length > 1 ? arguments[1] : void 0);
           },
           sort: function(e) {
-            return ce.call(Me(this), e);
+            return ce.call(ke(this), e);
           },
           subarray: function(e, t) {
-            var r = Me(this),
+            var r = ke(this),
               o = r.length,
               n = y(e, o);
-            return new (O(r, r[ye]))(
+            return new (I(r, r[ye]))(
               r.buffer,
               r.byteOffset + n * r.BYTES_PER_ELEMENT,
               m((void 0 === t ? o : y(t, o)) - n)
             );
           }
         },
-        Re = function(e, t) {
-          return ke(this, de.call(Me(this), e, t));
+        Le = function(e, t) {
+          return Ee(this, de.call(ke(this), e, t));
         },
-        Le = function(e) {
-          Me(this);
+        Ce = function(e) {
+          ke(this);
           var t = Ae(arguments[1], 1),
             r = this.length,
             o = w(e),
@@ -13576,15 +13454,15 @@ module.exports = (function(e) {
           if (n + t > r) throw G('Wrong length!');
           for (; s < n; ) this[t + s] = o[s++];
         },
-        Ce = {
+        De = {
           entries: function() {
-            return se.call(Me(this));
+            return se.call(ke(this));
           },
           keys: function() {
-            return ne.call(Me(this));
+            return ne.call(ke(this));
           },
           values: function() {
-            return oe.call(Me(this));
+            return oe.call(ke(this));
           }
         },
         Be = function(e, t) {
@@ -13597,7 +13475,7 @@ module.exports = (function(e) {
           );
         },
         Fe = function(e, t) {
-          return Be(e, (t = v(t, !0))) ? d(2, e[t]) : H(e, t);
+          return Be(e, (t = v(t, !0))) ? d(2, e[t]) : q(e, t);
         },
         Ue = function(e, t, r) {
           return !(Be(e, (t = v(t, !0))) && j(r) && g(r, 'value')) ||
@@ -13606,7 +13484,7 @@ module.exports = (function(e) {
             r.configurable ||
             (g(r, 'writable') && !r.writable) ||
             (g(r, 'enumerable') && !r.enumerable)
-            ? z(e, t, r)
+            ? H(e, t, r)
             : ((e[t] = r.value), e);
         };
       ve || ((U.f = Fe), (F.f = Ue)),
@@ -13620,21 +13498,21 @@ module.exports = (function(e) {
           (fe = he = function() {
             return le.call(this);
           });
-      var ze = h({}, Pe);
-      h(ze, Ce),
-        f(ze, pe, Ce.values),
-        h(ze, {
-          slice: Re,
-          set: Le,
+      var He = h({}, Re);
+      h(He, De),
+        f(He, pe, De.values),
+        h(He, {
+          slice: Le,
+          set: Ce,
           constructor: function() {},
           toString: fe,
-          toLocaleString: De
+          toLocaleString: Oe
         }),
-        Ne(ze, 'buffer', 'b'),
-        Ne(ze, 'byteOffset', 'o'),
-        Ne(ze, 'byteLength', 'l'),
-        Ne(ze, 'length', 'e'),
-        z(ze, me, {
+        Ne(He, 'buffer', 'b'),
+        Ne(He, 'byteOffset', 'o'),
+        Ne(He, 'byteLength', 'l'),
+        Ne(He, 'length', 'e'),
+        H(He, me, {
           get: function() {
             return this[ge];
           }
@@ -13645,12 +13523,12 @@ module.exports = (function(e) {
             h = 'set' + e,
             p = n[l],
             y = p || {},
-            v = p && M(p),
+            v = p && k(p),
             g = !p || !a.ABV,
             w = {},
             x = p && p.prototype,
-            k = function(e, r) {
-              z(e, r, {
+            E = function(e, r) {
+              H(e, r, {
                 get: function() {
                   return (function(e, r) {
                     var o = e._d;
@@ -13686,7 +13564,7 @@ module.exports = (function(e) {
                       'SharedArrayBuffer' == u
                     )
                   )
-                    return ge in r ? Se(p, r) : Ie.call(p, r);
+                    return ge in r ? Me(p, r) : Pe.call(p, r);
                   (s = r), (h = Ae(o, t));
                   var y = r.byteLength;
                   if (void 0 === n) {
@@ -13696,13 +13574,13 @@ module.exports = (function(e) {
                   a = i / t;
                 } else (a = _(r)), (s = new K((i = a * t)));
                 for (
-                  f(e, '_d', { b: s, o: h, l: i, e: a, v: new Q(s) });
+                  f(e, '_d', { b: s, o: h, l: i, e: a, v: new J(s) });
                   d < a;
 
                 )
-                  k(e, d++);
+                  E(e, d++);
               })),
-              (x = p.prototype = A(ze)),
+              (x = p.prototype = A(He)),
               f(x, 'constructor', p))
             : (s(function() {
                 p(1);
@@ -13710,7 +13588,7 @@ module.exports = (function(e) {
                 s(function() {
                   new p(-1);
                 }) &&
-                R(function(e) {
+                L(function(e) {
                   new p(), new p(null), new p(1.5), new p(e);
                 }, !0)) ||
               ((p = r(function(e, r, o, n) {
@@ -13727,27 +13605,27 @@ module.exports = (function(e) {
                         ? new y(r, Ae(o, t))
                         : new y(r)
                       : ge in r
-                      ? Se(p, r)
-                      : Ie.call(p, r)
+                      ? Me(p, r)
+                      : Pe.call(p, r)
                     : new y(_(r))
                 );
               })),
-              Y(v !== Function.prototype ? E(y).concat(E(v)) : E(y), function(
+              X(v !== Function.prototype ? S(y).concat(S(v)) : S(y), function(
                 e
               ) {
                 e in p || f(p, e, y[e]);
               }),
               (p.prototype = x),
               o || (x.constructor = p));
-          var S = x[pe],
-            N = !!S && ('values' == S.name || null == S.name),
-            I = Ce.values;
+          var M = x[pe],
+            N = !!M && ('values' == M.name || null == M.name),
+            P = De.values;
           f(p, _e, !0),
             f(x, ge, l),
             f(x, be, !0),
             f(x, ye, p),
             (u ? new p(1)[me] == l : me in x) ||
-              z(x, me, {
+              H(x, me, {
                 get: function() {
                   return l;
                 }
@@ -13762,13 +13640,13 @@ module.exports = (function(e) {
                     y.of.call(p, 1);
                   }),
               l,
-              { from: Ie, of: Te }
+              { from: Pe, of: Te }
             ),
             'BYTES_PER_ELEMENT' in x || f(x, 'BYTES_PER_ELEMENT', t),
-            i(i.P, l, Pe),
-            L(l),
-            i(i.P + i.F * xe, l, { set: Le }),
-            i(i.P + i.F * !N, l, Ce),
+            i(i.P, l, Re),
+            C(l),
+            i(i.P + i.F * xe, l, { set: Ce }),
+            i(i.P + i.F * !N, l, De),
             o || x.toString == fe || (x.toString = fe),
             i(
               i.P +
@@ -13777,7 +13655,7 @@ module.exports = (function(e) {
                     new p(1).slice();
                   }),
               l,
-              { slice: Re }
+              { slice: Le }
             ),
             i(
               i.P +
@@ -13791,10 +13669,10 @@ module.exports = (function(e) {
                       x.toLocaleString.call([1, 2]);
                     })),
               l,
-              { toLocaleString: De }
+              { toLocaleString: Oe }
             ),
-            (P[l] = N ? S : I),
-            o || N || f(x, pe, I);
+            (R[l] = N ? M : P),
+            o || N || f(x, pe, P);
         });
     } else e.exports = function() {};
   },
@@ -13822,16 +13700,16 @@ module.exports = (function(e) {
       w = o.Math,
       x = o.RangeError,
       A = o.Infinity,
-      M = b,
-      E = w.abs,
-      k = w.pow,
-      S = w.floor,
+      k = b,
+      S = w.abs,
+      E = w.pow,
+      M = w.floor,
       N = w.log,
-      I = w.LN2,
+      P = w.LN2,
       T = n ? '_b' : 'buffer',
-      O = n ? '_l' : 'byteLength',
-      D = n ? '_o' : 'byteOffset';
-    function P(e, t, r) {
+      I = n ? '_l' : 'byteLength',
+      O = n ? '_o' : 'byteOffset';
+    function R(e, t, r) {
       var o,
         n,
         s,
@@ -13839,28 +13717,28 @@ module.exports = (function(e) {
         a = 8 * r - t - 1,
         u = (1 << a) - 1,
         l = u >> 1,
-        c = 23 === t ? k(2, -24) - k(2, -77) : 0,
+        c = 23 === t ? E(2, -24) - E(2, -77) : 0,
         d = 0,
         f = e < 0 || (0 === e && 1 / e < 0) ? 1 : 0;
       for (
-        (e = E(e)) != e || e === A
+        (e = S(e)) != e || e === A
           ? ((n = e != e ? 1 : 0), (o = u))
-          : ((o = S(N(e) / I)),
-            e * (s = k(2, -o)) < 1 && (o--, (s *= 2)),
-            (e += o + l >= 1 ? c / s : c * k(2, 1 - l)) * s >= 2 &&
+          : ((o = M(N(e) / P)),
+            e * (s = E(2, -o)) < 1 && (o--, (s *= 2)),
+            (e += o + l >= 1 ? c / s : c * E(2, 1 - l)) * s >= 2 &&
               (o++, (s /= 2)),
             o + l >= u
               ? ((n = 0), (o = u))
               : o + l >= 1
-              ? ((n = (e * s - 1) * k(2, t)), (o += l))
-              : ((n = e * k(2, l - 1) * k(2, t)), (o = 0)));
+              ? ((n = (e * s - 1) * E(2, t)), (o += l))
+              : ((n = e * E(2, l - 1) * E(2, t)), (o = 0)));
         t >= 8;
         i[d++] = 255 & n, n /= 256, t -= 8
       );
       for (o = (o << t) | n, a += t; a > 0; i[d++] = 255 & o, o /= 256, a -= 8);
       return (i[--d] |= 128 * f), i;
     }
-    function R(e, t, r) {
+    function L(e, t, r) {
       var o,
         n = 8 * r - t - 1,
         s = (1 << n) - 1,
@@ -13878,14 +13756,14 @@ module.exports = (function(e) {
       if (0 === c) c = 1 - i;
       else {
         if (c === s) return o ? NaN : l ? -A : A;
-        (o += k(2, t)), (c -= i);
+        (o += E(2, t)), (c -= i);
       }
-      return (l ? -1 : 1) * o * k(2, c - t);
-    }
-    function L(e) {
-      return (e[3] << 24) | (e[2] << 16) | (e[1] << 8) | e[0];
+      return (l ? -1 : 1) * o * E(2, c - t);
     }
     function C(e) {
+      return (e[3] << 24) | (e[2] << 16) | (e[1] << 8) | e[0];
+    }
+    function D(e) {
       return [255 & e];
     }
     function B(e) {
@@ -13895,12 +13773,12 @@ module.exports = (function(e) {
       return [255 & e, (e >> 8) & 255, (e >> 16) & 255, (e >> 24) & 255];
     }
     function U(e) {
-      return P(e, 52, 8);
+      return R(e, 52, 8);
     }
-    function z(e) {
-      return P(e, 23, 4);
+    function H(e) {
+      return R(e, 23, 4);
     }
-    function H(e, t, r) {
+    function q(e, t, r) {
       m(e[v], t, {
         get: function() {
           return this[r];
@@ -13909,16 +13787,16 @@ module.exports = (function(e) {
     }
     function G(e, t, r, o) {
       var n = h(+r);
-      if (n + t > e[O]) throw x(g);
+      if (n + t > e[I]) throw x(g);
       var s = e[T]._b,
-        i = n + e[D],
+        i = n + e[O],
         a = s.slice(i, i + t);
       return o ? a : a.reverse();
     }
-    function q(e, t, r, o, n, s) {
+    function z(e, t, r, o, n, s) {
       var i = h(+r);
-      if (i + t > e[O]) throw x(g);
-      for (var a = e[T]._b, u = i + e[D], l = o(+n), c = 0; c < t; c++)
+      if (i + t > e[I]) throw x(g);
+      for (var a = e[T]._b, u = i + e[O], l = o(+n), c = 0; c < t; c++)
         a[u + c] = l[s ? c : t - c - 1];
     }
     if (i.ABV) {
@@ -13936,29 +13814,29 @@ module.exports = (function(e) {
         for (
           var W,
             V = ((b = function(e) {
-              return c(this, b), new M(h(e));
-            })[v] = M[v]),
-            K = p(M),
-            Q = 0;
-          K.length > Q;
+              return c(this, b), new k(h(e));
+            })[v] = k[v]),
+            K = p(k),
+            J = 0;
+          K.length > J;
 
         )
-          (W = K[Q++]) in b || a(b, W, M[W]);
+          (W = K[J++]) in b || a(b, W, k[W]);
         s || (V.constructor = b);
       }
-      var Y = new j(new b(2)),
-        J = j[v].setInt8;
-      Y.setInt8(0, 2147483648),
-        Y.setInt8(1, 2147483649),
-        (!Y.getInt8(0) && Y.getInt8(1)) ||
+      var X = new j(new b(2)),
+        Z = j[v].setInt8;
+      X.setInt8(0, 2147483648),
+        X.setInt8(1, 2147483649),
+        (!X.getInt8(0) && X.getInt8(1)) ||
           u(
             j[v],
             {
               setInt8: function(e, t) {
-                J.call(this, e, (t << 24) >> 24);
+                Z.call(this, e, (t << 24) >> 24);
               },
               setUint8: function(e, t) {
-                J.call(this, e, (t << 24) >> 24);
+                Z.call(this, e, (t << 24) >> 24);
               }
             },
             !0
@@ -13967,22 +13845,22 @@ module.exports = (function(e) {
       (b = function(e) {
         c(this, b, 'ArrayBuffer');
         var t = h(e);
-        (this._b = _.call(new Array(t), 0)), (this[O] = t);
+        (this._b = _.call(new Array(t), 0)), (this[I] = t);
       }),
         (j = function(e, t, r) {
           c(this, j, 'DataView'), c(e, b, 'DataView');
-          var o = e[O],
+          var o = e[I],
             n = d(t);
           if (n < 0 || n > o) throw x('Wrong offset!');
           if (n + (r = void 0 === r ? o - n : f(r)) > o)
             throw x('Wrong length!');
-          (this[T] = e), (this[D] = n), (this[O] = r);
+          (this[T] = e), (this[O] = n), (this[I] = r);
         }),
         n &&
-          (H(b, 'byteLength', '_l'),
-          H(j, 'buffer', '_b'),
-          H(j, 'byteLength', '_l'),
-          H(j, 'byteOffset', '_o')),
+          (q(b, 'byteLength', '_l'),
+          q(j, 'buffer', '_b'),
+          q(j, 'byteLength', '_l'),
+          q(j, 'byteOffset', '_o')),
         u(j[v], {
           getInt8: function(e) {
             return (G(this, 1, e)[0] << 24) >> 24;
@@ -13999,40 +13877,40 @@ module.exports = (function(e) {
             return (t[1] << 8) | t[0];
           },
           getInt32: function(e) {
-            return L(G(this, 4, e, arguments[1]));
+            return C(G(this, 4, e, arguments[1]));
           },
           getUint32: function(e) {
-            return L(G(this, 4, e, arguments[1])) >>> 0;
+            return C(G(this, 4, e, arguments[1])) >>> 0;
           },
           getFloat32: function(e) {
-            return R(G(this, 4, e, arguments[1]), 23, 4);
+            return L(G(this, 4, e, arguments[1]), 23, 4);
           },
           getFloat64: function(e) {
-            return R(G(this, 8, e, arguments[1]), 52, 8);
+            return L(G(this, 8, e, arguments[1]), 52, 8);
           },
           setInt8: function(e, t) {
-            q(this, 1, e, C, t);
+            z(this, 1, e, D, t);
           },
           setUint8: function(e, t) {
-            q(this, 1, e, C, t);
+            z(this, 1, e, D, t);
           },
           setInt16: function(e, t) {
-            q(this, 2, e, B, t, arguments[2]);
+            z(this, 2, e, B, t, arguments[2]);
           },
           setUint16: function(e, t) {
-            q(this, 2, e, B, t, arguments[2]);
+            z(this, 2, e, B, t, arguments[2]);
           },
           setInt32: function(e, t) {
-            q(this, 4, e, F, t, arguments[2]);
+            z(this, 4, e, F, t, arguments[2]);
           },
           setUint32: function(e, t) {
-            q(this, 4, e, F, t, arguments[2]);
+            z(this, 4, e, F, t, arguments[2]);
           },
           setFloat32: function(e, t) {
-            q(this, 4, e, z, t, arguments[2]);
+            z(this, 4, e, H, t, arguments[2]);
           },
           setFloat64: function(e, t) {
-            q(this, 8, e, U, t, arguments[2]);
+            z(this, 8, e, U, t, arguments[2]);
           }
         });
     y(b, 'ArrayBuffer'),
@@ -15340,33 +15218,33 @@ module.exports = (function(e) {
       w = r('./node_modules/core-js/modules/_promise-resolve.js'),
       x = u.TypeError,
       A = u.process,
-      M = A && A.versions,
-      E = (M && M.v8) || '',
-      k = u.Promise,
-      S = 'process' == c(A),
+      k = A && A.versions,
+      S = (k && k.v8) || '',
+      E = u.Promise,
+      M = 'process' == c(A),
       N = function() {},
-      I = (n = g.f),
+      P = (n = g.f),
       T = !!(function() {
         try {
-          var e = k.resolve(1),
+          var e = E.resolve(1),
             t = ((e.constructor = {})[
               r('./node_modules/core-js/modules/_wks.js')('species')
             ] = function(e) {
               e(N, N);
             });
           return (
-            (S || 'function' == typeof PromiseRejectionEvent) &&
+            (M || 'function' == typeof PromiseRejectionEvent) &&
             e.then(N) instanceof t &&
-            0 !== E.indexOf('6.6') &&
+            0 !== S.indexOf('6.6') &&
             -1 === j.indexOf('Chrome/66')
           );
         } catch (e) {}
       })(),
-      O = function(e) {
+      I = function(e) {
         var t;
         return !(!f(e) || 'function' != typeof (t = e.then)) && t;
       },
-      D = function(e, t) {
+      O = function(e, t) {
         if (!e._n) {
           e._n = !0;
           var r = e._c;
@@ -15385,7 +15263,7 @@ module.exports = (function(e) {
                     c = t.domain;
                   try {
                     a
-                      ? (n || (2 == e._h && L(e), (e._h = 1)),
+                      ? (n || (2 == e._h && C(e), (e._h = 1)),
                         !0 === a
                           ? (r = o)
                           : (c && c.enter(),
@@ -15393,7 +15271,7 @@ module.exports = (function(e) {
                             c && (c.exit(), (i = !0))),
                         r === t.promise
                           ? l(x('Promise-chain cycle'))
-                          : (s = O(r))
+                          : (s = I(r))
                           ? s.call(r, u, l)
                           : u(r))
                       : l(o);
@@ -15405,21 +15283,21 @@ module.exports = (function(e) {
 
             )
               i(r[s++]);
-            (e._c = []), (e._n = !1), t && !e._h && P(e);
+            (e._c = []), (e._n = !1), t && !e._h && R(e);
           });
         }
       },
-      P = function(e) {
+      R = function(e) {
         y.call(u, function() {
           var t,
             r,
             o,
             n = e._v,
-            s = R(e);
+            s = L(e);
           if (
             (s &&
               ((t = b(function() {
-                S
+                M
                   ? A.emit('unhandledRejection', n, e)
                   : (r = u.onunhandledrejection)
                   ? r({ promise: e, reason: n })
@@ -15427,32 +15305,32 @@ module.exports = (function(e) {
                     o.error &&
                     o.error('Unhandled promise rejection', n);
               })),
-              (e._h = S || R(e) ? 2 : 1)),
+              (e._h = M || L(e) ? 2 : 1)),
             (e._a = void 0),
             s && t.e)
           )
             throw t.v;
         });
       },
-      R = function(e) {
+      L = function(e) {
         return 1 !== e._h && 0 === (e._a || e._c).length;
       },
-      L = function(e) {
+      C = function(e) {
         y.call(u, function() {
           var t;
-          S
+          M
             ? A.emit('rejectionHandled', e)
             : (t = u.onrejectionhandled) && t({ promise: e, reason: e._v });
         });
       },
-      C = function(e) {
+      D = function(e) {
         var t = this;
         t._d ||
           ((t._d = !0),
           ((t = t._w || t)._v = e),
           (t._s = 2),
           t._a || (t._a = t._c.slice()),
-          D(t, !0));
+          O(t, !0));
       },
       B = function(e) {
         var t,
@@ -15461,28 +15339,28 @@ module.exports = (function(e) {
           (r._d = !0), (r = r._w || r);
           try {
             if (r === e) throw x("Promise can't be resolved itself");
-            (t = O(e))
+            (t = I(e))
               ? v(function() {
                   var o = { _w: r, _d: !1 };
                   try {
-                    t.call(e, l(B, o, 1), l(C, o, 1));
+                    t.call(e, l(B, o, 1), l(D, o, 1));
                   } catch (e) {
-                    C.call(o, e);
+                    D.call(o, e);
                   }
                 })
-              : ((r._v = e), (r._s = 1), D(r, !1));
+              : ((r._v = e), (r._s = 1), O(r, !1));
           } catch (e) {
-            C.call({ _w: r, _d: !1 }, e);
+            D.call({ _w: r, _d: !1 }, e);
           }
         }
       };
     T ||
-      ((k = function(e) {
-        p(this, k, 'Promise', '_h'), h(e), o.call(this);
+      ((E = function(e) {
+        p(this, E, 'Promise', '_h'), h(e), o.call(this);
         try {
-          e(l(B, this, 1), l(C, this, 1));
+          e(l(B, this, 1), l(D, this, 1));
         } catch (e) {
-          C.call(this, e);
+          D.call(this, e);
         }
       }),
       ((o = function(e) {
@@ -15494,17 +15372,17 @@ module.exports = (function(e) {
           (this._h = 0),
           (this._n = !1);
       }).prototype = r('./node_modules/core-js/modules/_redefine-all.js')(
-        k.prototype,
+        E.prototype,
         {
           then: function(e, t) {
-            var r = I(_(this, k));
+            var r = P(_(this, E));
             return (
               (r.ok = 'function' != typeof e || e),
               (r.fail = 'function' == typeof t && t),
-              (r.domain = S ? A.domain : void 0),
+              (r.domain = M ? A.domain : void 0),
               this._c.push(r),
               this._a && this._a.push(r),
-              this._s && D(this, !1),
+              this._s && O(this, !1),
               r.promise
             );
           },
@@ -15517,24 +15395,24 @@ module.exports = (function(e) {
         var e = new o();
         (this.promise = e),
           (this.resolve = l(B, e, 1)),
-          (this.reject = l(C, e, 1));
+          (this.reject = l(D, e, 1));
       }),
-      (g.f = I = function(e) {
-        return e === k || e === i ? new s(e) : n(e);
+      (g.f = P = function(e) {
+        return e === E || e === i ? new s(e) : n(e);
       })),
-      d(d.G + d.W + d.F * !T, { Promise: k }),
-      r('./node_modules/core-js/modules/_set-to-string-tag.js')(k, 'Promise'),
+      d(d.G + d.W + d.F * !T, { Promise: E }),
+      r('./node_modules/core-js/modules/_set-to-string-tag.js')(E, 'Promise'),
       r('./node_modules/core-js/modules/_set-species.js')('Promise'),
       (i = r('./node_modules/core-js/modules/_core.js').Promise),
       d(d.S + d.F * !T, 'Promise', {
         reject: function(e) {
-          var t = I(this);
+          var t = P(this);
           return (0, t.reject)(e), t.promise;
         }
       }),
       d(d.S + d.F * (a || !T), 'Promise', {
         resolve: function(e) {
-          return w(a && this === i ? k : this, e);
+          return w(a && this === i ? E : this, e);
         }
       }),
       d(
@@ -15543,14 +15421,14 @@ module.exports = (function(e) {
             !(
               T &&
               r('./node_modules/core-js/modules/_iter-detect.js')(function(e) {
-                k.all(e).catch(N);
+                E.all(e).catch(N);
               })
             ),
         'Promise',
         {
           all: function(e) {
             var t = this,
-              r = I(t),
+              r = P(t),
               o = r.resolve,
               n = r.reject,
               s = b(function() {
@@ -15572,7 +15450,7 @@ module.exports = (function(e) {
           },
           race: function(e) {
             var t = this,
-              r = I(t),
+              r = P(t),
               o = r.reject,
               n = b(function() {
                 m(e, !1, function(e) {
@@ -16043,20 +15921,20 @@ module.exports = (function(e) {
             g = v[x];
             for (
               var A = String(g[0]),
-                M = l(c(i(g.index), f.length), 0),
-                E = [],
-                k = 1;
-              k < g.length;
-              k++
+                k = l(c(i(g.index), f.length), 0),
+                S = [],
+                E = 1;
+              E < g.length;
+              E++
             )
-              E.push(void 0 === (b = g[k]) ? b : String(b));
-            var S = g.groups;
+              S.push(void 0 === (b = g[E]) ? b : String(b));
+            var M = g.groups;
             if (h) {
-              var N = [A].concat(E, M, f);
-              void 0 !== S && N.push(S);
-              var I = String(t.apply(void 0, N));
-            } else I = m(A, f, M, E, S, t);
-            M >= w && ((j += f.slice(w, M) + I), (w = M + A.length));
+              var N = [A].concat(S, k, f);
+              void 0 !== M && N.push(M);
+              var P = String(t.apply(void 0, N));
+            } else P = m(A, f, k, S, M, t);
+            k >= w && ((j += f.slice(w, k) + P), (w = k + A.length));
           }
           return j + f.slice(w);
         }
@@ -16240,8 +16118,8 @@ module.exports = (function(e) {
                 j = i(f, j, _);
               else {
                 if ((w.push(f.slice(b, j)), w.length === g)) return w;
-                for (var M = 1; M <= A.length - 1; M++)
-                  if ((w.push(A[M]), w.length === g)) return w;
+                for (var k = 1; k <= A.length - 1; k++)
+                  if ((w.push(A[k]), w.length === g)) return w;
                 j = b = x;
               }
             }
@@ -16597,26 +16475,26 @@ module.exports = (function(e) {
       w = r('./node_modules/core-js/modules/_property-desc.js'),
       x = r('./node_modules/core-js/modules/_object-create.js'),
       A = r('./node_modules/core-js/modules/_object-gopn-ext.js'),
-      M = r('./node_modules/core-js/modules/_object-gopd.js'),
-      E = r('./node_modules/core-js/modules/_object-dp.js'),
-      k = r('./node_modules/core-js/modules/_object-keys.js'),
-      S = M.f,
-      N = E.f,
-      I = A.f,
+      k = r('./node_modules/core-js/modules/_object-gopd.js'),
+      S = r('./node_modules/core-js/modules/_object-dp.js'),
+      E = r('./node_modules/core-js/modules/_object-keys.js'),
+      M = k.f,
+      N = S.f,
+      P = A.f,
       T = o.Symbol,
-      O = o.JSON,
-      D = O && O.stringify,
-      P = h('_hidden'),
-      R = h('toPrimitive'),
-      L = {}.propertyIsEnumerable,
-      C = c('symbol-registry'),
+      I = o.JSON,
+      O = I && I.stringify,
+      R = h('_hidden'),
+      L = h('toPrimitive'),
+      C = {}.propertyIsEnumerable,
+      D = c('symbol-registry'),
       B = c('symbols'),
       F = c('op-symbols'),
       U = Object.prototype,
-      z = 'function' == typeof T,
-      H = o.QObject,
-      G = !H || !H.prototype || !H.prototype.findChild,
-      q =
+      H = 'function' == typeof T,
+      q = o.QObject,
+      G = !q || !q.prototype || !q.prototype.findChild,
+      z =
         s &&
         l(function() {
           return (
@@ -16631,7 +16509,7 @@ module.exports = (function(e) {
           );
         })
           ? function(e, t, r) {
-              var o = S(U, t);
+              var o = M(U, t);
               o && delete U[t], N(e, t, r), o && e !== U && N(U, t, o);
             }
           : N,
@@ -16640,7 +16518,7 @@ module.exports = (function(e) {
         return (t._k = e), t;
       },
       V =
-        z && 'symbol' == typeof T.iterator
+        H && 'symbol' == typeof T.iterator
           ? function(e) {
               return 'symbol' == typeof e;
             }
@@ -16655,49 +16533,49 @@ module.exports = (function(e) {
           v(r),
           n(B, t)
             ? (r.enumerable
-                ? (n(e, P) && e[P][t] && (e[P][t] = !1),
+                ? (n(e, R) && e[R][t] && (e[R][t] = !1),
                   (r = x(r, { enumerable: w(0, !1) })))
-                : (n(e, P) || N(e, P, w(1, {})), (e[P][t] = !0)),
-              q(e, t, r))
+                : (n(e, R) || N(e, R, w(1, {})), (e[R][t] = !0)),
+              z(e, t, r))
             : N(e, t, r)
         );
       },
-      Q = function(e, t) {
+      J = function(e, t) {
         v(e);
         for (var r, o = _((t = b(t))), n = 0, s = o.length; s > n; )
           K(e, (r = o[n++]), t[r]);
         return e;
       },
-      Y = function(e) {
-        var t = L.call(this, (e = j(e, !0)));
+      X = function(e) {
+        var t = C.call(this, (e = j(e, !0)));
         return (
           !(this === U && n(B, e) && !n(F, e)) &&
-          (!(t || !n(this, e) || !n(B, e) || (n(this, P) && this[P][e])) || t)
+          (!(t || !n(this, e) || !n(B, e) || (n(this, R) && this[R][e])) || t)
         );
       },
-      J = function(e, t) {
+      Z = function(e, t) {
         if (((e = b(e)), (t = j(t, !0)), e !== U || !n(B, t) || n(F, t))) {
-          var r = S(e, t);
+          var r = M(e, t);
           return (
-            !r || !n(B, t) || (n(e, P) && e[P][t]) || (r.enumerable = !0), r
+            !r || !n(B, t) || (n(e, R) && e[R][t]) || (r.enumerable = !0), r
           );
         }
       },
-      X = function(e) {
-        for (var t, r = I(b(e)), o = [], s = 0; r.length > s; )
-          n(B, (t = r[s++])) || t == P || t == u || o.push(t);
+      $ = function(e) {
+        for (var t, r = P(b(e)), o = [], s = 0; r.length > s; )
+          n(B, (t = r[s++])) || t == R || t == u || o.push(t);
         return o;
       },
-      Z = function(e) {
+      Y = function(e) {
         for (
-          var t, r = e === U, o = I(r ? F : b(e)), s = [], i = 0;
+          var t, r = e === U, o = P(r ? F : b(e)), s = [], i = 0;
           o.length > i;
 
         )
           !n(B, (t = o[i++])) || (r && !n(U, t)) || s.push(B[t]);
         return s;
       };
-    z ||
+    H ||
       (a(
         (T = function() {
           if (this instanceof T)
@@ -16705,45 +16583,45 @@ module.exports = (function(e) {
           var e = f(arguments.length > 0 ? arguments[0] : void 0),
             t = function(r) {
               this === U && t.call(F, r),
-                n(this, P) && n(this[P], e) && (this[P][e] = !1),
-                q(this, e, w(1, r));
+                n(this, R) && n(this[R], e) && (this[R][e] = !1),
+                z(this, e, w(1, r));
             };
-          return s && G && q(U, e, { configurable: !0, set: t }), W(e);
+          return s && G && z(U, e, { configurable: !0, set: t }), W(e);
         }).prototype,
         'toString',
         function() {
           return this._k;
         }
       ),
-      (M.f = J),
-      (E.f = K),
-      (r('./node_modules/core-js/modules/_object-gopn.js').f = A.f = X),
-      (r('./node_modules/core-js/modules/_object-pie.js').f = Y),
-      (r('./node_modules/core-js/modules/_object-gops.js').f = Z),
+      (k.f = Z),
+      (S.f = K),
+      (r('./node_modules/core-js/modules/_object-gopn.js').f = A.f = $),
+      (r('./node_modules/core-js/modules/_object-pie.js').f = X),
+      (r('./node_modules/core-js/modules/_object-gops.js').f = Y),
       s &&
         !r('./node_modules/core-js/modules/_library.js') &&
-        a(U, 'propertyIsEnumerable', Y, !0),
+        a(U, 'propertyIsEnumerable', X, !0),
       (p.f = function(e) {
         return W(h(e));
       })),
-      i(i.G + i.W + i.F * !z, { Symbol: T });
+      i(i.G + i.W + i.F * !H, { Symbol: T });
     for (
-      var $ = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(
+      var Q = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(
           ','
         ),
         ee = 0;
-      $.length > ee;
+      Q.length > ee;
 
     )
-      h($[ee++]);
-    for (var te = k(h.store), re = 0; te.length > re; ) m(te[re++]);
-    i(i.S + i.F * !z, 'Symbol', {
+      h(Q[ee++]);
+    for (var te = E(h.store), re = 0; te.length > re; ) m(te[re++]);
+    i(i.S + i.F * !H, 'Symbol', {
       for: function(e) {
-        return n(C, (e += '')) ? C[e] : (C[e] = T(e));
+        return n(D, (e += '')) ? D[e] : (D[e] = T(e));
       },
       keyFor: function(e) {
         if (!V(e)) throw TypeError(e + ' is not a symbol!');
-        for (var t in C) if (C[t] === e) return t;
+        for (var t in D) if (D[t] === e) return t;
       },
       useSetter: function() {
         G = !0;
@@ -16752,27 +16630,27 @@ module.exports = (function(e) {
         G = !1;
       }
     }),
-      i(i.S + i.F * !z, 'Object', {
+      i(i.S + i.F * !H, 'Object', {
         create: function(e, t) {
-          return void 0 === t ? x(e) : Q(x(e), t);
+          return void 0 === t ? x(e) : J(x(e), t);
         },
         defineProperty: K,
-        defineProperties: Q,
-        getOwnPropertyDescriptor: J,
-        getOwnPropertyNames: X,
-        getOwnPropertySymbols: Z
+        defineProperties: J,
+        getOwnPropertyDescriptor: Z,
+        getOwnPropertyNames: $,
+        getOwnPropertySymbols: Y
       }),
-      O &&
+      I &&
         i(
           i.S +
             i.F *
-              (!z ||
+              (!H ||
                 l(function() {
                   var e = T();
                   return (
-                    '[null]' != D([e]) ||
-                    '{}' != D({ a: e }) ||
-                    '{}' != D(Object(e))
+                    '[null]' != O([e]) ||
+                    '{}' != O({ a: e }) ||
+                    '{}' != O(Object(e))
                   );
                 })),
           'JSON',
@@ -16791,15 +16669,15 @@ module.exports = (function(e) {
                         return t;
                     }),
                   (o[1] = t),
-                  D.apply(O, o)
+                  O.apply(I, o)
                 );
             }
           }
         ),
-      T.prototype[R] ||
+      T.prototype[L] ||
         r('./node_modules/core-js/modules/_hide.js')(
           T.prototype,
-          R,
+          L,
           T.prototype.valueOf
         ),
       d(T, 'Symbol'),
@@ -19174,77 +19052,77 @@ module.exports = (function(e) {
             w = e[t + 11],
             x = e[t + 12],
             A = e[t + 13],
-            M = e[t + 14],
-            E = e[t + 15],
-            k = s[0],
-            S = s[1],
+            k = e[t + 14],
+            S = e[t + 15],
+            E = s[0],
+            M = s[1],
             N = s[2],
-            I = s[3];
-          (k = l(k, S, N, I, i, 7, a[0])),
-            (I = l(I, k, S, N, u, 12, a[1])),
-            (N = l(N, I, k, S, h, 17, a[2])),
-            (S = l(S, N, I, k, p, 22, a[3])),
-            (k = l(k, S, N, I, m, 7, a[4])),
-            (I = l(I, k, S, N, _, 12, a[5])),
-            (N = l(N, I, k, S, y, 17, a[6])),
-            (S = l(S, N, I, k, v, 22, a[7])),
-            (k = l(k, S, N, I, g, 7, a[8])),
-            (I = l(I, k, S, N, b, 12, a[9])),
-            (N = l(N, I, k, S, j, 17, a[10])),
-            (S = l(S, N, I, k, w, 22, a[11])),
-            (k = l(k, S, N, I, x, 7, a[12])),
-            (I = l(I, k, S, N, A, 12, a[13])),
-            (N = l(N, I, k, S, M, 17, a[14])),
-            (k = c(k, (S = l(S, N, I, k, E, 22, a[15])), N, I, u, 5, a[16])),
-            (I = c(I, k, S, N, y, 9, a[17])),
-            (N = c(N, I, k, S, w, 14, a[18])),
-            (S = c(S, N, I, k, i, 20, a[19])),
-            (k = c(k, S, N, I, _, 5, a[20])),
-            (I = c(I, k, S, N, j, 9, a[21])),
-            (N = c(N, I, k, S, E, 14, a[22])),
-            (S = c(S, N, I, k, m, 20, a[23])),
-            (k = c(k, S, N, I, b, 5, a[24])),
-            (I = c(I, k, S, N, M, 9, a[25])),
-            (N = c(N, I, k, S, p, 14, a[26])),
-            (S = c(S, N, I, k, g, 20, a[27])),
-            (k = c(k, S, N, I, A, 5, a[28])),
-            (I = c(I, k, S, N, h, 9, a[29])),
-            (N = c(N, I, k, S, v, 14, a[30])),
-            (k = d(k, (S = c(S, N, I, k, x, 20, a[31])), N, I, _, 4, a[32])),
-            (I = d(I, k, S, N, g, 11, a[33])),
-            (N = d(N, I, k, S, w, 16, a[34])),
-            (S = d(S, N, I, k, M, 23, a[35])),
-            (k = d(k, S, N, I, u, 4, a[36])),
-            (I = d(I, k, S, N, m, 11, a[37])),
-            (N = d(N, I, k, S, v, 16, a[38])),
-            (S = d(S, N, I, k, j, 23, a[39])),
-            (k = d(k, S, N, I, A, 4, a[40])),
-            (I = d(I, k, S, N, i, 11, a[41])),
-            (N = d(N, I, k, S, p, 16, a[42])),
-            (S = d(S, N, I, k, y, 23, a[43])),
-            (k = d(k, S, N, I, b, 4, a[44])),
-            (I = d(I, k, S, N, x, 11, a[45])),
-            (N = d(N, I, k, S, E, 16, a[46])),
-            (k = f(k, (S = d(S, N, I, k, h, 23, a[47])), N, I, i, 6, a[48])),
-            (I = f(I, k, S, N, v, 10, a[49])),
-            (N = f(N, I, k, S, M, 15, a[50])),
-            (S = f(S, N, I, k, _, 21, a[51])),
-            (k = f(k, S, N, I, x, 6, a[52])),
-            (I = f(I, k, S, N, p, 10, a[53])),
-            (N = f(N, I, k, S, j, 15, a[54])),
-            (S = f(S, N, I, k, u, 21, a[55])),
-            (k = f(k, S, N, I, g, 6, a[56])),
-            (I = f(I, k, S, N, E, 10, a[57])),
-            (N = f(N, I, k, S, y, 15, a[58])),
-            (S = f(S, N, I, k, A, 21, a[59])),
-            (k = f(k, S, N, I, m, 6, a[60])),
-            (I = f(I, k, S, N, w, 10, a[61])),
-            (N = f(N, I, k, S, h, 15, a[62])),
-            (S = f(S, N, I, k, b, 21, a[63])),
-            (s[0] = (s[0] + k) | 0),
-            (s[1] = (s[1] + S) | 0),
+            P = s[3];
+          (E = l(E, M, N, P, i, 7, a[0])),
+            (P = l(P, E, M, N, u, 12, a[1])),
+            (N = l(N, P, E, M, h, 17, a[2])),
+            (M = l(M, N, P, E, p, 22, a[3])),
+            (E = l(E, M, N, P, m, 7, a[4])),
+            (P = l(P, E, M, N, _, 12, a[5])),
+            (N = l(N, P, E, M, y, 17, a[6])),
+            (M = l(M, N, P, E, v, 22, a[7])),
+            (E = l(E, M, N, P, g, 7, a[8])),
+            (P = l(P, E, M, N, b, 12, a[9])),
+            (N = l(N, P, E, M, j, 17, a[10])),
+            (M = l(M, N, P, E, w, 22, a[11])),
+            (E = l(E, M, N, P, x, 7, a[12])),
+            (P = l(P, E, M, N, A, 12, a[13])),
+            (N = l(N, P, E, M, k, 17, a[14])),
+            (E = c(E, (M = l(M, N, P, E, S, 22, a[15])), N, P, u, 5, a[16])),
+            (P = c(P, E, M, N, y, 9, a[17])),
+            (N = c(N, P, E, M, w, 14, a[18])),
+            (M = c(M, N, P, E, i, 20, a[19])),
+            (E = c(E, M, N, P, _, 5, a[20])),
+            (P = c(P, E, M, N, j, 9, a[21])),
+            (N = c(N, P, E, M, S, 14, a[22])),
+            (M = c(M, N, P, E, m, 20, a[23])),
+            (E = c(E, M, N, P, b, 5, a[24])),
+            (P = c(P, E, M, N, k, 9, a[25])),
+            (N = c(N, P, E, M, p, 14, a[26])),
+            (M = c(M, N, P, E, g, 20, a[27])),
+            (E = c(E, M, N, P, A, 5, a[28])),
+            (P = c(P, E, M, N, h, 9, a[29])),
+            (N = c(N, P, E, M, v, 14, a[30])),
+            (E = d(E, (M = c(M, N, P, E, x, 20, a[31])), N, P, _, 4, a[32])),
+            (P = d(P, E, M, N, g, 11, a[33])),
+            (N = d(N, P, E, M, w, 16, a[34])),
+            (M = d(M, N, P, E, k, 23, a[35])),
+            (E = d(E, M, N, P, u, 4, a[36])),
+            (P = d(P, E, M, N, m, 11, a[37])),
+            (N = d(N, P, E, M, v, 16, a[38])),
+            (M = d(M, N, P, E, j, 23, a[39])),
+            (E = d(E, M, N, P, A, 4, a[40])),
+            (P = d(P, E, M, N, i, 11, a[41])),
+            (N = d(N, P, E, M, p, 16, a[42])),
+            (M = d(M, N, P, E, y, 23, a[43])),
+            (E = d(E, M, N, P, b, 4, a[44])),
+            (P = d(P, E, M, N, x, 11, a[45])),
+            (N = d(N, P, E, M, S, 16, a[46])),
+            (E = f(E, (M = d(M, N, P, E, h, 23, a[47])), N, P, i, 6, a[48])),
+            (P = f(P, E, M, N, v, 10, a[49])),
+            (N = f(N, P, E, M, k, 15, a[50])),
+            (M = f(M, N, P, E, _, 21, a[51])),
+            (E = f(E, M, N, P, x, 6, a[52])),
+            (P = f(P, E, M, N, p, 10, a[53])),
+            (N = f(N, P, E, M, j, 15, a[54])),
+            (M = f(M, N, P, E, u, 21, a[55])),
+            (E = f(E, M, N, P, g, 6, a[56])),
+            (P = f(P, E, M, N, S, 10, a[57])),
+            (N = f(N, P, E, M, y, 15, a[58])),
+            (M = f(M, N, P, E, A, 21, a[59])),
+            (E = f(E, M, N, P, m, 6, a[60])),
+            (P = f(P, E, M, N, w, 10, a[61])),
+            (N = f(N, P, E, M, h, 15, a[62])),
+            (M = f(M, N, P, E, b, 21, a[63])),
+            (s[0] = (s[0] + E) | 0),
+            (s[1] = (s[1] + M) | 0),
             (s[2] = (s[2] + N) | 0),
-            (s[3] = (s[3] + I) | 0);
+            (s[3] = (s[3] + P) | 0);
         },
         _doFinalize: function() {
           var t = this._data,
@@ -20277,28 +20155,28 @@ module.exports = (function(e) {
               w,
               x,
               A,
-              M,
-              E,
               k,
-              S = this._hash.words,
+              S,
+              E,
+              M = this._hash.words,
               N = d.words,
-              I = f.words,
+              P = f.words,
               T = a.words,
-              O = u.words,
-              D = l.words,
-              P = c.words;
+              I = u.words,
+              O = l.words,
+              R = c.words;
             for (
-              w = s = S[0],
-                x = i = S[1],
-                A = h = S[2],
-                M = b = S[3],
-                E = j = S[4],
+              w = s = M[0],
+                x = i = M[1],
+                A = h = M[2],
+                k = b = M[3],
+                S = j = M[4],
                 r = 0;
               r < 80;
               ++r
             )
-              (k = (s + e[t + T[r]]) | 0),
-                (k +=
+              (E = (s + e[t + T[r]]) | 0),
+                (E +=
                   r < 16
                     ? p(i, h, b) + N[0]
                     : r < 32
@@ -20308,35 +20186,35 @@ module.exports = (function(e) {
                     : r < 64
                     ? y(i, h, b) + N[3]
                     : v(i, h, b) + N[4]),
-                (k = ((k = g((k |= 0), D[r])) + j) | 0),
+                (E = ((E = g((E |= 0), O[r])) + j) | 0),
                 (s = j),
                 (j = b),
                 (b = g(h, 10)),
                 (h = i),
-                (i = k),
-                (k = (w + e[t + O[r]]) | 0),
-                (k +=
+                (i = E),
+                (E = (w + e[t + I[r]]) | 0),
+                (E +=
                   r < 16
-                    ? v(x, A, M) + I[0]
+                    ? v(x, A, k) + P[0]
                     : r < 32
-                    ? y(x, A, M) + I[1]
+                    ? y(x, A, k) + P[1]
                     : r < 48
-                    ? _(x, A, M) + I[2]
+                    ? _(x, A, k) + P[2]
                     : r < 64
-                    ? m(x, A, M) + I[3]
-                    : p(x, A, M) + I[4]),
-                (k = ((k = g((k |= 0), P[r])) + E) | 0),
-                (w = E),
-                (E = M),
-                (M = g(A, 10)),
+                    ? m(x, A, k) + P[3]
+                    : p(x, A, k) + P[4]),
+                (E = ((E = g((E |= 0), R[r])) + S) | 0),
+                (w = S),
+                (S = k),
+                (k = g(A, 10)),
                 (A = x),
-                (x = k);
-            (k = (S[1] + h + M) | 0),
-              (S[1] = (S[2] + b + E) | 0),
-              (S[2] = (S[3] + j + w) | 0),
-              (S[3] = (S[4] + s + x) | 0),
-              (S[4] = (S[0] + i + A) | 0),
-              (S[0] = k);
+                (x = E);
+            (E = (M[1] + h + k) | 0),
+              (M[1] = (M[2] + b + S) | 0),
+              (M[2] = (M[3] + j + w) | 0),
+              (M[3] = (M[4] + s + x) | 0),
+              (M[4] = (M[0] + i + A) | 0),
+              (M[0] = E);
           },
           _doFinalize: function() {
             var e = this._data,
@@ -20661,13 +20539,13 @@ module.exports = (function(e) {
               (i =
                 (16711935 & ((i << 8) | (i >>> 24))) |
                 (4278255360 & ((i << 24) | (i >>> 8)))),
-              ((S = r[n]).high ^= i),
-              (S.low ^= s);
+              ((M = r[n]).high ^= i),
+              (M.low ^= s);
           }
           for (var a = 0; a < 24; a++) {
             for (var f = 0; f < 5; f++) {
               for (var h = 0, p = 0, m = 0; m < 5; m++)
-                (h ^= (S = r[f + 5 * m]).high), (p ^= S.low);
+                (h ^= (M = r[f + 5 * m]).high), (p ^= M.low);
               var _ = d[f];
               (_.high = h), (_.low = p);
             }
@@ -20683,34 +20561,34 @@ module.exports = (function(e) {
                 m < 5;
                 m++
               )
-                ((S = r[f + 5 * m]).high ^= h), (S.low ^= p);
+                ((M = r[f + 5 * m]).high ^= h), (M.low ^= p);
             }
             for (var j = 1; j < 25; j++) {
-              var w = (S = r[j]).high,
-                x = S.low,
+              var w = (M = r[j]).high,
+                x = M.low,
                 A = u[j];
               A < 32
                 ? ((h = (w << A) | (x >>> (32 - A))),
                   (p = (x << A) | (w >>> (32 - A))))
                 : ((h = (x << (A - 32)) | (w >>> (64 - A))),
                   (p = (w << (A - 32)) | (x >>> (64 - A))));
-              var M = d[l[j]];
-              (M.high = h), (M.low = p);
+              var k = d[l[j]];
+              (k.high = h), (k.low = p);
             }
-            var E = d[0],
-              k = r[0];
-            for (E.high = k.high, E.low = k.low, f = 0; f < 5; f++)
+            var S = d[0],
+              E = r[0];
+            for (S.high = E.high, S.low = E.low, f = 0; f < 5; f++)
               for (m = 0; m < 5; m++) {
-                var S = r[(j = f + 5 * m)],
+                var M = r[(j = f + 5 * m)],
                   N = d[j],
-                  I = d[((f + 1) % 5) + 5 * m],
+                  P = d[((f + 1) % 5) + 5 * m],
                   T = d[((f + 2) % 5) + 5 * m];
-                (S.high = N.high ^ (~I.high & T.high)),
-                  (S.low = N.low ^ (~I.low & T.low));
+                (M.high = N.high ^ (~P.high & T.high)),
+                  (M.low = N.low ^ (~P.low & T.low));
               }
-            S = r[0];
-            var O = c[a];
-            (S.high ^= O.high), (S.low ^= O.low);
+            M = r[0];
+            var I = c[a];
+            (M.high ^= I.high), (M.low ^= I.low);
           }
         },
         _doFinalize: function() {
@@ -20929,26 +20807,26 @@ module.exports = (function(e) {
               w = a.low,
               x = c.high,
               A = c.low,
-              M = d.high,
-              E = d.low,
-              k = f.high,
-              S = f.low,
+              k = d.high,
+              S = d.low,
+              E = f.high,
+              M = f.low,
               N = h,
-              I = p,
+              P = p,
               T = m,
-              O = _,
-              D = y,
-              P = v,
-              R = g,
-              L = b,
-              C = j,
+              I = _,
+              O = y,
+              R = v,
+              L = g,
+              C = b,
+              D = j,
               B = w,
               F = x,
               U = A,
-              z = M,
-              H = E,
-              G = k,
+              H = k,
               q = S,
+              G = E,
+              z = M,
               W = 0;
             W < 80;
             W++
@@ -20956,17 +20834,17 @@ module.exports = (function(e) {
             var V = l[W];
             if (W < 16)
               var K = (V.high = 0 | e[t + 2 * W]),
-                Q = (V.low = 0 | e[t + 2 * W + 1]);
+                J = (V.low = 0 | e[t + 2 * W + 1]);
             else {
-              var Y = l[W - 15],
-                J = Y.high,
-                X = Y.low,
-                Z =
-                  ((J >>> 1) | (X << 31)) ^ ((J >>> 8) | (X << 24)) ^ (J >>> 7),
-                $ =
-                  ((X >>> 1) | (J << 31)) ^
-                  ((X >>> 8) | (J << 24)) ^
-                  ((X >>> 7) | (J << 25)),
+              var X = l[W - 15],
+                Z = X.high,
+                $ = X.low,
+                Y =
+                  ((Z >>> 1) | ($ << 31)) ^ ((Z >>> 8) | ($ << 24)) ^ (Z >>> 7),
+                Q =
+                  (($ >>> 1) | (Z << 31)) ^
+                  (($ >>> 8) | (Z << 24)) ^
+                  (($ >>> 7) | (Z << 25)),
                 ee = l[W - 2],
                 te = ee.high,
                 re = ee.low,
@@ -20986,85 +20864,85 @@ module.exports = (function(e) {
                 ce = ue.low;
               (K =
                 (K =
-                  (K = Z + ie + ((Q = $ + ae) >>> 0 < $ >>> 0 ? 1 : 0)) +
+                  (K = Y + ie + ((J = Q + ae) >>> 0 < Q >>> 0 ? 1 : 0)) +
                   oe +
-                  ((Q += ne) >>> 0 < ne >>> 0 ? 1 : 0)) +
+                  ((J += ne) >>> 0 < ne >>> 0 ? 1 : 0)) +
                 le +
-                ((Q += ce) >>> 0 < ce >>> 0 ? 1 : 0)),
+                ((J += ce) >>> 0 < ce >>> 0 ? 1 : 0)),
                 (V.high = K),
-                (V.low = Q);
+                (V.low = J);
             }
             var de,
-              fe = (C & F) ^ (~C & z),
-              he = (B & U) ^ (~B & H),
-              pe = (N & T) ^ (N & D) ^ (T & D),
-              me = (I & O) ^ (I & P) ^ (O & P),
+              fe = (D & F) ^ (~D & H),
+              he = (B & U) ^ (~B & q),
+              pe = (N & T) ^ (N & O) ^ (T & O),
+              me = (P & I) ^ (P & R) ^ (I & R),
               _e =
-                ((N >>> 28) | (I << 4)) ^
-                ((N << 30) | (I >>> 2)) ^
-                ((N << 25) | (I >>> 7)),
+                ((N >>> 28) | (P << 4)) ^
+                ((N << 30) | (P >>> 2)) ^
+                ((N << 25) | (P >>> 7)),
               ye =
-                ((I >>> 28) | (N << 4)) ^
-                ((I << 30) | (N >>> 2)) ^
-                ((I << 25) | (N >>> 7)),
+                ((P >>> 28) | (N << 4)) ^
+                ((P << 30) | (N >>> 2)) ^
+                ((P << 25) | (N >>> 7)),
               ve =
-                ((C >>> 14) | (B << 18)) ^
-                ((C >>> 18) | (B << 14)) ^
-                ((C << 23) | (B >>> 9)),
+                ((D >>> 14) | (B << 18)) ^
+                ((D >>> 18) | (B << 14)) ^
+                ((D << 23) | (B >>> 9)),
               ge =
-                ((B >>> 14) | (C << 18)) ^
-                ((B >>> 18) | (C << 14)) ^
-                ((B << 23) | (C >>> 9)),
+                ((B >>> 14) | (D << 18)) ^
+                ((B >>> 18) | (D << 14)) ^
+                ((B << 23) | (D >>> 9)),
               be = u[W],
               je = be.high,
               we = be.low,
-              xe = G + ve + ((de = q + ge) >>> 0 < q >>> 0 ? 1 : 0),
+              xe = G + ve + ((de = z + ge) >>> 0 < z >>> 0 ? 1 : 0),
               Ae = ye + me;
-            (G = z),
-              (q = H),
-              (z = F),
-              (H = U),
-              (F = C),
+            (G = H),
+              (z = q),
+              (H = F),
+              (q = U),
+              (F = D),
               (U = B),
-              (C =
-                (R +
+              (D =
+                (L +
                   (xe =
                     (xe =
                       (xe = xe + fe + ((de += he) >>> 0 < he >>> 0 ? 1 : 0)) +
                       je +
                       ((de += we) >>> 0 < we >>> 0 ? 1 : 0)) +
                     K +
-                    ((de += Q) >>> 0 < Q >>> 0 ? 1 : 0)) +
-                  ((B = (L + de) | 0) >>> 0 < L >>> 0 ? 1 : 0)) |
+                    ((de += J) >>> 0 < J >>> 0 ? 1 : 0)) +
+                  ((B = (C + de) | 0) >>> 0 < C >>> 0 ? 1 : 0)) |
                 0),
-              (R = D),
-              (L = P),
-              (D = T),
-              (P = O),
+              (L = O),
+              (C = R),
+              (O = T),
+              (R = I),
               (T = N),
-              (O = I),
+              (I = P),
               (N =
                 (xe +
                   (_e + pe + (Ae >>> 0 < ye >>> 0 ? 1 : 0)) +
-                  ((I = (de + Ae) | 0) >>> 0 < de >>> 0 ? 1 : 0)) |
+                  ((P = (de + Ae) | 0) >>> 0 < de >>> 0 ? 1 : 0)) |
                 0);
           }
-          (p = o.low = p + I),
-            (o.high = h + N + (p >>> 0 < I >>> 0 ? 1 : 0)),
-            (_ = n.low = _ + O),
-            (n.high = m + T + (_ >>> 0 < O >>> 0 ? 1 : 0)),
-            (v = s.low = v + P),
-            (s.high = y + D + (v >>> 0 < P >>> 0 ? 1 : 0)),
-            (b = i.low = b + L),
-            (i.high = g + R + (b >>> 0 < L >>> 0 ? 1 : 0)),
+          (p = o.low = p + P),
+            (o.high = h + N + (p >>> 0 < P >>> 0 ? 1 : 0)),
+            (_ = n.low = _ + I),
+            (n.high = m + T + (_ >>> 0 < I >>> 0 ? 1 : 0)),
+            (v = s.low = v + R),
+            (s.high = y + O + (v >>> 0 < R >>> 0 ? 1 : 0)),
+            (b = i.low = b + C),
+            (i.high = g + L + (b >>> 0 < C >>> 0 ? 1 : 0)),
             (w = a.low = w + B),
-            (a.high = j + C + (w >>> 0 < B >>> 0 ? 1 : 0)),
+            (a.high = j + D + (w >>> 0 < B >>> 0 ? 1 : 0)),
             (A = c.low = A + U),
             (c.high = x + F + (A >>> 0 < U >>> 0 ? 1 : 0)),
-            (E = d.low = E + H),
-            (d.high = M + z + (E >>> 0 < H >>> 0 ? 1 : 0)),
-            (S = f.low = S + q),
-            (f.high = k + G + (S >>> 0 < q >>> 0 ? 1 : 0));
+            (S = d.low = S + q),
+            (d.high = k + H + (S >>> 0 < q >>> 0 ? 1 : 0)),
+            (M = f.low = M + z),
+            (f.high = E + G + (M >>> 0 < z >>> 0 ? 1 : 0));
         },
         _doFinalize: function() {
           var e = this._data,
@@ -26160,7 +26038,7 @@ module.exports = (function(e) {
                   2827177882,
                   2743944855
                 ],
-                M = [
+                k = [
                   0,
                   218828297,
                   437656594,
@@ -26418,7 +26296,7 @@ module.exports = (function(e) {
                   2594734927,
                   2544078150
                 ],
-                E = [
+                S = [
                   0,
                   151849742,
                   303699484,
@@ -26676,20 +26554,20 @@ module.exports = (function(e) {
                   1335535747,
                   1184342925
                 ];
-              function k(e) {
+              function E(e) {
                 for (var t = [], r = 0; r < e.length; r += 4)
                   t.push(
                     (e[r] << 24) | (e[r + 1] << 16) | (e[r + 2] << 8) | e[r + 3]
                   );
                 return t;
               }
-              var S = function(e) {
-                if (!(this instanceof S))
+              var M = function(e) {
+                if (!(this instanceof M))
                   throw Error('AES must be instanitated with `new`');
                 Object.defineProperty(this, 'key', { value: s(e, !0) }),
                   this._prepare();
               };
-              (S.prototype._prepare = function() {
+              (M.prototype._prepare = function() {
                 var e = d[this.key.length];
                 if (null == e)
                   throw new Error(
@@ -26701,7 +26579,7 @@ module.exports = (function(e) {
                 var r,
                   o = 4 * (e + 1),
                   n = this.key.length / 4,
-                  s = k(this.key);
+                  s = E(this.key);
                 for (t = 0; t < n; t++)
                   (r = t >> 2),
                     (this._Ke[r][t % 4] = s[t]),
@@ -26747,10 +26625,10 @@ module.exports = (function(e) {
                       (this._Kd[l][c] =
                         x[(i >> 24) & 255] ^
                         A[(i >> 16) & 255] ^
-                        M[(i >> 8) & 255] ^
-                        E[255 & i]);
+                        k[(i >> 8) & 255] ^
+                        S[255 & i]);
               }),
-                (S.prototype.encrypt = function(e) {
+                (M.prototype.encrypt = function(e) {
                   if (16 != e.length)
                     throw new Error(
                       'invalid plaintext size (must be 16 bytes)'
@@ -26758,7 +26636,7 @@ module.exports = (function(e) {
                   for (
                     var t = this._Ke.length - 1,
                       r = [0, 0, 0, 0],
-                      o = k(e),
+                      o = E(e),
                       n = 0;
                     n < 4;
                     n++
@@ -26786,7 +26664,7 @@ module.exports = (function(e) {
                       (u[4 * n + 3] = 255 & (h[255 & o[(n + 3) % 4]] ^ a));
                   return u;
                 }),
-                (S.prototype.decrypt = function(e) {
+                (M.prototype.decrypt = function(e) {
                   if (16 != e.length)
                     throw new Error(
                       'invalid ciphertext size (must be 16 bytes)'
@@ -26794,7 +26672,7 @@ module.exports = (function(e) {
                   for (
                     var t = this._Kd.length - 1,
                       r = [0, 0, 0, 0],
-                      o = k(e),
+                      o = E(e),
                       n = 0;
                     n < 4;
                     n++
@@ -26827,7 +26705,7 @@ module.exports = (function(e) {
                   throw Error('AES must be instanitated with `new`');
                 (this.description = 'Electronic Code Block'),
                   (this.name = 'ecb'),
-                  (this._aes = new S(e));
+                  (this._aes = new M(e));
               };
               (N.prototype.encrypt = function(e) {
                 if ((e = s(e)).length % 16 != 0)
@@ -26855,8 +26733,8 @@ module.exports = (function(e) {
                     a(e, r, 0, o, o + 16), a((r = this._aes.decrypt(r)), t, o);
                   return t;
                 });
-              var I = function(e, t) {
-                if (!(this instanceof I))
+              var P = function(e, t) {
+                if (!(this instanceof P))
                   throw Error('AES must be instanitated with `new`');
                 if (
                   ((this.description = 'Cipher Block Chaining'),
@@ -26868,9 +26746,9 @@ module.exports = (function(e) {
                       'invalid initialation vector size (must be 16 bytes)'
                     );
                 } else t = i(16);
-                (this._lastCipherblock = s(t, !0)), (this._aes = new S(e));
+                (this._lastCipherblock = s(t, !0)), (this._aes = new M(e));
               };
-              (I.prototype.encrypt = function(e) {
+              (P.prototype.encrypt = function(e) {
                 if ((e = s(e)).length % 16 != 0)
                   throw new Error(
                     'invalid plaintext size (must be multiple of 16 bytes)'
@@ -26887,7 +26765,7 @@ module.exports = (function(e) {
                 }
                 return t;
               }),
-                (I.prototype.decrypt = function(e) {
+                (P.prototype.decrypt = function(e) {
                   if ((e = s(e)).length % 16 != 0)
                     throw new Error(
                       'invalid ciphertext size (must be multiple of 16 bytes)'
@@ -26920,7 +26798,7 @@ module.exports = (function(e) {
                 r || (r = 1),
                   (this.segmentSize = r),
                   (this._shiftRegister = s(t, !0)),
-                  (this._aes = new S(e));
+                  (this._aes = new M(e));
               };
               (T.prototype.encrypt = function(e) {
                 if (e.length % this.segmentSize != 0)
@@ -26978,8 +26856,8 @@ module.exports = (function(e) {
                   }
                   return r;
                 });
-              var O = function(e, t) {
-                if (!(this instanceof O))
+              var I = function(e, t) {
+                if (!(this instanceof I))
                   throw Error('AES must be instanitated with `new`');
                 if (
                   ((this.description = 'Output Feedback'),
@@ -26993,9 +26871,9 @@ module.exports = (function(e) {
                 } else t = i(16);
                 (this._lastPrecipher = s(t, !0)),
                   (this._lastPrecipherIndex = 16),
-                  (this._aes = new S(e));
+                  (this._aes = new M(e));
               };
-              (O.prototype.encrypt = function(e) {
+              (I.prototype.encrypt = function(e) {
                 for (var t = s(e, !0), r = 0; r < t.length; r++)
                   16 === this._lastPrecipherIndex &&
                     ((this._lastPrecipher = this._aes.encrypt(
@@ -27005,29 +26883,29 @@ module.exports = (function(e) {
                     (t[r] ^= this._lastPrecipher[this._lastPrecipherIndex++]);
                 return t;
               }),
-                (O.prototype.decrypt = O.prototype.encrypt);
-              var D = function(e) {
-                if (!(this instanceof D))
+                (I.prototype.decrypt = I.prototype.encrypt);
+              var O = function(e) {
+                if (!(this instanceof O))
                   throw Error('Counter must be instanitated with `new`');
                 0 === e || e || (e = 1),
                   'number' == typeof e
                     ? ((this._counter = i(16)), this.setValue(e))
                     : this.setBytes(e);
               };
-              (D.prototype.setValue = function(e) {
+              (O.prototype.setValue = function(e) {
                 if ('number' != typeof e || parseInt(e) != e)
                   throw new Error('invalid counter value (must be an integer)');
                 for (var t = 15; 0 <= t; --t)
                   (this._counter[t] = e % 256), (e >>= 8);
               }),
-                (D.prototype.setBytes = function(e) {
+                (O.prototype.setBytes = function(e) {
                   if (16 != (e = s(e, !0)).length)
                     throw new Error(
                       'invalid counter bytes size (must be 16 bytes)'
                     );
                   this._counter = e;
                 }),
-                (D.prototype.increment = function() {
+                (O.prototype.increment = function() {
                   for (var e = 15; 0 <= e; e--) {
                     if (255 !== this._counter[e]) {
                       this._counter[e]++;
@@ -27036,18 +26914,18 @@ module.exports = (function(e) {
                     this._counter[e] = 0;
                   }
                 });
-              var P = function(e, t) {
-                if (!(this instanceof P))
+              var R = function(e, t) {
+                if (!(this instanceof R))
                   throw Error('AES must be instanitated with `new`');
                 (this.description = 'Counter'),
                   (this.name = 'ctr'),
-                  t instanceof D || (t = new D(t)),
+                  t instanceof O || (t = new O(t)),
                   (this._counter = t),
                   (this._remainingCounter = null),
                   (this._remainingCounterIndex = 16),
-                  (this._aes = new S(e));
+                  (this._aes = new M(e));
               };
-              (P.prototype.encrypt = function(e) {
+              (R.prototype.encrypt = function(e) {
                 for (var t = s(e, !0), r = 0; r < t.length; r++)
                   16 === this._remainingCounterIndex &&
                     ((this._remainingCounter = this._aes.encrypt(
@@ -27060,11 +26938,11 @@ module.exports = (function(e) {
                     ]);
                 return t;
               }),
-                (P.prototype.decrypt = P.prototype.encrypt);
-              var R = {
-                AES: S,
-                Counter: D,
-                ModeOfOperation: { ecb: N, cbc: I, cfb: T, ofb: O, ctr: P },
+                (R.prototype.decrypt = R.prototype.encrypt);
+              var L = {
+                AES: M,
+                Counter: O,
+                ModeOfOperation: { ecb: N, cbc: P, cfb: T, ofb: I, ctr: R },
                 utils: { hex: c, utf8: l },
                 padding: {
                   pkcs7: {
@@ -27092,8 +26970,8 @@ module.exports = (function(e) {
                 _arrayTest: { coerceArray: s, createArray: i, copyArray: a }
               };
               void 0 !== r
-                ? (t.exports = R)
-                : (e.aesjs && (R._aesjs = e.aesjs), (e.aesjs = R));
+                ? (t.exports = L)
+                : (e.aesjs && (L._aesjs = e.aesjs), (e.aesjs = L));
             })(this);
           },
           {}
@@ -27783,36 +27661,36 @@ module.exports = (function(e) {
                   w = 0 | i[4],
                   x = 8191 & w,
                   A = w >>> 13,
-                  M = 0 | i[5],
-                  E = 8191 & M,
-                  k = M >>> 13,
-                  S = 0 | i[6],
-                  N = 8191 & S,
-                  I = S >>> 13,
+                  k = 0 | i[5],
+                  S = 8191 & k,
+                  E = k >>> 13,
+                  M = 0 | i[6],
+                  N = 8191 & M,
+                  P = M >>> 13,
                   T = 0 | i[7],
-                  O = 8191 & T,
-                  D = T >>> 13,
-                  P = 0 | i[8],
-                  R = 8191 & P,
-                  L = P >>> 13,
-                  C = 0 | i[9],
-                  B = 8191 & C,
-                  F = C >>> 13,
+                  I = 8191 & T,
+                  O = T >>> 13,
+                  R = 0 | i[8],
+                  L = 8191 & R,
+                  C = R >>> 13,
+                  D = 0 | i[9],
+                  B = 8191 & D,
+                  F = D >>> 13,
                   U = 0 | a[0],
-                  z = 8191 & U,
-                  H = U >>> 13,
+                  H = 8191 & U,
+                  q = U >>> 13,
                   G = 0 | a[1],
-                  q = 8191 & G,
+                  z = 8191 & G,
                   W = G >>> 13,
                   V = 0 | a[2],
                   K = 8191 & V,
-                  Q = V >>> 13,
-                  Y = 0 | a[3],
-                  J = 8191 & Y,
-                  X = Y >>> 13,
-                  Z = 0 | a[4],
-                  $ = 8191 & Z,
-                  ee = Z >>> 13,
+                  J = V >>> 13,
+                  X = 0 | a[3],
+                  Z = 8191 & X,
+                  $ = X >>> 13,
+                  Y = 0 | a[4],
+                  Q = 8191 & Y,
+                  ee = Y >>> 13,
                   te = 0 | a[5],
                   re = 8191 & te,
                   oe = te >>> 13,
@@ -27830,23 +27708,23 @@ module.exports = (function(e) {
                   me = he >>> 13;
                 (r.negative = e.negative ^ t.negative), (r.length = 19);
                 var _e =
-                  (((l + (o = Math.imul(d, z))) | 0) +
+                  (((l + (o = Math.imul(d, H))) | 0) +
                     ((8191 &
-                      (n = ((n = Math.imul(d, H)) + Math.imul(f, z)) | 0)) <<
+                      (n = ((n = Math.imul(d, q)) + Math.imul(f, H)) | 0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = Math.imul(f, H)) + (n >>> 13)) | 0) + (_e >>> 26)) |
+                  ((((s = Math.imul(f, q)) + (n >>> 13)) | 0) + (_e >>> 26)) |
                   0),
                   (_e &= 67108863),
-                  (o = Math.imul(p, z)),
-                  (n = ((n = Math.imul(p, H)) + Math.imul(m, z)) | 0),
-                  (s = Math.imul(m, H));
+                  (o = Math.imul(p, H)),
+                  (n = ((n = Math.imul(p, q)) + Math.imul(m, H)) | 0),
+                  (s = Math.imul(m, q));
                 var ye =
-                  (((l + (o = (o + Math.imul(d, q)) | 0)) | 0) +
+                  (((l + (o = (o + Math.imul(d, z)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(d, W)) | 0) + Math.imul(f, q)) |
+                        ((n = (n + Math.imul(d, W)) | 0) + Math.imul(f, z)) |
                         0)) <<
                       13)) |
                   0;
@@ -27855,64 +27733,64 @@ module.exports = (function(e) {
                     (ye >>> 26)) |
                   0),
                   (ye &= 67108863),
-                  (o = Math.imul(y, z)),
-                  (n = ((n = Math.imul(y, H)) + Math.imul(v, z)) | 0),
-                  (s = Math.imul(v, H)),
-                  (o = (o + Math.imul(p, q)) | 0),
-                  (n = ((n = (n + Math.imul(p, W)) | 0) + Math.imul(m, q)) | 0),
+                  (o = Math.imul(y, H)),
+                  (n = ((n = Math.imul(y, q)) + Math.imul(v, H)) | 0),
+                  (s = Math.imul(v, q)),
+                  (o = (o + Math.imul(p, z)) | 0),
+                  (n = ((n = (n + Math.imul(p, W)) | 0) + Math.imul(m, z)) | 0),
                   (s = (s + Math.imul(m, W)) | 0);
                 var ve =
                   (((l + (o = (o + Math.imul(d, K)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(d, Q)) | 0) + Math.imul(f, K)) |
+                        ((n = (n + Math.imul(d, J)) | 0) + Math.imul(f, K)) |
                         0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = (s + Math.imul(f, Q)) | 0) + (n >>> 13)) | 0) +
+                  ((((s = (s + Math.imul(f, J)) | 0) + (n >>> 13)) | 0) +
                     (ve >>> 26)) |
                   0),
                   (ve &= 67108863),
-                  (o = Math.imul(b, z)),
-                  (n = ((n = Math.imul(b, H)) + Math.imul(j, z)) | 0),
-                  (s = Math.imul(j, H)),
-                  (o = (o + Math.imul(y, q)) | 0),
-                  (n = ((n = (n + Math.imul(y, W)) | 0) + Math.imul(v, q)) | 0),
+                  (o = Math.imul(b, H)),
+                  (n = ((n = Math.imul(b, q)) + Math.imul(j, H)) | 0),
+                  (s = Math.imul(j, q)),
+                  (o = (o + Math.imul(y, z)) | 0),
+                  (n = ((n = (n + Math.imul(y, W)) | 0) + Math.imul(v, z)) | 0),
                   (s = (s + Math.imul(v, W)) | 0),
                   (o = (o + Math.imul(p, K)) | 0),
-                  (n = ((n = (n + Math.imul(p, Q)) | 0) + Math.imul(m, K)) | 0),
-                  (s = (s + Math.imul(m, Q)) | 0);
+                  (n = ((n = (n + Math.imul(p, J)) | 0) + Math.imul(m, K)) | 0),
+                  (s = (s + Math.imul(m, J)) | 0);
                 var ge =
-                  (((l + (o = (o + Math.imul(d, J)) | 0)) | 0) +
+                  (((l + (o = (o + Math.imul(d, Z)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(d, X)) | 0) + Math.imul(f, J)) |
+                        ((n = (n + Math.imul(d, $)) | 0) + Math.imul(f, Z)) |
                         0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = (s + Math.imul(f, X)) | 0) + (n >>> 13)) | 0) +
+                  ((((s = (s + Math.imul(f, $)) | 0) + (n >>> 13)) | 0) +
                     (ge >>> 26)) |
                   0),
                   (ge &= 67108863),
-                  (o = Math.imul(x, z)),
-                  (n = ((n = Math.imul(x, H)) + Math.imul(A, z)) | 0),
-                  (s = Math.imul(A, H)),
-                  (o = (o + Math.imul(b, q)) | 0),
-                  (n = ((n = (n + Math.imul(b, W)) | 0) + Math.imul(j, q)) | 0),
+                  (o = Math.imul(x, H)),
+                  (n = ((n = Math.imul(x, q)) + Math.imul(A, H)) | 0),
+                  (s = Math.imul(A, q)),
+                  (o = (o + Math.imul(b, z)) | 0),
+                  (n = ((n = (n + Math.imul(b, W)) | 0) + Math.imul(j, z)) | 0),
                   (s = (s + Math.imul(j, W)) | 0),
                   (o = (o + Math.imul(y, K)) | 0),
-                  (n = ((n = (n + Math.imul(y, Q)) | 0) + Math.imul(v, K)) | 0),
-                  (s = (s + Math.imul(v, Q)) | 0),
-                  (o = (o + Math.imul(p, J)) | 0),
-                  (n = ((n = (n + Math.imul(p, X)) | 0) + Math.imul(m, J)) | 0),
-                  (s = (s + Math.imul(m, X)) | 0);
+                  (n = ((n = (n + Math.imul(y, J)) | 0) + Math.imul(v, K)) | 0),
+                  (s = (s + Math.imul(v, J)) | 0),
+                  (o = (o + Math.imul(p, Z)) | 0),
+                  (n = ((n = (n + Math.imul(p, $)) | 0) + Math.imul(m, Z)) | 0),
+                  (s = (s + Math.imul(m, $)) | 0);
                 var be =
-                  (((l + (o = (o + Math.imul(d, $)) | 0)) | 0) +
+                  (((l + (o = (o + Math.imul(d, Q)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(d, ee)) | 0) + Math.imul(f, $)) |
+                        ((n = (n + Math.imul(d, ee)) | 0) + Math.imul(f, Q)) |
                         0)) <<
                       13)) |
                   0;
@@ -27921,21 +27799,21 @@ module.exports = (function(e) {
                     (be >>> 26)) |
                   0),
                   (be &= 67108863),
-                  (o = Math.imul(E, z)),
-                  (n = ((n = Math.imul(E, H)) + Math.imul(k, z)) | 0),
-                  (s = Math.imul(k, H)),
-                  (o = (o + Math.imul(x, q)) | 0),
-                  (n = ((n = (n + Math.imul(x, W)) | 0) + Math.imul(A, q)) | 0),
+                  (o = Math.imul(S, H)),
+                  (n = ((n = Math.imul(S, q)) + Math.imul(E, H)) | 0),
+                  (s = Math.imul(E, q)),
+                  (o = (o + Math.imul(x, z)) | 0),
+                  (n = ((n = (n + Math.imul(x, W)) | 0) + Math.imul(A, z)) | 0),
                   (s = (s + Math.imul(A, W)) | 0),
                   (o = (o + Math.imul(b, K)) | 0),
-                  (n = ((n = (n + Math.imul(b, Q)) | 0) + Math.imul(j, K)) | 0),
-                  (s = (s + Math.imul(j, Q)) | 0),
-                  (o = (o + Math.imul(y, J)) | 0),
-                  (n = ((n = (n + Math.imul(y, X)) | 0) + Math.imul(v, J)) | 0),
-                  (s = (s + Math.imul(v, X)) | 0),
-                  (o = (o + Math.imul(p, $)) | 0),
+                  (n = ((n = (n + Math.imul(b, J)) | 0) + Math.imul(j, K)) | 0),
+                  (s = (s + Math.imul(j, J)) | 0),
+                  (o = (o + Math.imul(y, Z)) | 0),
+                  (n = ((n = (n + Math.imul(y, $)) | 0) + Math.imul(v, Z)) | 0),
+                  (s = (s + Math.imul(v, $)) | 0),
+                  (o = (o + Math.imul(p, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(p, ee)) | 0) + Math.imul(m, $)) | 0),
+                    ((n = (n + Math.imul(p, ee)) | 0) + Math.imul(m, Q)) | 0),
                   (s = (s + Math.imul(m, ee)) | 0);
                 var je =
                   (((l + (o = (o + Math.imul(d, re)) | 0)) | 0) +
@@ -27950,21 +27828,21 @@ module.exports = (function(e) {
                     (je >>> 26)) |
                   0),
                   (je &= 67108863),
-                  (o = Math.imul(N, z)),
-                  (n = ((n = Math.imul(N, H)) + Math.imul(I, z)) | 0),
-                  (s = Math.imul(I, H)),
-                  (o = (o + Math.imul(E, q)) | 0),
-                  (n = ((n = (n + Math.imul(E, W)) | 0) + Math.imul(k, q)) | 0),
-                  (s = (s + Math.imul(k, W)) | 0),
+                  (o = Math.imul(N, H)),
+                  (n = ((n = Math.imul(N, q)) + Math.imul(P, H)) | 0),
+                  (s = Math.imul(P, q)),
+                  (o = (o + Math.imul(S, z)) | 0),
+                  (n = ((n = (n + Math.imul(S, W)) | 0) + Math.imul(E, z)) | 0),
+                  (s = (s + Math.imul(E, W)) | 0),
                   (o = (o + Math.imul(x, K)) | 0),
-                  (n = ((n = (n + Math.imul(x, Q)) | 0) + Math.imul(A, K)) | 0),
-                  (s = (s + Math.imul(A, Q)) | 0),
-                  (o = (o + Math.imul(b, J)) | 0),
-                  (n = ((n = (n + Math.imul(b, X)) | 0) + Math.imul(j, J)) | 0),
-                  (s = (s + Math.imul(j, X)) | 0),
-                  (o = (o + Math.imul(y, $)) | 0),
+                  (n = ((n = (n + Math.imul(x, J)) | 0) + Math.imul(A, K)) | 0),
+                  (s = (s + Math.imul(A, J)) | 0),
+                  (o = (o + Math.imul(b, Z)) | 0),
+                  (n = ((n = (n + Math.imul(b, $)) | 0) + Math.imul(j, Z)) | 0),
+                  (s = (s + Math.imul(j, $)) | 0),
+                  (o = (o + Math.imul(y, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(y, ee)) | 0) + Math.imul(v, $)) | 0),
+                    ((n = (n + Math.imul(y, ee)) | 0) + Math.imul(v, Q)) | 0),
                   (s = (s + Math.imul(v, ee)) | 0),
                   (o = (o + Math.imul(p, re)) | 0),
                   (n =
@@ -27983,21 +27861,21 @@ module.exports = (function(e) {
                     (we >>> 26)) |
                   0),
                   (we &= 67108863),
-                  (o = Math.imul(O, z)),
-                  (n = ((n = Math.imul(O, H)) + Math.imul(D, z)) | 0),
-                  (s = Math.imul(D, H)),
-                  (o = (o + Math.imul(N, q)) | 0),
-                  (n = ((n = (n + Math.imul(N, W)) | 0) + Math.imul(I, q)) | 0),
-                  (s = (s + Math.imul(I, W)) | 0),
-                  (o = (o + Math.imul(E, K)) | 0),
-                  (n = ((n = (n + Math.imul(E, Q)) | 0) + Math.imul(k, K)) | 0),
-                  (s = (s + Math.imul(k, Q)) | 0),
-                  (o = (o + Math.imul(x, J)) | 0),
-                  (n = ((n = (n + Math.imul(x, X)) | 0) + Math.imul(A, J)) | 0),
-                  (s = (s + Math.imul(A, X)) | 0),
-                  (o = (o + Math.imul(b, $)) | 0),
+                  (o = Math.imul(I, H)),
+                  (n = ((n = Math.imul(I, q)) + Math.imul(O, H)) | 0),
+                  (s = Math.imul(O, q)),
+                  (o = (o + Math.imul(N, z)) | 0),
+                  (n = ((n = (n + Math.imul(N, W)) | 0) + Math.imul(P, z)) | 0),
+                  (s = (s + Math.imul(P, W)) | 0),
+                  (o = (o + Math.imul(S, K)) | 0),
+                  (n = ((n = (n + Math.imul(S, J)) | 0) + Math.imul(E, K)) | 0),
+                  (s = (s + Math.imul(E, J)) | 0),
+                  (o = (o + Math.imul(x, Z)) | 0),
+                  (n = ((n = (n + Math.imul(x, $)) | 0) + Math.imul(A, Z)) | 0),
+                  (s = (s + Math.imul(A, $)) | 0),
+                  (o = (o + Math.imul(b, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(b, ee)) | 0) + Math.imul(j, $)) | 0),
+                    ((n = (n + Math.imul(b, ee)) | 0) + Math.imul(j, Q)) | 0),
                   (s = (s + Math.imul(j, ee)) | 0),
                   (o = (o + Math.imul(y, re)) | 0),
                   (n =
@@ -28020,21 +27898,21 @@ module.exports = (function(e) {
                     (xe >>> 26)) |
                   0),
                   (xe &= 67108863),
-                  (o = Math.imul(R, z)),
-                  (n = ((n = Math.imul(R, H)) + Math.imul(L, z)) | 0),
-                  (s = Math.imul(L, H)),
-                  (o = (o + Math.imul(O, q)) | 0),
-                  (n = ((n = (n + Math.imul(O, W)) | 0) + Math.imul(D, q)) | 0),
-                  (s = (s + Math.imul(D, W)) | 0),
+                  (o = Math.imul(L, H)),
+                  (n = ((n = Math.imul(L, q)) + Math.imul(C, H)) | 0),
+                  (s = Math.imul(C, q)),
+                  (o = (o + Math.imul(I, z)) | 0),
+                  (n = ((n = (n + Math.imul(I, W)) | 0) + Math.imul(O, z)) | 0),
+                  (s = (s + Math.imul(O, W)) | 0),
                   (o = (o + Math.imul(N, K)) | 0),
-                  (n = ((n = (n + Math.imul(N, Q)) | 0) + Math.imul(I, K)) | 0),
-                  (s = (s + Math.imul(I, Q)) | 0),
-                  (o = (o + Math.imul(E, J)) | 0),
-                  (n = ((n = (n + Math.imul(E, X)) | 0) + Math.imul(k, J)) | 0),
-                  (s = (s + Math.imul(k, X)) | 0),
-                  (o = (o + Math.imul(x, $)) | 0),
+                  (n = ((n = (n + Math.imul(N, J)) | 0) + Math.imul(P, K)) | 0),
+                  (s = (s + Math.imul(P, J)) | 0),
+                  (o = (o + Math.imul(S, Z)) | 0),
+                  (n = ((n = (n + Math.imul(S, $)) | 0) + Math.imul(E, Z)) | 0),
+                  (s = (s + Math.imul(E, $)) | 0),
+                  (o = (o + Math.imul(x, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(x, ee)) | 0) + Math.imul(A, $)) | 0),
+                    ((n = (n + Math.imul(x, ee)) | 0) + Math.imul(A, Q)) | 0),
                   (s = (s + Math.imul(A, ee)) | 0),
                   (o = (o + Math.imul(b, re)) | 0),
                   (n =
@@ -28061,22 +27939,22 @@ module.exports = (function(e) {
                     (Ae >>> 26)) |
                   0),
                   (Ae &= 67108863),
-                  (o = Math.imul(B, z)),
-                  (n = ((n = Math.imul(B, H)) + Math.imul(F, z)) | 0),
-                  (s = Math.imul(F, H)),
-                  (o = (o + Math.imul(R, q)) | 0),
-                  (n = ((n = (n + Math.imul(R, W)) | 0) + Math.imul(L, q)) | 0),
-                  (s = (s + Math.imul(L, W)) | 0),
-                  (o = (o + Math.imul(O, K)) | 0),
-                  (n = ((n = (n + Math.imul(O, Q)) | 0) + Math.imul(D, K)) | 0),
-                  (s = (s + Math.imul(D, Q)) | 0),
-                  (o = (o + Math.imul(N, J)) | 0),
-                  (n = ((n = (n + Math.imul(N, X)) | 0) + Math.imul(I, J)) | 0),
-                  (s = (s + Math.imul(I, X)) | 0),
-                  (o = (o + Math.imul(E, $)) | 0),
+                  (o = Math.imul(B, H)),
+                  (n = ((n = Math.imul(B, q)) + Math.imul(F, H)) | 0),
+                  (s = Math.imul(F, q)),
+                  (o = (o + Math.imul(L, z)) | 0),
+                  (n = ((n = (n + Math.imul(L, W)) | 0) + Math.imul(C, z)) | 0),
+                  (s = (s + Math.imul(C, W)) | 0),
+                  (o = (o + Math.imul(I, K)) | 0),
+                  (n = ((n = (n + Math.imul(I, J)) | 0) + Math.imul(O, K)) | 0),
+                  (s = (s + Math.imul(O, J)) | 0),
+                  (o = (o + Math.imul(N, Z)) | 0),
+                  (n = ((n = (n + Math.imul(N, $)) | 0) + Math.imul(P, Z)) | 0),
+                  (s = (s + Math.imul(P, $)) | 0),
+                  (o = (o + Math.imul(S, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(E, ee)) | 0) + Math.imul(k, $)) | 0),
-                  (s = (s + Math.imul(k, ee)) | 0),
+                    ((n = (n + Math.imul(S, ee)) | 0) + Math.imul(E, Q)) | 0),
+                  (s = (s + Math.imul(E, ee)) | 0),
                   (o = (o + Math.imul(x, re)) | 0),
                   (n =
                     ((n = (n + Math.imul(x, oe)) | 0) + Math.imul(A, re)) | 0),
@@ -28093,7 +27971,7 @@ module.exports = (function(e) {
                   (n =
                     ((n = (n + Math.imul(p, fe)) | 0) + Math.imul(m, de)) | 0),
                   (s = (s + Math.imul(m, fe)) | 0);
-                var Me =
+                var ke =
                   (((l + (o = (o + Math.imul(d, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
@@ -28103,26 +27981,26 @@ module.exports = (function(e) {
                   0;
                 (l =
                   ((((s = (s + Math.imul(f, me)) | 0) + (n >>> 13)) | 0) +
-                    (Me >>> 26)) |
+                    (ke >>> 26)) |
                   0),
-                  (Me &= 67108863),
-                  (o = Math.imul(B, q)),
-                  (n = ((n = Math.imul(B, W)) + Math.imul(F, q)) | 0),
+                  (ke &= 67108863),
+                  (o = Math.imul(B, z)),
+                  (n = ((n = Math.imul(B, W)) + Math.imul(F, z)) | 0),
                   (s = Math.imul(F, W)),
-                  (o = (o + Math.imul(R, K)) | 0),
-                  (n = ((n = (n + Math.imul(R, Q)) | 0) + Math.imul(L, K)) | 0),
-                  (s = (s + Math.imul(L, Q)) | 0),
-                  (o = (o + Math.imul(O, J)) | 0),
-                  (n = ((n = (n + Math.imul(O, X)) | 0) + Math.imul(D, J)) | 0),
-                  (s = (s + Math.imul(D, X)) | 0),
-                  (o = (o + Math.imul(N, $)) | 0),
+                  (o = (o + Math.imul(L, K)) | 0),
+                  (n = ((n = (n + Math.imul(L, J)) | 0) + Math.imul(C, K)) | 0),
+                  (s = (s + Math.imul(C, J)) | 0),
+                  (o = (o + Math.imul(I, Z)) | 0),
+                  (n = ((n = (n + Math.imul(I, $)) | 0) + Math.imul(O, Z)) | 0),
+                  (s = (s + Math.imul(O, $)) | 0),
+                  (o = (o + Math.imul(N, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(N, ee)) | 0) + Math.imul(I, $)) | 0),
-                  (s = (s + Math.imul(I, ee)) | 0),
-                  (o = (o + Math.imul(E, re)) | 0),
+                    ((n = (n + Math.imul(N, ee)) | 0) + Math.imul(P, Q)) | 0),
+                  (s = (s + Math.imul(P, ee)) | 0),
+                  (o = (o + Math.imul(S, re)) | 0),
                   (n =
-                    ((n = (n + Math.imul(E, oe)) | 0) + Math.imul(k, re)) | 0),
-                  (s = (s + Math.imul(k, oe)) | 0),
+                    ((n = (n + Math.imul(S, oe)) | 0) + Math.imul(E, re)) | 0),
+                  (s = (s + Math.imul(E, oe)) | 0),
                   (o = (o + Math.imul(x, se)) | 0),
                   (n =
                     ((n = (n + Math.imul(x, ie)) | 0) + Math.imul(A, se)) | 0),
@@ -28135,7 +28013,7 @@ module.exports = (function(e) {
                   (n =
                     ((n = (n + Math.imul(y, fe)) | 0) + Math.imul(v, de)) | 0),
                   (s = (s + Math.imul(v, fe)) | 0);
-                var Ee =
+                var Se =
                   (((l + (o = (o + Math.imul(p, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
@@ -28145,27 +28023,27 @@ module.exports = (function(e) {
                   0;
                 (l =
                   ((((s = (s + Math.imul(m, me)) | 0) + (n >>> 13)) | 0) +
-                    (Ee >>> 26)) |
+                    (Se >>> 26)) |
                   0),
-                  (Ee &= 67108863),
+                  (Se &= 67108863),
                   (o = Math.imul(B, K)),
-                  (n = ((n = Math.imul(B, Q)) + Math.imul(F, K)) | 0),
-                  (s = Math.imul(F, Q)),
-                  (o = (o + Math.imul(R, J)) | 0),
-                  (n = ((n = (n + Math.imul(R, X)) | 0) + Math.imul(L, J)) | 0),
-                  (s = (s + Math.imul(L, X)) | 0),
-                  (o = (o + Math.imul(O, $)) | 0),
+                  (n = ((n = Math.imul(B, J)) + Math.imul(F, K)) | 0),
+                  (s = Math.imul(F, J)),
+                  (o = (o + Math.imul(L, Z)) | 0),
+                  (n = ((n = (n + Math.imul(L, $)) | 0) + Math.imul(C, Z)) | 0),
+                  (s = (s + Math.imul(C, $)) | 0),
+                  (o = (o + Math.imul(I, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(O, ee)) | 0) + Math.imul(D, $)) | 0),
-                  (s = (s + Math.imul(D, ee)) | 0),
+                    ((n = (n + Math.imul(I, ee)) | 0) + Math.imul(O, Q)) | 0),
+                  (s = (s + Math.imul(O, ee)) | 0),
                   (o = (o + Math.imul(N, re)) | 0),
                   (n =
-                    ((n = (n + Math.imul(N, oe)) | 0) + Math.imul(I, re)) | 0),
-                  (s = (s + Math.imul(I, oe)) | 0),
-                  (o = (o + Math.imul(E, se)) | 0),
+                    ((n = (n + Math.imul(N, oe)) | 0) + Math.imul(P, re)) | 0),
+                  (s = (s + Math.imul(P, oe)) | 0),
+                  (o = (o + Math.imul(S, se)) | 0),
                   (n =
-                    ((n = (n + Math.imul(E, ie)) | 0) + Math.imul(k, se)) | 0),
-                  (s = (s + Math.imul(k, ie)) | 0),
+                    ((n = (n + Math.imul(S, ie)) | 0) + Math.imul(E, se)) | 0),
+                  (s = (s + Math.imul(E, ie)) | 0),
                   (o = (o + Math.imul(x, ue)) | 0),
                   (n =
                     ((n = (n + Math.imul(x, le)) | 0) + Math.imul(A, ue)) | 0),
@@ -28174,7 +28052,7 @@ module.exports = (function(e) {
                   (n =
                     ((n = (n + Math.imul(b, fe)) | 0) + Math.imul(j, de)) | 0),
                   (s = (s + Math.imul(j, fe)) | 0);
-                var ke =
+                var Ee =
                   (((l + (o = (o + Math.imul(y, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
@@ -28184,33 +28062,33 @@ module.exports = (function(e) {
                   0;
                 (l =
                   ((((s = (s + Math.imul(v, me)) | 0) + (n >>> 13)) | 0) +
-                    (ke >>> 26)) |
+                    (Ee >>> 26)) |
                   0),
-                  (ke &= 67108863),
-                  (o = Math.imul(B, J)),
-                  (n = ((n = Math.imul(B, X)) + Math.imul(F, J)) | 0),
-                  (s = Math.imul(F, X)),
-                  (o = (o + Math.imul(R, $)) | 0),
+                  (Ee &= 67108863),
+                  (o = Math.imul(B, Z)),
+                  (n = ((n = Math.imul(B, $)) + Math.imul(F, Z)) | 0),
+                  (s = Math.imul(F, $)),
+                  (o = (o + Math.imul(L, Q)) | 0),
                   (n =
-                    ((n = (n + Math.imul(R, ee)) | 0) + Math.imul(L, $)) | 0),
-                  (s = (s + Math.imul(L, ee)) | 0),
-                  (o = (o + Math.imul(O, re)) | 0),
+                    ((n = (n + Math.imul(L, ee)) | 0) + Math.imul(C, Q)) | 0),
+                  (s = (s + Math.imul(C, ee)) | 0),
+                  (o = (o + Math.imul(I, re)) | 0),
                   (n =
-                    ((n = (n + Math.imul(O, oe)) | 0) + Math.imul(D, re)) | 0),
-                  (s = (s + Math.imul(D, oe)) | 0),
+                    ((n = (n + Math.imul(I, oe)) | 0) + Math.imul(O, re)) | 0),
+                  (s = (s + Math.imul(O, oe)) | 0),
                   (o = (o + Math.imul(N, se)) | 0),
                   (n =
-                    ((n = (n + Math.imul(N, ie)) | 0) + Math.imul(I, se)) | 0),
-                  (s = (s + Math.imul(I, ie)) | 0),
-                  (o = (o + Math.imul(E, ue)) | 0),
+                    ((n = (n + Math.imul(N, ie)) | 0) + Math.imul(P, se)) | 0),
+                  (s = (s + Math.imul(P, ie)) | 0),
+                  (o = (o + Math.imul(S, ue)) | 0),
                   (n =
-                    ((n = (n + Math.imul(E, le)) | 0) + Math.imul(k, ue)) | 0),
-                  (s = (s + Math.imul(k, le)) | 0),
+                    ((n = (n + Math.imul(S, le)) | 0) + Math.imul(E, ue)) | 0),
+                  (s = (s + Math.imul(E, le)) | 0),
                   (o = (o + Math.imul(x, de)) | 0),
                   (n =
                     ((n = (n + Math.imul(x, fe)) | 0) + Math.imul(A, de)) | 0),
                   (s = (s + Math.imul(A, fe)) | 0);
-                var Se =
+                var Me =
                   (((l + (o = (o + Math.imul(b, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
@@ -28220,28 +28098,28 @@ module.exports = (function(e) {
                   0;
                 (l =
                   ((((s = (s + Math.imul(j, me)) | 0) + (n >>> 13)) | 0) +
-                    (Se >>> 26)) |
+                    (Me >>> 26)) |
                   0),
-                  (Se &= 67108863),
-                  (o = Math.imul(B, $)),
-                  (n = ((n = Math.imul(B, ee)) + Math.imul(F, $)) | 0),
+                  (Me &= 67108863),
+                  (o = Math.imul(B, Q)),
+                  (n = ((n = Math.imul(B, ee)) + Math.imul(F, Q)) | 0),
                   (s = Math.imul(F, ee)),
-                  (o = (o + Math.imul(R, re)) | 0),
+                  (o = (o + Math.imul(L, re)) | 0),
                   (n =
-                    ((n = (n + Math.imul(R, oe)) | 0) + Math.imul(L, re)) | 0),
-                  (s = (s + Math.imul(L, oe)) | 0),
-                  (o = (o + Math.imul(O, se)) | 0),
+                    ((n = (n + Math.imul(L, oe)) | 0) + Math.imul(C, re)) | 0),
+                  (s = (s + Math.imul(C, oe)) | 0),
+                  (o = (o + Math.imul(I, se)) | 0),
                   (n =
-                    ((n = (n + Math.imul(O, ie)) | 0) + Math.imul(D, se)) | 0),
-                  (s = (s + Math.imul(D, ie)) | 0),
+                    ((n = (n + Math.imul(I, ie)) | 0) + Math.imul(O, se)) | 0),
+                  (s = (s + Math.imul(O, ie)) | 0),
                   (o = (o + Math.imul(N, ue)) | 0),
                   (n =
-                    ((n = (n + Math.imul(N, le)) | 0) + Math.imul(I, ue)) | 0),
-                  (s = (s + Math.imul(I, le)) | 0),
-                  (o = (o + Math.imul(E, de)) | 0),
+                    ((n = (n + Math.imul(N, le)) | 0) + Math.imul(P, ue)) | 0),
+                  (s = (s + Math.imul(P, le)) | 0),
+                  (o = (o + Math.imul(S, de)) | 0),
                   (n =
-                    ((n = (n + Math.imul(E, fe)) | 0) + Math.imul(k, de)) | 0),
-                  (s = (s + Math.imul(k, fe)) | 0);
+                    ((n = (n + Math.imul(S, fe)) | 0) + Math.imul(E, de)) | 0),
+                  (s = (s + Math.imul(E, fe)) | 0);
                 var Ne =
                   (((l + (o = (o + Math.imul(x, pe)) | 0)) | 0) +
                     ((8191 &
@@ -28258,92 +28136,92 @@ module.exports = (function(e) {
                   (o = Math.imul(B, re)),
                   (n = ((n = Math.imul(B, oe)) + Math.imul(F, re)) | 0),
                   (s = Math.imul(F, oe)),
-                  (o = (o + Math.imul(R, se)) | 0),
+                  (o = (o + Math.imul(L, se)) | 0),
                   (n =
-                    ((n = (n + Math.imul(R, ie)) | 0) + Math.imul(L, se)) | 0),
-                  (s = (s + Math.imul(L, ie)) | 0),
-                  (o = (o + Math.imul(O, ue)) | 0),
+                    ((n = (n + Math.imul(L, ie)) | 0) + Math.imul(C, se)) | 0),
+                  (s = (s + Math.imul(C, ie)) | 0),
+                  (o = (o + Math.imul(I, ue)) | 0),
                   (n =
-                    ((n = (n + Math.imul(O, le)) | 0) + Math.imul(D, ue)) | 0),
-                  (s = (s + Math.imul(D, le)) | 0),
+                    ((n = (n + Math.imul(I, le)) | 0) + Math.imul(O, ue)) | 0),
+                  (s = (s + Math.imul(O, le)) | 0),
                   (o = (o + Math.imul(N, de)) | 0),
                   (n =
-                    ((n = (n + Math.imul(N, fe)) | 0) + Math.imul(I, de)) | 0),
-                  (s = (s + Math.imul(I, fe)) | 0);
-                var Ie =
-                  (((l + (o = (o + Math.imul(E, pe)) | 0)) | 0) +
+                    ((n = (n + Math.imul(N, fe)) | 0) + Math.imul(P, de)) | 0),
+                  (s = (s + Math.imul(P, fe)) | 0);
+                var Pe =
+                  (((l + (o = (o + Math.imul(S, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(E, me)) | 0) + Math.imul(k, pe)) |
+                        ((n = (n + Math.imul(S, me)) | 0) + Math.imul(E, pe)) |
                         0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = (s + Math.imul(k, me)) | 0) + (n >>> 13)) | 0) +
-                    (Ie >>> 26)) |
+                  ((((s = (s + Math.imul(E, me)) | 0) + (n >>> 13)) | 0) +
+                    (Pe >>> 26)) |
                   0),
-                  (Ie &= 67108863),
+                  (Pe &= 67108863),
                   (o = Math.imul(B, se)),
                   (n = ((n = Math.imul(B, ie)) + Math.imul(F, se)) | 0),
                   (s = Math.imul(F, ie)),
-                  (o = (o + Math.imul(R, ue)) | 0),
+                  (o = (o + Math.imul(L, ue)) | 0),
                   (n =
-                    ((n = (n + Math.imul(R, le)) | 0) + Math.imul(L, ue)) | 0),
-                  (s = (s + Math.imul(L, le)) | 0),
-                  (o = (o + Math.imul(O, de)) | 0),
+                    ((n = (n + Math.imul(L, le)) | 0) + Math.imul(C, ue)) | 0),
+                  (s = (s + Math.imul(C, le)) | 0),
+                  (o = (o + Math.imul(I, de)) | 0),
                   (n =
-                    ((n = (n + Math.imul(O, fe)) | 0) + Math.imul(D, de)) | 0),
-                  (s = (s + Math.imul(D, fe)) | 0);
+                    ((n = (n + Math.imul(I, fe)) | 0) + Math.imul(O, de)) | 0),
+                  (s = (s + Math.imul(O, fe)) | 0);
                 var Te =
                   (((l + (o = (o + Math.imul(N, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(N, me)) | 0) + Math.imul(I, pe)) |
+                        ((n = (n + Math.imul(N, me)) | 0) + Math.imul(P, pe)) |
                         0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = (s + Math.imul(I, me)) | 0) + (n >>> 13)) | 0) +
+                  ((((s = (s + Math.imul(P, me)) | 0) + (n >>> 13)) | 0) +
                     (Te >>> 26)) |
                   0),
                   (Te &= 67108863),
                   (o = Math.imul(B, ue)),
                   (n = ((n = Math.imul(B, le)) + Math.imul(F, ue)) | 0),
                   (s = Math.imul(F, le)),
-                  (o = (o + Math.imul(R, de)) | 0),
+                  (o = (o + Math.imul(L, de)) | 0),
                   (n =
-                    ((n = (n + Math.imul(R, fe)) | 0) + Math.imul(L, de)) | 0),
-                  (s = (s + Math.imul(L, fe)) | 0);
-                var Oe =
-                  (((l + (o = (o + Math.imul(O, pe)) | 0)) | 0) +
+                    ((n = (n + Math.imul(L, fe)) | 0) + Math.imul(C, de)) | 0),
+                  (s = (s + Math.imul(C, fe)) | 0);
+                var Ie =
+                  (((l + (o = (o + Math.imul(I, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(O, me)) | 0) + Math.imul(D, pe)) |
+                        ((n = (n + Math.imul(I, me)) | 0) + Math.imul(O, pe)) |
                         0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = (s + Math.imul(D, me)) | 0) + (n >>> 13)) | 0) +
-                    (Oe >>> 26)) |
+                  ((((s = (s + Math.imul(O, me)) | 0) + (n >>> 13)) | 0) +
+                    (Ie >>> 26)) |
                   0),
-                  (Oe &= 67108863),
+                  (Ie &= 67108863),
                   (o = Math.imul(B, de)),
                   (n = ((n = Math.imul(B, fe)) + Math.imul(F, de)) | 0),
                   (s = Math.imul(F, fe));
-                var De =
-                  (((l + (o = (o + Math.imul(R, pe)) | 0)) | 0) +
+                var Oe =
+                  (((l + (o = (o + Math.imul(L, pe)) | 0)) | 0) +
                     ((8191 &
                       (n =
-                        ((n = (n + Math.imul(R, me)) | 0) + Math.imul(L, pe)) |
+                        ((n = (n + Math.imul(L, me)) | 0) + Math.imul(C, pe)) |
                         0)) <<
                       13)) |
                   0;
                 (l =
-                  ((((s = (s + Math.imul(L, me)) | 0) + (n >>> 13)) | 0) +
-                    (De >>> 26)) |
+                  ((((s = (s + Math.imul(C, me)) | 0) + (n >>> 13)) | 0) +
+                    (Oe >>> 26)) |
                   0),
-                  (De &= 67108863);
-                var Pe =
+                  (Oe &= 67108863);
+                var Re =
                   (((l + (o = Math.imul(B, pe))) | 0) +
                     ((8191 &
                       (n = ((n = Math.imul(B, me)) + Math.imul(F, pe)) | 0)) <<
@@ -28352,9 +28230,9 @@ module.exports = (function(e) {
                 return (
                   (l =
                     ((((s = Math.imul(F, me)) + (n >>> 13)) | 0) +
-                      (Pe >>> 26)) |
+                      (Re >>> 26)) |
                     0),
-                  (Pe &= 67108863),
+                  (Re &= 67108863),
                   (u[0] = _e),
                   (u[1] = ye),
                   (u[2] = ve),
@@ -28364,16 +28242,16 @@ module.exports = (function(e) {
                   (u[6] = we),
                   (u[7] = xe),
                   (u[8] = Ae),
-                  (u[9] = Me),
-                  (u[10] = Ee),
-                  (u[11] = ke),
-                  (u[12] = Se),
+                  (u[9] = ke),
+                  (u[10] = Se),
+                  (u[11] = Ee),
+                  (u[12] = Me),
                   (u[13] = Ne),
-                  (u[14] = Ie),
+                  (u[14] = Pe),
                   (u[15] = Te),
-                  (u[16] = Oe),
-                  (u[17] = De),
-                  (u[18] = Pe),
+                  (u[16] = Ie),
+                  (u[17] = Oe),
+                  (u[18] = Re),
                   0 !== l && ((u[19] = l), r.length++),
                   r
                 );
@@ -29705,7 +29583,7 @@ module.exports = (function(e) {
                   d < o;
                   d++
                 ) {
-                  var f = (M = t[d])._getNAFPoints(e);
+                  var f = (k = t[d])._getNAFPoints(e);
                   (a[d] = f.wnd), (u[d] = f.points);
                 }
                 for (d = o - 1; 1 <= d; d -= 2) {
@@ -29751,13 +29629,13 @@ module.exports = (function(e) {
                   }
                   if ((0 <= d && x++, (j = j.dblp(x)), d < 0)) break;
                   for (v = 0; v < o; v++) {
-                    var M,
-                      E = w[v];
-                    0 !== E &&
-                      (0 < E
-                        ? (M = u[v][(E - 1) >> 1])
-                        : E < 0 && (M = u[v][(-E - 1) >> 1].neg()),
-                      (j = 'affine' === M.type ? j.mixedAdd(M) : j.add(M)));
+                    var k,
+                      S = w[v];
+                    0 !== S &&
+                      (0 < S
+                        ? (k = u[v][(S - 1) >> 1])
+                        : S < 0 && (k = u[v][(-S - 1) >> 1].neg()),
+                      (j = 'affine' === k.type ? j.mixedAdd(k) : j.add(k)));
                   }
                 }
                 for (d = 0; d < o; d++) u[d] = null;
@@ -32314,19 +32192,19 @@ module.exports = (function(e) {
               var r = i(e, t, 28) ^ i(t, e, 2) ^ i(t, e, 7);
               return r < 0 && (r += 4294967296), r;
             }
-            function M(e, t) {
+            function k(e, t) {
               var r = a(e, t, 28) ^ a(t, e, 2) ^ a(t, e, 7);
               return r < 0 && (r += 4294967296), r;
             }
-            function E(e, t) {
+            function S(e, t) {
               var r = i(e, t, 14) ^ i(e, t, 18) ^ i(t, e, 9);
               return r < 0 && (r += 4294967296), r;
             }
-            function k(e, t) {
+            function E(e, t) {
               var r = a(e, t, 14) ^ a(e, t, 18) ^ a(t, e, 9);
               return r < 0 && (r += 4294967296), r;
             }
-            function S(e, t) {
+            function M(e, t) {
               var r = i(e, t, 1) ^ i(e, t, 8) ^ u(e, t, 7);
               return r < 0 && (r += 4294967296), r;
             }
@@ -32334,7 +32212,7 @@ module.exports = (function(e) {
               var r = a(e, t, 1) ^ a(e, t, 8) ^ l(e, t, 7);
               return r < 0 && (r += 4294967296), r;
             }
-            function I(e, t) {
+            function P(e, t) {
               var r = i(e, t, 19) ^ i(t, e, 29) ^ u(e, t, 6);
               return r < 0 && (r += 4294967296), r;
             }
@@ -32350,11 +32228,11 @@ module.exports = (function(e) {
               (g.prototype._prepareBlock = function(e, t) {
                 for (var r = this.W, o = 0; o < 32; o++) r[o] = e[t + o];
                 for (; o < r.length; o += 2) {
-                  var n = I(r[o - 4], r[o - 3]),
+                  var n = P(r[o - 4], r[o - 3]),
                     s = T(r[o - 4], r[o - 3]),
                     i = r[o - 14],
                     a = r[o - 13],
-                    u = S(r[o - 30], r[o - 29]),
+                    u = M(r[o - 30], r[o - 29]),
                     l = N(r[o - 30], r[o - 29]),
                     c = r[o - 32],
                     d = r[o - 31];
@@ -32376,56 +32254,56 @@ module.exports = (function(e) {
                   y = this.h[8],
                   v = this.h[9],
                   g = this.h[10],
-                  S = this.h[11],
+                  M = this.h[11],
                   N = this.h[12],
-                  I = this.h[13],
+                  P = this.h[13],
                   T = this.h[14],
-                  O = this.h[15];
+                  I = this.h[15];
                 s(this.k.length === r.length);
-                for (var D = 0; D < r.length; D += 2) {
-                  var P = T,
-                    R = O,
-                    L = E(y, v),
-                    C = k(y, v),
+                for (var O = 0; O < r.length; O += 2) {
+                  var R = T,
+                    L = I,
+                    C = S(y, v),
+                    D = E(y, v),
                     B = b(y, 0, g, 0, N),
-                    F = j(0, v, 0, S, 0, I),
-                    U = this.k[D],
-                    z = this.k[D + 1],
-                    H = r[D],
-                    G = r[D + 1],
-                    q = m(P, R, L, C, B, F, U, z, H, G),
-                    W = _(P, R, L, C, B, F, U, z, H, G);
-                  (P = A(o, n)),
-                    (R = M(o, n)),
-                    (L = w(o, 0, i, 0, u)),
-                    (C = x(0, n, 0, a, 0, l));
-                  var V = d(P, R, L, C),
-                    K = f(P, R, L, C);
+                    F = j(0, v, 0, M, 0, P),
+                    U = this.k[O],
+                    H = this.k[O + 1],
+                    q = r[O],
+                    G = r[O + 1],
+                    z = m(R, L, C, D, B, F, U, H, q, G),
+                    W = _(R, L, C, D, B, F, U, H, q, G);
+                  (R = A(o, n)),
+                    (L = k(o, n)),
+                    (C = w(o, 0, i, 0, u)),
+                    (D = x(0, n, 0, a, 0, l));
+                  var V = d(R, L, C, D),
+                    K = f(R, L, C, D);
                   (T = N),
-                    (O = I),
+                    (I = P),
                     (N = g),
-                    (I = S),
+                    (P = M),
                     (g = y),
-                    (S = v),
-                    (y = d(h, p, q, W)),
-                    (v = f(p, p, q, W)),
+                    (M = v),
+                    (y = d(h, p, z, W)),
+                    (v = f(p, p, z, W)),
                     (h = u),
                     (p = l),
                     (u = i),
                     (l = a),
                     (i = o),
                     (a = n),
-                    (o = d(q, W, V, K)),
-                    (n = f(q, W, V, K));
+                    (o = d(z, W, V, K)),
+                    (n = f(z, W, V, K));
                 }
                 c(this.h, 0, o, n),
                   c(this.h, 2, i, a),
                   c(this.h, 4, u, l),
                   c(this.h, 6, h, p),
                   c(this.h, 8, y, v),
-                  c(this.h, 10, g, S),
-                  c(this.h, 12, N, I),
-                  c(this.h, 14, T, O);
+                  c(this.h, 10, g, M),
+                  c(this.h, 12, N, P),
+                  c(this.h, 14, T, I);
               }),
               (g.prototype._digest = function(e) {
                 return 'hex' === e
@@ -33025,35 +32903,35 @@ module.exports = (function(e) {
                     w,
                     x,
                     A,
-                    M,
-                    E,
                     k,
                     S,
+                    E,
+                    M,
                     N,
-                    I,
-                    T,
-                    O,
-                    D,
                     P,
+                    T,
+                    I,
+                    O,
                     R,
                     L,
                     C,
+                    D,
                     B,
                     F,
                     U,
-                    z,
                     H,
-                    G,
                     q,
+                    G,
+                    z,
                     W,
                     V,
                     K,
-                    Q,
-                    Y,
                     J,
                     X,
                     Z,
                     $,
+                    Y,
+                    Q,
                     ee,
                     te,
                     re,
@@ -33141,101 +33019,101 @@ module.exports = (function(e) {
                       (m = e[0]),
                       (_ = e[1]),
                       (K = (e[11] << 4) | (e[10] >>> 28)),
-                      (Q = (e[10] << 4) | (e[11] >>> 28)),
+                      (J = (e[10] << 4) | (e[11] >>> 28)),
                       (N = (e[20] << 3) | (e[21] >>> 29)),
-                      (I = (e[21] << 3) | (e[20] >>> 29)),
+                      (P = (e[21] << 3) | (e[20] >>> 29)),
                       (ae = (e[31] << 9) | (e[30] >>> 23)),
                       (ue = (e[30] << 9) | (e[31] >>> 23)),
                       (G = (e[40] << 18) | (e[41] >>> 14)),
-                      (q = (e[41] << 18) | (e[40] >>> 14)),
-                      (R = (e[2] << 1) | (e[3] >>> 31)),
-                      (L = (e[3] << 1) | (e[2] >>> 31)),
+                      (z = (e[41] << 18) | (e[40] >>> 14)),
+                      (L = (e[2] << 1) | (e[3] >>> 31)),
+                      (C = (e[3] << 1) | (e[2] >>> 31)),
                       (y = (e[13] << 12) | (e[12] >>> 20)),
                       (v = (e[12] << 12) | (e[13] >>> 20)),
-                      (Y = (e[22] << 10) | (e[23] >>> 22)),
-                      (J = (e[23] << 10) | (e[22] >>> 22)),
+                      (X = (e[22] << 10) | (e[23] >>> 22)),
+                      (Z = (e[23] << 10) | (e[22] >>> 22)),
                       (T = (e[33] << 13) | (e[32] >>> 19)),
-                      (O = (e[32] << 13) | (e[33] >>> 19)),
+                      (I = (e[32] << 13) | (e[33] >>> 19)),
                       (le = (e[42] << 2) | (e[43] >>> 30)),
                       (ce = (e[43] << 2) | (e[42] >>> 30)),
                       (te = (e[5] << 30) | (e[4] >>> 2)),
                       (re = (e[4] << 30) | (e[5] >>> 2)),
-                      (C = (e[14] << 6) | (e[15] >>> 26)),
+                      (D = (e[14] << 6) | (e[15] >>> 26)),
                       (B = (e[15] << 6) | (e[14] >>> 26)),
                       (g = (e[25] << 11) | (e[24] >>> 21)),
                       (b = (e[24] << 11) | (e[25] >>> 21)),
-                      (X = (e[34] << 15) | (e[35] >>> 17)),
-                      (Z = (e[35] << 15) | (e[34] >>> 17)),
-                      (D = (e[45] << 29) | (e[44] >>> 3)),
-                      (P = (e[44] << 29) | (e[45] >>> 3)),
-                      (M = (e[6] << 28) | (e[7] >>> 4)),
-                      (E = (e[7] << 28) | (e[6] >>> 4)),
+                      ($ = (e[34] << 15) | (e[35] >>> 17)),
+                      (Y = (e[35] << 15) | (e[34] >>> 17)),
+                      (O = (e[45] << 29) | (e[44] >>> 3)),
+                      (R = (e[44] << 29) | (e[45] >>> 3)),
+                      (k = (e[6] << 28) | (e[7] >>> 4)),
+                      (S = (e[7] << 28) | (e[6] >>> 4)),
                       (oe = (e[17] << 23) | (e[16] >>> 9)),
                       (ne = (e[16] << 23) | (e[17] >>> 9)),
                       (F = (e[26] << 25) | (e[27] >>> 7)),
                       (U = (e[27] << 25) | (e[26] >>> 7)),
                       (j = (e[36] << 21) | (e[37] >>> 11)),
                       (w = (e[37] << 21) | (e[36] >>> 11)),
-                      ($ = (e[47] << 24) | (e[46] >>> 8)),
+                      (Q = (e[47] << 24) | (e[46] >>> 8)),
                       (ee = (e[46] << 24) | (e[47] >>> 8)),
                       (W = (e[8] << 27) | (e[9] >>> 5)),
                       (V = (e[9] << 27) | (e[8] >>> 5)),
-                      (k = (e[18] << 20) | (e[19] >>> 12)),
-                      (S = (e[19] << 20) | (e[18] >>> 12)),
+                      (E = (e[18] << 20) | (e[19] >>> 12)),
+                      (M = (e[19] << 20) | (e[18] >>> 12)),
                       (se = (e[29] << 7) | (e[28] >>> 25)),
                       (ie = (e[28] << 7) | (e[29] >>> 25)),
-                      (z = (e[38] << 8) | (e[39] >>> 24)),
-                      (H = (e[39] << 8) | (e[38] >>> 24)),
+                      (H = (e[38] << 8) | (e[39] >>> 24)),
+                      (q = (e[39] << 8) | (e[38] >>> 24)),
                       (x = (e[48] << 14) | (e[49] >>> 18)),
                       (A = (e[49] << 14) | (e[48] >>> 18)),
                       (e[0] = m ^ (~y & g)),
                       (e[1] = _ ^ (~v & b)),
-                      (e[10] = M ^ (~k & N)),
-                      (e[11] = E ^ (~S & I)),
-                      (e[20] = R ^ (~C & F)),
-                      (e[21] = L ^ (~B & U)),
-                      (e[30] = W ^ (~K & Y)),
-                      (e[31] = V ^ (~Q & J)),
+                      (e[10] = k ^ (~E & N)),
+                      (e[11] = S ^ (~M & P)),
+                      (e[20] = L ^ (~D & F)),
+                      (e[21] = C ^ (~B & U)),
+                      (e[30] = W ^ (~K & X)),
+                      (e[31] = V ^ (~J & Z)),
                       (e[40] = te ^ (~oe & se)),
                       (e[41] = re ^ (~ne & ie)),
                       (e[2] = y ^ (~g & j)),
                       (e[3] = v ^ (~b & w)),
-                      (e[12] = k ^ (~N & T)),
-                      (e[13] = S ^ (~I & O)),
-                      (e[22] = C ^ (~F & z)),
-                      (e[23] = B ^ (~U & H)),
-                      (e[32] = K ^ (~Y & X)),
-                      (e[33] = Q ^ (~J & Z)),
+                      (e[12] = E ^ (~N & T)),
+                      (e[13] = M ^ (~P & I)),
+                      (e[22] = D ^ (~F & H)),
+                      (e[23] = B ^ (~U & q)),
+                      (e[32] = K ^ (~X & $)),
+                      (e[33] = J ^ (~Z & Y)),
                       (e[42] = oe ^ (~se & ae)),
                       (e[43] = ne ^ (~ie & ue)),
                       (e[4] = g ^ (~j & x)),
                       (e[5] = b ^ (~w & A)),
-                      (e[14] = N ^ (~T & D)),
-                      (e[15] = I ^ (~O & P)),
-                      (e[24] = F ^ (~z & G)),
-                      (e[25] = U ^ (~H & q)),
-                      (e[34] = Y ^ (~X & $)),
-                      (e[35] = J ^ (~Z & ee)),
+                      (e[14] = N ^ (~T & O)),
+                      (e[15] = P ^ (~I & R)),
+                      (e[24] = F ^ (~H & G)),
+                      (e[25] = U ^ (~q & z)),
+                      (e[34] = X ^ (~$ & Q)),
+                      (e[35] = Z ^ (~Y & ee)),
                       (e[44] = se ^ (~ae & le)),
                       (e[45] = ie ^ (~ue & ce)),
                       (e[6] = j ^ (~x & m)),
                       (e[7] = w ^ (~A & _)),
-                      (e[16] = T ^ (~D & M)),
-                      (e[17] = O ^ (~P & E)),
-                      (e[26] = z ^ (~G & R)),
-                      (e[27] = H ^ (~q & L)),
-                      (e[36] = X ^ (~$ & W)),
-                      (e[37] = Z ^ (~ee & V)),
+                      (e[16] = T ^ (~O & k)),
+                      (e[17] = I ^ (~R & S)),
+                      (e[26] = H ^ (~G & L)),
+                      (e[27] = q ^ (~z & C)),
+                      (e[36] = $ ^ (~Q & W)),
+                      (e[37] = Y ^ (~ee & V)),
                       (e[46] = ae ^ (~le & te)),
                       (e[47] = ue ^ (~ce & re)),
                       (e[8] = x ^ (~m & y)),
                       (e[9] = A ^ (~_ & v)),
-                      (e[18] = D ^ (~M & k)),
-                      (e[19] = P ^ (~E & S)),
-                      (e[28] = G ^ (~R & C)),
-                      (e[29] = q ^ (~L & B)),
-                      (e[38] = $ ^ (~W & K)),
-                      (e[39] = ee ^ (~V & Q)),
+                      (e[18] = O ^ (~k & E)),
+                      (e[19] = R ^ (~S & M)),
+                      (e[28] = G ^ (~L & D)),
+                      (e[29] = z ^ (~C & B)),
+                      (e[38] = Q ^ (~W & K)),
+                      (e[39] = ee ^ (~V & J)),
                       (e[48] = le ^ (~te & oe)),
                       (e[49] = ce ^ (~re & ne)),
                       (e[0] ^= a[o]),
@@ -33371,7 +33249,7 @@ module.exports = (function(e) {
                         w = i,
                         x = a,
                         A = u,
-                        M = l;
+                        k = l;
                       for (p = 0; p < 16; p++)
                         (m = d + 4 * p),
                           (c[p] =
@@ -33397,7 +33275,7 @@ module.exports = (function(e) {
                             ((w >>> 25) | (w << 7))) +
                             ((w & x) ^ (~w & A))) |
                             0) +
-                            ((M + ((t[p] + c[p]) | 0)) | 0)) |
+                            ((k + ((t[p] + c[p]) | 0)) | 0)) |
                           0),
                           (y =
                             ((((v >>> 2) | (v << 30)) ^
@@ -33405,7 +33283,7 @@ module.exports = (function(e) {
                               ((v >>> 22) | (v << 10))) +
                               ((v & g) ^ (v & b) ^ (g & b))) |
                             0),
-                          (M = A),
+                          (k = A),
                           (A = x),
                           (x = w),
                           (w = (j + _) | 0),
@@ -33420,7 +33298,7 @@ module.exports = (function(e) {
                         (i = (i + w) | 0),
                         (a = (a + x) | 0),
                         (u = (u + A) | 0),
-                        (l = (l + M) | 0),
+                        (l = (l + k) | 0),
                         (d += 64),
                         (f -= 64);
                     }
@@ -33611,51 +33489,51 @@ module.exports = (function(e) {
                     w = new Uint32Array(32 * s * o),
                     x = 32 * s,
                     A = new Uint32Array(16),
-                    M = new Uint32Array(16),
-                    E = u * o * 2,
-                    k = 0,
-                    S = null,
+                    k = new Uint32Array(16),
+                    S = u * o * 2,
+                    E = 0,
+                    M = null,
                     N = !1,
-                    I = 0,
+                    P = 0,
                     T = 0,
-                    O = parseInt(1e3 / s),
-                    D = void 0 !== e ? e : setTimeout,
-                    P = function() {
-                      if (N) return p(new Error('cancelled'), k / E);
-                      switch (I) {
+                    I = parseInt(1e3 / s),
+                    O = void 0 !== e ? e : setTimeout,
+                    R = function() {
+                      if (N) return p(new Error('cancelled'), E / S);
+                      switch (P) {
                         case 0:
-                          d(_, (b = 32 * T * s), j, 0, x), (I = 1), (g = 0);
+                          d(_, (b = 32 * T * s), j, 0, x), (P = 1), (g = 0);
                         case 1:
-                          O < (r = o - g) && (r = O);
+                          I < (r = o - g) && (r = I);
                           for (var e = 0; e < r; e++)
-                            d(j, 0, w, (g + e) * x, x), a(j, x, s, A, M);
+                            d(j, 0, w, (g + e) * x, x), a(j, x, s, A, k);
                           if (
                             ((g += r),
-                            (k += r),
-                            (n = parseInt((1e3 * k) / E)) !== S)
+                            (E += r),
+                            (n = parseInt((1e3 * E) / S)) !== M)
                           ) {
-                            if ((N = p(null, k / E))) break;
-                            S = n;
+                            if ((N = p(null, E / S))) break;
+                            M = n;
                           }
                           if (g < o) break;
-                          (g = 0), (I = 2);
+                          (g = 0), (P = 2);
                         case 2:
                           var r, n;
-                          for (O < (r = o - g) && (r = O), e = 0; e < r; e++) {
+                          for (I < (r = o - g) && (r = I), e = 0; e < r; e++) {
                             var f = j[16 * (2 * s - 1)] & (o - 1);
-                            c(w, f * x, j, x), a(j, x, s, A, M);
+                            c(w, f * x, j, x), a(j, x, s, A, k);
                           }
                           if (
                             ((g += r),
-                            (k += r),
-                            (n = parseInt((1e3 * k) / E)) !== S)
+                            (E += r),
+                            (n = parseInt((1e3 * E) / S)) !== M)
                           ) {
-                            if ((N = p(null, k / E))) break;
-                            S = n;
+                            if ((N = p(null, E / S))) break;
+                            M = n;
                           }
                           if (g < o) break;
                           if ((d(j, 0, _, b, x), ++T < u)) {
-                            I = 0;
+                            P = 0;
                             break;
                           }
                           for (m = [], e = 0; e < _.length; e++)
@@ -33666,9 +33544,9 @@ module.exports = (function(e) {
                           var h = i(t, m, l);
                           return p(null, 1, h);
                       }
-                      D(P);
+                      O(R);
                     };
-                  P();
+                  R();
                 }
                 void 0 !== r
                   ? (t.exports = p)
@@ -34087,7 +33965,7 @@ module.exports = (function(e) {
               if (u.isHexString(e)) return u.hexStripZeros(e);
               throw new Error('invalid blockTag');
             }
-            var M = {
+            var k = {
               hash: j,
               blockHash: g(j, null),
               blockNumber: g(w, null),
@@ -34106,7 +33984,7 @@ module.exports = (function(e) {
               creates: g(i.getAddress, null),
               raw: g(u.hexlify)
             };
-            function E(e) {
+            function S(e) {
               if (
                 (null != e.gas && null == e.gasLimit && (e.gasLimit = e.gas),
                 e.to &&
@@ -34131,7 +34009,7 @@ module.exports = (function(e) {
                 ];
                 e.raw = f.encode(t);
               }
-              var r = v(M, e),
+              var r = v(k, e),
                 o = e.networkId;
               return (
                 null != e.chainId &&
@@ -34150,7 +34028,7 @@ module.exports = (function(e) {
                 r
               );
             }
-            var k = {
+            var E = {
                 hash: j,
                 parentHash: j,
                 number: w,
@@ -34169,15 +34047,15 @@ module.exports = (function(e) {
                 extraData: u.hexlify,
                 transactions: g(b(j))
               },
-              S = d.shallowCopy(k);
+              M = d.shallowCopy(E);
             function N(e, t) {
               return (
                 null != e.author && null == e.miner && (e.miner = e.author),
-                v(t ? S : k, e)
+                v(t ? M : E, e)
               );
             }
-            S.transactions = g(b(E));
-            var I = {
+            M.transactions = g(b(S));
+            var P = {
               from: g(i.getAddress),
               nonce: g(w),
               gasLimit: g(a.bigNumberify),
@@ -34187,9 +34065,9 @@ module.exports = (function(e) {
               data: g(u.hexlify)
             };
             function T(e) {
-              return v(I, e);
+              return v(P, e);
             }
-            var O = {
+            var I = {
                 transactionLogIndex: g(w),
                 transactionIndex: w,
                 blockNumber: w,
@@ -34200,7 +34078,7 @@ module.exports = (function(e) {
                 logIndex: w,
                 blockHash: j
               },
-              D = {
+              O = {
                 to: g(i.getAddress, null),
                 from: g(i.getAddress, null),
                 contractAddress: g(i.getAddress, null),
@@ -34211,34 +34089,34 @@ module.exports = (function(e) {
                 blockHash: j,
                 transactionHash: j,
                 logs: b(function(e) {
-                  return v(O, e);
+                  return v(I, e);
                 }),
                 blockNumber: w,
                 confirmations: g(w, null),
                 cumulativeGasUsed: a.bigNumberify,
                 status: g(w)
               };
-            function P(e) {
+            function R(e) {
               return (
                 Array.isArray(e)
                   ? e.forEach(function(e) {
-                      P(e);
+                      R(e);
                     })
                   : null != e && j(e),
                 e
               );
             }
-            var R,
-              L = {
+            var L,
+              C = {
                 fromBlock: g(A, void 0),
                 toBlock: g(A, void 0),
                 address: g(i.getAddress, void 0),
-                topics: g(P, void 0)
+                topics: g(R, void 0)
               },
-              C = {
+              D = {
                 blockHash: g(j, void 0),
                 address: g(i.getAddress, void 0),
-                topics: g(P, void 0)
+                topics: g(R, void 0)
               },
               B = {
                 blockNumber: g(w),
@@ -34253,9 +34131,9 @@ module.exports = (function(e) {
                   throw new Error('invaid boolean - ' + e);
                 }),
                 address: i.getAddress,
-                data: ((R = u.hexlify),
+                data: ((L = u.hexlify),
                 function(e) {
-                  return e ? R(e) : '0x';
+                  return e ? L(e) : '0x';
                 }),
                 topics: b(j),
                 transactionHash: j,
@@ -34288,7 +34166,7 @@ module.exports = (function(e) {
                 })
                 .join('&');
             }
-            function z(e) {
+            function H(e) {
               if ('string' == typeof e) {
                 if (20 === u.hexDataLength(e))
                   return 'address:' + i.getAddress(e);
@@ -34304,7 +34182,7 @@ module.exports = (function(e) {
               }
               throw new Error('invalid event - ' + e);
             }
-            function H() {
+            function q() {
               return new Date().getTime();
             }
             var G = (function(e) {
@@ -34519,7 +34397,7 @@ module.exports = (function(e) {
                 }),
                 (t.prototype._getFastBlockNumber = function() {
                   var e = this,
-                    t = H();
+                    t = q();
                   return (
                     t - this._fastQueryDate > 2 * this._pollingInterval &&
                       ((this._fastQueryDate = t),
@@ -34539,7 +34417,7 @@ module.exports = (function(e) {
                 (t.prototype._setFastBlockNumber = function(e) {
                   (null != this._fastBlockNumber &&
                     e < this._fastBlockNumber) ||
-                    ((this._fastQueryDate = H()),
+                    ((this._fastQueryDate = q()),
                     (null == this._fastBlockNumber ||
                       e > this._fastBlockNumber) &&
                       ((this._fastBlockNumber = e),
@@ -34872,7 +34750,7 @@ module.exports = (function(e) {
                                 if (null != e.blockHash) {
                                   var o,
                                     n,
-                                    s = ((n = v(D, (o = e))).logs.forEach(
+                                    s = ((n = v(O, (o = e))).logs.forEach(
                                       function(e, t) {
                                         null == e.transactionLogIndex &&
                                           (e.transactionLogIndex = t);
@@ -34910,7 +34788,7 @@ module.exports = (function(e) {
                         var r,
                           o = {
                             filter: ((r = e),
-                            r && r.blockHash ? v(C, r) : v(L, r))
+                            r && r.blockHash ? v(D, r) : v(C, r))
                           };
                         return t.perform('getLogs', o).then(function(e) {
                           return b(F)(e);
@@ -35015,7 +34893,7 @@ module.exports = (function(e) {
                     });
                 }),
                 (t.checkTransactionResponse = function(e) {
-                  return E(e);
+                  return S(e);
                 }),
                 (t.prototype.doPoll = function() {}),
                 (t.prototype.perform = function(e, t) {
@@ -35033,7 +34911,7 @@ module.exports = (function(e) {
                 }),
                 (t.prototype._stopPending = function() {}),
                 (t.prototype._addEventListener = function(e, t, r) {
-                  this._events.push({ tag: z(e), listener: t, once: r }),
+                  this._events.push({ tag: H(e), listener: t, once: r }),
                     'pending' === e && this._startPending(),
                     (this.polling = !0);
                 }),
@@ -35050,7 +34928,7 @@ module.exports = (function(e) {
                   for (var t = this, r = [], o = 1; o < arguments.length; o++)
                     r[o - 1] = arguments[o];
                   var n = !1,
-                    s = z(e);
+                    s = H(e);
                   return (
                     (this._events = this._events.filter(function(e) {
                       return (
@@ -35068,13 +34946,13 @@ module.exports = (function(e) {
                 }),
                 (t.prototype.listenerCount = function(e) {
                   if (!e) return this._events.length;
-                  var t = z(e);
+                  var t = H(e);
                   return this._events.filter(function(e) {
                     return e.tag === t;
                   }).length;
                 }),
                 (t.prototype.listeners = function(e) {
-                  var t = z(e);
+                  var t = H(e);
                   return this._events
                     .filter(function(e) {
                       return e.tag === t;
@@ -35086,7 +34964,7 @@ module.exports = (function(e) {
                 (t.prototype.removeAllListeners = function(e) {
                   if (null == e) (this._events = []), this._stopPending();
                   else {
-                    var t = z(e);
+                    var t = H(e);
                     (this._events = this._events.filter(function(e) {
                       return e.tag !== t;
                     })),
@@ -35096,7 +34974,7 @@ module.exports = (function(e) {
                 }),
                 (t.prototype.removeListener = function(e, t) {
                   var r = !1,
-                    o = z(e);
+                    o = H(e);
                   return (
                     (this._events = this._events.filter(function(e) {
                       return e.tag !== o || e.listener != t || !!r || !(r = !0);
@@ -36774,7 +36652,7 @@ module.exports = (function(e) {
                   t
                 );
               })(j),
-              M = new A(
+              k = new A(
                 function(e, t) {
                   return t;
                 },
@@ -36782,18 +36660,18 @@ module.exports = (function(e) {
                 !1,
                 'none'
               ),
-              E = (function(e) {
+              S = (function(e) {
                 function t(t, r) {
                   return e.call(this, t, 'bool', 'bool', r, !1) || this;
                 }
                 return (
                   n(t, e),
                   (t.prototype.encode = function(e) {
-                    return M.encode(e ? 1 : 0);
+                    return k.encode(e ? 1 : 0);
                   }),
                   (t.prototype.decode = function(e, t) {
                     try {
-                      var r = M.decode(e, t);
+                      var r = k.decode(e, t);
                     } catch (e) {
                       throw ('insufficient data for uint256 type' ===
                         e.reason &&
@@ -36816,7 +36694,7 @@ module.exports = (function(e) {
                   t
                 );
               })(j),
-              k = (function(e) {
+              E = (function(e) {
                 function t(t, r, o) {
                   var n = this,
                     s = 'bytes' + r;
@@ -36870,7 +36748,7 @@ module.exports = (function(e) {
                   t
                 );
               })(j),
-              S = (function(e) {
+              M = (function(e) {
                 function t(t, r) {
                   return e.call(this, t, 'address', 'address', r, !1) || this;
                 }
@@ -36916,9 +36794,9 @@ module.exports = (function(e) {
             function N(e) {
               var t = 32 * Math.ceil(e.length / 32),
                 r = new Uint8Array(t - e.length);
-              return c.concat([M.encode(e.length), e, r]);
+              return c.concat([k.encode(e.length), e, r]);
             }
-            function I(e, t, r) {
+            function P(e, t, r) {
               e.length < t + 32 &&
                 a.throwError(
                   'insufficient data for dynamicBytes length',
@@ -36929,7 +36807,7 @@ module.exports = (function(e) {
                     value: c.hexlify(e.slice(t, t + 32))
                   }
                 );
-              var o = M.decode(e, t).value;
+              var o = k.decode(e, t).value;
               try {
                 o = o.toNumber();
               } catch (e) {
@@ -36975,7 +36853,7 @@ module.exports = (function(e) {
                     return null;
                   }),
                   (t.prototype.decode = function(e, t) {
-                    var r = I(e, t, this.localName);
+                    var r = P(e, t, this.localName);
                     return (
                       (r.value = this.coerceFunc('bytes', c.hexlify(r.value))),
                       r
@@ -36984,7 +36862,7 @@ module.exports = (function(e) {
                   t
                 );
               })(j),
-              O = (function(e) {
+              I = (function(e) {
                 function t(t, r) {
                   return e.call(this, t, 'string', 'string', r, !0) || this;
                 }
@@ -37002,7 +36880,7 @@ module.exports = (function(e) {
                     );
                   }),
                   (t.prototype.decode = function(e, t) {
-                    var r = I(e, t, this.localName);
+                    var r = P(e, t, this.localName);
                     return (
                       (r.value = this.coerceFunc(
                         'string',
@@ -37014,10 +36892,10 @@ module.exports = (function(e) {
                   t
                 );
               })(j);
-            function D(e) {
+            function O(e) {
               return 32 * Math.ceil(e / 32);
             }
-            function P(e, t) {
+            function R(e, t) {
               if (Array.isArray(t));
               else if (t && 'object' == typeof t) {
                 var r = [];
@@ -37044,8 +36922,8 @@ module.exports = (function(e) {
                 s = 0;
               o.forEach(function(e) {
                 e.dynamic
-                  ? ((n += 32), (s += D(e.value.length)))
-                  : (n += D(e.value.length));
+                  ? ((n += 32), (s += O(e.value.length)))
+                  : (n += O(e.value.length));
               });
               var i = 0,
                 u = n,
@@ -37053,23 +36931,23 @@ module.exports = (function(e) {
               return (
                 o.forEach(function(e) {
                   e.dynamic
-                    ? (l.set(M.encode(u), i),
+                    ? (l.set(k.encode(u), i),
                       (i += 32),
                       l.set(e.value, u),
-                      (u += D(e.value.length)))
-                    : (l.set(e.value, i), (i += D(e.value.length)));
+                      (u += O(e.value.length)))
+                    : (l.set(e.value, i), (i += O(e.value.length)));
                 }),
                 l
               );
             }
-            function R(e, t, r) {
+            function L(e, t, r) {
               var o = r,
                 n = 0,
                 s = [];
               return (
                 e.forEach(function(e) {
                   if (e.dynamic) {
-                    var i = M.decode(t, r);
+                    var i = k.decode(t, r);
                     (a = e.decode(t, o + i.value.toNumber())).consumed =
                       i.consumed;
                   } else var a = e.decode(t, r);
@@ -37086,7 +36964,7 @@ module.exports = (function(e) {
                 { value: s, consumed: n }
               );
             }
-            var L = (function(e) {
+            var C = (function(e) {
                 function t(t, r, o, n) {
                   var s = this,
                     i = r.type + '[' + (0 <= o ? o : '') + ']',
@@ -37108,7 +36986,7 @@ module.exports = (function(e) {
                       });
                     var t = this.length,
                       r = new Uint8Array(0);
-                    -1 === t && ((t = e.length), (r = M.encode(t))),
+                    -1 === t && ((t = e.length), (r = k.encode(t))),
                       a.checkArgumentCount(
                         t,
                         e.length,
@@ -37117,14 +36995,14 @@ module.exports = (function(e) {
                       );
                     for (var o = [], n = 0; n < e.length; n++)
                       o.push(this.coder);
-                    return c.concat([r, P(o, e)]);
+                    return c.concat([r, R(o, e)]);
                   }),
                   (t.prototype.decode = function(e, t) {
                     var r = 0,
                       o = this.length;
                     if (-1 === o) {
                       try {
-                        var n = M.decode(e, t);
+                        var n = k.decode(e, t);
                       } catch (e) {
                         a.throwError(
                           'insufficient data for dynamic array length',
@@ -37153,7 +37031,7 @@ module.exports = (function(e) {
                     }
                     for (var s = [], i = 0; i < o; i++)
                       s.push(new w(this.coder));
-                    var u = R(s, e, t);
+                    var u = L(s, e, t);
                     return (
                       (u.consumed += r),
                       (u.value = this.coerceFunc(this.type, u.value)),
@@ -37163,7 +37041,7 @@ module.exports = (function(e) {
                   t
                 );
               })(j),
-              C = (function(e) {
+              D = (function(e) {
                 function t(t, r, o) {
                   var n = this,
                     s = !1,
@@ -37181,10 +37059,10 @@ module.exports = (function(e) {
                 return (
                   n(t, e),
                   (t.prototype.encode = function(e) {
-                    return P(this.coders, e);
+                    return R(this.coders, e);
                   }),
                   (t.prototype.decode = function(e, t) {
-                    var r = R(this.coders, e, t);
+                    var r = L(this.coders, e, t);
                     return (r.value = this.coerceFunc(this.type, r.value)), r;
                   }),
                   t
@@ -37201,7 +37079,7 @@ module.exports = (function(e) {
               }
               return r && t.push(r), t;
             }
-            var F = { address: S, bool: E, string: O, bytes: T };
+            var F = { address: M, bool: S, string: I, bytes: T };
             function U(e, t) {
               var r,
                 o = F[t.type];
@@ -37225,14 +37103,14 @@ module.exports = (function(e) {
                       arg: 'param',
                       value: t
                     }),
-                  new k(e, n, t.name)
+                  new E(e, n, t.name)
                 );
               if ((r = t.type.match(m))) {
                 var n = parseInt(r[2] || '-1');
                 return (
                   ((t = f.shallowCopy(t)).type = r[1]),
                   (t = f.deepCopy(t)),
-                  new L(e, U(e, t), n, t.name)
+                  new C(e, U(e, t), n, t.name)
                 );
               }
               return 'tuple' === t.type.substring(0, 5)
@@ -37243,7 +37121,7 @@ module.exports = (function(e) {
                       t.forEach(function(t) {
                         o.push(U(e, t));
                       }),
-                      new C(e, o, r)
+                      new D(e, o, r)
                     );
                   })(e, t.components, t.name)
                 : '' === t.type
@@ -37254,7 +37132,7 @@ module.exports = (function(e) {
                   }),
                   null);
             }
-            var z = (function() {
+            var H = (function() {
               function e(t) {
                 a.checkNew(this, e),
                   t || (t = r.defaultCoerceFunc),
@@ -37278,7 +37156,7 @@ module.exports = (function(e) {
                       (t = 'string' == typeof e ? g(e) : e),
                         r.push(U(this.coerceFunc, t));
                     }, this),
-                    c.hexlify(new C(this.coerceFunc, r, '_').encode(t))
+                    c.hexlify(new D(this.coerceFunc, r, '_').encode(t))
                   );
                 }),
                 (e.prototype.decode = function(e, t) {
@@ -37289,14 +37167,14 @@ module.exports = (function(e) {
                       (t = 'string' == typeof e ? g(e) : f.deepCopy(e)),
                         r.push(U(this.coerceFunc, t));
                     }, this),
-                    new C(this.coerceFunc, r, '_').decode(c.arrayify(t), 0)
+                    new D(this.coerceFunc, r, '_').decode(c.arrayify(t), 0)
                       .value
                   );
                 }),
                 e
               );
             })();
-            (r.AbiCoder = z), (r.defaultAbiCoder = new z());
+            (r.AbiCoder = H), (r.defaultAbiCoder = new H());
           },
           {
             '../constants': 3,
@@ -38273,7 +38151,7 @@ module.exports = (function(e) {
                 )
               );
             }
-            function M(e, t) {
+            function k(e, t) {
               t || (t = s.langEn), n.checkNormalize();
               var r = t.split(e);
               if (r.length % 3 != 0) throw new Error('invalid mnemonic');
@@ -38337,13 +38215,13 @@ module.exports = (function(e) {
                 );
               }),
               (r.fromMnemonic = function(e, t, r) {
-                return M(e, t), x(A(e, r), e);
+                return k(e, t), x(A(e, r), e);
               }),
               (r.fromSeed = function(e) {
                 return x(e, null);
               }),
               (r.mnemonicToSeed = A),
-              (r.mnemonicToEntropy = M),
+              (r.mnemonicToEntropy = k),
               (r.entropyToMnemonic = function(e, t) {
                 if (
                   (e = a.arrayify(e)).length % 4 != 0 ||
@@ -38376,7 +38254,7 @@ module.exports = (function(e) {
               }),
               (r.isValidMnemonic = function(e, t) {
                 try {
-                  return M(e, t), !0;
+                  return k(e, t), !0;
                 } catch (e) {}
                 return !1;
               });
@@ -38527,18 +38405,18 @@ module.exports = (function(e) {
               (r.parseBytes32String = A.parseBytes32String),
               (r.toUtf8Bytes = A.toUtf8Bytes),
               (r.toUtf8String = A.toUtf8String);
-            var M = e('./units');
-            (r.commify = M.commify),
-              (r.formatEther = M.formatEther),
-              (r.parseEther = M.parseEther),
-              (r.formatUnits = M.formatUnits),
-              (r.parseUnits = M.parseUnits);
-            var E = e('./web');
-            r.fetchJson = E.fetchJson;
-            var k = e('./hmac');
-            r.SupportedAlgorithms = k.SupportedAlgorithms;
-            var S = e('./utf8');
-            r.UnicodeNormalizationForm = S.UnicodeNormalizationForm;
+            var k = e('./units');
+            (r.commify = k.commify),
+              (r.formatEther = k.formatEther),
+              (r.parseEther = k.parseEther),
+              (r.formatUnits = k.formatUnits),
+              (r.parseUnits = k.parseUnits);
+            var S = e('./web');
+            r.fetchJson = S.fetchJson;
+            var E = e('./hmac');
+            r.SupportedAlgorithms = E.SupportedAlgorithms;
+            var M = e('./utf8');
+            r.UnicodeNormalizationForm = M.UnicodeNormalizationForm;
             var N = e('./wordlist');
             r.Wordlist = N.Wordlist;
           },
@@ -39826,14 +39704,14 @@ module.exports = (function(e) {
                         else if (l) {
                           var c = (l = d.arrayify(l)).slice(0, 16),
                             v = l.slice(16, 32),
-                            M = l.slice(32, 64),
-                            E = new u.SigningKey(n).address,
-                            k = new s.default.Counter(b),
-                            S = new s.default.ModeOfOperation.ctr(c, k),
-                            N = d.arrayify(S.encrypt(n)),
-                            I = h.keccak256(d.concat([v, N])),
+                            k = l.slice(32, 64),
+                            S = new u.SigningKey(n).address,
+                            E = new s.default.Counter(b),
+                            M = new s.default.ModeOfOperation.ctr(c, E),
+                            N = d.arrayify(M.encrypt(n)),
+                            P = h.keccak256(d.concat([v, N])),
                             T = {
-                              address: E.substring(2).toLowerCase(),
+                              address: S.substring(2).toLowerCase(),
                               id: a.default.v4({ random: j }),
                               version: 3,
                               Crypto: {
@@ -39848,33 +39726,33 @@ module.exports = (function(e) {
                                   p: A,
                                   r: x
                                 },
-                                mac: I.substring(2)
+                                mac: P.substring(2)
                               }
                             };
                           if (f) {
-                            var O = m.randomBytes(16),
-                              D = new s.default.Counter(O),
-                              P = new s.default.ModeOfOperation.ctr(M, D),
-                              R = d.arrayify(P.encrypt(f)),
-                              L = new Date(),
-                              C =
-                                L.getUTCFullYear() +
+                            var I = m.randomBytes(16),
+                              O = new s.default.Counter(I),
+                              R = new s.default.ModeOfOperation.ctr(k, O),
+                              L = d.arrayify(R.encrypt(f)),
+                              C = new Date(),
+                              D =
+                                C.getUTCFullYear() +
                                 '-' +
-                                y(L.getUTCMonth() + 1, 2) +
+                                y(C.getUTCMonth() + 1, 2) +
                                 '-' +
-                                y(L.getUTCDate(), 2) +
+                                y(C.getUTCDate(), 2) +
                                 'T' +
-                                y(L.getUTCHours(), 2) +
+                                y(C.getUTCHours(), 2) +
                                 '-' +
-                                y(L.getUTCMinutes(), 2) +
+                                y(C.getUTCMinutes(), 2) +
                                 '-' +
-                                y(L.getUTCSeconds(), 2) +
+                                y(C.getUTCSeconds(), 2) +
                                 '.0Z';
                             T['x-ethers'] = {
                               client: _,
-                              gethFilename: 'UTC--' + C + '--' + T.address,
-                              mnemonicCounter: d.hexlify(O).substring(2),
-                              mnemonicCiphertext: d.hexlify(R).substring(2),
+                              gethFilename: 'UTC--' + D + '--' + T.address,
+                              mnemonicCounter: d.hexlify(I).substring(2),
+                              mnemonicCiphertext: d.hexlify(L).substring(2),
                               path: p,
                               version: '0.1'
                             };
@@ -41131,40 +41009,45 @@ module.exports = (function(e) {
     'use strict';
     var o = r('./node_modules/prop-types/lib/ReactPropTypesSecret.js');
     function n() {}
-    e.exports = function() {
-      function e(e, t, r, n, s, i) {
-        if (i !== o) {
-          var a = new Error(
-            'Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types'
-          );
-          throw ((a.name = 'Invariant Violation'), a);
+    function s() {}
+    (s.resetWarningCache = n),
+      (e.exports = function() {
+        function e(e, t, r, n, s, i) {
+          if (i !== o) {
+            var a = new Error(
+              'Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types'
+            );
+            throw ((a.name = 'Invariant Violation'), a);
+          }
         }
-      }
-      function t() {
-        return e;
-      }
-      e.isRequired = e;
-      var r = {
-        array: e,
-        bool: e,
-        func: e,
-        number: e,
-        object: e,
-        string: e,
-        symbol: e,
-        any: e,
-        arrayOf: t,
-        element: e,
-        instanceOf: t,
-        node: e,
-        objectOf: t,
-        oneOf: t,
-        oneOfType: t,
-        shape: t,
-        exact: t
-      };
-      return (r.checkPropTypes = n), (r.PropTypes = r), r;
-    };
+        function t() {
+          return e;
+        }
+        e.isRequired = e;
+        var r = {
+          array: e,
+          bool: e,
+          func: e,
+          number: e,
+          object: e,
+          string: e,
+          symbol: e,
+          any: e,
+          arrayOf: t,
+          element: e,
+          elementType: e,
+          instanceOf: t,
+          node: e,
+          objectOf: t,
+          oneOf: t,
+          oneOfType: t,
+          shape: t,
+          exact: t,
+          checkPropTypes: s,
+          resetWarningCache: n
+        };
+        return (r.PropTypes = r), r;
+      });
   },
   './node_modules/prop-types/index.js': function(e, t, r) {
     e.exports = r('./node_modules/prop-types/factoryWithThrowingShims.js')();
@@ -41462,48 +41345,48 @@ module.exports = (function(e) {
                     n
                   )
                 : i,
-            M = g(m),
-            E = a.title ? 'color: ' + a.title(x) + ';' : '',
-            k = ['color: gray; font-weight: lighter;'];
-          k.push(E),
-            t.timestamp && k.push('color: gray; font-weight: lighter;'),
-            t.duration && k.push('color: gray; font-weight: lighter;');
-          var S = s(x, M, b);
+            k = g(m),
+            S = a.title ? 'color: ' + a.title(x) + ';' : '',
+            E = ['color: gray; font-weight: lighter;'];
+          E.push(S),
+            t.timestamp && E.push('color: gray; font-weight: lighter;'),
+            t.duration && E.push('color: gray; font-weight: lighter;');
+          var M = s(x, k, b);
           try {
             A
               ? a.title && c
-                ? r.groupCollapsed.apply(r, ['%c ' + S].concat(k))
-                : r.groupCollapsed(S)
+                ? r.groupCollapsed.apply(r, ['%c ' + M].concat(E))
+                : r.groupCollapsed(M)
               : a.title && c
-              ? r.group.apply(r, ['%c ' + S].concat(k))
-              : r.group(S);
+              ? r.group.apply(r, ['%c ' + M].concat(E))
+              : r.group(M);
           } catch (e) {
-            r.log(S);
+            r.log(M);
           }
           var N = h(u, x, [y], 'prevState'),
-            I = h(u, x, [x], 'action'),
+            P = h(u, x, [x], 'action'),
             T = h(u, x, [v, y], 'error'),
-            O = h(u, x, [j], 'nextState');
+            I = h(u, x, [j], 'nextState');
           if (N)
             if (a.prevState) {
-              var D = 'color: ' + a.prevState(y) + '; font-weight: bold';
-              r[N]('%c prev state', D, y);
+              var O = 'color: ' + a.prevState(y) + '; font-weight: bold';
+              r[N]('%c prev state', O, y);
             } else r[N]('prev state', y);
-          if (I)
+          if (P)
             if (a.action) {
-              var P = 'color: ' + a.action(x) + '; font-weight: bold';
-              r[I]('%c action    ', P, x);
-            } else r[I]('action    ', x);
+              var R = 'color: ' + a.action(x) + '; font-weight: bold';
+              r[P]('%c action    ', R, x);
+            } else r[P]('action    ', x);
           if (v && T)
             if (a.error) {
-              var R = 'color: ' + a.error(v, y) + '; font-weight: bold;';
-              r[T]('%c error     ', R, v);
+              var L = 'color: ' + a.error(v, y) + '; font-weight: bold;';
+              r[T]('%c error     ', L, v);
             } else r[T]('error     ', v);
-          if (O)
+          if (I)
             if (a.nextState) {
-              var L = 'color: ' + a.nextState(j) + '; font-weight: bold';
-              r[O]('%c next state', L, j);
-            } else r[O]('next state', j);
+              var C = 'color: ' + a.nextState(j) + '; font-weight: bold';
+              r[I]('%c next state', C, j);
+            } else r[I]('next state', j);
           l && f(y, j, r, A);
           try {
             r.groupEnd();
@@ -41515,7 +41398,7 @@ module.exports = (function(e) {
       function m() {
         var e =
             arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
-          t = Object.assign({}, M, e),
+          t = Object.assign({}, k, e),
           r = t.logger,
           o = t.stateTransformer,
           n = t.errorTransformer,
@@ -41734,7 +41617,7 @@ module.exports = (function(e) {
           D: { color: '#F44336', text: 'DELETED:' },
           A: { color: '#2196F3', text: 'ARRAY:' }
         },
-        M = {
+        k = {
           level: 'log',
           logger: console,
           logErrors: !0,
@@ -41772,7 +41655,7 @@ module.exports = (function(e) {
           diffPredicate: void 0,
           transformer: void 0
         },
-        E = function() {
+        S = function() {
           var e =
               arguments.length > 0 && void 0 !== arguments[0]
                 ? arguments[0]
@@ -41785,10 +41668,10 @@ module.exports = (function(e) {
                 "\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n"
               );
         };
-      (e.defaults = M),
+      (e.defaults = k),
         (e.createLogger = m),
-        (e.logger = E),
-        (e.default = E),
+        (e.logger = S),
+        (e.default = S),
         Object.defineProperty(e, '__esModule', { value: !0 });
     })(t);
   },
@@ -46015,6 +45898,9 @@ module.exports = (function(e) {
   },
   https: function(e, t) {
     e.exports = require('https');
+  },
+  'lodash.omit': function(e, t) {
+    e.exports = require('lodash.omit');
   },
   os: function(e, t) {
     e.exports = require('os');

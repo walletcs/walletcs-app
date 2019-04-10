@@ -28,17 +28,13 @@ const CheckPrivateFlash = props => {
       <div className={styles.insertPrivate}>
         Insert <span className={styles.private}>Private</span> key flash drive
       </div>
-      <div className={styles.controls}>
-        <Button onClick={props.onCancel}>Cancel</Button>
-      </div>
+      <Button onClick={props.onCancel}>Cancel</Button>
     </Fragment>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    drives: state.drive.drives
-  };
-};
+const mapStateToProps = state => ({
+  drives: state.drive.drives
+});
 
 export default connect(mapStateToProps)(CheckPrivateFlash);

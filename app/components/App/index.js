@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
+import cx from 'classnames';
 
-import Button from '../Button';
+import MenuItem from '../MenuItem';
 import Account from '../Account';
 import Validate from '../Validate';
 import Backup from '../Backup';
@@ -9,16 +10,10 @@ import SignTransaction from '../SignTransaction';
 import USBListener from '../USBListener';
 
 import walletcsLogo from '../../assets/wallet_logo.svg';
-import walletcsLabel from '../../assets/wallet_label.svg';
 
 import styles from './index.css';
 
-const Logo = props => (
-  <div className={styles.logo}>
-    <img src={walletcsLogo} className={styles.icon} alt="" />
-    <img src={walletcsLabel} className={styles.icon} alt="" />
-  </div>
-);
+const Logo = () => <img src={walletcsLogo} alt="" />;
 
 export default class App extends Component {
   state = {
@@ -55,20 +50,28 @@ export default class App extends Component {
   };
 
   renderMenu = () => (
-    <div>
-      <Button primary onClick={() => this.setAccountScreen()}>
+    <Fragment>
+      <MenuItem onClick={() => this.setAccountScreen()}>
         Generate Account
-      </Button>
-      <Button primary onClick={() => this.setBackupScreen()}>
-        Backup Private Key Drive
-      </Button>
-      <Button primary onClick={() => this.setValidateScreen()}>
-        Validate / Generate Address
-      </Button>
-      <Button primary onClick={() => this.setSignTransactionScreen()}>
+      </MenuItem>
+      <div className={styles.row}>
+        <MenuItem
+          className={styles.rowMenu}
+          onClick={() => this.setBackupScreen()}
+        >
+          Backup Private Key Drive
+        </MenuItem>
+        <MenuItem
+          className={styles.rowMenu}
+          onClick={() => this.setValidateScreen()}
+        >
+          Validate / Generate Address
+        </MenuItem>
+      </div>
+      <MenuItem primary onClick={() => this.setSignTransactionScreen()}>
         Sign Transaction
-      </Button>
-    </div>
+      </MenuItem>
+    </Fragment>
   );
 
   setDefaultScreen = () => {
@@ -80,18 +83,26 @@ export default class App extends Component {
 
   render() {
     let content;
+    const screenSelected = !!this.state.screen;
 
-    if (!this.state.screen) {
-      content = this.renderMenu();
-    } else {
+    if (screenSelected) {
       const Screen = this.state.screen;
       content = <Screen onCancel={this.setDefaultScreen} />;
+    } else {
+      content = this.renderMenu();
     }
 
     return (
       <Provider store={this.props.store}>
-        <div className={styles.app}>
-          <div className={styles.header}>
+        <div
+          className={cx(styles.app, { [styles.whiteTheme]: screenSelected })}
+        >
+          <div
+            className={cx({
+              [styles.flexHeader]: !screenSelected,
+              [styles.staticHeader]: screenSelected
+            })}
+          >
             <div className={styles.headerText}>
               {this.state.screenName || <Logo />}
             </div>

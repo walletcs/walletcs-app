@@ -3,7 +3,8 @@ const initialState = {
   address: null,
   keys: [],
   transactions: [],
-  transactionsToSign: []
+  transactionsToSign: [],
+  rawTransactions: []
 };
 
 export const accountReducer = (state = initialState, action) => {
@@ -37,6 +38,11 @@ export const accountReducer = (state = initialState, action) => {
       return {
         ...state,
         transactions: action.payload.transactions
+      };
+    case 'SET_RAW_TRANSACTIONS':
+      return {
+        ...state,
+        rawTransactions: action.payload.rawTransactions
       };
     case 'SET_TRANSACTIONS_TO_SIGN':
       let transactionsToSign = state.transactionsToSign.slice(0);

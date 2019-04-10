@@ -40,6 +40,13 @@ export const setTransactions = transactions => ({
   }
 });
 
+export const setRawTransactions = rawTransactions => ({
+  type: 'SET_RAW_TRANSACTIONS',
+  payload: {
+    rawTransactions
+  }
+});
+
 export const setTransactionToSign = (transaction, checked) => ({
   type: 'SET_TRANSACTIONS_TO_SIGN',
   payload: {

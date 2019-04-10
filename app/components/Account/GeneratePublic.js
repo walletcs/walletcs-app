@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import cx from 'classnames';
 
 import Button from '../Button';
 
@@ -30,30 +31,13 @@ class GeneratePublic extends Component {
   render() {
     return (
       <Fragment>
-        <div style={{ flex: 4 }}>
-          <div
-            style={{ backgroundColor: '#27AE60', borderRadius: 2, padding: 20 }}
-          >
-            <div
-              style={{
-                color: '#FFF',
-                fontSize: 18,
-                textAlign: 'center',
-                padding: 5
-              }}
-            >
+        <div>
+          <div>
+            <div className={styles.infoText}>
               After press 'Save address' button this drive will contain file
               with public address of your account.
             </div>
-            <div
-              style={{
-                color: '#FFF',
-                fontSize: 18,
-                textAlign: 'center',
-                padding: 5,
-                fontWeight: '600'
-              }}
-            >
+            <div className={cx(styles.infoText, styles.bold)}>
               You can safely distribute this address
             </div>
           </div>

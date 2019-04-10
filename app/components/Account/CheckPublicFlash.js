@@ -22,7 +22,7 @@ const CheckPublicFlash = props => {
         <img src={arrow} className={styles.icon} alt="" />
         <img src={device} className={styles.icon} alt="" />
       </div>
-      <div style={{ backgroundColor: '#95b4d0', padding: 10, bottom: '10%' }}>
+      <div style={{ padding: 10, bottom: '10%' }}>
         <div className={styles.publicPoints}>
           1. Remove PRIVATE key flash drive
         </div>
@@ -33,17 +33,13 @@ const CheckPublicFlash = props => {
           3. Insert Public Address flash drive
         </div>
       </div>
-      <div className={styles.controls}>
-        <Button onClick={props.onCancel}>Cancel</Button>
-      </div>
+      <Button onClick={props.onCancel}>Cancel</Button>
     </Fragment>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    drives: state.drive.drives
-  };
-};
+const mapStateToProps = state => ({
+  drives: state.drive.drives
+});
 
 export default connect(mapStateToProps)(CheckPublicFlash);

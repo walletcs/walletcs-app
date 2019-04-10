@@ -14,50 +14,49 @@ body {
 }
 
 .app {
+  display: flex;
   flex-direction: column;
   height: 100%;
-  display: flex;
+  background-color: #000;
+}
+
+.whiteTheme {
   background-color: #fff;
 }
 
-.logo {
-  display: flex;
+.flexHeader {
+  padding: 45px 0;
+  background-color: #000;
+  min-width: 740px;
+  margin: 0 auto;
 }
 
-.icon {
-  margin: 0 5px;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1;
-  background-color: #6894bc;
-}
-
-.content {
-  display: flex;
-  flex: 6 6;
-  background-color: #fff;
-  justify-content: center;
-  align-items: center;
+.staticHeader {
+  padding: 45px 0;
+  background-color: #f2f2f2;
+  min-width: 740px;
+  width: 100%;
+  text-align: center;
 }
 
 .headerText {
   font-family: 'Avenir';
   font-size: 24px;
-  color: #fff;
+  color: #010d17;
 }
 
-.container {
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  padding: 5%;
+.content {
+  background-color: #000;
+  width: 740px;
+  margin: auto;
+}
+
+.row {
   display: flex;
-  flex-direction: column;
+}
+
+.rowMenu {
+  width: 100%;
 }
 
 .icons {
@@ -71,9 +70,12 @@ body {
   margin: 15px;
 }
 
-.controls {
-  flex: 1;
+.container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .insertPrivate {
@@ -81,12 +83,10 @@ body {
 }
 
 .rowControls {
-  flex: 1;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   display: flex;
   width: 100%;
-  margin: 15px 0;
 }
 
 .private {
@@ -94,58 +94,39 @@ body {
 }
 
 .inputWrapper {
-  background-color: #f3f3f3;
-  border-bottom: 2px solid #6894bc;
+  background-color: #fff;
+  border-bottom: 2px solid #26cd58;
   padding: 5px;
 }
 
 .input {
   width: 100%;
-  color: #4f4f4f;
+  color: #010d17;
   font-weight: 500;
   font-size: 16px;
   outline: none;
   height: 20px;
   border: none;
-  background-color: #f3f3f3;
+  background-color: #fff;
 }
 
 .label {
-  color: #828282;
+  color: #010d17;
   font-size: 12px;
 }
 
 .privateTextGen {
-  color: #4f4f4f;
+  color: #010d17;
   font-weight: 500;
   font-size: 16px;
   margin: 15px 0;
 }
 
 .publicPoints {
-  color: #fff;
+  color: #010d17;
   font-size: 16px;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.tableRow {
-  display: flex;
-  border-top: 0.5px solid #e8e8e8;
-  padding: 7px;
-}
-
-.tableRow:last-child {
-  border-bottom: 0.5px solid #e8e8e8;
-}
-
-.tableCell {
-  width: 200px;
-  color: #4f4f4f;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 10px;
 }
 
 .generateCheckboxContainer {
@@ -155,5 +136,16 @@ body {
 .message {
   font-weight: 500;
   font-size: 16px;
-  color: #4f4f4f;
+  color: #010d17;
+}
+
+.infoText {
+  color: #010d17;
+  font-size: 18;
+  text-align: center;
+  padding: 5;
+}
+
+.bold {
+  font-weight: 600;
 }

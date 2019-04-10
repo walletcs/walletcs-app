@@ -5,7 +5,6 @@ import SelectTransaction from './SelectTransaction';
 import StepHandler from '../StepHandler';
 import CheckTransactionFlash from './CheckTransactionFlash';
 import DetectPrivateKeys from './DetectPrivateKeys';
-import SelectTransactionsForSign from './SelectTransactionsForSign';
 import Final from './Final';
 
 const steps = [
@@ -14,7 +13,6 @@ const steps = [
   CheckPrivateFlash,
   DetectPrivateKeys,
   CheckTransactionFlash,
-  SelectTransactionsForSign,
   Final
 ];
 

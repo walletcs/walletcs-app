@@ -32,6 +32,10 @@
       "id": "less-loader",
       "buildMeta": { "providedExports": true }
     },
+    "lodash.omit": {
+      "id": "lodash.omit",
+      "buildMeta": { "providedExports": true }
+    },
     "react": { "id": "react", "buildMeta": { "providedExports": true } },
     "react-dom": {
       "id": "react-dom",

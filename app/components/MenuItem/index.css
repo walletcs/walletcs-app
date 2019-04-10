@@ -1,0 +1,27 @@
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  font-size: 14px;
+  height: 132px;
+  border: 1px solid #010d17;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  opacity: 0.9;
+}
+
+.primary {
+  background-color: #26cd58;
+}
+
+.text {
+  margin-top: auto;
+}
+
+.arrow {
+  margin-left: auto;
+}

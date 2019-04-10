@@ -32,18 +32,14 @@ const Final = props => (
         Please remember to securely store you private key flash drive
       </div>
     </div>
-    <div className={styles.rowControls}>
-      <Button onClick={props.onCancel} primary>
-        Done
-      </Button>
-    </div>
+    <Button onClick={props.onCancel} primary>
+      Done
+    </Button>
   </Fragment>
 );
 
-const mapStateToProps = state => {
-  return {
-    accountName: state.account.name
-  };
-};
+const mapStateToProps = state => ({
+  accountName: state.account.name
+});
 
 export default connect(mapStateToProps)(Final);

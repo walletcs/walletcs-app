@@ -4,6 +4,7 @@ import { EtherKeyPair } from 'walletcs/src/index';
 import { connect } from 'react-redux';
 
 import Button from '../Button';
+import Table from '../Table';
 
 import { setTransactions } from '../../actions/account';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
@@ -41,65 +42,42 @@ class DetectPrivateKeys extends Component {
       .filter(f => !!f);
 
     const transactionsWithKeys = this.props.transactions
-      .map(item => {
-        const { transaction } = item;
-
+      .filter(t => this.props.transactionsToSign.includes(t.data))
+      .map(transaction => {
         const privateKey = privateKeys.find(k => {
-          return EtherKeyPair.checkPair(transaction.pub_key, k);
+          return EtherKeyPair.checkPair(transaction.extra.pub_key, k);
         });
 
         return {
-          transaction,
-          file: item.file,
-          privateKey,
-          foundKey: !!privateKey
+          ...transaction,
+          key: {
+            privateKey,
+            foundKey: privateKey ? 'Yes' : 'No'
+          }
         };
       })
-      .filter(t => this.props.transactionsToSign.includes(t.file));
+      .filter(t => this.props.transactionsToSign.includes(t.data));
 
     this.props.setTransactions(transactionsWithKeys);
   };
 
   render() {
     const { transactions = [] } = this.props;
+
     const isTransactionsExists = !!transactions.length;
+    const data = transactions.map(tr => ({
+      fields: [tr.extra.file, (tr.key || {}).foundKey]
+    }));
 
     return (
       <Fragment>
-        <div>
-          {isTransactionsExists ? (
-            <Fragment>
-              <div className={styles.tableRow}>
-                {/* <div className={styles.tableCell} /> */}
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-                  ACCOUNT
-                </div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-                  TIME
-                </div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-                  KEY FOUND
-                </div>
-              </div>
-              <Fragment>
-                {transactions.map(item => (
-                  <div className={styles.tableRow}>
-                    {/* <div className={styles.tableCell} /> */}
-                    <div className={styles.tableCell}>{item.file}</div>
-                    <div className={styles.tableCell} />
-                    <div className={styles.tableCell}>
-                      {item.foundKey ? 'Yes' : 'No'}
-                    </div>
-                  </div>
-                ))}
-              </Fragment>
-            </Fragment>
-          ) : (
-            <div className={styles.message}>
-              Private keys for signing transactions not found
-            </div>
-          )}
-        </div>
+        {isTransactionsExists ? (
+          <Table data={data} headers={['FILE', 'KEY FOUND']} />
+        ) : (
+          <div className={styles.message}>
+            Private keys for signing transactions not found
+          </div>
+        )}
         <div className={styles.rowControls}>
           <Button onClick={this.props.onCancel}>Cancel</Button>
           {isTransactionsExists && (

@@ -64,7 +64,7 @@ class GeneratePrivate extends Component {
               disabled={this.props.loadingMsg}
               className={styles.input}
               onChange={e => this.handleChange(e.target.value)}
-              addressName={
+              defaultValue={
                 this.state.addressName || this.props.inputaddressName
               }
             />

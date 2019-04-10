@@ -5,6 +5,7 @@ import { EtherKeyPair } from 'walletcs/src/index';
 
 import Button from '../Button';
 import Checkbox from '../Checkbox';
+import Table from '../Table';
 
 import { writeFile } from '../../utils/helpers';
 import { setPublicKeys, setGeneratedFlag } from '../../actions/account';
@@ -77,33 +78,17 @@ class DetectPublicAddresses extends Component {
 
   render() {
     const keys = this.props.publicKeys || [];
+    const data = keys.map(item => {
+      const found = item.found ? 'Yes' : 'No';
+      return {
+        id: item.publicKey,
+        fields: [item.account, item.publicKey, found]
+      };
+    });
 
     return (
       <Fragment>
-        <div>
-          <div className={styles.tableRow}>
-            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-              ACCOUNT
-            </div>
-            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-              ADDRESS
-            </div>
-            <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-              FOUND
-            </div>
-          </div>
-          <Fragment>
-            {keys.map(item => (
-              <div className={styles.tableRow}>
-                <div className={styles.tableCell}>{item.account}</div>
-                <div className={styles.tableCell}>{item.publicKey}</div>
-                <div className={styles.tableCell}>
-                  {item.found ? 'Yes' : 'No'}
-                </div>
-              </div>
-            ))}
-          </Fragment>
-        </div>
+        <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
         <div className={styles.generateCheckboxContainer}>
           <Checkbox
             checked={this.state.generate}

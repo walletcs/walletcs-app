@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
+import { EtherTransactionDecoder } from 'walletcs/src/index';
 
 import Button from '../Button';
-import SelectTableItem from './SelectTableItem';
+import Table from '../Table';
 
-import { setTransactions, setTransactionToSign } from '../../actions/account';
+import {
+  setTransactions,
+  setTransactionToSign,
+  setRawTransactions
+} from '../../actions/account';
 import { TRANSACTION_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.css';
@@ -25,7 +30,7 @@ class SelectTransaction extends Component {
       console.error(error);
     }
 
-    const transactions = dir
+    const files = dir
       .filter(file => file.startsWith(TRANSACTION_PREFIX))
       .map(file => {
         let transaction = {};
@@ -47,46 +52,73 @@ class SelectTransaction extends Component {
       })
       .filter(t => !!t);
 
-    this.props.setTransactions(transactions);
+    const data = [];
+
+    files.forEach(element => {
+      element.transaction.transactions.forEach(tr => {
+        let contractObj = {};
+        let abi = [];
+        let method = { name: 'transfer' };
+
+        if (tr.contract) {
+          contractObj =
+            element.transaction.contracts.find(
+              c => c.contract === tr.contract
+            ) || {};
+          abi = contractObj.abi;
+
+          try {
+            EtherTransactionDecoder.addABI(abi);
+            method = EtherTransactionDecoder.decodeMethodContract(
+              tr.transaction.data
+            );
+          } catch (error) {
+            console.error(error);
+          }
+        }
+
+        const trType = tr.contract ? '=>' : 'ETH';
+        const filename = `${element.file} (${tr.transaction.nonce})`;
+
+        data.push({
+          ...tr.transaction,
+          extra: {
+            pub_key: element.transaction.pub_key,
+            file: element.file,
+            filename,
+            type: trType,
+            method: method.name
+          }
+        });
+      });
+    });
+
+    this.props.setTransactions(data);
+    this.props.setRawTransactions(files);
   };
 
-  checkTransaction = (file, checked) => {
-    this.props.setTransactionToSign(file, checked);
+  checkTransaction = (data, checked) => {
+    this.props.setTransactionToSign(data, checked);
   };
 
   render() {
-    const transactions = this.props.transactions || [];
-    const isKeysExists = !!transactions.length;
+    const isKeysExists = !!this.props.transactions.length;
+    const data = this.props.transactions.map(tr => ({
+      id: tr.data,
+      fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount]
+    }));
 
     return (
       <Fragment>
-        <div>
-          {isKeysExists ? (
-            <Fragment>
-              <div style={{ fontSize: 16 }}>Select transaction to sign</div>
-              <div className={styles.tableRow}>
-                <div className={styles.tableCell} />
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-                  FILE
-                </div>
-                <div className={styles.tableCell} style={{ color: '#ABABAB' }}>
-                  TIME
-                </div>
-                <div className={styles.tableCell} />
-              </div>
-              <Fragment>
-                {transactions.map(item => (
-                  <SelectTableItem
-                    item={item}
-                    onCheck={this.checkTransaction}
-                  />
-                ))}
-              </Fragment>
-            </Fragment>
-          ) : (
-            <div className={styles.message}>Transactions not found</div>
-          )}
-        </div>
+        {isKeysExists ? (
+          <Table
+            data={data}
+            headers={['FILE', 'TYPE', 'TO', 'METHOD', 'AMOUNT']}
+            onCheck={this.checkTransaction}
+          />
+        ) : (
+          <div className={styles.message}>Transactions not found</div>
+        )}
         <div className={styles.rowControls}>
           <Button onClick={this.props.onCancel}>Cancel</Button>
           {isKeysExists && (
@@ -110,8 +142,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setTransactions: items => dispatch(setTransactions(items)),
-    setTransactionToSign: (file, checked) =>
-      dispatch(setTransactionToSign(file, checked))
+    setTransactionToSign: (data, checked) =>
+      dispatch(setTransactionToSign(data, checked)),
+    setRawTransactions: data => dispatch(setRawTransactions(data))
   };
 };
 

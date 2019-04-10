@@ -26,17 +26,13 @@ const CheckTransactionFlash = ({ drives, onCancel, next }) => {
       <div className={styles.insertPrivate}>
         Insert flash drive with Transactions to sign
       </div>
-      <div className={styles.controls}>
-        <Button onClick={onCancel}>Cancel</Button>
-      </div>
+      <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    drives: state.drive.drives
-  };
-};
+const mapStateToProps = state => ({
+  drives: state.drive.drives
+});
 
 export default connect(mapStateToProps)(CheckTransactionFlash);

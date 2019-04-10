@@ -4,6 +4,7 @@ import fs from 'fs';
 import { EtherKeyPair } from 'walletcs/src/index';
 
 import Button from '../Button';
+import Table from '../Table';
 
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 import { setPrivateKeys } from '../../actions/account';
@@ -18,6 +19,10 @@ class DetectPrivateKeys extends Component {
   setupPrivateKeys = () => {
     let dir = [];
     const { privateDrive } = this.props.drives;
+
+    if (!privateDrive) {
+      return;
+    }
 
     try {
       dir = fs.readdirSync(privateDrive) || [];
@@ -51,19 +56,16 @@ class DetectPrivateKeys extends Component {
   render() {
     const { keys = [] } = this.props;
     const isKeysExists = !!keys.length;
+    const data = keys.map(item => ({
+      id: item.publicKey,
+      fields: [item.publicKey]
+    }));
 
     return (
       <Fragment>
         <div>
           {isKeysExists ? (
-            <Fragment>
-              <div className={styles.tableCell} App={{ color: '#ABABAB' }}>
-                ADDRESS
-              </div>
-              {keys.map(item => (
-                <div className={styles.tableCell}>{item.publicKey}</div>
-              ))}
-            </Fragment>
+            <Table data={data} headers={['ADDRESS']} />
           ) : (
             <div className={styles.message}>Private keys not found</div>
           )}
