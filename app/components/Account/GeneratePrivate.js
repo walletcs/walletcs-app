@@ -73,7 +73,7 @@ class GeneratePrivate extends Component {
             Private key is used to transfer funds or perform secure operations
             from your account. It must be kept secure at all times.
           </div>
-          <div
+          {/* <div
             style={{ top: '20%', backgroundColor: '#E53838', borderRadius: 2 }}
           >
             <div
@@ -87,7 +87,7 @@ class GeneratePrivate extends Component {
               Do not plug in flash drive with the Private Key into any online
               device
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.rowControls}>
           {this.props.loadingMsg ? (

@@ -328,11 +328,9 @@ module.exports = (function(e) {
               'div',
               { className: P.a.insertPrivate },
               void 0,
-              'Insert',
-              ' ',
+              'Insert ',
               T('span', { className: P.a.private }, void 0, 'Private'),
-              ' ',
-              'key flash drive'
+              ' key flash drive'
             ),
             T(w, { onClick: e.onCancel }, void 0, 'Cancel')
           )
@@ -1594,11 +1592,9 @@ module.exports = (function(e) {
               'div',
               { className: P.a.insertPrivate },
               void 0,
-              'Insert',
-              ' ',
+              'Insert ',
               ze('span', { className: P.a.private }, void 0, 'Empty'),
-              ' ',
-              'key flash drive'
+              ' key flash drive'
             ),
             ze(w, { onClick: e.onCancel }, void 0, 'Cancel')
           )
@@ -2107,7 +2103,8 @@ module.exports = (function(e) {
                             void 0,
                             'You have successfully signed ',
                             e.length,
-                            ' transactions'
+                            ' ',
+                            'transactions'
                           ),
                           e.map(e =>
                             ct(
