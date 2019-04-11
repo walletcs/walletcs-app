@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import Button from '../Button';
+import FlashToDeviceIndicator from '../FlashToDeviceIndicator';
 
 import emptyDrive from '../../assets/empty_drive.png';
-import arrow from '../../assets/Arrow.png';
 import device from '../../assets/Device.png';
 
 import styles from '../App/index.css';
@@ -20,7 +20,7 @@ const CheckEmptyFlash = props => {
     <Fragment>
       <div className={styles.icons}>
         <img src={emptyDrive} className={styles.icon} alt="" />
-        <img src={arrow} className={styles.icon} alt="" />
+        <FlashToDeviceIndicator flash="empty" />
         <img src={device} className={styles.icon} alt="" />
       </div>
       <div style={{ backgroundColor: '#95b4d0', padding: 10, bottom: '10%' }}>

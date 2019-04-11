@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import Button from '../Button';
+import FlashToDeviceIndicator from '../FlashToDeviceIndicator';
 
 import privateFlash from '../../assets/private_flash.png';
-import arrow from '../../assets/Arrow.png';
 import device from '../../assets/Device.png';
 import styles from '../App/index.css';
 
@@ -22,7 +22,7 @@ const CheckPrivateFlash = props => {
     <Fragment>
       <div className={styles.icons}>
         <img src={privateFlash} className={styles.icon} alt="" />
-        <img src={arrow} className={styles.icon} alt="" />
+        <FlashToDeviceIndicator flash="private" />
         <img src={device} className={styles.icon} alt="" />
       </div>
       <div className={styles.insertPrivate}>

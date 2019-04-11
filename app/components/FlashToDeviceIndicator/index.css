@@ -1,0 +1,28 @@
+.elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80px;
+  height: 4px;
+}
+
+.element {
+  width: 16px;
+  height: 4px;
+  background: #d8d8d8;
+}
+
+.private {
+  background: #f95721;
+}
+
+.public {
+  background: #74df8b;
+}
+.empty {
+  background: #999999;
+}
+
+.transaction {
+  background: #000;
+}

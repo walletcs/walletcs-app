@@ -4522,9 +4522,10 @@ electron-updater@^3.2.3:
     semver "^5.6.0"
     source-map-support "^0.5.9"
 
-electron@^3.0.10:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-3.0.10.tgz#7d412856e8cf0d3041a612a32dd09e2af2d50f50"
+electron@^3.1.8:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-3.1.8.tgz#01b0b147dfcca47967ff07dbf72bf5e96125a2ac"
+  integrity sha512-1MiFoMzxGaR0wDfwFE5Ydnuk6ry/4lKgF0c+NFyEItxM/WyEHNZPNjJAeKJ+M/0sevmZ+6W4syNZnQL5M3GgsQ==
   dependencies:
     "@types/node" "^8.0.24"
     electron-download "^4.1.0"
@@ -8973,10 +8974,6 @@ onetime@^2.0.0, onetime@^2.0.1:
   resolved "https://registry.npmjs.org/onetime/-/onetime-2.0.1.tgz#067428230fd67443b2794b22bba528b6867962d4"
   dependencies:
     mimic-fn "^1.0.0"
-
-opencollective-postinstall@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.1.tgz#798e83e168f7b91949061c2683f762af747f17cc"
 
 opener@^1.5.1:
   version "1.5.1"
