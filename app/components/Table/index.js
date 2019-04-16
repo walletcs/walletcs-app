@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import SelectTableItem from './SelectTableItem';
 
@@ -45,5 +46,11 @@ class Table extends Component {
     );
   }
 }
+
+Table.propTypes = {
+  data: PropTypes.array,
+  headers: PropTypes.array,
+  onCheck: PropTypes.func
+};
 
 export default Table;

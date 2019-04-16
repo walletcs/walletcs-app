@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from '../App/index.css';
 
@@ -21,3 +22,7 @@ export default class StepHandler extends Component {
     );
   }
 }
+
+StepHandler.propTypes = {
+  steps: PropTypes.array
+};

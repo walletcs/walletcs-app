@@ -149,3 +149,7 @@ body {
 .bold {
   font-weight: 600;
 }
+
+.radioGroup {
+  padding: 5px;
+}

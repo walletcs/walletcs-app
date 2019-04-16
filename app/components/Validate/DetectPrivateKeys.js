@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
 import { EtherKeyPair } from 'walletcs/src/index';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Table from '../Table';
@@ -82,6 +83,14 @@ class DetectPrivateKeys extends Component {
     );
   }
 }
+
+DetectPrivateKeys.propTypes = {
+  drives: PropTypes.array,
+  keys: PropTypes.array,
+  next: PropTypes.func,
+  onCancel: PropTypes.func,
+  setPrivateKeys: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

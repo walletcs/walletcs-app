@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
@@ -45,6 +46,12 @@ class Final extends Component {
     );
   }
 }
+
+Final.propTypes = {
+  drives: PropTypes.array,
+  keys: PropTypes.array,
+  onCancel: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { EtherKeyPair } from 'walletcs/src/index';
+import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
+import { RadioGroup, Radio } from 'react-radio-group';
+import PropTypes from 'prop-types';
 
 import { setAccountName, setAddress } from '../../actions/account';
 import { resetDrives } from '../../actions/drive';
 import { writeFile } from '../../utils/helpers';
-import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
+import { PRIVATE_KEY_PREFIX, BTC_NETWORK } from '../../utils/constants';
 
 import Button from '../Button';
 
@@ -14,6 +16,7 @@ import styles from '../App/index.css';
 class GeneratePrivate extends Component {
   state = {
     addressName: '',
+    transactionType: null,
     loadingMsg: null
   };
 
@@ -21,14 +24,39 @@ class GeneratePrivate extends Component {
     this.setState({ addressName });
   };
 
+  handleTypeChange = transactionType => {
+    this.setState({ transactionType });
+  };
+
   onSave = async () => {
+    const { transactionType, addressName } = this.state;
+
+    if (!transactionType || !addressName) {
+      return;
+    }
+
     await this.savePrivateKey();
     this.props.setAccountName(this.state.addressName);
     this.props.next();
   };
 
   generatePair = () => {
-    const { address, privateKey } = EtherKeyPair.generatePair();
+    let address;
+    let privateKey;
+
+    if (this.state.transactionType === 'ETH') {
+      const pair = EtherKeyPair.generatePair();
+
+      address = pair.address;
+      privateKey = pair.privateKey;
+    } else {
+      // console.warn(BitcoinCheckPair);
+
+      const pair = BitcoinCheckPair.generatePair(BTC_NETWORK);
+
+      address = pair[0];
+      privateKey = pair[1];
+    }
 
     return new Promise(resolve => resolve({ address, privateKey }));
   };
@@ -56,7 +84,7 @@ class GeneratePrivate extends Component {
   render() {
     return (
       <Fragment>
-        <div style={{ flex: 4 }}>
+        <div style={{ width: '100%' }}>
           <div className={styles.inputWrapper}>
             <div className={styles.label}>Account name</div>
             <input
@@ -69,9 +97,22 @@ class GeneratePrivate extends Component {
               }
             />
           </div>
-          <div className={styles.privateTextGen}>
-            Private key is used to transfer funds or perform secure operations
-            from your account. It must be kept secure at all times.
+          <div className={styles.radioGroup}>
+            <div className={styles.label}>Key type:</div>
+            <RadioGroup
+              name="transactionType"
+              selectedValue={this.state.transactionType}
+              onChange={this.handleTypeChange}
+            >
+              <div>
+                <Radio value="btc" />
+                BTC
+              </div>
+              <div>
+                <Radio value="eth" />
+                ETH
+              </div>
+            </RadioGroup>
           </div>
         </div>
         <div className={styles.rowControls}>
@@ -90,6 +131,17 @@ class GeneratePrivate extends Component {
     );
   }
 }
+
+GeneratePrivate.propTypes = {
+  drives: PropTypes.array,
+  inputaddressName: PropTypes.string,
+  loadingMsg: PropTypes.string,
+  next: PropTypes.func,
+  onCancel: PropTypes.func,
+  resetDrives: PropTypes.func,
+  setAccountName: PropTypes.func,
+  setAddress: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
@@ -64,6 +65,15 @@ class GeneratePublic extends Component {
     );
   }
 }
+
+GeneratePublic.propTypes = {
+  account: PropTypes.object,
+  drives: PropTypes.array,
+  loadingMsg: PropTypes.string,
+  next: PropTypes.func,
+  onCancel: PropTypes.func,
+  resetDrives: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

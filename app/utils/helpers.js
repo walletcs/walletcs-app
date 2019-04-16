@@ -54,3 +54,11 @@ export const writeFile = (path, data) => {
     fs.closeSync(fd);
   }
 };
+
+export const getTransactionType = transaction => {
+  if (!transaction.data) {
+    return 'BTC';
+  }
+
+  return transaction.contract ? '=>' : 'ETH';
+};

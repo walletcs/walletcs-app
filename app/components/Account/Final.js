@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
@@ -37,6 +38,11 @@ const Final = props => (
     </Button>
   </Fragment>
 );
+
+Final.propTypes = {
+  accountName: PropTypes.string,
+  onCancel: PropTypes.func
+};
 
 const mapStateToProps = state => ({
   accountName: state.account.name

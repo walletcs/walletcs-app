@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
-import { EtherKeyPair } from 'walletcs/src/index';
+import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Checkbox from '../Checkbox';
@@ -10,7 +11,7 @@ import Table from '../Table';
 import { writeFile } from '../../utils/helpers';
 import { setPublicKeys, setGeneratedFlag } from '../../actions/account';
 
-import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
+import { PUBLIC_KEY_PREFIX, BTC_NETWORK } from '../../utils/constants';
 
 import styles from '../App/index.css';
 
@@ -32,7 +33,25 @@ class DetectPublicAddresses extends Component {
       const drive = publicDrive || emptyDrive;
 
       keysForGenerate.forEach(k => {
-        const address = EtherKeyPair.recoveryPublicKey(k.privateKey);
+        let address;
+
+        try {
+          address = EtherKeyPair.recoveryPublicKey(k.privateKey);
+        } catch (error) {
+          console.log('Invalid eth public key');
+        }
+
+        if (!address) {
+          try {
+            address = BitcoinCheckPair.recoveryPublicKey(
+              k.privateKey,
+              BTC_NETWORK
+            );
+          } catch (error) {
+            console.log('Invalid btc public key');
+          }
+        }
+
         const { account } = k;
         const path = `${drive}/${PUBLIC_KEY_PREFIX}${account}.txt`;
         writeFile(path, address);
@@ -106,6 +125,16 @@ class DetectPublicAddresses extends Component {
     );
   }
 }
+
+DetectPublicAddresses.propTypes = {
+  drives: PropTypes.array,
+  keys: PropTypes.array,
+  next: PropTypes.func,
+  onCancel: PropTypes.func,
+  publicKeys: PropTypes.array,
+  setGeneratedFlag: PropTypes.func,
+  setPublicKeys: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

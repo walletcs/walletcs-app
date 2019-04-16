@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import FlashToDeviceIndicator from '../FlashToDeviceIndicator';
@@ -29,6 +30,12 @@ const CheckTransactionFlash = ({ drives, onCancel, next }) => {
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
   );
+};
+
+CheckTransactionFlash.propTypes = {
+  drives: PropTypes.array,
+  next: PropTypes.func,
+  onCancel: PropTypes.func
 };
 
 const mapStateToProps = state => ({

@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { EtherTransaction } from 'walletcs/src/index';
+import { EtherTransaction, BitcoinTransaction } from 'walletcs/src/index';
 import omit from 'lodash.omit';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import { resetAccount } from '../../actions/account';
@@ -9,7 +10,8 @@ import { writeFile } from '../../utils/helpers';
 
 import {
   SIGNED_TRANSACTION_PREFIX,
-  TRANSACTION_PREFIX
+  TRANSACTION_PREFIX,
+  BTC_NETWORK
 } from '../../utils/constants';
 
 import success from '../../assets/success.png';
@@ -38,7 +40,7 @@ class Final extends Component {
     const drive = this.props.drives.emptyDrive;
     const transactions = this.getTransactions();
 
-    await this.props.rawTransactions.forEach(async fullTransaction => {
+    this.props.rawTransactions.forEach(async fullTransaction => {
       const { transaction } = fullTransaction;
 
       const signedTransactionsData = await Promise.all(
@@ -50,10 +52,23 @@ class Final extends Component {
 
           if (trForSign) {
             const signData = omit(trForSign, 'key', 'extra');
-            signature = await EtherTransaction.sign(
-              trForSign.key.privateKey,
-              signData
-            );
+
+            try {
+              if (trForSign.extra.type === 'BTC') {
+                signature = await BitcoinTransaction.sign(
+                  trForSign.key.privateKey,
+                  signData,
+                  BTC_NETWORK
+                );
+              } else {
+                signature = await EtherTransaction.sign(
+                  trForSign.key.privateKey,
+                  signData
+                );
+              }
+            } catch (error) {
+              console.error(error);
+            }
           }
 
           return { transaction: signature || tr };
@@ -115,6 +130,14 @@ class Final extends Component {
     );
   }
 }
+
+Final.propTypes = {
+  drives: PropTypes.array,
+  onCancel: PropTypes.func,
+  rawTransactions: PropTypes.array,
+  resetAccount: PropTypes.func,
+  transactions: PropTypes.array
+};
 
 const mapStateToProps = state => ({
   drives: state.drive.drives,

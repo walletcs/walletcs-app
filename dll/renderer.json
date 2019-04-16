@@ -45,6 +45,10 @@
       "id": "react-hot-loader",
       "buildMeta": { "providedExports": true }
     },
+    "react-radio-group": {
+      "id": "react-radio-group",
+      "buildMeta": { "providedExports": true }
+    },
     "react-redux": {
       "id": "react-redux",
       "buildMeta": { "providedExports": true }

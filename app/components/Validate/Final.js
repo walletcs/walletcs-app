@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 
@@ -40,11 +41,15 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    publicKeys: state.account.publicKeys,
-    generatedFlag: state.account.generatedFlag
-  };
+Final.propTypes = {
+  generatedFlag: PropTypes.bool,
+  onCancel: PropTypes.func,
+  publicKeys: PropTypes.array
 };
+
+const mapStateToProps = state => ({
+  publicKeys: state.account.publicKeys,
+  generatedFlag: state.account.generatedFlag
+});
 
 export default connect(mapStateToProps)(Final);

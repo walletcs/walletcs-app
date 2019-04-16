@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
 import { EtherTransactionDecoder } from 'walletcs/src/index';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import Table from '../Table';
@@ -12,6 +13,7 @@ import {
   setRawTransactions
 } from '../../actions/account';
 import { TRANSACTION_PREFIX } from '../../utils/constants';
+import { getTransactionType } from '../../utils/helpers';
 
 import styles from '../App/index.css';
 
@@ -57,27 +59,27 @@ class SelectTransaction extends Component {
     files.forEach(element => {
       element.transaction.transactions.forEach(tr => {
         let contractObj = {};
-        let abi = [];
         let method = { name: 'transfer' };
 
         if (tr.contract) {
           contractObj =
-            element.transaction.contracts.find(
+            (element.transaction.contracts || []).find(
               c => c.contract === tr.contract
             ) || {};
-          abi = contractObj.abi;
 
-          try {
-            EtherTransactionDecoder.addABI(abi);
-            method = EtherTransactionDecoder.decodeMethodContract(
-              tr.transaction.data
-            );
-          } catch (error) {
-            console.error(error);
+          if (contractObj.abi) {
+            try {
+              EtherTransactionDecoder.addABI(contractObj.abi);
+              method = EtherTransactionDecoder.decodeMethodContract(
+                tr.transaction.data
+              );
+            } catch (error) {
+              console.error(error);
+            }
           }
         }
 
-        const trType = tr.contract ? '=>' : 'ETH';
+        const trType = getTransactionType(tr);
         const filename = `${element.file} (${tr.transaction.nonce})`;
 
         data.push({
@@ -131,6 +133,16 @@ class SelectTransaction extends Component {
     );
   }
 }
+
+SelectTransaction.propTypes = {
+  drives: PropTypes.array,
+  next: PropTypes.func,
+  onCancel: PropTypes.func,
+  setRawTransactions: PropTypes.func,
+  setTransactionToSign: PropTypes.func,
+  setTransactions: PropTypes.func,
+  transactions: PropTypes.array
+};
 
 const mapStateToProps = state => {
   return {

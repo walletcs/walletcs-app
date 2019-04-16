@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux';
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 import MenuItem from '../MenuItem';
 import Account from '../Account';
@@ -9,7 +10,7 @@ import Backup from '../Backup';
 import SignTransaction from '../SignTransaction';
 import USBListener from '../USBListener';
 
-import walletcsLogo from '../../assets/wallet_logo.svg';
+import walletcsLogo from '../../assets/walletcs_logo.png';
 
 import styles from './index.css';
 
@@ -115,3 +116,7 @@ export default class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  store: PropTypes.any
+};

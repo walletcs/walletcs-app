@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
@@ -65,6 +66,13 @@ class CopyKeys extends Component {
     );
   }
 }
+
+CopyKeys.propTypes = {
+  drives: PropTypes.array,
+  next: PropTypes.func,
+  onCancel: PropTypes.func,
+  setPrivateKeys: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

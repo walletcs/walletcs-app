@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import usb from 'usb';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { getDrives } from '../../utils/helpers';
 import { setDrivesToStorage } from '../../actions/drive';
@@ -38,6 +39,11 @@ class USBListener extends Component {
     return this.props.children;
   }
 }
+
+USBListener.propTypes = {
+  children: PropTypes.any,
+  setDrivesToStorage: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {

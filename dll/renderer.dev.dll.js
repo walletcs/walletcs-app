@@ -325,6 +325,20 @@ var renderer = /******/ (function(modules) {
         /***/
       },
 
+    /***/ 'react-radio-group':
+      /*!************************************!*\
+  !*** external "react-radio-group" ***!
+  \************************************/
+      /*! no static exports found */
+      /*! all exports used */
+      /***/ function(module, exports) {
+        eval(
+          'module.exports = react-radio-group;\n\n//# sourceURL=webpack://renderer/external_%22react-radio-group%22?'
+        );
+
+        /***/
+      },
+
     /***/ 'react-redux':
       /*!******************************!*\
   !*** external "react-redux" ***!

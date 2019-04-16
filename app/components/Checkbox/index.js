@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './index.css';
 
@@ -20,5 +21,11 @@ const Checkbox = props => (
     </label>
   </Fragment>
 );
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  label: PropTypes.string,
+  onChange: PropTypes.func
+};
 
 export default Checkbox;
