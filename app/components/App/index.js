@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react';
+/* eslint-disable react/forbid-prop-types */
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -11,6 +12,10 @@ import SignTransaction from '../SignTransaction';
 import USBListener from '../USBListener';
 
 import walletcsLogo from '../../assets/walletcs_logo.png';
+import generateIcon from '../../assets/generate_icon.png';
+import backupIcon from '../../assets/backup_icon.png';
+import validateIcon from '../../assets/validate_icon.png';
+import signIcon from '../../assets/sign_icon.png';
 
 import styles from './index.css';
 
@@ -51,28 +56,24 @@ export default class App extends Component {
   };
 
   renderMenu = () => (
-    <Fragment>
-      <MenuItem onClick={() => this.setAccountScreen()}>
+    <div className={styles.row}>
+      <MenuItem icon={generateIcon} onClick={() => this.setAccountScreen()}>
         Generate Account
       </MenuItem>
-      <div className={styles.row}>
-        <MenuItem
-          className={styles.rowMenu}
-          onClick={() => this.setBackupScreen()}
-        >
-          Backup Private Key Drive
-        </MenuItem>
-        <MenuItem
-          className={styles.rowMenu}
-          onClick={() => this.setValidateScreen()}
-        >
-          Validate / Generate Address
-        </MenuItem>
-      </div>
-      <MenuItem primary onClick={() => this.setSignTransactionScreen()}>
+      <MenuItem icon={backupIcon} onClick={() => this.setBackupScreen()}>
+        Backup Private Key Drive
+      </MenuItem>
+      <MenuItem icon={validateIcon} onClick={() => this.setValidateScreen()}>
+        Validate / Generate Address
+      </MenuItem>
+      <MenuItem
+        primary
+        icon={signIcon}
+        onClick={() => this.setSignTransactionScreen()}
+      >
         Sign Transaction
       </MenuItem>
-    </Fragment>
+    </div>
   );
 
   setDefaultScreen = () => {
@@ -84,17 +85,19 @@ export default class App extends Component {
 
   render() {
     let content;
-    const screenSelected = !!this.state.screen;
+    const { screenName, screen } = this.state;
+    const { store } = this.props;
+    const screenSelected = !!screen;
 
     if (screenSelected) {
-      const Screen = this.state.screen;
+      const Screen = screen;
       content = <Screen onCancel={this.setDefaultScreen} />;
     } else {
       content = this.renderMenu();
     }
 
     return (
-      <Provider store={this.props.store}>
+      <Provider store={store}>
         <div
           className={cx(styles.app, { [styles.whiteTheme]: screenSelected })}
         >
@@ -104,9 +107,7 @@ export default class App extends Component {
               [styles.staticHeader]: screenSelected
             })}
           >
-            <div className={styles.headerText}>
-              {this.state.screenName || <Logo />}
-            </div>
+            <div className={styles.headerText}>{screenName || <Logo />}</div>
           </div>
           <div className={styles.content}>
             <USBListener>{content}</USBListener>
@@ -118,5 +119,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  store: PropTypes.any
+  store: PropTypes.any.isRequired
 };

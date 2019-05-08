@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { EtherTransaction, BitcoinTransaction } from 'walletcs/src/index';
@@ -28,19 +29,23 @@ class Final extends Component {
   };
 
   done = () => {
-    this.props.resetAccount();
-    this.props.onCancel();
+    const { resetAccountAction, onCancel } = this.props;
+
+    resetAccountAction();
+    onCancel();
   };
 
-  getTransactions = () => {
-    return this.props.transactions.filter(t => t.key.privateKey) || [];
-  };
+  // eslint-disable-next-line react/destructuring-assignment
+  getTransactions = () =>
+    this.props.transactions.filter(t => t.key.privateKey) || [];
 
   signTransactions = async () => {
-    const drive = this.props.drives.emptyDrive;
+    const { drives, rawTransactions } = this.props;
+
+    const drive = drives.emptyDrive;
     const transactions = this.getTransactions();
 
-    this.props.rawTransactions.forEach(async fullTransaction => {
+    rawTransactions.forEach(async fullTransaction => {
       const { transaction } = fullTransaction;
 
       const signedTransactionsData = await Promise.all(
@@ -94,8 +99,9 @@ class Final extends Component {
 
   render() {
     const signedTransactions = this.getTransactions();
+    const { signed } = this.state;
 
-    if (!this.state.signed) {
+    if (!signed) {
       return (
         <div className={styles.container}>
           <div className={styles.message}>Signing...</div>
@@ -133,10 +139,16 @@ class Final extends Component {
 
 Final.propTypes = {
   drives: PropTypes.array,
-  onCancel: PropTypes.func,
+  onCancel: PropTypes.func.isRequired,
   rawTransactions: PropTypes.array,
-  resetAccount: PropTypes.func,
+  resetAccountAction: PropTypes.func.isRequired,
   transactions: PropTypes.array
+};
+
+Final.defaultProps = {
+  transactions: [],
+  rawTransactions: [],
+  drives: []
 };
 
 const mapStateToProps = state => ({
@@ -147,7 +159,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  resetAccount: () => dispatch(resetAccount())
+  resetAccountAction: () => dispatch(resetAccount())
 });
 
 export default connect(

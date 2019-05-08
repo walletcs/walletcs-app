@@ -36,6 +36,10 @@
       "id": "lodash.omit",
       "buildMeta": { "providedExports": true }
     },
+    "prop-types": {
+      "id": "prop-types",
+      "buildMeta": { "providedExports": true }
+    },
     "react": { "id": "react", "buildMeta": { "providedExports": true } },
     "react-dom": {
       "id": "react-dom",

@@ -283,6 +283,20 @@ var renderer = /******/ (function(modules) {
         /***/
       },
 
+    /***/ 'prop-types':
+      /*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+      /*! no static exports found */
+      /*! all exports used */
+      /***/ function(module, exports) {
+        eval(
+          'module.exports = prop-types;\n\n//# sourceURL=webpack://renderer/external_%22prop-types%22?'
+        );
+
+        /***/
+      },
+
     /***/ react:
       /*!************************!*\
   !*** external "react" ***!

@@ -1,3 +1,5 @@
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable no-console */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
@@ -19,7 +21,8 @@ class DetectPrivateKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { privateDrive } = this.props.drives;
+    const { drives, setPrivateKeysAction } = this.props;
+    const { privateDrive } = drives;
 
     if (!privateDrive) {
       return;
@@ -51,11 +54,11 @@ class DetectPrivateKeys extends Component {
         };
       });
 
-    this.props.setPrivateKeys(res);
+    setPrivateKeysAction(res);
   };
 
   render() {
-    const { keys = [] } = this.props;
+    const { keys = [], next, onCancel } = this.props;
     const isKeysExists = !!keys.length;
     const data = keys.map(item => ({
       id: item.publicKey,
@@ -72,9 +75,9 @@ class DetectPrivateKeys extends Component {
           )}
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>Cancel</Button>
+          <Button onClick={onCancel}>Cancel</Button>
           {isKeysExists && (
-            <Button onClick={this.props.next} primary>
+            <Button onClick={next} primary>
               Next
             </Button>
           )}
@@ -85,25 +88,26 @@ class DetectPrivateKeys extends Component {
 }
 
 DetectPrivateKeys.propTypes = {
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  setPrivateKeysAction: PropTypes.func.isRequired,
   drives: PropTypes.array,
-  keys: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
-  setPrivateKeys: PropTypes.func
+  keys: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    keys: state.account.keys,
-    drives: state.drive.drives
-  };
+DetectPrivateKeys.defaultProps = {
+  drives: [],
+  keys: []
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setPrivateKeys: keys => dispatch(setPrivateKeys(keys))
-  };
-};
+const mapStateToProps = state => ({
+  keys: state.account.keys,
+  drives: state.drive.drives
+});
+
+const mapDispatchToProps = dispatch => ({
+  setPrivateKeysAction: keys => dispatch(setPrivateKeys(keys))
+});
 
 export default connect(
   mapStateToProps,

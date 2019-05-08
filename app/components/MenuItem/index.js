@@ -1,28 +1,36 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import arrow from '../../assets/arrow.svg';
-
 import styles from './index.css';
 
-const MenuItem = props => (
+const MenuItem = ({ children, onClick, primary, className, icon }) => (
   <div
-    className={cx(styles.menuItem, props.className, {
-      [styles.primary]: props.primary
+    className={cx(styles.menuItem, className, {
+      [styles.primary]: primary
     })}
-    onClick={props.onClick}
+    onClick={onClick}
+    onKeyPress={onClick}
+    role="button"
+    tabIndex={0}
   >
-    <img src={arrow} className={styles.arrow} />
-    <div className={styles.text}>{props.children}</div>
+    <img src={icon} className={styles.icon} alt="" />
+    <div className={styles.text}>{children}</div>
   </div>
 );
 
 MenuItem.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
   className: PropTypes.string,
-  onClick: PropTypes.func,
-  primary: PropTypes.bool
+  onClick: PropTypes.func.isRequired,
+  primary: PropTypes.bool,
+  icon: PropTypes.string.isRequired
+};
+
+MenuItem.defaultProps = {
+  primary: false,
+  className: ''
 };
 
 export default MenuItem;

@@ -11,7 +11,7 @@ import device from '../../assets/Device.png';
 import styles from '../App/index.css';
 
 const CheckEmptyFlash = props => {
-  const { drives, next } = props;
+  const { drives, next, onCancel } = props;
 
   if (drives.emptyDrive) {
     next();
@@ -36,15 +36,20 @@ const CheckEmptyFlash = props => {
       <div className={styles.insertPrivate}>
         Insert <span className={styles.private}>Empty</span> key flash drive
       </div>
-      <Button onClick={props.onCancel}>Cancel</Button>
+      <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
   );
 };
 
 CheckEmptyFlash.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired
+};
+
+CheckEmptyFlash.defaultProps = {
+  drives: []
 };
 
 const mapStateToProps = state => ({

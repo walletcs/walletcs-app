@@ -33,9 +33,17 @@ const CheckTransactionFlash = ({ drives, onCancel, next }) => {
 };
 
 CheckTransactionFlash.propTypes = {
-  drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired
+};
+
+CheckTransactionFlash.defaultProps = {
+  drives: {}
 };
 
 const mapStateToProps = state => ({

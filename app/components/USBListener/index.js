@@ -1,3 +1,5 @@
+/* eslint-disable react/forbid-prop-types */
+// eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import usb from 'usb';
 import { connect } from 'react-redux';
@@ -7,21 +9,9 @@ import { getDrives } from '../../utils/helpers';
 import { setDrivesToStorage } from '../../actions/drive';
 
 class USBListener extends Component {
-  state = {
-    activeStep: 0,
-    loadingMsg: null
-  };
-
-  setDrives = async interval => {
-    const drives = await getDrives();
-
-    if (Object.keys(drives).length) {
-      this.props.setDrivesToStorage(drives);
-      interval && clearInterval(interval);
-    }
-  };
-
   async componentWillMount() {
+    const { setDrivesToStorageAction } = this.props;
+
     await this.setDrives();
 
     usb.on('attach', async () => {
@@ -31,31 +21,42 @@ class USBListener extends Component {
     });
 
     usb.on('detach', async () => {
-      this.props.setDrivesToStorage({});
+      setDrivesToStorageAction({});
     });
   }
 
+  setDrives = async interval => {
+    const { setDrivesToStorageAction } = this.props;
+    const drives = await getDrives();
+
+    if (Object.keys(drives).length) {
+      setDrivesToStorageAction(drives);
+
+      if (interval) {
+        clearInterval(interval);
+      }
+    }
+  };
+
   render() {
-    return this.props.children;
+    const { children } = this.props;
+
+    return children;
   }
 }
 
 USBListener.propTypes = {
-  children: PropTypes.any,
-  setDrivesToStorage: PropTypes.func
+  children: PropTypes.any.isRequired,
+  setDrivesToStorageAction: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    path: state.drive.path
-  };
-};
+const mapStateToProps = state => ({
+  path: state.drive.path
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setDrivesToStorage: path => dispatch(setDrivesToStorage(path))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  setDrivesToStorageAction: path => dispatch(setDrivesToStorage(path))
+});
 
 export default connect(
   mapStateToProps,

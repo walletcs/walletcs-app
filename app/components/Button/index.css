@@ -5,7 +5,7 @@
   width: 100%;
   align-items: center;
   background: #f6f6f6;
-  border: 1px solid #010d17;
+  border: 1px solid #bbc1c7;
   box-sizing: border-box;
   margin: 10px 5px;
   cursor: pointer;
@@ -15,27 +15,33 @@
   background-color: #26cd58;
 }
 
-.primary:hover {
-  opacity: 0.9;
+.primary:hover > .primaryText {
+  opacity: 0.7;
 }
 
 .default {
-  background-color: #efefef;
+  background-color: #fff;
 }
 
-.default:hover {
-  opacity: 0.6;
+.default:hover > .defaultText {
+  opacity: 0.5;
 }
 
 .text {
-  font-family: 'Avenir';
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
 }
 
 .defaultText {
   color: #010d17;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .primaryText {
-  color: #010d17;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
 }

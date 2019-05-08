@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
@@ -19,7 +20,8 @@ class CopyKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { privateDrive } = this.props.drives;
+    const { drives, setPrivateKeysAction } = this.props;
+    const { privateDrive } = drives;
 
     try {
       dir = fs.readdirSync(privateDrive) || [];
@@ -44,10 +46,12 @@ class CopyKeys extends Component {
         };
       });
 
-    this.props.setPrivateKeys(res);
+    setPrivateKeysAction(res);
   };
 
   render() {
+    const { onCancel, next } = this.props;
+
     return (
       <Fragment>
         <div className={styles.icons}>
@@ -57,8 +61,8 @@ class CopyKeys extends Component {
           Private Key flash drive copied
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>Cancel</Button>
-          <Button onClick={this.props.next} primary>
+          <Button onClick={onCancel}>Cancel</Button>
+          <Button onClick={next} primary>
             Next
           </Button>
         </div>
@@ -69,23 +73,23 @@ class CopyKeys extends Component {
 
 CopyKeys.propTypes = {
   drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
-  setPrivateKeys: PropTypes.func
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  setPrivateKeysAction: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    keys: state.account.keys,
-    drives: state.drive.drives
-  };
+CopyKeys.defaultProps = {
+  drives: []
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setPrivateKeys: keys => dispatch(setPrivateKeys(keys))
-  };
-};
+const mapStateToProps = state => ({
+  keys: state.account.keys,
+  drives: state.drive.drives
+});
+
+const mapDispatchToProps = dispatch => ({
+  setPrivateKeysAction: k => dispatch(setPrivateKeys(k))
+});
 
 export default connect(
   mapStateToProps,

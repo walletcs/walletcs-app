@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -42,9 +43,14 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
 };
 
 Final.propTypes = {
+  onCancel: PropTypes.func.isRequired,
   generatedFlag: PropTypes.bool,
-  onCancel: PropTypes.func,
   publicKeys: PropTypes.array
+};
+
+Final.defaultProps = {
+  generatedFlag: false,
+  publicKeys: []
 };
 
 const mapStateToProps = state => ({

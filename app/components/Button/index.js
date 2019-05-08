@@ -1,36 +1,47 @@
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import styles from './index.css';
 
-const Button = props => (
+const Button = ({ primary, className, children, onClick }) => (
   <div
-    {...props}
     className={cx(
       styles.button,
       {
-        [styles.primary]: props.primary,
-        [styles.default]: !props.primary
+        [styles.primary]: primary,
+        [styles.default]: !primary
       },
-      props.className
+      className
     )}
+    onClick={onClick}
+    onKeyPress={onClick}
+    role="button"
+    tabIndex={0}
   >
     <div
       className={cx(styles.text, {
-        [styles.primaryText]: props.primary,
-        [styles.defaultText]: !props.primary
+        [styles.primaryText]: primary,
+        [styles.defaultText]: !primary
       })}
     >
-      {props.children}
+      {children}
     </div>
   </div>
 );
 
 Button.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
+  onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
   primary: PropTypes.bool
+};
+
+Button.defaultProps = {
+  className: '',
+  primary: false
 };
 
 export default Button;

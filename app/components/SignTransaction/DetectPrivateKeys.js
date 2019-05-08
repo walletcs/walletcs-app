@@ -1,3 +1,5 @@
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable no-console */
 import React, { Component, Fragment } from 'react';
 import fs from 'fs';
 import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
@@ -19,7 +21,8 @@ class DetectPrivateKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { privateDrive } = this.props.drives;
+    const { drives } = this.props;
+    const { privateDrive } = drives;
 
     try {
       dir = fs.readdirSync(privateDrive) || [];
@@ -42,8 +45,14 @@ class DetectPrivateKeys extends Component {
       })
       .filter(f => !!f);
 
-    const transactionsWithKeys = this.props.transactions
-      .filter(t => this.props.transactionsToSign.includes(t.data))
+    const {
+      transactions,
+      transactionsToSign,
+      setTransactionsAction
+    } = this.props;
+
+    const transactionsWithKeys = transactions
+      .filter(t => transactionsToSign.includes(t.data))
       .map(transaction => {
         const privateKey = privateKeys.find(k => {
           let key;
@@ -76,13 +85,13 @@ class DetectPrivateKeys extends Component {
           }
         };
       })
-      .filter(t => this.props.transactionsToSign.includes(t.data));
+      .filter(t => transactionsToSign.includes(t.data));
 
-    this.props.setTransactions(transactionsWithKeys);
+    setTransactionsAction(transactionsWithKeys);
   };
 
   render() {
-    const { transactions = [] } = this.props;
+    const { transactions = [], next, onCancel } = this.props;
 
     const isTransactionsExists = !!transactions.length;
     const data = transactions.map(tr => ({
@@ -99,9 +108,9 @@ class DetectPrivateKeys extends Component {
           </div>
         )}
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>Cancel</Button>
+          <Button onClick={onCancel}>Cancel</Button>
           {isTransactionsExists && (
-            <Button onClick={this.props.next} primary>
+            <Button onClick={next} primary>
               Sign
             </Button>
           )}
@@ -112,27 +121,29 @@ class DetectPrivateKeys extends Component {
 }
 
 DetectPrivateKeys.propTypes = {
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  setTransactionsAction: PropTypes.func.isRequired,
   drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
-  setTransactions: PropTypes.func,
   transactions: PropTypes.array,
   transactionsToSign: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    drives: state.drive.drives,
-    transactions: state.account.transactions,
-    transactionsToSign: state.account.transactionsToSign
-  };
+DetectPrivateKeys.defaultProps = {
+  drives: [],
+  transactions: [],
+  transactionsToSign: []
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setTransactions: keys => dispatch(setTransactions(keys))
-  };
-};
+const mapStateToProps = state => ({
+  drives: state.drive.drives,
+  transactions: state.account.transactions,
+  transactionsToSign: state.account.transactionsToSign
+});
+
+const mapDispatchToProps = dispatch => ({
+  setTransactionsAction: keys => dispatch(setTransactions(keys))
+});
 
 export default connect(
   mapStateToProps,

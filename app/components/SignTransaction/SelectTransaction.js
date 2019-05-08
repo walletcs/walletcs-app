@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
@@ -24,7 +25,12 @@ class SelectTransaction extends Component {
 
   setupTransactions = () => {
     let dir = [];
-    const drive = this.props.drives.emptyDrive;
+    const {
+      drives,
+      setTransactionsAction,
+      setRawTransactionsAction
+    } = this.props;
+    const drive = drives.emptyDrive;
 
     try {
       dir = fs.readdirSync(drive) || [];
@@ -95,17 +101,21 @@ class SelectTransaction extends Component {
       });
     });
 
-    this.props.setTransactions(data);
-    this.props.setRawTransactions(files);
+    setTransactionsAction(data);
+    setRawTransactionsAction(files);
   };
 
   checkTransaction = (data, checked) => {
-    this.props.setTransactionToSign(data, checked);
+    const { setTransactionToSignAction } = this.props;
+
+    setTransactionToSignAction(data, checked);
   };
 
   render() {
-    const isKeysExists = !!this.props.transactions.length;
-    const data = this.props.transactions.map(tr => ({
+    const { transactions, onCancel, next } = this.props;
+
+    const isKeysExists = !!transactions.length;
+    const data = transactions.map(tr => ({
       id: tr.data,
       fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount]
     }));
@@ -122,9 +132,9 @@ class SelectTransaction extends Component {
           <div className={styles.message}>Transactions not found</div>
         )}
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>Cancel</Button>
+          <Button onClick={onCancel}>Cancel</Button>
           {isKeysExists && (
-            <Button onClick={this.props.next} primary>
+            <Button onClick={next} primary>
               Next
             </Button>
           )}
@@ -135,30 +145,31 @@ class SelectTransaction extends Component {
 }
 
 SelectTransaction.propTypes = {
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  setRawTransactionsAction: PropTypes.func.isRequired,
+  setTransactionToSignAction: PropTypes.func.isRequired,
+  setTransactionsAction: PropTypes.func.isRequired,
   drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
-  setRawTransactions: PropTypes.func,
-  setTransactionToSign: PropTypes.func,
-  setTransactions: PropTypes.func,
   transactions: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    drives: state.drive.drives,
-    transactions: state.account.transactions
-  };
+SelectTransaction.defaultProps = {
+  drives: [],
+  transactions: []
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setTransactions: items => dispatch(setTransactions(items)),
-    setTransactionToSign: (data, checked) =>
-      dispatch(setTransactionToSign(data, checked)),
-    setRawTransactions: data => dispatch(setRawTransactions(data))
-  };
-};
+const mapStateToProps = state => ({
+  drives: state.drive.drives,
+  transactions: state.account.transactions
+});
+
+const mapDispatchToProps = dispatch => ({
+  setTransactionsAction: items => dispatch(setTransactions(items)),
+  setTransactionToSignAction: (data, checked) =>
+    dispatch(setTransactionToSign(data, checked)),
+  setRawTransactionsAction: data => dispatch(setRawTransactions(data))
+});
 
 export default connect(
   mapStateToProps,

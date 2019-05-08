@@ -1,27 +1,38 @@
 .menuItem {
   display: flex;
   flex-direction: column;
-  padding: 8px;
-  background-color: #f2f2f2;
+  padding: 10px;
+  background-color: #fff;
   font-weight: bold;
   font-size: 14px;
-  height: 137px;
-  border: 1px solid #010d17;
+  height: 178px;
+  width: 190px;
+  border: 1px solid #bbc1c7;
   cursor: pointer;
+  margin: 4px;
 }
 
-.menuItem:hover {
-  opacity: 0.9;
+.menuItem:hover > .text {
+  opacity: 0.4;
 }
 
 .primary {
   background-color: #26cd58;
 }
 
-.text {
-  margin-top: auto;
+.primary > .text {
+  color: #fff;
 }
 
-.arrow {
-  margin-left: auto;
+.text {
+  margin: auto;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.icon {
+  margin: auto;
+  margin-top: 30px;
 }

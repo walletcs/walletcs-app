@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,13 +11,15 @@ export default class StepHandler extends Component {
 
   render() {
     const { activeStep } = this.state;
-    const Content = this.props.steps[activeStep];
+    const { steps } = this.props;
+
+    const Content = steps[activeStep];
 
     return (
       <div className={styles.container}>
         <Content
           {...this.props}
-          next={() => this.setState({ activeStep: this.state.activeStep + 1 })}
+          next={() => this.setState({ activeStep: activeStep + 1 })}
         />
       </div>
     );
@@ -24,5 +27,5 @@ export default class StepHandler extends Component {
 }
 
 StepHandler.propTypes = {
-  steps: PropTypes.array
+  steps: PropTypes.array.isRequired
 };

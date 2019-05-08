@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -17,8 +18,10 @@ class Final extends Component {
   }
 
   backupPrivateKeys = () => {
-    const { emptyDrive } = this.props.drives;
-    const keysForRestore = this.props.keys;
+    const { drives, keys } = this.props;
+
+    const { emptyDrive } = drives;
+    const keysForRestore = keys;
 
     keysForRestore.forEach(k => {
       const { account, privateKey } = k;
@@ -29,6 +32,8 @@ class Final extends Component {
   };
 
   render() {
+    const { onCancel } = this.props;
+
     return (
       <Fragment>
         <div className={styles.container}>
@@ -38,7 +43,7 @@ class Final extends Component {
           </div>
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel} primary>
+          <Button onClick={onCancel} primary>
             Done
           </Button>
         </div>
@@ -48,16 +53,19 @@ class Final extends Component {
 }
 
 Final.propTypes = {
+  onCancel: PropTypes.func.isRequired,
   drives: PropTypes.array,
-  keys: PropTypes.array,
-  onCancel: PropTypes.func
+  keys: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    keys: state.account.keys,
-    drives: state.drive.drives
-  };
+Final.defaultProps = {
+  drives: [],
+  keys: []
 };
+
+const mapStateToProps = state => ({
+  keys: state.account.keys,
+  drives: state.drive.drives
+});
 
 export default connect(mapStateToProps)(Final);

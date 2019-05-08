@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -21,19 +21,18 @@ class FlashToDeviceIndicator extends Component {
 
   render() {
     const { active } = this.state;
+    const { flash } = this.props;
 
     return (
       <div className={styles.elements}>
-        {Array.apply(null, { length: 3 })
-          .map(Number.call, Number)
-          .map(num => (
-            <div
-              key={num}
-              className={cx(styles.element, {
-                [styles[this.props.flash]]: active === num
-              })}
-            />
-          ))}
+        {[0, 1, 2].map(num => (
+          <div
+            key={num}
+            className={cx(styles.element, {
+              [styles[flash]]: active === num
+            })}
+          />
+        ))}
       </div>
     );
   }
@@ -41,6 +40,7 @@ class FlashToDeviceIndicator extends Component {
 
 FlashToDeviceIndicator.propTypes = {
   flash: PropTypes.oneOf(['private', 'public', 'empty', 'transaction'])
+    .isRequired
 };
 
 export default FlashToDeviceIndicator;

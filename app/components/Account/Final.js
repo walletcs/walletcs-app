@@ -7,7 +7,7 @@ import Button from '../Button';
 import success from '../../assets/success.png';
 import styles from '../App/index.css';
 
-const Final = props => (
+const Final = ({ accountName, onCancel }) => (
   <Fragment>
     <div className={styles.container}>
       <img src={success} className={styles.icon} alt="" />
@@ -19,7 +19,7 @@ const Final = props => (
           textAlign: 'center'
         }}
       >
-        {`You have successfully created an account: ${props.accountName}`}
+        {`You have successfully created an account: ${accountName}`}
       </div>
       <div
         style={{
@@ -33,15 +33,15 @@ const Final = props => (
         Please remember to securely store you private key flash drive
       </div>
     </div>
-    <Button onClick={props.onCancel} primary>
+    <Button onClick={onCancel} primary>
       Done
     </Button>
   </Fragment>
 );
 
 Final.propTypes = {
-  accountName: PropTypes.string,
-  onCancel: PropTypes.func
+  accountName: PropTypes.string.isRequired,
+  onCancel: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

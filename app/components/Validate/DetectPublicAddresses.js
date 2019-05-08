@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
@@ -23,13 +24,18 @@ class DetectPublicAddresses extends Component {
   }
 
   onGenerateChange = () => {
-    this.setState({ generate: !this.state.generate });
+    const { generate } = this.state;
+
+    this.setState({ generate: !generate });
   };
 
   restorePublicKeys = () => {
-    if (this.state.generate) {
-      const keysForGenerate = this.props.publicKeys.filter(f => !f.found);
-      const { publicDrive, emptyDrive } = this.props.drives;
+    const { generate } = this.state;
+    const { publicKeys, drives, setGeneratedFlagAction, next } = this.props;
+
+    if (generate) {
+      const keysForGenerate = publicKeys.filter(f => !f.found);
+      const { publicDrive, emptyDrive } = drives;
       const drive = publicDrive || emptyDrive;
 
       keysForGenerate.forEach(k => {
@@ -58,13 +64,14 @@ class DetectPublicAddresses extends Component {
       });
     }
 
-    this.props.setGeneratedFlag(this.state.generate);
-    this.props.next();
+    setGeneratedFlagAction(generate);
+    next();
   };
 
   setupPublicKeys = () => {
     let publicKeysFiles = [];
-    const { publicDrive, emptyDrive } = this.props.drives;
+    const { setPublicKeysAction, drives, keys } = this.props;
+    const { publicDrive, emptyDrive } = drives;
     const drive = publicDrive || emptyDrive;
 
     try {
@@ -87,16 +94,19 @@ class DetectPublicAddresses extends Component {
         return res;
       });
 
-    const preparedPublicKeys = this.props.keys.map(item => ({
+    const preparedPublicKeys = keys.map(item => ({
       ...item,
       found: publicKeys.includes(item.publicKey)
     }));
 
-    this.props.setPublicKeys(preparedPublicKeys);
+    setPublicKeysAction(preparedPublicKeys);
   };
 
   render() {
-    const keys = this.props.publicKeys || [];
+    const { onCancel, publicKeys } = this.props;
+    const { generate } = this.state;
+
+    const keys = publicKeys || [];
     const data = keys.map(item => {
       const found = item.found ? 'Yes' : 'No';
       return {
@@ -110,13 +120,13 @@ class DetectPublicAddresses extends Component {
         <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
         <div className={styles.generateCheckboxContainer}>
           <Checkbox
-            checked={this.state.generate}
+            checked={generate}
             onChange={this.onGenerateChange}
             label="Generate missing keys"
           />
         </div>
         <div className={styles.rowControls}>
-          <Button onClick={this.props.onCancel}>Cancel</Button>
+          <Button onClick={onCancel}>Cancel</Button>
           <Button onClick={this.restorePublicKeys} primary>
             Next
           </Button>
@@ -127,29 +137,31 @@ class DetectPublicAddresses extends Component {
 }
 
 DetectPublicAddresses.propTypes = {
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  setGeneratedFlagAction: PropTypes.func.isRequired,
+  setPublicKeysAction: PropTypes.func.isRequired,
   drives: PropTypes.array,
   keys: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
-  publicKeys: PropTypes.array,
-  setGeneratedFlag: PropTypes.func,
-  setPublicKeys: PropTypes.func
+  publicKeys: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    publicKeys: state.account.publicKeys,
-    keys: state.account.keys,
-    drives: state.drive.drives
-  };
+DetectPublicAddresses.defaultProps = {
+  drives: [],
+  keys: [],
+  publicKeys: []
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setPublicKeys: keys => dispatch(setPublicKeys(keys)),
-    setGeneratedFlag: flag => dispatch(setGeneratedFlag(flag))
-  };
-};
+const mapStateToProps = state => ({
+  publicKeys: state.account.publicKeys,
+  keys: state.account.keys,
+  drives: state.drive.drives
+});
+
+const mapDispatchToProps = dispatch => ({
+  setPublicKeysAction: keys => dispatch(setPublicKeys(keys)),
+  setGeneratedFlagAction: flag => dispatch(setGeneratedFlag(flag))
+});
 
 export default connect(
   mapStateToProps,

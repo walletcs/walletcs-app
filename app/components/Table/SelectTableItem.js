@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -10,29 +11,31 @@ export default class SelectTableItem extends Component {
   state = { checked: false };
 
   handleCheck = () => {
-    this.setState({ checked: !this.state.checked });
-    this.props.onCheck(this.props.item.id, !this.state.checked);
+    const { checked } = this.state;
+    const { onCheck, item } = this.props;
+
+    this.setState({ checked: !checked });
+    onCheck(item.id, !checked);
   };
 
   render() {
-    const isCheckboxNeeded = !!this.props.onCheck;
+    const { checked } = this.state;
+    const { onCheck, item } = this.props;
+    const isCheckboxNeeded = !!onCheck;
 
     return (
       <tr
         className={cx(styles.tableRow, {
-          [styles.tableDataRow]: !!this.props.onCheck
+          [styles.tableDataRow]: !!onCheck
         })}
         onClick={this.handleCheck}
       >
         {isCheckboxNeeded && (
           <td className={cx(styles.tableCell, styles.tableCheckbox)}>
-            <Checkbox
-              checked={this.state.checked}
-              onChange={this.handleCheck}
-            />
+            <Checkbox checked={checked} onChange={this.handleCheck} />
           </td>
         )}
-        {this.props.item.fields.map(e => (
+        {item.fields.map(e => (
           <td key={e} className={styles.tableCell}>
             {e}
           </td>
@@ -45,4 +48,9 @@ export default class SelectTableItem extends Component {
 SelectTableItem.propTypes = {
   item: PropTypes.object,
   onCheck: PropTypes.func
+};
+
+SelectTableItem.defaultProps = {
+  item: {},
+  onCheck: () => {}
 };

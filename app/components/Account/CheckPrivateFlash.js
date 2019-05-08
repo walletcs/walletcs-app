@@ -10,8 +10,8 @@ import device from '../../assets/Device.png';
 import styles from '../App/index.css';
 
 const CheckPrivateFlash = props => {
-  const { drives, next } = props;
-  const drive = props.onlyPrivate
+  const { drives, next, onlyPrivate, onCancel } = props;
+  const drive = onlyPrivate
     ? drives.privateDrive
     : drives.privateDrive || drives.emptyDrive;
 
@@ -29,16 +29,25 @@ const CheckPrivateFlash = props => {
       <div className={styles.insertPrivate}>
         Insert <span className={styles.private}>Private</span> key flash drive
       </div>
-      <Button onClick={props.onCancel}>Cancel</Button>
+      <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
   );
 };
 
 CheckPrivateFlash.propTypes = {
-  drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
   onlyPrivate: PropTypes.bool
+};
+
+CheckPrivateFlash.defaultProps = {
+  drives: {},
+  onlyPrivate: false
 };
 
 const mapStateToProps = state => ({

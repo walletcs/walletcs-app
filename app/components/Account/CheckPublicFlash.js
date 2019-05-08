@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,7 +11,7 @@ import publicFlash from '../../assets/public_flash.png';
 import styles from '../App/index.css';
 
 const CheckPublicFlash = props => {
-  const { drives, next } = props;
+  const { drives, next, onCancel } = props;
 
   if (drives.publicDrive || drives.emptyDrive) {
     next();
@@ -34,15 +35,19 @@ const CheckPublicFlash = props => {
           3. Insert Public Address flash drive
         </div>
       </div>
-      <Button onClick={props.onCancel}>Cancel</Button>
+      <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
   );
 };
 
 CheckPublicFlash.propTypes = {
   drives: PropTypes.array,
-  next: PropTypes.func,
-  onCancel: PropTypes.func
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired
+};
+
+CheckPublicFlash.defaultProps = {
+  drives: []
 };
 
 const mapStateToProps = state => ({

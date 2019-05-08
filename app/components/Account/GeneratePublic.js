@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
@@ -14,29 +15,38 @@ import styles from '../App/index.css';
 
 class GeneratePublic extends Component {
   state = {
-    loadingMsg: null
+    loadingMsg: ''
   };
 
   savePublicKey = () => {
-    const { publicDrive, emptyDrive } = this.props.drives;
-    const { address, name } = this.props.account;
+    const { resetDrivesAction, next, drives, account } = this.props;
+    const { publicDrive, emptyDrive } = drives;
+    const { address, name } = account;
 
     this.setState({ loadingMsg: 'Calculating public key...' });
     const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.txt`;
 
     writeFile(path, address);
-    this.props.resetDrives();
-    this.props.next();
+    resetDrivesAction();
+    next();
   };
 
   render() {
+    const { loadingMsg } = this.state;
+    const { account = {}, onCancel } = this.props;
+    const { name = '' } = account;
+
+    // https://github.com/eslint/eslint/issues/9872
+    // eslint-disable-next-line prefer-template
+    const addrname = 'addr-' + name + '.txt';
+
     return (
       <Fragment>
         <div>
           <div>
             <div className={styles.infoText}>
-              After press 'Save address' button this drive will contain file
-              with public address of your account.
+              After press &quot;Save address&quot; button this drive will
+              contain file with public address of your account.
             </div>
             <div className={cx(styles.infoText, styles.bold)}>
               You can safely distribute this address
@@ -45,16 +55,14 @@ class GeneratePublic extends Component {
           <div style={{ color: '#828282', fontSize: 14, marginTop: 15 }}>
             File to be created:
           </div>
-          <div style={{ color: '#4F4F4F', fontSize: 16 }}>
-            {`addr-${this.props.account.name}.txt`}
-          </div>
+          <div style={{ color: '#4F4F4F', fontSize: 16 }}>{addrname}</div>
         </div>
         <div className={styles.rowControls}>
-          {this.props.loadingMsg ? (
-            <div>{this.props.loadingMsg}</div>
+          {loadingMsg ? (
+            <div>{loadingMsg}</div>
           ) : (
             <Fragment>
-              <Button onClick={this.props.onCancel}>Cancel</Button>
+              <Button onClick={onCancel}>Cancel</Button>
               <Button onClick={this.savePublicKey} primary>
                 Save address
               </Button>
@@ -69,24 +77,24 @@ class GeneratePublic extends Component {
 GeneratePublic.propTypes = {
   account: PropTypes.object,
   drives: PropTypes.array,
-  loadingMsg: PropTypes.string,
-  next: PropTypes.func,
-  onCancel: PropTypes.func,
-  resetDrives: PropTypes.func
+  next: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  resetDrivesAction: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    drives: state.drive.drives,
-    account: state.account
-  };
+GeneratePublic.defaultProps = {
+  account: {},
+  drives: []
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    resetDrives: path => dispatch(resetDrives(path))
-  };
-};
+const mapStateToProps = state => ({
+  drives: state.drive.drives,
+  account: state.account
+});
+
+const mapDispatchToProps = dispatch => ({
+  resetDrivesAction: path => dispatch(resetDrives(path))
+});
 
 export default connect(
   mapStateToProps,
