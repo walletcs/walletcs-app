@@ -91,12 +91,16 @@ DetectPrivateKeys.propTypes = {
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   setPrivateKeysAction: PropTypes.func.isRequired,
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   keys: PropTypes.array
 };
 
 DetectPrivateKeys.defaultProps = {
-  drives: [],
+  drives: {},
   keys: []
 };
 

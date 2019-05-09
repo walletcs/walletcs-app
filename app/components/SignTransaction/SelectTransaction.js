@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import fs from 'fs';
@@ -150,12 +151,16 @@ SelectTransaction.propTypes = {
   setRawTransactionsAction: PropTypes.func.isRequired,
   setTransactionToSignAction: PropTypes.func.isRequired,
   setTransactionsAction: PropTypes.func.isRequired,
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   transactions: PropTypes.array
 };
 
 SelectTransaction.defaultProps = {
-  drives: [],
+  drives: {},
   transactions: []
 };
 

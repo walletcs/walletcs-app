@@ -42,14 +42,17 @@ const CheckEmptyFlash = props => {
 };
 
 CheckEmptyFlash.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired
 };
 
 CheckEmptyFlash.defaultProps = {
-  drives: []
+  drives: {}
 };
 
 const mapStateToProps = state => ({

@@ -141,13 +141,17 @@ DetectPublicAddresses.propTypes = {
   onCancel: PropTypes.func.isRequired,
   setGeneratedFlagAction: PropTypes.func.isRequired,
   setPublicKeysAction: PropTypes.func.isRequired,
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   keys: PropTypes.array,
   publicKeys: PropTypes.array
 };
 
 DetectPublicAddresses.defaultProps = {
-  drives: [],
+  drives: {},
   keys: [],
   publicKeys: []
 };

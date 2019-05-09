@@ -41,9 +41,13 @@ body {
 }
 
 .content {
-  background-color: #000;
+  background-color: #fff;
   width: 832px;
-  margin: auto;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .row {
@@ -69,6 +73,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #fff;
+  height: 100%;
 }
 
 .insertPrivate {

@@ -124,13 +124,17 @@ DetectPrivateKeys.propTypes = {
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   setTransactionsAction: PropTypes.func.isRequired,
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   transactions: PropTypes.array,
   transactionsToSign: PropTypes.array
 };
 
 DetectPrivateKeys.defaultProps = {
-  drives: [],
+  drives: {},
   transactions: [],
   transactionsToSign: []
 };

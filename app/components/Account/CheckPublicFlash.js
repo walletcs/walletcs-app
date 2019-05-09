@@ -41,13 +41,17 @@ const CheckPublicFlash = props => {
 };
 
 CheckPublicFlash.propTypes = {
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired
 };
 
 CheckPublicFlash.defaultProps = {
-  drives: []
+  drives: {}
 };
 
 const mapStateToProps = state => ({

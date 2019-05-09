@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
@@ -138,7 +139,11 @@ class Final extends Component {
 }
 
 Final.propTypes = {
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   onCancel: PropTypes.func.isRequired,
   rawTransactions: PropTypes.array,
   resetAccountAction: PropTypes.func.isRequired,
@@ -148,7 +153,7 @@ Final.propTypes = {
 Final.defaultProps = {
   transactions: [],
   rawTransactions: [],
-  drives: []
+  drives: {}
 };
 
 const mapStateToProps = state => ({

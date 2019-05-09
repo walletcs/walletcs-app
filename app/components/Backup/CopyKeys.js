@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
@@ -72,14 +73,18 @@ class CopyKeys extends Component {
 }
 
 CopyKeys.propTypes = {
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   setPrivateKeysAction: PropTypes.func.isRequired
 };
 
 CopyKeys.defaultProps = {
-  drives: []
+  drives: {}
 };
 
 const mapStateToProps = state => ({

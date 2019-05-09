@@ -76,7 +76,11 @@ class GeneratePublic extends Component {
 
 GeneratePublic.propTypes = {
   account: PropTypes.object,
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   resetDrivesAction: PropTypes.func.isRequired
@@ -84,7 +88,7 @@ GeneratePublic.propTypes = {
 
 GeneratePublic.defaultProps = {
   account: {},
-  drives: []
+  drives: {}
 };
 
 const mapStateToProps = state => ({

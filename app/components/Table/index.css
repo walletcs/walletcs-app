@@ -1,6 +1,6 @@
 .tableRow {
   display: flex;
-  border-bottom: 0.5px solid #010d17;
+  border-bottom: 1px solid #bbc1c7;
   padding: 7px;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .tableHeader {
-  opacity: 0.4;
+  text-transform: uppercase;
 }
 
 .tableCell {
@@ -24,6 +24,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .tableCheckbox {

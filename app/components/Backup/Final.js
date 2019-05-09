@@ -54,12 +54,16 @@ class Final extends Component {
 
 Final.propTypes = {
   onCancel: PropTypes.func.isRequired,
-  drives: PropTypes.array,
+  drives: PropTypes.shape({
+    emptyDrive: PropTypes.string,
+    publicDrive: PropTypes.string,
+    privateDrive: PropTypes.string
+  }),
   keys: PropTypes.array
 };
 
 Final.defaultProps = {
-  drives: [],
+  drives: {},
   keys: []
 };
 
