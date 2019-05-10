@@ -10,8 +10,6 @@ import Button from '../Button';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 import { setPrivateKeys } from '../../actions/account';
 
-import keys from '../../assets/Keys.png';
-
 import styles from '../App/index.css';
 
 class CopyKeys extends Component {
@@ -55,9 +53,6 @@ class CopyKeys extends Component {
 
     return (
       <Fragment>
-        <div className={styles.icons}>
-          <img src={keys} className={styles.icon} alt="" />
-        </div>
         <div className={styles.insertPrivate}>
           Private Key flash drive copied
         </div>

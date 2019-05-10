@@ -9,30 +9,25 @@ import Button from '../Button';
 
 import styles from '../App/index.css';
 
-import success from '../../assets/success.png';
-
 const Final = ({ publicKeys, onCancel, generatedFlag }) => {
   const accounts = generatedFlag ? publicKeys.filter(f => !f.found) : [];
 
   return (
     <Fragment>
-      <div className={styles.container}>
-        <img src={success} className={styles.icon} alt="" />
-        {accounts.length ? (
-          <Fragment>
-            <div className={styles.message}>
-              {accounts.length} PUBLIC ADDRESSES generated:
-            </div>
-            {accounts.map(item => (
-              <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${
-                item.account
-              }.txt`}</div>
-            ))}
-          </Fragment>
-        ) : (
-          <div className={styles.message}>There is no keys for restore.</div>
-        )}
-      </div>
+      {accounts.length ? (
+        <Fragment>
+          <div className={styles.message}>
+            {accounts.length} PUBLIC ADDRESSES generated:
+          </div>
+          {accounts.map(item => (
+            <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${
+              item.account
+            }.txt`}</div>
+          ))}
+        </Fragment>
+      ) : (
+        <div className={styles.message}>There is no keys for restore.</div>
+      )}
       <div className={styles.rowControls}>
         <Button onClick={onCancel} primary>
           Done

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import fs from 'fs';
 
 import { PRIVATE_KEY_PREFIX, PUBLIC_KEY_PREFIX } from './constants';
@@ -55,10 +56,10 @@ export const writeFile = (path, data) => {
   }
 };
 
-export const getTransactionType = transaction => {
-  if (!transaction.data) {
+export const getTransactionType = trObj => {
+  if (!trObj.transaction.data) {
     return 'BTC';
   }
 
-  return transaction.contract ? '=>' : 'ETH';
+  return trObj.contract ? '=>' : 'ETH';
 };

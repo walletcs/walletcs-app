@@ -15,7 +15,9 @@ export default class SelectTableItem extends Component {
     const { onCheck, item } = this.props;
 
     this.setState({ checked: !checked });
-    onCheck(item.id, !checked);
+    if (onCheck) {
+      onCheck(item.id, !checked);
+    }
   };
 
   render() {
@@ -52,5 +54,5 @@ SelectTableItem.propTypes = {
 
 SelectTableItem.defaultProps = {
   item: {},
-  onCheck: () => {}
+  onCheck: null
 };

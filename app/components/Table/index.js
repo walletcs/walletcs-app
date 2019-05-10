@@ -51,7 +51,7 @@ Table.propTypes = {
 Table.defaultProps = {
   data: [],
   headers: [],
-  onCheck: () => {}
+  onCheck: null
 };
 
 export default Table;

@@ -226,7 +226,7 @@
     "redux-thunk": "^2.3.0",
     "source-map-support": "^0.5.9",
     "usb": "^1.5.0",
-    "walletcs": "^0.5.7"
+    "walletcs": "^0.6.8"
   },
   "devEngines": {
     "node": ">=7.x",

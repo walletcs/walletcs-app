@@ -22,6 +22,7 @@ class GeneratePublic extends Component {
     const { resetDrivesAction, next, drives, account } = this.props;
     const { publicDrive, emptyDrive } = drives;
     const { address, name } = account;
+    console.warn(account);
 
     this.setState({ loadingMsg: 'Calculating public key...' });
     const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.txt`;

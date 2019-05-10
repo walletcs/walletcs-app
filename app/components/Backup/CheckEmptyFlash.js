@@ -24,15 +24,6 @@ const CheckEmptyFlash = props => {
         <FlashToDeviceIndicator flash="empty" />
         <img src={device} className={styles.icon} alt="" />
       </div>
-      <div style={{ backgroundColor: '#95b4d0', padding: 10, bottom: '10%' }}>
-        <div className={styles.publicPoints}>
-          1. Remove PRIVATE key flash drive
-        </div>
-        <div className={styles.publicPoints}>
-          2. Make sure you choose the right flash drive
-        </div>
-        <div className={styles.publicPoints}>3. insert Empty flash drive</div>
-      </div>
       <div className={styles.insertPrivate}>
         Insert <span className={styles.private}>Empty</span> key flash drive
       </div>

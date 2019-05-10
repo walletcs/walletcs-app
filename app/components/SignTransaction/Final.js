@@ -16,8 +16,6 @@ import {
   BTC_NETWORK
 } from '../../utils/constants';
 
-import success from '../../assets/success.png';
-
 import styles from '../App/index.css';
 
 class Final extends Component {
@@ -112,22 +110,19 @@ class Final extends Component {
 
     return (
       <Fragment>
-        <div className={styles.container}>
-          <img src={success} className={styles.icon} alt="" />
-          {signedTransactions.length ? (
-            <Fragment>
-              <div className={styles.message}>
-                You have successfully signed {signedTransactions.length}{' '}
-                transactions
-              </div>
-              {signedTransactions.map(item => (
-                <div className={styles.message}>{item.file}</div>
-              ))}
-            </Fragment>
-          ) : (
-            <div className={styles.message}>Transactions not signed</div>
-          )}
-        </div>
+        {signedTransactions.length ? (
+          <Fragment>
+            <div className={styles.message}>
+              You have successfully signed {signedTransactions.length}{' '}
+              transactions
+            </div>
+            {signedTransactions.map(item => (
+              <div className={styles.message}>{item.file}</div>
+            ))}
+          </Fragment>
+        ) : (
+          <div className={styles.message}>Transactions not signed</div>
+        )}
         <div className={styles.rowControls}>
           <Button onClick={this.done} primary>
             Done

@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 
 import Button from '../Button';
 
-import success from '../../assets/success.png';
 import styles from '../App/index.css';
 
 const Final = ({ accountName, onCancel }) => (
   <Fragment>
     <div className={styles.container}>
-      <img src={success} className={styles.icon} alt="" />
       <div
         style={{
           margin: 5,

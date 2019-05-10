@@ -50,7 +50,7 @@ class GeneratePrivate extends Component {
     let privateKeyValue;
     const { transactionType } = this.state;
 
-    if (transactionType === 'ETH') {
+    if (transactionType === 'eth') {
       const pair = EtherKeyPair.generatePair();
 
       addressValue = pair.address;
@@ -88,7 +88,7 @@ class GeneratePrivate extends Component {
       return false;
     }
 
-    setAddressAction(res.address);
+    setAddressAction(res.addressValue);
     resetDrivesAction();
     this.setState({ loadingMsg: null });
 

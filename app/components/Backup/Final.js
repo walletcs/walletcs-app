@@ -8,8 +8,6 @@ import Button from '../Button';
 import { writeFile } from '../../utils/helpers';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
-import success from '../../assets/success.png';
-
 import styles from '../App/index.css';
 
 class Final extends Component {
@@ -36,11 +34,8 @@ class Final extends Component {
 
     return (
       <Fragment>
-        <div className={styles.container}>
-          <img src={success} className={styles.icon} alt="" />
-          <div className={styles.message}>
-            You have successfully created backed up your PRIVATE key Drive
-          </div>
+        <div className={styles.message}>
+          You have successfully backed up your drive with private key
         </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel} primary>

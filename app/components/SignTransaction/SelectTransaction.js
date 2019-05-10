@@ -116,6 +116,7 @@ class SelectTransaction extends Component {
     const { transactions, onCancel, next } = this.props;
 
     const isKeysExists = !!transactions.length;
+
     const data = transactions.map(tr => ({
       id: tr.data,
       fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount]
