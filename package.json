@@ -37,14 +37,6 @@
     "test-watch": "yarn test --watch"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --ignore-path .eslintignore --single-quote --write",
-      "git add"
-    ],
-    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
-      "prettier --ignore-path .eslintignore --parser json --write",
-      "git add"
-    ],
     "*.{css,scss}": [
       "prettier --ignore-path .eslintignore --single-quote --write",
       "git add"
@@ -80,10 +72,15 @@
       ]
     },
     "win": {
-      "target": ["nsis"]
+      "target": [
+        "nsis"
+      ]
     },
     "linux": {
-      "target": ["deb", "AppImage"],
+      "target": [
+        "deb",
+        "AppImage"
+      ],
       "category": "Development"
     },
     "directories": {
@@ -104,11 +101,17 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
       "\\.(css|less|sass|scss)$": "identity-obj-proxy"
     },
-    "moduleFileExtensions": ["js", "jsx", "json"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
-    "setupFiles": ["./internals/scripts/CheckBuiltsExist.js"]
+    "setupFiles": [
+      "./internals/scripts/CheckBuiltsExist.js"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",

@@ -9,11 +9,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import Table from '../Table';
 
-import {
-  setTransactions,
-  setTransactionToSign,
-  setRawTransactions
-} from '../../actions/account';
+import { setTransactions, setTransactionToSign, setRawTransactions } from '../../actions/account';
 import { TRANSACTION_PREFIX } from '../../utils/constants';
 import { getTransactionType } from '../../utils/helpers';
 
@@ -26,11 +22,7 @@ class SelectTransaction extends Component {
 
   setupTransactions = () => {
     let dir = [];
-    const {
-      drives,
-      setTransactionsAction,
-      setRawTransactionsAction
-    } = this.props;
+    const { drives, setTransactionsAction, setRawTransactionsAction } = this.props;
     const drive = drives.emptyDrive;
 
     try {
@@ -41,13 +33,11 @@ class SelectTransaction extends Component {
 
     const files = dir
       .filter(file => file.startsWith(TRANSACTION_PREFIX))
-      .map(file => {
+      .map((file) => {
         let transaction = {};
 
         try {
-          transaction = JSON.parse(
-            fs.readFileSync(`${drive}/${file}`, 'utf-8')
-          );
+          transaction = JSON.parse(fs.readFileSync(`${drive}/${file}`, 'utf-8'));
         } catch (error) {
           console.error(`error while reading ${drive}/${file}`);
           console.error(error);
@@ -56,30 +46,25 @@ class SelectTransaction extends Component {
 
         return {
           transaction,
-          file
+          file,
         };
       })
       .filter(t => !!t);
 
     const data = [];
 
-    files.forEach(element => {
-      element.transaction.transactions.forEach(tr => {
+    files.forEach((element) => {
+      element.transaction.transactions.forEach((tr) => {
         let contractObj = {};
         let method = { name: 'transfer' };
 
         if (tr.contract) {
-          contractObj =
-            (element.transaction.contracts || []).find(
-              c => c.contract === tr.contract
-            ) || {};
+          contractObj = (element.transaction.contracts || []).find(c => c.contract === tr.contract) || {};
 
           if (contractObj.abi) {
             try {
               EtherTransactionDecoder.addABI(contractObj.abi);
-              method = EtherTransactionDecoder.decodeMethodContract(
-                tr.transaction.data
-              );
+              method = EtherTransactionDecoder.decodeMethodContract(tr.transaction.data);
             } catch (error) {
               console.error(error);
             }
@@ -96,8 +81,8 @@ class SelectTransaction extends Component {
             file: element.file,
             filename,
             type: trType,
-            method: method.name
-          }
+            method: method.name,
+          },
         });
       });
     });
@@ -119,7 +104,7 @@ class SelectTransaction extends Component {
 
     const data = transactions.map(tr => ({
       id: tr.data,
-      fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount]
+      fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount],
     }));
 
     return (
@@ -155,29 +140,28 @@ SelectTransaction.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
-  transactions: PropTypes.array
+  transactions: PropTypes.array,
 };
 
 SelectTransaction.defaultProps = {
   drives: {},
-  transactions: []
+  transactions: [],
 };
 
 const mapStateToProps = state => ({
   drives: state.drive.drives,
-  transactions: state.account.transactions
+  transactions: state.account.transactions,
 });
 
 const mapDispatchToProps = dispatch => ({
   setTransactionsAction: items => dispatch(setTransactions(items)),
-  setTransactionToSignAction: (data, checked) =>
-    dispatch(setTransactionToSign(data, checked)),
-  setRawTransactionsAction: data => dispatch(setRawTransactions(data))
+  setTransactionToSignAction: (data, checked) => dispatch(setTransactionToSign(data, checked)),
+  setRawTransactionsAction: data => dispatch(setRawTransactions(data)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SelectTransaction);
