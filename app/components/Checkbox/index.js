@@ -9,12 +9,7 @@ import styles from './index.css';
 
 const Checkbox = ({ checked, label, onChange }) => (
   <Fragment>
-    <input
-      type="checkbox"
-      checked={checked}
-      className={styles.inpcbx}
-      readOnly
-    />
+    <input type="checkbox" checked={checked} className={styles.inpcbx} readOnly />
     <label className={styles.cbx}>
       <span onClick={() => onChange(!checked)}>
         <svg width="12px" height="10px" viewBox="0 0 12 10">
@@ -29,12 +24,12 @@ const Checkbox = ({ checked, label, onChange }) => (
 Checkbox.propTypes = {
   checked: PropTypes.bool,
   label: PropTypes.string,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };
 
 Checkbox.defaultProps = {
   checked: false,
-  label: ''
+  label: '',
 };
 
 export default Checkbox;

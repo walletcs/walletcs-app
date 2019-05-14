@@ -6,15 +6,17 @@ import PropTypes from 'prop-types';
 
 import styles from './index.css';
 
-const Button = ({ primary, className, children, onClick }) => (
+const Button = ({
+  primary, className, children, onClick,
+}) => (
   <div
     className={cx(
       styles.button,
       {
         [styles.primary]: primary,
-        [styles.default]: !primary
+        [styles.default]: !primary,
       },
-      className
+      className,
     )}
     onClick={onClick}
     onKeyPress={onClick}
@@ -24,7 +26,7 @@ const Button = ({ primary, className, children, onClick }) => (
     <div
       className={cx(styles.text, {
         [styles.primaryText]: primary,
-        [styles.defaultText]: !primary
+        [styles.defaultText]: !primary,
       })}
     >
       {children}
@@ -36,12 +38,12 @@ Button.propTypes = {
   children: PropTypes.any.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
-  primary: PropTypes.bool
+  primary: PropTypes.bool,
 };
 
 Button.defaultProps = {
   className: '',
-  primary: false
+  primary: false,
 };
 
 export default Button;

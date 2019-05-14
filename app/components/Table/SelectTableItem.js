@@ -28,7 +28,7 @@ export default class SelectTableItem extends Component {
     return (
       <tr
         className={cx(styles.tableRow, {
-          [styles.tableDataRow]: !!onCheck
+          [styles.tableDataRow]: !!onCheck,
         })}
         onClick={this.handleCheck}
       >
@@ -49,10 +49,10 @@ export default class SelectTableItem extends Component {
 
 SelectTableItem.propTypes = {
   item: PropTypes.object,
-  onCheck: PropTypes.func
+  onCheck: PropTypes.func,
 };
 
 SelectTableItem.defaultProps = {
   item: {},
-  onCheck: null
+  onCheck: null,
 };

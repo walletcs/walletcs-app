@@ -1,60 +1,61 @@
 export const setAccountName = name => ({
   type: 'SET_ACCOUNT_NAME',
   payload: {
-    name
-  }
+    name,
+  },
 });
 
-export const setAddress = address => ({
+export const setAddress = (address, network) => ({
   type: 'SET_ADDRESS',
   payload: {
-    address
-  }
+    address,
+    network,
+  },
 });
 
 export const setPrivateKeys = keys => ({
   type: 'SET_PRIVATE_KEYS',
   payload: {
-    keys
-  }
+    keys,
+  },
 });
 
 export const setPublicKeys = keys => ({
   type: 'SET_PUBLIC_KEYS',
   payload: {
-    keys
-  }
+    keys,
+  },
 });
 
 export const setGeneratedFlag = flag => ({
   type: 'SET_GENERATED_FLAG',
   payload: {
-    flag
-  }
+    flag,
+  },
 });
 
 export const setTransactions = transactions => ({
   type: 'SET_TRANSACTIONS',
   payload: {
-    transactions
-  }
+    transactions,
+  },
 });
 
 export const setRawTransactions = rawTransactions => ({
   type: 'SET_RAW_TRANSACTIONS',
   payload: {
-    rawTransactions
-  }
+    rawTransactions,
+  },
 });
 
 export const setTransactionToSign = (transaction, checked) => ({
   type: 'SET_TRANSACTIONS_TO_SIGN',
   payload: {
     transaction,
-    checked
-  }
+    checked,
+  },
 });
 
 export const resetAccount = () => ({
-  type: 'RESET'
+  type: 'RESET',
 });

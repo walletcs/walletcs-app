@@ -25,7 +25,7 @@ class USBListener extends Component {
     });
   }
 
-  setDrives = async interval => {
+  setDrives = async (interval) => {
     const { setDrivesToStorageAction } = this.props;
     const drives = await getDrives();
 
@@ -47,18 +47,18 @@ class USBListener extends Component {
 
 USBListener.propTypes = {
   children: PropTypes.any.isRequired,
-  setDrivesToStorageAction: PropTypes.func.isRequired
+  setDrivesToStorageAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  path: state.drive.path
+  path: state.drive.path,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setDrivesToStorageAction: path => dispatch(setDrivesToStorage(path))
+  setDrivesToStorageAction: path => dispatch(setDrivesToStorage(path)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(USBListener);

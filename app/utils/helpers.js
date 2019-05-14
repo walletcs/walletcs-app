@@ -11,7 +11,7 @@ export const getDrives = async () => {
   const result = {};
 
   drives
-    .map(driveItem => {
+    .map((driveItem) => {
       let dir = [];
       const { path } = driveItem.mountpoints[0] || {};
 
@@ -36,7 +36,7 @@ export const getDrives = async () => {
       return { path, driveType: rawDriveType || 'emptyDrive' };
     })
     .filter(f => !!f)
-    .forEach(d => {
+    .forEach((d) => {
       result[d.driveType] = d.path;
     });
 
@@ -48,7 +48,7 @@ export const writeFile = (path, data) => {
 
   try {
     fd = fs.openSync(path, 'wx+');
-    fs.writeFileSync(path, data, { flag: 'rs+' });
+    fs.writeFileSync(path, JSON.stringify(data), { flag: 'rs+' });
   } catch (error) {
     console.error(error);
   } finally {
@@ -56,7 +56,7 @@ export const writeFile = (path, data) => {
   }
 };
 
-export const getTransactionType = trObj => {
+export const getTransactionType = (trObj) => {
   if (!trObj.transaction.data) {
     return 'BTC';
   }

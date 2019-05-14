@@ -17,12 +17,12 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
       {accounts.length ? (
         <Fragment>
           <div className={styles.message}>
-            {accounts.length} PUBLIC ADDRESSES generated:
+            {accounts.length}
+            {' '}
+PUBLIC ADDRESSES generated:
           </div>
           {accounts.map(item => (
-            <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${
-              item.account
-            }.txt`}</div>
+            <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${item.account}.json`}</div>
           ))}
         </Fragment>
       ) : (
@@ -40,17 +40,17 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
 Final.propTypes = {
   onCancel: PropTypes.func.isRequired,
   generatedFlag: PropTypes.bool,
-  publicKeys: PropTypes.array
+  publicKeys: PropTypes.array,
 };
 
 Final.defaultProps = {
   generatedFlag: false,
-  publicKeys: []
+  publicKeys: [],
 };
 
 const mapStateToProps = state => ({
   publicKeys: state.account.publicKeys,
-  generatedFlag: state.account.generatedFlag
+  generatedFlag: state.account.generatedFlag,
 });
 
 export default connect(mapStateToProps)(Final);

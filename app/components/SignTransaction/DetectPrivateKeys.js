@@ -10,7 +10,7 @@ import Button from '../Button';
 import Table from '../Table';
 
 import { setTransactions } from '../../actions/account';
-import { PRIVATE_KEY_PREFIX, BTC_NETWORK } from '../../utils/constants';
+import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.css';
 
@@ -32,32 +32,33 @@ class DetectPrivateKeys extends Component {
 
     const privateKeys = dir
       .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
-      .map(file => {
+      .map((file) => {
         let privateKey;
+        let keyNetwork;
 
         try {
-          privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          const privateKeyParsedData = JSON.parse(privateKeyData) || {};
+          privateKey = privateKeyParsedData.key;
+          keyNetwork = privateKeyParsedData.network;
         } catch (error) {
           console.error(error);
         }
 
-        return privateKey;
+        return { privateKey, keyNetwork };
       })
       .filter(f => !!f);
 
-    const {
-      transactions,
-      transactionsToSign,
-      setTransactionsAction
-    } = this.props;
+    const { transactions, transactionsToSign, setTransactionsAction } = this.props;
 
     const transactionsWithKeys = transactions
-      .filter(t => transactionsToSign.includes(t.data))
-      .map(transaction => {
-        const privateKey = privateKeys.find(k => {
+      .filter(t => transactionsToSign.includes(t.data || t.extra.hash))
+      .map((transaction) => {
+        const privateKey = privateKeys.find((k) => {
           let key;
+
           try {
-            key = EtherKeyPair.checkPair(transaction.extra.pub_key, k);
+            key = EtherKeyPair.checkPair(transaction.extra.pub_key, k.privateKey);
           } catch (error) {
             console.log('Invalid ether key pair');
           }
@@ -66,8 +67,8 @@ class DetectPrivateKeys extends Component {
             try {
               key = BitcoinCheckPair.checkPair(
                 transaction.extra.pub_key,
-                k,
-                BTC_NETWORK
+                k.privateKey,
+                k.keyNetwork,
               );
             } catch (error) {
               console.log('Invalid bitcoin key pair');
@@ -81,11 +82,10 @@ class DetectPrivateKeys extends Component {
           ...transaction,
           key: {
             privateKey,
-            foundKey: privateKey ? 'Yes' : 'No'
-          }
+            foundKey: privateKey ? 'Yes' : 'No',
+          },
         };
-      })
-      .filter(t => transactionsToSign.includes(t.data));
+      });
 
     setTransactionsAction(transactionsWithKeys);
   };
@@ -93,9 +93,9 @@ class DetectPrivateKeys extends Component {
   render() {
     const { transactions = [], next, onCancel } = this.props;
 
-    const isTransactionsExists = !!transactions.length;
+    const isTransactionsExists = transactions.some(t => (t.key || {}).privateKey);
     const data = transactions.map(tr => ({
-      fields: [tr.extra.file, (tr.key || {}).foundKey]
+      fields: [tr.extra.filename, (tr.key || {}).foundKey],
     }));
 
     return (
@@ -103,9 +103,7 @@ class DetectPrivateKeys extends Component {
         {isTransactionsExists ? (
           <Table data={data} headers={['FILE', 'KEY FOUND']} />
         ) : (
-          <div className={styles.message}>
-            Private keys for signing transactions not found
-          </div>
+          <div className={styles.message}>Private keys for signing transactions not found</div>
         )}
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
@@ -127,29 +125,29 @@ DetectPrivateKeys.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   transactions: PropTypes.array,
-  transactionsToSign: PropTypes.array
+  transactionsToSign: PropTypes.array,
 };
 
 DetectPrivateKeys.defaultProps = {
   drives: {},
   transactions: [],
-  transactionsToSign: []
+  transactionsToSign: [],
 };
 
 const mapStateToProps = state => ({
   drives: state.drive.drives,
   transactions: state.account.transactions,
-  transactionsToSign: state.account.transactionsToSign
+  transactionsToSign: state.account.transactionsToSign,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setTransactionsAction: keys => dispatch(setTransactions(keys))
+  setTransactionsAction: keys => dispatch(setTransactions(keys)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(DetectPrivateKeys);

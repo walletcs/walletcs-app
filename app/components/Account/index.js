@@ -7,13 +7,7 @@ import GeneratePublic from './GeneratePublic';
 import Final from './Final';
 import StepHandler from '../StepHandler';
 
-const steps = [
-  CheckPrivateFlash,
-  GeneratePrivate,
-  CheckPublicFlash,
-  GeneratePublic,
-  Final
-];
+const steps = [CheckPrivateFlash, GeneratePrivate, CheckPublicFlash, GeneratePublic, Final];
 
 const Account = props => <StepHandler {...props} steps={steps} />;
 

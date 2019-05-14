@@ -15,19 +15,20 @@ import styles from '../App/index.css';
 
 class GeneratePublic extends Component {
   state = {
-    loadingMsg: ''
+    loadingMsg: '',
   };
 
   savePublicKey = () => {
-    const { resetDrivesAction, next, drives, account } = this.props;
+    const {
+      resetDrivesAction, next, drives, account,
+    } = this.props;
     const { publicDrive, emptyDrive } = drives;
-    const { address, name } = account;
-    console.warn(account);
+    const { address, name, network } = account;
 
     this.setState({ loadingMsg: 'Calculating public key...' });
-    const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.txt`;
+    const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.json`;
 
-    writeFile(path, address);
+    writeFile(path, { key: address, network });
     resetDrivesAction();
     next();
   };
@@ -39,23 +40,21 @@ class GeneratePublic extends Component {
 
     // https://github.com/eslint/eslint/issues/9872
     // eslint-disable-next-line prefer-template
-    const addrname = 'addr-' + name + '.txt';
+    const addrname = 'addr-' + name + '.json';
 
     return (
       <Fragment>
         <div>
           <div>
             <div className={styles.infoText}>
-              After press &quot;Save address&quot; button this drive will
-              contain file with public address of your account.
+              After press &quot;Save address&quot; button this drive will contain file with public
+              address of your account.
             </div>
             <div className={cx(styles.infoText, styles.bold)}>
               You can safely distribute this address
             </div>
           </div>
-          <div style={{ color: '#828282', fontSize: 14, marginTop: 15 }}>
-            File to be created:
-          </div>
+          <div style={{ color: '#828282', fontSize: 14, marginTop: 15 }}>File to be created:</div>
           <div style={{ color: '#4F4F4F', fontSize: 16 }}>{addrname}</div>
         </div>
         <div className={styles.rowControls}>
@@ -80,28 +79,28 @@ GeneratePublic.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  resetDrivesAction: PropTypes.func.isRequired
+  resetDrivesAction: PropTypes.func.isRequired,
 };
 
 GeneratePublic.defaultProps = {
   account: {},
-  drives: {}
+  drives: {},
 };
 
 const mapStateToProps = state => ({
   drives: state.drive.drives,
-  account: state.account
+  account: state.account,
 });
 
 const mapDispatchToProps = dispatch => ({
-  resetDrivesAction: path => dispatch(resetDrives(path))
+  resetDrivesAction: path => dispatch(resetDrives(path)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(GeneratePublic);

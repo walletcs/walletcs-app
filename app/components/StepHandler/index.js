@@ -6,7 +6,7 @@ import styles from '../App/index.css';
 
 export default class StepHandler extends Component {
   state = {
-    activeStep: 0
+    activeStep: 0,
   };
 
   render() {
@@ -17,15 +17,12 @@ export default class StepHandler extends Component {
 
     return (
       <div className={styles.container}>
-        <Content
-          {...this.props}
-          next={() => this.setState({ activeStep: activeStep + 1 })}
-        />
+        <Content {...this.props} next={() => this.setState({ activeStep: activeStep + 1 })} />
       </div>
     );
   }
 }
 
 StepHandler.propTypes = {
-  steps: PropTypes.array.isRequired
+  steps: PropTypes.array.isRequired,
 };

@@ -151,3 +151,26 @@ body {
 .radioGroup {
   padding: 5px;
 }
+
+.recommend {
+  font-size: 18px;
+  text-align: center;
+  padding: 30px;
+  color: #26cd58;
+}
+
+.footer {
+  height: 15px;
+  background: #010d17;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.footerOffline {
+  color: #26cd58;
+}
+
+.footerOnline {
+  color: red;
+}

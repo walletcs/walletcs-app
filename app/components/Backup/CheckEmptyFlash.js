@@ -10,7 +10,7 @@ import device from '../../assets/Device.png';
 
 import styles from '../App/index.css';
 
-const CheckEmptyFlash = props => {
+const CheckEmptyFlash = (props) => {
   const { drives, next, onCancel } = props;
 
   if (drives.emptyDrive) {
@@ -25,7 +25,11 @@ const CheckEmptyFlash = props => {
         <img src={device} className={styles.icon} alt="" />
       </div>
       <div className={styles.insertPrivate}>
-        Insert <span className={styles.private}>Empty</span> key flash drive
+        Insert
+        {' '}
+        <span className={styles.private}>Empty</span>
+        {' '}
+key flash drive
       </div>
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
@@ -36,18 +40,18 @@ CheckEmptyFlash.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   next: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired
+  onCancel: PropTypes.func.isRequired,
 };
 
 CheckEmptyFlash.defaultProps = {
-  drives: {}
+  drives: {},
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 export default connect(mapStateToProps)(CheckEmptyFlash);

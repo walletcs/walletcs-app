@@ -24,34 +24,34 @@ const Logo = () => <img src={walletcsLogo} alt="" />;
 export default class App extends Component {
   state = {
     screen: null,
-    screenName: null
+    screenName: null,
   };
 
   setAccountScreen = () => {
     this.setState({
       screen: Account,
-      screenName: 'Generate Account'
+      screenName: 'Generate Account',
     });
   };
 
   setValidateScreen = () => {
     this.setState({
       screen: Validate,
-      screenName: 'Validate / Generate Address'
+      screenName: 'Validate / Generate Address',
     });
   };
 
   setBackupScreen = () => {
     this.setState({
       screen: Backup,
-      screenName: 'Backup Private Key Drive'
+      screenName: 'Backup Private Key Drive',
     });
   };
 
   setSignTransactionScreen = () => {
     this.setState({
       screen: SignTransaction,
-      screenName: 'Sign Transaction'
+      screenName: 'Sign Transaction',
     });
   };
 
@@ -66,11 +66,7 @@ export default class App extends Component {
       <MenuItem icon={validateIcon} onClick={() => this.setValidateScreen()}>
         Validate / Generate Address
       </MenuItem>
-      <MenuItem
-        primary
-        icon={signIcon}
-        onClick={() => this.setSignTransactionScreen()}
-      >
+      <MenuItem primary icon={signIcon} onClick={() => this.setSignTransactionScreen()}>
         Sign Transaction
       </MenuItem>
     </div>
@@ -79,7 +75,7 @@ export default class App extends Component {
   setDefaultScreen = () => {
     this.setState({
       screen: null,
-      screenName: null
+      screenName: null,
     });
   };
 
@@ -91,26 +87,33 @@ export default class App extends Component {
 
     if (screenSelected) {
       const Screen = screen;
-      content = <Screen onCancel={this.setDefaultScreen} />;
+      content = <Screen onCancel={this.setDefaultScreen} onValidate={this.setValidateScreen} />;
     } else {
       content = this.renderMenu();
     }
 
     return (
       <Provider store={store}>
-        <div
-          className={cx(styles.app, { [styles.whiteTheme]: screenSelected })}
-        >
+        <div className={cx(styles.app, { [styles.whiteTheme]: screenSelected })}>
           <div
             className={cx({
               [styles.flexHeader]: !screenSelected,
-              [styles.staticHeader]: screenSelected
+              [styles.staticHeader]: screenSelected,
             })}
           >
             <div className={styles.headerText}>{screenName || <Logo />}</div>
           </div>
           <div className={styles.content}>
             <USBListener>{content}</USBListener>
+          </div>
+          <div className={styles.footer}>
+            Network status:
+            {' '}
+            {navigator.onLine ? (
+              <span className={styles.footerOnline}>online</span>
+            ) : (
+              <span className={styles.footerOffline}>offline</span>
+            )}
           </div>
         </div>
       </Provider>
@@ -119,5 +122,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  store: PropTypes.any.isRequired
+  store: PropTypes.any.isRequired,
 };

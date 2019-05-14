@@ -5,6 +5,8 @@ import fs from 'fs';
 import { connect } from 'react-redux';
 import { EtherTransactionDecoder } from 'walletcs/src/index';
 import PropTypes from 'prop-types';
+import hash from 'object-hash';
+import omit from 'lodash.omit';
 
 import Button from '../Button';
 import Table from '../Table';
@@ -72,7 +74,7 @@ class SelectTransaction extends Component {
         }
 
         const trType = getTransactionType(tr);
-        const filename = `${element.file} (${tr.transaction.nonce})`;
+        const filename = `${element.file} (${tr.transaction.nonce || ''})`;
 
         data.push({
           ...tr.transaction,
@@ -82,11 +84,13 @@ class SelectTransaction extends Component {
             filename,
             type: trType,
             method: method.name,
+            hash: hash(tr.transaction),
           },
         });
       });
     });
 
+    console.warn(data);
     setTransactionsAction(data);
     setRawTransactionsAction(files);
   };
@@ -103,7 +107,7 @@ class SelectTransaction extends Component {
     const isKeysExists = !!transactions.length;
 
     const data = transactions.map(tr => ({
-      id: tr.data,
+      id: tr.data || tr.extra.hash,
       fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount],
     }));
 

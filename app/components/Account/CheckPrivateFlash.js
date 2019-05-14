@@ -9,11 +9,11 @@ import privateFlash from '../../assets/private_flash.png';
 import device from '../../assets/Device.png';
 import styles from '../App/index.css';
 
-const CheckPrivateFlash = props => {
-  const { drives, next, onlyPrivate, onCancel } = props;
-  const drive = onlyPrivate
-    ? drives.privateDrive
-    : drives.privateDrive || drives.emptyDrive;
+const CheckPrivateFlash = (props) => {
+  const {
+    drives, next, onlyPrivate, onCancel,
+  } = props;
+  const drive = onlyPrivate ? drives.privateDrive : drives.privateDrive || drives.emptyDrive;
 
   if (drive) {
     next();
@@ -27,7 +27,11 @@ const CheckPrivateFlash = props => {
         <img src={device} className={styles.icon} alt="" />
       </div>
       <div className={styles.insertPrivate}>
-        Insert <span className={styles.private}>Private</span> key flash drive
+        Insert
+        {' '}
+        <span className={styles.private}>Private</span>
+        {' '}
+key flash drive
       </div>
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
@@ -38,20 +42,20 @@ CheckPrivateFlash.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  onlyPrivate: PropTypes.bool
+  onlyPrivate: PropTypes.bool,
 };
 
 CheckPrivateFlash.defaultProps = {
   drives: {},
-  onlyPrivate: false
+  onlyPrivate: false,
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 export default connect(mapStateToProps)(CheckPrivateFlash);

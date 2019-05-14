@@ -1,18 +1,20 @@
 const initialState = {
-  drives: {}
+  drives: {},
 };
 
-export const driveReducer = (state = initialState, action) => {
+const driveReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_DRIVES':
       return {
-        drives: action.payload.drives
+        drives: action.payload.drives,
       };
     case 'RESET_DRIVES':
       return {
-        drives: {}
+        drives: {},
       };
     default:
       return state;
   }
 };
+
+export default driveReducer;

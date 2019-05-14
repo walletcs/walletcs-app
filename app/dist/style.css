@@ -224,6 +224,25 @@ html {
 .index__radioGroup__3pu5T {
   padding: 5px;
 }
+.index__recommend__2NU6j {
+  font-size: 18px;
+  text-align: center;
+  padding: 30px;
+  color: #26cd58;
+}
+.index__footer__1yMDn {
+  height: 15px;
+  background: #010d17;
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+}
+.index__footerOffline__iJi1s {
+  color: #26cd58;
+}
+.index__footerOnline__ZpqBW {
+  color: red;
+}
 .index__cbx__1sMI2 {
   margin: auto;
   -webkit-user-select: none;

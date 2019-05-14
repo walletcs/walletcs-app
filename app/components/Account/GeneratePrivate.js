@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { setAccountName, setAddress } from '../../actions/account';
 import { resetDrives } from '../../actions/drive';
 import { writeFile } from '../../utils/helpers';
-import { PRIVATE_KEY_PREFIX, BTC_NETWORK } from '../../utils/constants';
+import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
 import Button from '../Button';
 
@@ -18,15 +18,19 @@ class GeneratePrivate extends Component {
   state = {
     addressName: '',
     transactionType: null,
-    loadingMsg: null
+    loadingMsg: null,
   };
 
-  handleChange = addressName => {
+  handleChange = (addressName) => {
     this.setState({ addressName });
   };
 
-  handleTypeChange = transactionType => {
+  handleTypeChange = (transactionType) => {
     this.setState({ transactionType });
+  };
+
+  handleNetworkChange = (transactionNetwork) => {
+    this.setState({ transactionNetwork });
   };
 
   onSave = async () => {
@@ -48,7 +52,7 @@ class GeneratePrivate extends Component {
   generatePair = () => {
     let addressValue;
     let privateKeyValue;
-    const { transactionType } = this.state;
+    const { transactionType, transactionNetwork } = this.state;
 
     if (transactionType === 'eth') {
       const pair = EtherKeyPair.generatePair();
@@ -56,7 +60,7 @@ class GeneratePrivate extends Component {
       addressValue = pair.address;
       privateKeyValue = pair.privateKey;
     } else {
-      const pair = BitcoinCheckPair.generatePair(BTC_NETWORK);
+      const pair = BitcoinCheckPair.generatePair(transactionNetwork);
 
       [addressValue, privateKeyValue] = pair;
     }
@@ -65,7 +69,7 @@ class GeneratePrivate extends Component {
   };
 
   savePrivateKey = async () => {
-    const { addressName } = this.state;
+    const { addressName, transactionNetwork } = this.state;
     const { setAddressAction, resetDrivesAction } = this.props;
 
     if (!addressName) {
@@ -78,17 +82,16 @@ class GeneratePrivate extends Component {
 
     const res = await this.generatePair();
 
-    const path = `${privateDrive ||
-      emptyDrive}/${PRIVATE_KEY_PREFIX}${addressName}.txt`;
+    const path = `${privateDrive || emptyDrive}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
 
     try {
-      writeFile(path, res.privateKeyValue);
+      writeFile(path, { key: res.privateKeyValue, network: transactionNetwork });
     } catch (_) {
       this.setState({ loadingMsg: 'Error while writing file' });
       return false;
     }
 
-    setAddressAction(res.addressValue);
+    setAddressAction(res.addressValue, transactionNetwork);
     resetDrivesAction();
     this.setState({ loadingMsg: null });
 
@@ -96,8 +99,11 @@ class GeneratePrivate extends Component {
   };
 
   render() {
-    const { loadingMsg, addressName, transactionType } = this.state;
+    const {
+      loadingMsg, addressName, transactionType, transactionNetwork,
+    } = this.state;
     const { inputaddressName, onCancel } = this.props;
+    const showNext = transactionType === 'btc' ? !!transactionNetwork : !!transactionType;
 
     return (
       <Fragment>
@@ -128,6 +134,25 @@ class GeneratePrivate extends Component {
                 ETH
               </div>
             </RadioGroup>
+            {transactionType === 'btc' && (
+              <Fragment>
+                <div className={styles.label}>Network:</div>
+                <RadioGroup
+                  name="transactionNetwork"
+                  selectedValue={transactionNetwork}
+                  onChange={this.handleNetworkChange}
+                >
+                  <div>
+                    <Radio value="main" />
+                    Main
+                  </div>
+                  <div>
+                    <Radio value="test3" />
+                    Test
+                  </div>
+                </RadioGroup>
+              </Fragment>
+            )}
           </div>
         </div>
         <div className={styles.rowControls}>
@@ -138,7 +163,7 @@ class GeneratePrivate extends Component {
           ) : (
             <Fragment>
               <Button onClick={onCancel}>Cancel</Button>
-              {transactionType && (
+              {showNext && (
                 <Button onClick={this.onSave} primary>
                   Save private key
                 </Button>
@@ -155,32 +180,32 @@ GeneratePrivate.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   inputaddressName: PropTypes.string,
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   resetDrivesAction: PropTypes.func.isRequired,
   setAccountNameAction: PropTypes.func.isRequired,
-  setAddressAction: PropTypes.func.isRequired
+  setAddressAction: PropTypes.func.isRequired,
 };
 
 GeneratePrivate.defaultProps = {
   drives: {},
-  inputaddressName: ''
+  inputaddressName: '',
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 const mapDispatchToProps = dispatch => ({
   setAccountNameAction: name => dispatch(setAccountName(name)),
-  setAddressAction: address => dispatch(setAddress(address)),
-  resetDrivesAction: path => dispatch(resetDrives(path))
+  setAddressAction: (address, network) => dispatch(setAddress(address, network)),
+  resetDrivesAction: path => dispatch(resetDrives(path)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(GeneratePrivate);

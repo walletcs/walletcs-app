@@ -10,7 +10,7 @@ import device from '../../assets/Device.png';
 import publicFlash from '../../assets/public_flash.png';
 import styles from '../App/index.css';
 
-const CheckPublicFlash = props => {
+const CheckPublicFlash = (props) => {
   const { drives, next, onCancel } = props;
 
   if (drives.publicDrive || drives.emptyDrive) {
@@ -25,15 +25,9 @@ const CheckPublicFlash = props => {
         <img src={device} className={styles.icon} alt="" />
       </div>
       <div style={{ padding: 10, bottom: '10%' }}>
-        <div className={styles.publicPoints}>
-          1. Remove PRIVATE key flash drive
-        </div>
-        <div className={styles.publicPoints}>
-          2. Make sure you choose the right flash drive
-        </div>
-        <div className={styles.publicPoints}>
-          3. Insert Public Address flash drive
-        </div>
+        <div className={styles.publicPoints}>1. Remove PRIVATE key flash drive</div>
+        <div className={styles.publicPoints}>2. Make sure you choose the right flash drive</div>
+        <div className={styles.publicPoints}>3. Insert Public Address flash drive</div>
       </div>
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
@@ -44,18 +38,18 @@ CheckPublicFlash.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   next: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired
+  onCancel: PropTypes.func.isRequired,
 };
 
 CheckPublicFlash.defaultProps = {
-  drives: {}
+  drives: {},
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 export default connect(mapStateToProps)(CheckPublicFlash);

@@ -15,19 +15,10 @@ const Table = ({ headers, onCheck, data }) => {
       <tbody>
         <tr className={styles.tableRow}>
           {isCheckboxNeeded && (
-            <td
-              className={cx(
-                styles.tableCell,
-                styles.tableHeader,
-                styles.tableCheckbox
-              )}
-            />
+            <td className={cx(styles.tableCell, styles.tableHeader, styles.tableCheckbox)} />
           )}
           {headers.map(header => (
-            <td
-              key={header}
-              className={cx(styles.tableCell, styles.tableHeader)}
-            >
+            <td key={header} className={cx(styles.tableCell, styles.tableHeader)}>
               {header}
             </td>
           ))}
@@ -45,13 +36,13 @@ const Table = ({ headers, onCheck, data }) => {
 Table.propTypes = {
   data: PropTypes.array,
   headers: PropTypes.array,
-  onCheck: PropTypes.func
+  onCheck: PropTypes.func,
 };
 
 Table.defaultProps = {
   data: [],
   headers: [],
-  onCheck: null
+  onCheck: null,
 };
 
 export default Table;

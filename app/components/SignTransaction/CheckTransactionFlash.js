@@ -24,9 +24,7 @@ const CheckTransactionFlash = ({ drives, onCancel, next }) => {
         <FlashToDeviceIndicator flash="transaction" />
         <img src={device} className={styles.icon} alt="" />
       </div>
-      <div className={styles.insertPrivate}>
-        Insert flash drive with Transactions to sign
-      </div>
+      <div className={styles.insertPrivate}>Insert flash drive with Transactions to sign</div>
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>
   );
@@ -36,18 +34,18 @@ CheckTransactionFlash.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   next: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired
+  onCancel: PropTypes.func.isRequired,
 };
 
 CheckTransactionFlash.defaultProps = {
-  drives: {}
+  drives: {},
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 export default connect(mapStateToProps)(CheckTransactionFlash);

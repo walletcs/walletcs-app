@@ -10,17 +10,14 @@ import Button from '../Button';
 import { resetAccount } from '../../actions/account';
 import { writeFile } from '../../utils/helpers';
 
-import {
-  SIGNED_TRANSACTION_PREFIX,
-  TRANSACTION_PREFIX,
-  BTC_NETWORK
-} from '../../utils/constants';
+import { SIGNED_TRANSACTION_PREFIX, TRANSACTION_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.css';
 
 class Final extends Component {
   state = {
-    signed: false
+    signed: false,
+    error: null,
   };
 
   componentWillMount = () => {
@@ -35,8 +32,7 @@ class Final extends Component {
   };
 
   // eslint-disable-next-line react/destructuring-assignment
-  getTransactions = () =>
-    this.props.transactions.filter(t => t.key.privateKey) || [];
+  getTransactions = () => this.props.transactions.filter(t => t.key.privateKey) || [];
 
   signTransactions = async () => {
     const { drives, rawTransactions } = this.props;
@@ -44,14 +40,13 @@ class Final extends Component {
     const drive = drives.emptyDrive;
     const transactions = this.getTransactions();
 
-    rawTransactions.forEach(async fullTransaction => {
+    rawTransactions.forEach(async (fullTransaction) => {
       const { transaction } = fullTransaction;
 
       const signedTransactionsData = await Promise.all(
-        transaction.transactions.map(async tr => {
-          const trForSign = transactions.find(
-            t => t.data === tr.transaction.data
-          );
+        transaction.transactions.map(async (tr) => {
+          const trForSign = transactions.find(t => t.data === tr.transaction.data);
+
           let signature;
 
           if (trForSign) {
@@ -60,37 +55,36 @@ class Final extends Component {
             try {
               if (trForSign.extra.type === 'BTC') {
                 signature = await BitcoinTransaction.sign(
-                  trForSign.key.privateKey,
+                  trForSign.key.privateKey.privateKey,
                   signData,
-                  BTC_NETWORK
+                  trForSign.key.privateKey.keyNetwork,
                 );
               } else {
                 signature = await EtherTransaction.sign(
-                  trForSign.key.privateKey,
-                  signData
+                  trForSign.key.privateKey.privateKey,
+                  signData,
                 );
               }
             } catch (error) {
               console.error(error);
+              this.setState({ error });
             }
           }
 
           return { transaction: signature || tr };
-        })
+        }),
       );
 
       const signedTransaction = {
         ...fullTransaction.transaction,
-        transactions: signedTransactionsData
+        transactions: signedTransactionsData,
       };
 
-      const filename = fullTransaction.file
-        .replace(TRANSACTION_PREFIX, '')
-        .replace(/\(d?\)/, '');
+      const filename = fullTransaction.file.replace(TRANSACTION_PREFIX, '').replace(/\(d?\)/, '');
 
       const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`;
 
-      writeFile(path, JSON.stringify(signedTransaction));
+      writeFile(path, signedTransaction);
     });
 
     this.setState({ signed: true });
@@ -98,7 +92,7 @@ class Final extends Component {
 
   render() {
     const signedTransactions = this.getTransactions();
-    const { signed } = this.state;
+    const { signed, error } = this.state;
 
     if (!signed) {
       return (
@@ -112,13 +106,26 @@ class Final extends Component {
       <Fragment>
         {signedTransactions.length ? (
           <Fragment>
-            <div className={styles.message}>
-              You have successfully signed {signedTransactions.length}{' '}
-              transactions
-            </div>
-            {signedTransactions.map(item => (
-              <div className={styles.message}>{item.file}</div>
-            ))}
+            {error ? (
+              <div className={styles.message}>
+                An error has occured while signing transactions:
+                {' '}
+                {error.message}
+              </div>
+            ) : (
+              <Fragment>
+                <div className={styles.message}>
+                  You have successfully signed
+                  {' '}
+                  {signedTransactions.length}
+                  {' '}
+transactions
+                </div>
+                {signedTransactions.map(item => (
+                  <div className={styles.message}>{item.file}</div>
+                ))}
+              </Fragment>
+            )}
           </Fragment>
         ) : (
           <div className={styles.message}>Transactions not signed</div>
@@ -137,32 +144,32 @@ Final.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   onCancel: PropTypes.func.isRequired,
   rawTransactions: PropTypes.array,
   resetAccountAction: PropTypes.func.isRequired,
-  transactions: PropTypes.array
+  transactions: PropTypes.array,
 };
 
 Final.defaultProps = {
   transactions: [],
   rawTransactions: [],
-  drives: {}
+  drives: {},
 };
 
 const mapStateToProps = state => ({
   drives: state.drive.drives,
   transactions: state.account.transactions,
   transactionsToSign: state.account.transactionsToSign,
-  rawTransactions: state.account.rawTransactions
+  rawTransactions: state.account.rawTransactions,
 });
 
 const mapDispatchToProps = dispatch => ({
-  resetAccountAction: () => dispatch(resetAccount())
+  resetAccountAction: () => dispatch(resetAccount()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Final);

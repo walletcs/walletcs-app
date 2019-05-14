@@ -13,11 +13,9 @@ const steps = [
   CheckPrivateFlash,
   DetectPrivateKeys,
   CheckTransactionFlash,
-  Final
+  Final,
 ];
 
-const SignTransaction = props => (
-  <StepHandler {...props} steps={steps} onlyPrivate />
-);
+const SignTransaction = props => <StepHandler {...props} steps={steps} onlyPrivate />;
 
 export default SignTransaction;

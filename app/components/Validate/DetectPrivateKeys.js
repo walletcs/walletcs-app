@@ -3,7 +3,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
-import { EtherKeyPair } from 'walletcs/src/index';
+import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
@@ -36,13 +36,22 @@ class DetectPrivateKeys extends Component {
 
     const res = dir
       .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
-      .map(file => {
+      .map((file) => {
         let privateKey;
         let publicKey;
+        let keyNetwork;
 
         try {
-          privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
-          publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
+          const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          const privateKeyParsedData = JSON.parse(privateKeyData) || {};
+          privateKey = privateKeyParsedData.key;
+          keyNetwork = privateKeyParsedData.network;
+
+          if (privateKey.startsWith('0x')) {
+            publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
+          } else {
+            publicKey = BitcoinCheckPair.recoveryPublicKey(privateKey, keyNetwork);
+          }
         } catch (error) {
           console.error(error);
         }
@@ -50,7 +59,8 @@ class DetectPrivateKeys extends Component {
         return {
           privateKey,
           publicKey,
-          account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
+          keyNetwork,
+          account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.json', ''),
         };
       });
 
@@ -62,7 +72,7 @@ class DetectPrivateKeys extends Component {
     const isKeysExists = !!keys.length;
     const data = keys.map(item => ({
       id: item.publicKey,
-      fields: [item.publicKey]
+      fields: [item.publicKey],
     }));
 
     return (
@@ -94,26 +104,26 @@ DetectPrivateKeys.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
-  keys: PropTypes.array
+  keys: PropTypes.array,
 };
 
 DetectPrivateKeys.defaultProps = {
   drives: {},
-  keys: []
+  keys: [],
 };
 
 const mapStateToProps = state => ({
   keys: state.account.keys,
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setPrivateKeysAction: keys => dispatch(setPrivateKeys(keys))
+  setPrivateKeysAction: keys => dispatch(setPrivateKeys(keys)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(DetectPrivateKeys);

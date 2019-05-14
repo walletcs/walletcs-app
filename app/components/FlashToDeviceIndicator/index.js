@@ -29,7 +29,7 @@ class FlashToDeviceIndicator extends Component {
           <div
             key={num}
             className={cx(styles.element, {
-              [styles[flash]]: active === num
+              [styles[flash]]: active === num,
             })}
           />
         ))}
@@ -39,8 +39,7 @@ class FlashToDeviceIndicator extends Component {
 }
 
 FlashToDeviceIndicator.propTypes = {
-  flash: PropTypes.oneOf(['private', 'public', 'empty', 'transaction'])
-    .isRequired
+  flash: PropTypes.oneOf(['private', 'public', 'empty', 'transaction']).isRequired,
 };
 
 export default FlashToDeviceIndicator;

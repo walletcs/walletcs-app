@@ -30,18 +30,19 @@ class CopyKeys extends Component {
 
     const res = dir
       .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
-      .map(file => {
-        let privateKey;
+      .map((file) => {
+        let privateKeyParsedData;
 
         try {
-          privateKey = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          privateKeyParsedData = JSON.parse(privateKeyData) || {};
         } catch (error) {
           console.error(error);
         }
 
         return {
-          privateKey,
-          account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.txt', '')
+          privateKeyParsedData,
+          account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.json', ''),
         };
       });
 
@@ -53,9 +54,7 @@ class CopyKeys extends Component {
 
     return (
       <Fragment>
-        <div className={styles.insertPrivate}>
-          Private Key flash drive copied
-        </div>
+        <div className={styles.insertPrivate}>Private Key flash drive copied</div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
           <Button onClick={next} primary>
@@ -71,27 +70,27 @@ CopyKeys.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  setPrivateKeysAction: PropTypes.func.isRequired
+  setPrivateKeysAction: PropTypes.func.isRequired,
 };
 
 CopyKeys.defaultProps = {
-  drives: {}
+  drives: {},
 };
 
 const mapStateToProps = state => ({
   keys: state.account.keys,
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setPrivateKeysAction: k => dispatch(setPrivateKeys(k))
+  setPrivateKeysAction: k => dispatch(setPrivateKeys(k)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(CopyKeys);

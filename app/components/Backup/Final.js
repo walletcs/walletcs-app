@@ -21,11 +21,11 @@ class Final extends Component {
     const { emptyDrive } = drives;
     const keysForRestore = keys;
 
-    keysForRestore.forEach(k => {
-      const { account, privateKey } = k;
-      const path = `${emptyDrive}/${PRIVATE_KEY_PREFIX}${account}.txt`;
+    keysForRestore.forEach((k) => {
+      const { account, privateKeyParsedData } = k;
+      const path = `${emptyDrive}/${PRIVATE_KEY_PREFIX}${account}.json`;
 
-      writeFile(path, privateKey);
+      writeFile(path, privateKeyParsedData);
     });
   };
 
@@ -52,19 +52,19 @@ Final.propTypes = {
   drives: PropTypes.shape({
     emptyDrive: PropTypes.string,
     publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string
+    privateDrive: PropTypes.string,
   }),
-  keys: PropTypes.array
+  keys: PropTypes.array,
 };
 
 Final.defaultProps = {
   drives: {},
-  keys: []
+  keys: [],
 };
 
 const mapStateToProps = state => ({
   keys: state.account.keys,
-  drives: state.drive.drives
+  drives: state.drive.drives,
 });
 
 export default connect(mapStateToProps)(Final);

@@ -12,7 +12,7 @@ const steps = [
   DetectPrivateKeys,
   CheckPublicFlash,
   DetectPublicAddresses,
-  Final
+  Final,
 ];
 
 const Validate = props => <StepHandler {...props} steps={steps} />;
