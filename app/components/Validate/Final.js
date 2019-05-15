@@ -22,7 +22,7 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
 PUBLIC ADDRESSES generated:
           </div>
           {accounts.map(item => (
-            <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${item.account}.json`}</div>
+            <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${item.account}.txt`}</div>
           ))}
         </Fragment>
       ) : (

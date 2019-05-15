@@ -43,12 +43,13 @@ export const getDrives = async () => {
   return result;
 };
 
-export const writeFile = (path, data) => {
+export const writeFile = (path, data, options = {}) => {
   let fd;
 
   try {
+    const dataToWrite = options.txt ? data : JSON.stringify(data);
     fd = fs.openSync(path, 'wx+');
-    fs.writeFileSync(path, JSON.stringify(data), { flag: 'rs+' });
+    fs.writeFileSync(path, dataToWrite, { flag: 'rs+' });
   } catch (error) {
     console.error(error);
   } finally {

@@ -25,7 +25,23 @@ export default class App extends Component {
   state = {
     screen: null,
     screenName: null,
+    online: navigator.onLine,
   };
+
+  componentWillMount() {
+    window.addEventListener('online', () => {
+      this.setState({ online: true });
+    });
+
+    window.addEventListener('offline', () => {
+      this.setState({ online: false });
+    });
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('online');
+    window.removeEventListener('offline');
+  }
 
   setAccountScreen = () => {
     this.setState({
@@ -81,7 +97,7 @@ export default class App extends Component {
 
   render() {
     let content;
-    const { screenName, screen } = this.state;
+    const { screenName, screen, online } = this.state;
     const { store } = this.props;
     const screenSelected = !!screen;
 
@@ -109,7 +125,7 @@ export default class App extends Component {
           <div className={styles.footer}>
             Network status:
             {' '}
-            {navigator.onLine ? (
+            {online ? (
               <span className={styles.footerOnline}>online</span>
             ) : (
               <span className={styles.footerOffline}>offline</span>

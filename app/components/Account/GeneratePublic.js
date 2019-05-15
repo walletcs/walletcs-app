@@ -23,12 +23,12 @@ class GeneratePublic extends Component {
       resetDrivesAction, next, drives, account,
     } = this.props;
     const { publicDrive, emptyDrive } = drives;
-    const { address, name, network } = account;
+    const { address, name } = account;
 
     this.setState({ loadingMsg: 'Calculating public key...' });
-    const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.json`;
+    const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.txt`;
 
-    writeFile(path, { key: address, network });
+    writeFile(path, address, { txt: true });
     resetDrivesAction();
     next();
   };
@@ -40,7 +40,7 @@ class GeneratePublic extends Component {
 
     // https://github.com/eslint/eslint/issues/9872
     // eslint-disable-next-line prefer-template
-    const addrname = 'addr-' + name + '.json';
+    const addrname = 'addr-' + name + '.txt';
 
     return (
       <Fragment>

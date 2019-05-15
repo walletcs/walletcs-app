@@ -55,8 +55,8 @@ class DetectPublicAddresses extends Component {
         }
 
         const { account } = k;
-        const path = `${drive}/${PUBLIC_KEY_PREFIX}${account}.json`;
-        writeFile(path, { key: address, network: k.keyNetwork });
+        const path = `${drive}/${PUBLIC_KEY_PREFIX}${account}.txt`;
+        writeFile(path, address, { txt: true });
       });
     }
 
@@ -82,8 +82,7 @@ class DetectPublicAddresses extends Component {
         let res;
 
         try {
-          const data = fs.readFileSync(`${drive}/${pkfile}`, 'utf-8');
-          res = (JSON.parse(data) || {}).key;
+          res = fs.readFileSync(`${drive}/${pkfile}`, 'utf-8');
         } catch (error) {
           console.error(error);
         }
