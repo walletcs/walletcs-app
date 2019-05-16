@@ -28,7 +28,12 @@ class GeneratePublic extends Component {
     this.setState({ loadingMsg: 'Calculating public key...' });
     const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.txt`;
 
-    writeFile(path, address, { txt: true });
+    try {
+      writeFile(path, address, { txt: true });
+    } catch (error) {
+      const extraPath = path.replace('.txt', '').concat(`-${Date.now()}.txt`);
+      writeFile(extraPath, address, { txt: true });
+    }
     resetDrivesAction();
     next();
   };

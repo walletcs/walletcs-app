@@ -19,6 +19,7 @@ class GeneratePrivate extends Component {
     addressName: '',
     transactionType: null,
     loadingMsg: null,
+    error: null,
   };
 
   handleChange = (addressName) => {
@@ -87,7 +88,10 @@ class GeneratePrivate extends Component {
     try {
       writeFile(path, { key: res.privateKeyValue, network: transactionNetwork });
     } catch (_) {
-      this.setState({ loadingMsg: 'Error while writing file' });
+      this.setState({
+        error: 'File already exists. Please enter a different name',
+        loadingMsg: null,
+      });
       return false;
     }
 
@@ -100,7 +104,7 @@ class GeneratePrivate extends Component {
 
   render() {
     const {
-      loadingMsg, addressName, transactionType, transactionNetwork,
+      loadingMsg, addressName, transactionType, transactionNetwork, error,
     } = this.state;
     const { inputaddressName, onCancel } = this.props;
     const showNext = transactionType === 'btc' ? !!transactionNetwork : !!transactionType;
@@ -155,6 +159,7 @@ class GeneratePrivate extends Component {
             )}
           </div>
         </div>
+        <div>{error}</div>
         <div className={styles.rowControls}>
           {loadingMsg ? (
             <div style={{ display: 'block' }}>
