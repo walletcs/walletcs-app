@@ -82,6 +82,9 @@
       ],
       "category": "Development"
     },
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
     "directories": {
       "buildResources": "resources",
       "output": "release"
