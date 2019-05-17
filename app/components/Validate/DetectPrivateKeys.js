@@ -79,7 +79,7 @@ class DetectPrivateKeys extends Component {
 
     return (
       <Fragment>
-        <div>
+        <div className={styles.contentWrapper}>
           {isKeysExists ? (
             <Table data={data} headers={['ADDRESS']} />
           ) : (

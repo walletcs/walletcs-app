@@ -100,11 +100,13 @@ class DetectPrivateKeys extends Component {
 
     return (
       <Fragment>
-        {isTransactionsExists ? (
-          <Table data={data} headers={['FILE', 'KEY FOUND']} />
-        ) : (
-          <div className={styles.message}>Private keys for signing transactions not found</div>
-        )}
+        <div className={styles.contentWrapper}>
+          {isTransactionsExists ? (
+            <Table data={data} headers={['FILE', 'KEY FOUND']} />
+          ) : (
+            <div className={styles.message}>Private keys for signing transactions not found</div>
+          )}
+        </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
           {isTransactionsExists && (

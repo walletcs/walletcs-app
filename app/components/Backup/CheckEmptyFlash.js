@@ -19,17 +19,19 @@ const CheckEmptyFlash = (props) => {
 
   return (
     <Fragment>
-      <div className={styles.icons}>
-        <img src={emptyDrive} className={styles.icon} alt="" />
-        <FlashToDeviceIndicator flash="empty" />
-        <img src={device} className={styles.icon} alt="" />
-      </div>
-      <div className={styles.insertPrivate}>
-        Insert
-        {' '}
-        <span className={styles.private}>Empty</span>
-        {' '}
+      <div className={styles.contentWrapper}>
+        <div className={styles.icons}>
+          <img src={emptyDrive} className={styles.icon} alt="" />
+          <FlashToDeviceIndicator flash="empty" />
+          <img src={device} className={styles.icon} alt="" />
+        </div>
+        <div className={styles.insertPrivate}>
+          Insert
+          {' '}
+          <span className={styles.private}>Empty</span>
+          {' '}
 key flash drive
+        </div>
       </div>
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>

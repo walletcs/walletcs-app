@@ -21,17 +21,19 @@ const CheckPrivateFlash = (props) => {
 
   return (
     <Fragment>
-      <div className={styles.icons}>
-        <img src={privateFlash} className={styles.icon} alt="" />
-        <FlashToDeviceIndicator flash="private" />
-        <img src={device} className={styles.icon} alt="" />
-      </div>
-      <div className={styles.insertPrivate}>
-        Insert
-        {' '}
-        <span className={styles.private}>Private</span>
-        {' '}
+      <div className={styles.contentWrapper}>
+        <div className={styles.icons}>
+          <img src={privateFlash} className={styles.icon} alt="" />
+          <FlashToDeviceIndicator flash="private" />
+          <img src={device} className={styles.icon} alt="" />
+        </div>
+        <div className={styles.insertPrivate}>
+          Insert
+          {' '}
+          <span className={styles.private}>Private</span>
+          {' '}
 key flash drive
+        </div>
       </div>
       <Button onClick={onCancel}>Cancel</Button>
     </Fragment>

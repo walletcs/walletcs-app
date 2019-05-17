@@ -49,7 +49,7 @@ class GeneratePublic extends Component {
 
     return (
       <Fragment>
-        <div>
+        <div className={styles.contentWrapper}>
           <div>
             <div className={styles.infoText}>
               After press &quot;Save address&quot; button this drive will contain file with public
@@ -59,7 +59,15 @@ class GeneratePublic extends Component {
               You can safely distribute this address
             </div>
           </div>
-          <div style={{ color: '#828282', fontSize: 14, marginTop: 15 }}>File to be created:</div>
+          <div
+            style={{
+              color: '#828282',
+              fontSize: 14,
+              marginTop: 15,
+            }}
+          >
+            File to be created:
+          </div>
           <div style={{ color: '#4F4F4F', fontSize: 16 }}>{addrname}</div>
         </div>
         <div className={styles.rowControls}>

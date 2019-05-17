@@ -54,7 +54,9 @@ class CopyKeys extends Component {
 
     return (
       <Fragment>
-        <div className={styles.insertPrivate}>Private Key flash drive copied</div>
+        <div className={styles.contentWrapper}>
+          <div className={styles.insertPrivate}>Private Key flash drive copied</div>
+        </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
           <Button onClick={next} primary>

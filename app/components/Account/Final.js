@@ -8,28 +8,30 @@ import styles from '../App/index.css';
 
 const Final = ({ accountName, onCancel, onValidate }) => (
   <Fragment>
-    <div
-      style={{
-        margin: 5,
-        color: '#4F4F4F',
-        fontSize: 16,
-        textAlign: 'center',
-      }}
-    >
-      {`You have successfully created an account: ${accountName}`}
+    <div className={styles.contentWrapper}>
+      <div
+        style={{
+          margin: 5,
+          color: '#4F4F4F',
+          fontSize: 16,
+          textAlign: 'center',
+        }}
+      >
+        {`You have successfully created an account: ${accountName}`}
+      </div>
+      <div
+        style={{
+          margin: 20,
+          color: '#4F4F4F',
+          fontSize: 16,
+          textAlign: 'center',
+          fontWeight: '600',
+        }}
+      >
+        Please remember to securely store your private key flash drive!
+      </div>
+      <div className={styles.recommend}>We recommend to validate your account</div>
     </div>
-    <div
-      style={{
-        margin: 20,
-        color: '#4F4F4F',
-        fontSize: 16,
-        textAlign: 'center',
-        fontWeight: '600',
-      }}
-    >
-      Please remember to securely store your private key flash drive!
-    </div>
-    <div className={styles.recommend}>We recommend to validate your account</div>
     <div className={styles.rowControls}>
       <Button onClick={onValidate} primary>
         Validate

@@ -108,32 +108,34 @@ class Final extends Component {
 
     return (
       <Fragment>
-        {signedTransactions.length ? (
-          <Fragment>
-            {error ? (
-              <div className={styles.message}>
-                An error has occured while signing transactions:
-                {' '}
-                {error.message}
-              </div>
-            ) : (
-              <Fragment>
+        <div className={styles.contentWrapper}>
+          {signedTransactions.length ? (
+            <Fragment>
+              {error ? (
                 <div className={styles.message}>
-                  You have successfully signed
+                  An error has occured while signing transactions:
                   {' '}
-                  {signedTransactions.length}
-                  {' '}
-transactions
+                  {error.message}
                 </div>
-                {signedTransactions.map(item => (
-                  <div className={styles.message}>{item.file}</div>
-                ))}
-              </Fragment>
-            )}
-          </Fragment>
-        ) : (
-          <div className={styles.message}>Transactions not signed</div>
-        )}
+              ) : (
+                <Fragment>
+                  <div className={styles.message}>
+                    You have successfully signed
+                    {' '}
+                    {signedTransactions.length}
+                    {' '}
+transactions
+                  </div>
+                  {signedTransactions.map(item => (
+                    <div className={styles.message}>{item.file}</div>
+                  ))}
+                </Fragment>
+              )}
+            </Fragment>
+          ) : (
+            <div className={styles.message}>Transactions not signed</div>
+          )}
+        </div>
         <div className={styles.rowControls}>
           <Button onClick={this.done} primary>
             Done

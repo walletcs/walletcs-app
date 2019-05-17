@@ -113,15 +113,17 @@ class SelectTransaction extends Component {
 
     return (
       <Fragment>
-        {isKeysExists ? (
-          <Table
-            data={data}
-            headers={['FILE', 'TYPE', 'TO', 'METHOD', 'AMOUNT']}
-            onCheck={this.checkTransaction}
-          />
-        ) : (
-          <div className={styles.message}>Transactions not found</div>
-        )}
+        <div className={styles.contentWrapper}>
+          {isKeysExists ? (
+            <Table
+              data={data}
+              headers={['FILE', 'TYPE', 'TO', 'METHOD', 'AMOUNT']}
+              onCheck={this.checkTransaction}
+            />
+          ) : (
+            <div className={styles.message}>Transactions not found</div>
+          )}
+        </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
           {isKeysExists && (

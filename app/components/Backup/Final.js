@@ -34,8 +34,10 @@ class Final extends Component {
 
     return (
       <Fragment>
-        <div className={styles.message}>
-          You have successfully backed up your drive with private key
+        <div className={styles.contentWrapper}>
+          <div className={styles.message}>
+            You have successfully backed up your drive with private key
+          </div>
         </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel} primary>

@@ -14,20 +14,22 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
 
   return (
     <Fragment>
-      {accounts.length ? (
-        <Fragment>
-          <div className={styles.message}>
-            {accounts.length}
-            {' '}
+      <div className={styles.contentWrapper}>
+        {accounts.length ? (
+          <Fragment>
+            <div className={styles.message}>
+              {accounts.length}
+              {' '}
 PUBLIC ADDRESSES generated:
-          </div>
-          {accounts.map(item => (
-            <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${item.account}.txt`}</div>
-          ))}
-        </Fragment>
-      ) : (
-        <div className={styles.message}>There is no keys for restore.</div>
-      )}
+            </div>
+            {accounts.map(item => (
+              <div className={styles.message}>{`${PUBLIC_KEY_PREFIX}${item.account}.txt`}</div>
+            ))}
+          </Fragment>
+        ) : (
+          <div className={styles.message}>There is no keys for restore.</div>
+        )}
+      </div>
       <div className={styles.rowControls}>
         <Button onClick={onCancel} primary>
           Done

@@ -113,13 +113,15 @@ class DetectPublicAddresses extends Component {
 
     return (
       <Fragment>
-        <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
-        <div className={styles.generateCheckboxContainer}>
-          <Checkbox
-            checked={generate}
-            onChange={this.onGenerateChange}
-            label="Generate missing keys"
-          />
+        <div className={styles.contentWrapper}>
+          <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
+          <div className={styles.generateCheckboxContainer}>
+            <Checkbox
+              checked={generate}
+              onChange={this.onGenerateChange}
+              label="Generate missing keys"
+            />
+          </div>
         </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>

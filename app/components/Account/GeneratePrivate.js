@@ -115,7 +115,7 @@ class GeneratePrivate extends Component {
 
     return (
       <Fragment>
-        <div style={{ width: '100%' }}>
+        <div className={styles.contentWrapper}>
           <div className={styles.inputWrapper}>
             <div className={styles.label}>Account name</div>
             <input
