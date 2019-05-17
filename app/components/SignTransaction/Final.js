@@ -71,7 +71,11 @@ class Final extends Component {
             }
           }
 
-          return { transaction: signature || tr };
+          if (signature) {
+            return { transaction: signature };
+          }
+
+          return tr;
         }),
       );
 
