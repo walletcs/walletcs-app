@@ -45,7 +45,7 @@ class DetectPublicAddresses extends Component {
         let address;
 
         try {
-          if (k.privateKey.startsWith('0x')) {
+          if (k.keyType === 'ETH') {
             address = EtherKeyPair.recoveryPublicKey(k.privateKey);
           } else {
             address = BitcoinCheckPair.recoveryPublicKey(k.privateKey, k.keyNetwork);

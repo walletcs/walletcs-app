@@ -40,14 +40,16 @@ class DetectPrivateKeys extends Component {
         let privateKey;
         let publicKey;
         let keyNetwork;
+        let keyType;
 
         try {
           const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
           const privateKeyParsedData = JSON.parse(privateKeyData) || {};
           privateKey = privateKeyParsedData.key;
           keyNetwork = privateKeyParsedData.network;
+          keyType = privateKeyParsedData.type;
 
-          if (privateKey.startsWith('0x')) {
+          if (keyType === 'ETH') {
             publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
           } else {
             publicKey = BitcoinCheckPair.recoveryPublicKey(privateKey, keyNetwork);

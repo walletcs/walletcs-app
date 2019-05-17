@@ -55,7 +55,7 @@ class GeneratePrivate extends Component {
     let privateKeyValue;
     const { transactionType, transactionNetwork } = this.state;
 
-    if (transactionType === 'eth') {
+    if (transactionType === 'ETH') {
       const pair = EtherKeyPair.generatePair();
 
       addressValue = pair.address;
@@ -70,7 +70,7 @@ class GeneratePrivate extends Component {
   };
 
   savePrivateKey = async () => {
-    const { addressName, transactionNetwork } = this.state;
+    const { addressName, transactionNetwork, transactionType } = this.state;
     const { setAddressAction, resetDrivesAction } = this.props;
 
     if (!addressName) {
@@ -86,7 +86,11 @@ class GeneratePrivate extends Component {
     const path = `${privateDrive || emptyDrive}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
 
     try {
-      writeFile(path, { key: res.privateKeyValue, network: transactionNetwork });
+      writeFile(path, {
+        key: res.privateKeyValue,
+        network: transactionType === 'ETH' ? 'ETH' : transactionNetwork,
+        type: transactionType,
+      });
     } catch (_) {
       this.setState({
         error: 'File already exists. Please enter a different name',
@@ -107,7 +111,7 @@ class GeneratePrivate extends Component {
       loadingMsg, addressName, transactionType, transactionNetwork, error,
     } = this.state;
     const { inputaddressName, onCancel } = this.props;
-    const showNext = transactionType === 'btc' ? !!transactionNetwork : !!transactionType;
+    const showNext = transactionType === 'BTC' ? !!transactionNetwork : !!transactionType;
 
     return (
       <Fragment>
@@ -130,15 +134,15 @@ class GeneratePrivate extends Component {
               onChange={this.handleTypeChange}
             >
               <div>
-                <Radio value="btc" />
+                <Radio value="BTC" />
                 BTC
               </div>
               <div>
-                <Radio value="eth" />
+                <Radio value="ETH" />
                 ETH
               </div>
             </RadioGroup>
-            {transactionType === 'btc' && (
+            {transactionType === 'BTC' && (
               <Fragment>
                 <div className={styles.label}>Network:</div>
                 <RadioGroup
