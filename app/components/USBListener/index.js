@@ -50,15 +50,11 @@ USBListener.propTypes = {
   setDrivesToStorageAction: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  path: state.drive.path,
-});
-
 const mapDispatchToProps = dispatch => ({
   setDrivesToStorageAction: path => dispatch(setDrivesToStorage(path)),
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(USBListener);

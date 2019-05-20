@@ -30,7 +30,7 @@ const Final = ({ accountName, onCancel, onValidate }) => (
       >
         Please remember to securely store your private key flash drive!
       </div>
-      <div className={styles.recommend}>We recommend to validate your account</div>
+      <div className={styles.recommend}>We highly recommend to validate your account now</div>
     </div>
     <div className={styles.rowControls}>
       <Button onClick={onValidate} primary>

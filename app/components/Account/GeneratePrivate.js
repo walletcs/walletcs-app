@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-for */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
@@ -17,7 +19,7 @@ import styles from '../App/index.css';
 class GeneratePrivate extends Component {
   state = {
     addressName: '',
-    transactionType: null,
+    blockchain: null,
     loadingMsg: null,
     error: null,
   };
@@ -26,19 +28,19 @@ class GeneratePrivate extends Component {
     this.setState({ addressName });
   };
 
-  handleTypeChange = (transactionType) => {
-    this.setState({ transactionType });
+  handleTypeChange = (blockchain) => {
+    this.setState({ blockchain });
   };
 
-  handleNetworkChange = (transactionNetwork) => {
-    this.setState({ transactionNetwork });
+  handleNetworkChange = (network) => {
+    this.setState({ network });
   };
 
   onSave = async () => {
-    const { transactionType, addressName } = this.state;
+    const { blockchain, addressName } = this.state;
     const { setAccountNameAction, next } = this.props;
 
-    if (!transactionType || !addressName) {
+    if (!blockchain || !addressName) {
       return;
     }
 
@@ -53,15 +55,15 @@ class GeneratePrivate extends Component {
   generatePair = () => {
     let addressValue;
     let privateKeyValue;
-    const { transactionType, transactionNetwork } = this.state;
+    const { blockchain, network } = this.state;
 
-    if (transactionType === 'ETH') {
+    if (blockchain === 'ETH') {
       const pair = EtherKeyPair.generatePair();
 
       addressValue = pair.address;
       privateKeyValue = pair.privateKey;
     } else {
-      const pair = BitcoinCheckPair.generatePair(transactionNetwork);
+      const pair = BitcoinCheckPair.generatePair(network);
 
       [addressValue, privateKeyValue] = pair;
     }
@@ -70,14 +72,14 @@ class GeneratePrivate extends Component {
   };
 
   savePrivateKey = async () => {
-    const { addressName, transactionNetwork, transactionType } = this.state;
+    const { addressName, network, blockchain } = this.state;
     const { setAddressAction, resetDrivesAction } = this.props;
 
     if (!addressName) {
       return false;
     }
 
-    this.setState({ loadingMsg: 'Generating private key...' });
+    this.setState({ error: null, loadingMsg: 'Generating private key...' });
     const { drives } = this.props;
     const { privateDrive, emptyDrive } = drives;
 
@@ -88,8 +90,8 @@ class GeneratePrivate extends Component {
     try {
       writeFile(path, {
         key: res.privateKeyValue,
-        network: transactionType === 'ETH' ? 'ETH' : transactionNetwork,
-        type: transactionType,
+        network: blockchain === 'ETH' ? 'ETH' : network,
+        blockchain,
       });
     } catch (_) {
       this.setState({
@@ -99,7 +101,7 @@ class GeneratePrivate extends Component {
       return false;
     }
 
-    setAddressAction(res.addressValue, transactionNetwork);
+    setAddressAction(res.addressValue, network);
     resetDrivesAction();
     this.setState({ loadingMsg: null });
 
@@ -108,10 +110,10 @@ class GeneratePrivate extends Component {
 
   render() {
     const {
-      loadingMsg, addressName, transactionType, transactionNetwork, error,
+      loadingMsg, addressName, blockchain, network, error,
     } = this.state;
     const { inputaddressName, onCancel } = this.props;
-    const showNext = transactionType === 'BTC' ? !!transactionNetwork : !!transactionType;
+    const showNext = blockchain === 'BTC' ? !!network : !!blockchain;
 
     return (
       <Fragment>
@@ -127,48 +129,48 @@ class GeneratePrivate extends Component {
             />
           </div>
           <div className={styles.radioGroup}>
-            <div className={styles.label}>Key type:</div>
-            <RadioGroup
-              name="transactionType"
-              selectedValue={transactionType}
-              onChange={this.handleTypeChange}
-            >
+            <div>
+              <div className={styles.label}>Blockchain:</div>
+              <RadioGroup
+                name="blockchain"
+                selectedValue={blockchain}
+                onChange={this.handleTypeChange}
+              >
+                <label className={styles.radio}>
+                  <Radio value="BTC" />
+                  <span>BTC</span>
+                </label>
+                <label className={styles.radio}>
+                  <Radio value="ETH" />
+                  <span>ETH</span>
+                </label>
+              </RadioGroup>
+            </div>
+            {blockchain === 'BTC' && (
               <div>
-                <Radio value="BTC" />
-                BTC
-              </div>
-              <div>
-                <Radio value="ETH" />
-                ETH
-              </div>
-            </RadioGroup>
-            {transactionType === 'BTC' && (
-              <Fragment>
                 <div className={styles.label}>Network:</div>
                 <RadioGroup
-                  name="transactionNetwork"
-                  selectedValue={transactionNetwork}
+                  name="network"
+                  selectedValue={network}
                   onChange={this.handleNetworkChange}
                 >
-                  <div>
+                  <label className={styles.radio}>
                     <Radio value="main" />
-                    Main
-                  </div>
-                  <div>
+                    <span>Main</span>
+                  </label>
+                  <label className={styles.radio}>
                     <Radio value="test3" />
-                    Test
-                  </div>
+                    <span>Test</span>
+                  </label>
                 </RadioGroup>
-              </Fragment>
+              </div>
             )}
           </div>
         </div>
         <div>{error}</div>
         <div className={styles.rowControls}>
           {loadingMsg ? (
-            <div style={{ display: 'block' }}>
-              <div style={{ margin: 'auto' }}>{loadingMsg}</div>
-            </div>
+            <div style={{ margin: 'auto', marginBottom: 65 }}>{loadingMsg}</div>
           ) : (
             <Fragment>
               <Button onClick={onCancel}>Cancel</Button>

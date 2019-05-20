@@ -26,9 +26,10 @@ const CheckPublicFlash = (props) => {
           <img src={device} className={styles.icon} alt="" />
         </div>
         <div style={{ padding: 10, bottom: '10%' }}>
-          <div className={styles.publicPoints}>1. Remove PRIVATE key flash drive</div>
-          <div className={styles.publicPoints}>2. Make sure you choose the right flash drive</div>
-          <div className={styles.publicPoints}>3. Insert Public Address flash drive</div>
+          <div className={styles.publicPoints}>
+            1. Remove PRIVATE key flash drive and store it securely
+          </div>
+          <div className={styles.publicPoints}>2. Insert Public Address flash drive</div>
         </div>
       </div>
       <Button onClick={onCancel}>Cancel</Button>

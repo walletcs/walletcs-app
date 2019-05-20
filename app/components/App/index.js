@@ -10,6 +10,7 @@ import Validate from '../Validate';
 import Backup from '../Backup';
 import SignTransaction from '../SignTransaction';
 import USBListener from '../USBListener';
+import StatusBar from '../StatusBar';
 
 import walletcsLogo from '../../assets/walletcs_logo.png';
 import generateIcon from '../../assets/generate_icon.png';
@@ -123,13 +124,7 @@ export default class App extends Component {
             <USBListener>{content}</USBListener>
           </div>
           <div className={styles.footer}>
-            Network status:
-            {' '}
-            {online ? (
-              <span className={styles.footerOnline}>online</span>
-            ) : (
-              <span className={styles.footerOffline}>offline</span>
-            )}
+            <StatusBar online={online} />
           </div>
         </div>
       </Provider>

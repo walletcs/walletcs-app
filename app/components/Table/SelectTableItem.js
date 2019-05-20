@@ -8,7 +8,13 @@ import Checkbox from '../Checkbox';
 import styles from './index.css';
 
 export default class SelectTableItem extends Component {
-  state = { checked: false };
+  constructor(props) {
+    super(props);
+
+    const { item } = props;
+    const { checked = false } = item;
+    this.state = { checked };
+  }
 
   handleCheck = () => {
     const { checked } = this.state;

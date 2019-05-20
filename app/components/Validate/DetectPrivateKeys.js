@@ -40,16 +40,16 @@ class DetectPrivateKeys extends Component {
         let privateKey;
         let publicKey;
         let keyNetwork;
-        let keyType;
+        let keyBlockchain;
 
         try {
           const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
           const privateKeyParsedData = JSON.parse(privateKeyData) || {};
           privateKey = privateKeyParsedData.key;
           keyNetwork = privateKeyParsedData.network;
-          keyType = privateKeyParsedData.type;
+          keyBlockchain = privateKeyParsedData.blockchain;
 
-          if (keyType === 'ETH') {
+          if (keyBlockchain === 'ETH') {
             publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
           } else {
             publicKey = BitcoinCheckPair.recoveryPublicKey(privateKey, keyNetwork);
@@ -62,6 +62,7 @@ class DetectPrivateKeys extends Component {
           privateKey,
           publicKey,
           keyNetwork,
+          keyBlockchain,
           account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.json', ''),
         };
       });
@@ -72,16 +73,17 @@ class DetectPrivateKeys extends Component {
   render() {
     const { keys = [], next, onCancel } = this.props;
     const isKeysExists = !!keys.length;
+
     const data = keys.map(item => ({
       id: item.publicKey,
-      fields: [item.publicKey],
+      fields: [item.account, item.publicKey, item.keyNetwork],
     }));
 
     return (
       <Fragment>
         <div className={styles.contentWrapper}>
           {isKeysExists ? (
-            <Table data={data} headers={['ADDRESS']} />
+            <Table data={data} headers={['NAME', 'ADDRESS', 'NETWORK']} />
           ) : (
             <div className={styles.message}>Private keys not found</div>
           )}

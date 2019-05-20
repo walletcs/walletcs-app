@@ -11,9 +11,9 @@ import transactionFlash from '../../assets/transaction_drive.png';
 import styles from '../App/index.css';
 
 const CheckTransactionFlash = ({ drives, onCancel, next }) => {
-  const { emptyDrive } = drives;
+  const { emptyDrive, publicDrive } = drives;
 
-  if (emptyDrive) {
+  if (emptyDrive || publicDrive) {
     next();
   }
 

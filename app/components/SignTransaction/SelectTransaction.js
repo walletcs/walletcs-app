@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { EtherTransactionDecoder } from 'walletcs/src/index';
 import PropTypes from 'prop-types';
 import hash from 'object-hash';
-import omit from 'lodash.omit';
 
 import Button from '../Button';
 import Table from '../Table';
@@ -24,8 +23,13 @@ class SelectTransaction extends Component {
 
   setupTransactions = () => {
     let dir = [];
-    const { drives, setTransactionsAction, setRawTransactionsAction } = this.props;
-    const drive = drives.emptyDrive;
+    const {
+      drives,
+      setTransactionsAction,
+      setRawTransactionsAction,
+      setTransactionToSignAction,
+    } = this.props;
+    const drive = drives.publicDrive || drives.emptyDrive;
 
     try {
       dir = fs.readdirSync(drive) || [];
@@ -75,6 +79,7 @@ class SelectTransaction extends Component {
 
         const trType = getTransactionType(tr);
         const filename = `${element.file} (${tr.transaction.nonce || ''})`;
+        const trHash = hash(tr.transaction);
 
         data.push({
           ...tr.transaction,
@@ -82,15 +87,16 @@ class SelectTransaction extends Component {
             pub_key: element.transaction.pub_key,
             file: element.file,
             filename,
-            type: trType,
+            blockchain: trType,
             method: method.name,
-            hash: hash(tr.transaction),
+            hash: trHash,
           },
         });
+
+        setTransactionToSignAction(tr.transaction.data || trHash, true);
       });
     });
 
-    console.warn(data);
     setTransactionsAction(data);
     setRawTransactionsAction(files);
   };
@@ -102,13 +108,17 @@ class SelectTransaction extends Component {
   };
 
   render() {
-    const { transactions, onCancel, next } = this.props;
+    const {
+      transactions, onCancel, next, transactionsToSign,
+    } = this.props;
 
     const isKeysExists = !!transactions.length;
+    const isTransactionsToSign = !!transactionsToSign.length;
 
     const data = transactions.map(tr => ({
       id: tr.data || tr.extra.hash,
-      fields: [tr.extra.file, tr.extra.type, tr.to, tr.extra.method, tr.amount],
+      checked: true,
+      fields: [tr.extra.file, tr.extra.blockchain, tr.to, tr.extra.method, tr.value],
     }));
 
     return (
@@ -126,7 +136,7 @@ class SelectTransaction extends Component {
         </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
-          {isKeysExists && (
+          {isKeysExists && isTransactionsToSign && (
             <Button onClick={next} primary>
               Next
             </Button>
@@ -149,16 +159,19 @@ SelectTransaction.propTypes = {
     privateDrive: PropTypes.string,
   }),
   transactions: PropTypes.array,
+  transactionsToSign: PropTypes.array,
 };
 
 SelectTransaction.defaultProps = {
   drives: {},
   transactions: [],
+  transactionsToSign: [],
 };
 
 const mapStateToProps = state => ({
   drives: state.drive.drives,
   transactions: state.account.transactions,
+  transactionsToSign: state.account.transactionsToSign,
 });
 
 const mapDispatchToProps = dispatch => ({

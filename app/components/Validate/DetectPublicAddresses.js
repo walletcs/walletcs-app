@@ -45,7 +45,7 @@ class DetectPublicAddresses extends Component {
         let address;
 
         try {
-          if (k.keyType === 'ETH') {
+          if (k.keyBlockchain === 'ETH') {
             address = EtherKeyPair.recoveryPublicKey(k.privateKey);
           } else {
             address = BitcoinCheckPair.recoveryPublicKey(k.privateKey, k.keyNetwork);
@@ -111,16 +111,20 @@ class DetectPublicAddresses extends Component {
       };
     });
 
+    const isGenerateNeedeed = keys.some(k => !k.found);
+
     return (
       <Fragment>
         <div className={styles.contentWrapper}>
           <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
           <div className={styles.generateCheckboxContainer}>
-            <Checkbox
-              checked={generate}
-              onChange={this.onGenerateChange}
-              label="Generate missing keys"
-            />
+            {isGenerateNeedeed && (
+              <Checkbox
+                checked={generate}
+                onChange={this.onGenerateChange}
+                label="Generate missing keys"
+              />
+            )}
           </div>
         </div>
         <div className={styles.rowControls}>

@@ -53,7 +53,7 @@ class Final extends Component {
             const signData = omit(trForSign, 'key', 'extra');
 
             try {
-              if (trForSign.extra.type === 'BTC') {
+              if (trForSign.extra.blockchain === 'BTC') {
                 signature = await BitcoinTransaction.sign(
                   trForSign.key.privateKey.privateKey,
                   signData,
