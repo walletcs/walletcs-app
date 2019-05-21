@@ -13032,10 +13032,10 @@ walletcs@^0.1.0:
     walletcs "^0.1.0"
     web3 "^1.0.0-beta.46"
 
-walletcs@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/walletcs/-/walletcs-0.7.4.tgz#f087c3b6f1327099280a1a86c07d698733411fe7"
-  integrity sha512-7+EBiuKOvtypNDn4zDE11Zubis4nozOCzjoO6ro0+6kzgCzz0AHvgSPyiJPl7+zZr1Ev0EA+VCQD/wE+C84eHw==
+walletcs@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/walletcs/-/walletcs-0.7.5.tgz#f2d08d982b9c3b437760bea710dc5b48c8820c65"
+  integrity sha512-wkUoTU4XLzH6SpuiMl5AxJA1eINgbvGQ4Ux2ZK1tqgqJgjx4db1zYcCMDSiMiT7Ut5jFC3UxfS25KRFMQhAtqg==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.3.0"
     "@babel/register" "^7.0.0"
