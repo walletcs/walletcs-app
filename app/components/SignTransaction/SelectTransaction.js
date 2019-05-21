@@ -81,10 +81,9 @@ class SelectTransaction extends Component {
         const trType = getTransactionType(tr);
         const filename = `${element.file} (${tr.transaction.nonce || ''})`;
         const trHash = hash(tr.transaction);
-        const normalizedTransaction = representTx(tr.transaction);
 
         data.push({
-          ...normalizedTransaction,
+          ...tr.transaction,
           extra: {
             pub_key: element.transaction.pub_key,
             file: element.file,
@@ -117,11 +116,21 @@ class SelectTransaction extends Component {
     const isKeysExists = !!transactions.length;
     const isTransactionsToSign = !!transactionsToSign.length;
 
-    const data = transactions.map(tr => ({
-      id: tr.data || tr.extra.hash,
-      checked: true,
-      fields: [tr.extra.file, tr.extra.blockchain, tr.to, tr.extra.method, tr.value],
-    }));
+    const data = transactions.map((tr) => {
+      const normalizedTransaction = representTx(tr);
+
+      return {
+        id: tr.data || tr.extra.hash,
+        checked: true,
+        fields: [
+          tr.extra.file,
+          tr.extra.blockchain,
+          tr.to,
+          tr.extra.method,
+          normalizedTransaction.value,
+        ],
+      };
+    });
 
     return (
       <Fragment>
