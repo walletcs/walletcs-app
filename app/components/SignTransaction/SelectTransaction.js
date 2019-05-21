@@ -3,7 +3,8 @@
 import React, { Component, Fragment } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
-import { EtherTransactionDecoder } from 'walletcs/src/index';
+import { EtherTransactionDecoder, representTx } from 'walletcs/src/index';
+
 import PropTypes from 'prop-types';
 import hash from 'object-hash';
 
@@ -80,9 +81,10 @@ class SelectTransaction extends Component {
         const trType = getTransactionType(tr);
         const filename = `${element.file} (${tr.transaction.nonce || ''})`;
         const trHash = hash(tr.transaction);
+        const normalizedTransaction = representTx(tr.transaction);
 
         data.push({
-          ...tr.transaction,
+          ...normalizedTransaction,
           extra: {
             pub_key: element.transaction.pub_key,
             file: element.file,
