@@ -428,13 +428,13 @@ html {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0 10px;
+  padding: 0 5px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
 }
 .index__tableCheckbox__2gM32 {
-  flex: 0.3;
+  flex: 0.2;
 }
 /*# sourceMappingURL=style.css.map */

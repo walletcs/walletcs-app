@@ -76,6 +76,7 @@ class DetectPrivateKeys extends Component {
 
     const data = keys.map(item => ({
       id: item.publicKey,
+      flex: [1, 2, 1],
       fields: [item.account, item.publicKey, item.keyNetwork],
     }));
 

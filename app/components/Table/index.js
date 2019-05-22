@@ -17,11 +17,20 @@ const Table = ({ headers, onCheck, data }) => {
           {isCheckboxNeeded && (
             <td className={cx(styles.tableCell, styles.tableHeader, styles.tableCheckbox)} />
           )}
-          {headers.map(header => (
-            <td key={header} className={cx(styles.tableCell, styles.tableHeader)}>
-              {header}
-            </td>
-          ))}
+          {headers.map((header, index) => {
+            const item = data[0];
+            const flex = item.flex ? item.flex[index] : 1;
+
+            return (
+              <td
+                key={header}
+                style={{ flex }}
+                className={cx(styles.tableCell, styles.tableHeader)}
+              >
+                {header}
+              </td>
+            );
+          })}
         </tr>
         <Fragment>
           {data.map(item => (

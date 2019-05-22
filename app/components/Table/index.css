@@ -23,7 +23,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0 10px;
+  padding: 0 5px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -31,5 +31,5 @@
 }
 
 .tableCheckbox {
-  flex: 0.3;
+  flex: 0.2;
 }

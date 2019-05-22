@@ -2,25 +2,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 import styles from '../App/index.css';
 
 const StatusBar = ({ online, drives }) => {
   let driveStatus = [];
   if (drives.privateDrive) {
-    driveStatus.push(<span className={styles.redStatusLabel}>private keys</span>);
+    driveStatus.push(
+      <span key={shortid.generate()} className={styles.redStatusLabel}>
+        private keys
+      </span>,
+    );
   }
 
   if (drives.publicDrive) {
-    driveStatus.push(<span className={styles.greenStatusLabel}>public</span>);
+    driveStatus.push(
+      <span key={shortid.generate()} className={styles.greenStatusLabel}>
+        public
+      </span>,
+    );
   }
 
   if (drives.emptyDrive) {
-    driveStatus.push(<span>unknown</span>);
+    driveStatus.push(<span key={shortid.generate()}>unknown</span>);
   }
 
   if (!driveStatus.length) {
-    driveStatus = [<span>none</span>];
+    driveStatus = [<span key={shortid.generate()}>none</span>];
   }
 
   return (

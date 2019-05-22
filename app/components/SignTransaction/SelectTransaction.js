@@ -89,6 +89,7 @@ class SelectTransaction extends Component {
             file: element.file,
             filename,
             blockchain: trType,
+            network: tr.network,
             method: method.name,
             hash: trHash,
           },
@@ -122,9 +123,10 @@ class SelectTransaction extends Component {
       return {
         id: tr.extra.hash,
         checked: true,
+        flex: [0.9, 0.6, 0.9, 1, 0.9],
         fields: [
           tr.extra.file,
-          tr.extra.blockchain,
+          tr.extra.network,
           tr.to,
           tr.extra.method,
           normalizedTransaction.value,
@@ -138,7 +140,7 @@ class SelectTransaction extends Component {
           {isKeysExists ? (
             <Table
               data={data}
-              headers={['FILE', 'TYPE', 'TO', 'METHOD', 'AMOUNT']}
+              headers={['FILE', 'NETWORK', 'TO', 'METHOD', 'AMOUNT']}
               onCheck={this.checkTransaction}
             />
           ) : (

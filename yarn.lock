@@ -8658,6 +8658,11 @@ nanoid@^1.0.1:
   version "1.3.1"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-1.3.1.tgz#4538e1a02822b131da198d8eb17c9e3b3ac5167f"
 
+nanoid@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.0.3.tgz#dde999e173bc9d7bd2ee2746b89909ade98e075e"
+  integrity sha512-NbaoqdhIYmY6FXDRB4eYtDVC9Z9eCbn8TyaiC16LNKtpPv/aqa0tOPD8y6gNE4yUNnaZ7LLhYtXOev/6+cBtfw==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -11314,6 +11319,13 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
 
+shortid@^2.2.14:
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.14.tgz#80db6aafcbc3e3a46850b3c88d39e051b84c8d18"
+  integrity sha512-4UnZgr9gDdA1kaKj/38IiudfC3KHKhDc1zi/HSxd9FQDR0VLwH3/y79tZJLsVYPsJgIjeHjqIWaWVRJUj9qZOQ==
+  dependencies:
+    nanoid "^2.0.0"
+
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -13032,10 +13044,10 @@ walletcs@^0.1.0:
     walletcs "^0.1.0"
     web3 "^1.0.0-beta.46"
 
-walletcs@^0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/walletcs/-/walletcs-0.7.8.tgz#f3f84c51b46da56ef2bb6fd7fbcf01ca3535779d"
-  integrity sha512-vvvzA+GV0RSok+0NQNJf8C9WCGGNweke0qkuBpKUcJ0/7HByNAJlKteSBOswYofzDpsSTNPKF+RWkm04oGRnuA==
+walletcs@^0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/walletcs/-/walletcs-0.7.9.tgz#fc83544e7f00bf4f523ebb844dc9ca50a0e5fa74"
+  integrity sha512-W56HMksVdZt2qZlR80IcRcOusuhK5RjsXZlWfnTMHJaMEH6hFTawPHBlwxubX8cPXfGP5u6tTrohzhnGUCDWHw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.3.0"
     "@babel/register" "^7.0.0"

@@ -363,6 +363,18 @@ eval("module.exports = redux-thunk;\n\n//# sourceURL=webpack://renderer/external
 
 /***/ }),
 
+/***/ "shortid":
+/*!**************************!*\
+  !*** external "shortid" ***!
+  \**************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+eval("module.exports = shortid;\n\n//# sourceURL=webpack://renderer/external_%22shortid%22?");
+
+/***/ }),
+
 /***/ "source-map-support":
 /*!*************************************!*\
   !*** external "source-map-support" ***!

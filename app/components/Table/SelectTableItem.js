@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 import Checkbox from '../Checkbox';
 
@@ -43,11 +44,15 @@ export default class SelectTableItem extends Component {
             <Checkbox checked={checked} onChange={this.handleCheck} />
           </td>
         )}
-        {item.fields.map(e => (
-          <td key={e} className={styles.tableCell}>
-            {e}
-          </td>
-        ))}
+        {item.fields.map((e, index) => {
+          const flex = item.flex ? item.flex[index] : 1;
+
+          return (
+            <td key={shortid.generate()} style={{ flex }} className={styles.tableCell}>
+              {e}
+            </td>
+          );
+        })}
       </tr>
     );
   }

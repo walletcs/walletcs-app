@@ -1,7 +1,7 @@
 {
   "name": "walletcs",
   "productName": "WalletCS",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "WalletCS desktop offline client",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -236,9 +236,10 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "shortid": "^2.2.14",
     "source-map-support": "^0.5.9",
     "usb": "^1.5.0",
-    "walletcs": "^0.7.8"
+    "walletcs": "^0.7.9"
   },
   "devEngines": {
     "node": ">=7.x",
