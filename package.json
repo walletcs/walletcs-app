@@ -1,7 +1,7 @@
 {
   "name": "walletcs",
   "productName": "WalletCS",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "WalletCS desktop offline client",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -55,7 +55,8 @@
       "app/app.html",
       "app/main.prod.js",
       "app/main.prod.js.map",
-      "package.json"
+      "package.json",
+      "resources/icon.jpg"
     ],
     "dmg": {
       "contents": [
@@ -80,7 +81,12 @@
       "target": [
         "AppImage"
       ],
-      "category": "Development"
+      "category": "Development",
+      "desktop": {
+        "Name": "WalletCS",
+        "Icon": "appimagekit-walletcs",
+        "Comment": "WalletCS desktop offline client"
+      }
     },
     "appImage": {
       "systemIntegration": "doNotAsk"
