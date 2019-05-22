@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { EtherTransaction, BitcoinTransaction } from 'walletcs/src/index';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
+import hash from 'object-hash';
 
 import Button from '../Button';
 import { resetAccount } from '../../actions/account';
@@ -45,7 +46,7 @@ class Final extends Component {
 
       const signedTransactionsData = await Promise.all(
         transaction.transactions.map(async (tr) => {
-          const trForSign = transactions.find(t => t.data === tr.transaction.data);
+          const trForSign = transactions.find(t => t.extra.hash === hash(tr.transaction));
 
           let signature;
 
@@ -72,16 +73,22 @@ class Final extends Component {
           }
 
           if (signature) {
-            return { transaction: signature };
+            return { object: { transaction: signature }, signed: true };
           }
 
-          return tr;
+          return { object: tr, signed: false };
         }),
       );
 
+      const isSignedExists = signedTransactionsData.some(t => t.signed);
+
+      if (!isSignedExists) {
+        return;
+      }
+
       const signedTransaction = {
         ...fullTransaction.transaction,
-        transactions: signedTransactionsData,
+        transactions: signedTransactionsData.map(t => t.object),
       };
 
       const filename = fullTransaction.file.replace(TRANSACTION_PREFIX, '').replace(/\(d?\)/, '');

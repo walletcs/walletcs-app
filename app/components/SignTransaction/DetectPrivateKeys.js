@@ -52,7 +52,7 @@ class DetectPrivateKeys extends Component {
     const { transactions, transactionsToSign, setTransactionsAction } = this.props;
 
     const transactionsWithKeys = transactions
-      .filter(t => transactionsToSign.includes(t.data || t.extra.hash))
+      .filter(t => transactionsToSign.includes(t.extra.hash))
       .map((transaction) => {
         const privateKey = privateKeys.find((k) => {
           let key;

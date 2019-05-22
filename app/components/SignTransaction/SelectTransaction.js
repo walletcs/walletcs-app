@@ -94,7 +94,7 @@ class SelectTransaction extends Component {
           },
         });
 
-        setTransactionToSignAction(tr.transaction.data || trHash, true);
+        setTransactionToSignAction(trHash, true);
       });
     });
 
@@ -120,7 +120,7 @@ class SelectTransaction extends Component {
       const normalizedTransaction = representTx(tr);
 
       return {
-        id: tr.data || tr.extra.hash,
+        id: tr.extra.hash,
         checked: true,
         fields: [
           tr.extra.file,
