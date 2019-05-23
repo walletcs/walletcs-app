@@ -18,7 +18,7 @@ const Table = ({ headers, onCheck, data }) => {
             <td className={cx(styles.tableCell, styles.tableHeader, styles.tableCheckbox)} />
           )}
           {headers.map((header, index) => {
-            const item = data[0];
+            const item = data[0] || {};
             const flex = item.flex ? item.flex[index] : 1;
 
             return (

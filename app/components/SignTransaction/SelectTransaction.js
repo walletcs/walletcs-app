@@ -123,7 +123,7 @@ class SelectTransaction extends Component {
       return {
         id: tr.extra.hash,
         checked: true,
-        flex: [0.9, 0.6, 0.9, 1, 0.9],
+        flex: [0.9, 0.75, 0.9, 0.9, 0.9],
         fields: [
           tr.extra.file,
           tr.extra.network,
