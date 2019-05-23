@@ -3,7 +3,7 @@
 import React, { Component, Fragment } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
-import { EtherTransactionDecoder, representTx } from 'walletcs/src/index';
+import { EtherTransactionDecoder, representEthTx, representBtcTx } from 'walletcs/src/index';
 
 import PropTypes from 'prop-types';
 import hash from 'object-hash';
@@ -118,18 +118,21 @@ class SelectTransaction extends Component {
     const isTransactionsToSign = !!transactionsToSign.length;
 
     const data = transactions.map((tr) => {
-      let { amount } = tr;
+      let trAmount;
 
       if (tr.extra.blockchain === 'ETH') {
-        const normalizedTransaction = representTx(tr);
-        amount = normalizedTransaction.value;
+        const normalizedTransaction = representEthTx(tr);
+        trAmount = normalizedTransaction.value;
+      } else {
+        const normalizedTransaction = representBtcTx(tr);
+        trAmount = normalizedTransaction.amount;
       }
 
       return {
         id: tr.extra.hash,
         checked: true,
         flex: [0.8, 0.75, 0.8, 1, 0.9],
-        fields: [tr.extra.file, tr.extra.network, tr.to, tr.extra.method, amount],
+        fields: [tr.extra.file, tr.extra.network, tr.to, tr.extra.method, trAmount],
       };
     });
 
