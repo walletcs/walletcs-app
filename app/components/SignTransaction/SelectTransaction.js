@@ -118,19 +118,18 @@ class SelectTransaction extends Component {
     const isTransactionsToSign = !!transactionsToSign.length;
 
     const data = transactions.map((tr) => {
-      const normalizedTransaction = representTx(tr);
+      let { amount } = tr;
+
+      if (tr.extra.blockchain === 'ETH') {
+        const normalizedTransaction = representTx(tr);
+        amount = normalizedTransaction.value;
+      }
 
       return {
         id: tr.extra.hash,
         checked: true,
-        flex: [0.9, 0.75, 0.9, 0.9, 0.9],
-        fields: [
-          tr.extra.file,
-          tr.extra.network,
-          tr.to,
-          tr.extra.method,
-          normalizedTransaction.value,
-        ],
+        flex: [0.8, 0.75, 0.8, 1, 0.9],
+        fields: [tr.extra.file, tr.extra.network, tr.to, tr.extra.method, amount],
       };
     });
 
