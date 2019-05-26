@@ -38,7 +38,7 @@ class Final extends Component {
   signTransactions = async () => {
     const { drives, rawTransactions } = this.props;
 
-    const drive = drives.emptyDrive;
+    const drive = drives.emptyDrive || drives.publicDrive;
     const transactions = this.getTransactions();
 
     rawTransactions.forEach(async (fullTransaction) => {

@@ -1,7 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
-import usb from 'usb';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -10,32 +9,21 @@ import { setDrivesToStorage } from '../../actions/drive';
 
 class USBListener extends Component {
   async componentWillMount() {
-    const { setDrivesToStorageAction } = this.props;
-
-    await this.setDrives();
-
-    usb.on('attach', async () => {
-      const interval = setInterval(async () => {
-        await this.setDrives(interval);
-      }, 1000);
-    });
-
-    usb.on('detach', async () => {
-      setDrivesToStorageAction({});
-    });
+    this.interval = setInterval(async () => {
+      await this.setDrives();
+    }, 1000);
   }
 
-  setDrives = async (interval) => {
+  async componentWillUnmount() {
+    clearInterval(this.interval);
+    this.interval = null;
+  }
+
+  setDrives = async () => {
     const { setDrivesToStorageAction } = this.props;
     const drives = await getDrives();
 
-    if (Object.keys(drives).length) {
-      setDrivesToStorageAction(drives);
-
-      if (interval) {
-        clearInterval(interval);
-      }
-    }
+    setDrivesToStorageAction(drives);
   };
 
   render() {

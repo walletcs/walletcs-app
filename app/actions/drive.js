@@ -1,10 +1,10 @@
 export const setDrivesToStorage = drives => ({
-  type: 'SET_DRIVES',
+  type: 'CHECK_DRIVES',
   payload: {
-    drives
-  }
+    drives,
+  },
 });
 
 export const resetDrives = () => ({
-  type: 'RESET_DRIVES'
+  type: 'RESET_DRIVES',
 });

@@ -4,7 +4,7 @@ const initialState = {
 
 const driveReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_DRIVES':
+    case 'CHECK_DRIVES':
       return {
         drives: action.payload.drives,
       };

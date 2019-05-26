@@ -8,6 +8,7 @@ import styles from '../App/index.css';
 
 const StatusBar = ({ online, drives }) => {
   let driveStatus = [];
+
   if (drives.privateDrive) {
     driveStatus.push(
       <span key={shortid.generate()} className={styles.redStatusLabel}>

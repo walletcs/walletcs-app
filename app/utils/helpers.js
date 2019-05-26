@@ -7,7 +7,8 @@ const drivelist = require('drivelist');
 
 export const getDrives = async () => {
   const drivesList = await drivelist.list();
-  const drives = drivesList.filter(item => item.busType === 'USB');
+
+  const drives = drivesList.filter(item => item.isUSB);
   const result = {};
 
   drives
