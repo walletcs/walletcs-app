@@ -129,7 +129,7 @@ class GeneratePrivate extends Component {
             />
           </div>
           <div className={styles.radioGroup}>
-            <div>
+            <div style={{ flex: 1 }}>
               <div className={styles.label}>Blockchain:</div>
               <RadioGroup
                 name="blockchain"
@@ -147,7 +147,7 @@ class GeneratePrivate extends Component {
               </RadioGroup>
             </div>
             {blockchain === 'BTC' && (
-              <div>
+              <div style={{ flex: 1 }}>
                 <div className={styles.label}>Network:</div>
                 <RadioGroup
                   name="network"

@@ -17,6 +17,10 @@ const StatusBar = ({ online, drives }) => {
   }
 
   if (drives.publicDrive) {
+    if (driveStatus.length) {
+      driveStatus.push(<span>|</span>);
+    }
+
     driveStatus.push(
       <span key={shortid.generate()} className={styles.greenStatusLabel}>
         public
@@ -25,6 +29,10 @@ const StatusBar = ({ online, drives }) => {
   }
 
   if (drives.emptyDrive) {
+    if (driveStatus.length) {
+      driveStatus.push(<span>|</span>);
+    }
+
     driveStatus.push(<span key={shortid.generate()}>unknown</span>);
   }
 
