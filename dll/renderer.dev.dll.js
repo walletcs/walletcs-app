@@ -387,18 +387,6 @@ eval("module.exports = source-map-support;\n\n//# sourceURL=webpack://renderer/e
 
 /***/ }),
 
-/***/ "usb":
-/*!**********************!*\
-  !*** external "usb" ***!
-  \**********************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-eval("module.exports = usb;\n\n//# sourceURL=webpack://renderer/external_%22usb%22?");
-
-/***/ }),
-
 /***/ "walletcs":
 /*!***************************!*\
   !*** external "walletcs" ***!

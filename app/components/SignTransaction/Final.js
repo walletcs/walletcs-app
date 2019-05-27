@@ -52,6 +52,7 @@ class Final extends Component {
 
           if (trForSign) {
             const signData = omit(trForSign, 'key', 'extra');
+            console.log('HERE', tr);
 
             try {
               if (trForSign.extra.blockchain === 'BTC') {
@@ -73,7 +74,7 @@ class Final extends Component {
           }
 
           if (signature) {
-            return { object: { transaction: signature }, signed: true };
+            return { object: { ...tr, transaction: signature }, signed: true };
           }
 
           return { object: tr, signed: false };
