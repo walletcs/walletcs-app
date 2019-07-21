@@ -1,5 +1,5 @@
 # WalletCS
-WalletCS is a cold storage system that enables secure handling of blockchain assets.
+A cold storage system that enables secure handling of blockchain assets.
 
 **Table of contents**
 
@@ -24,22 +24,18 @@ WalletCS is a cold storage-based security platform for blockchain assets.
 In WalletCS system, your private keys are generated and handled in the offline, "air-gapped" environment which is never connected to the internet.
 Features like smart contract support and batch transactions make WalletCS suitable for enterprise-grade environments.
 
-> WalletCS secure cold storage system. 
-> It is designed to be installed on the offline computer.
-> WalletCS Offline Application is used to generate accounts, sign transactions and perform other offline operations.
 
 
 ## Features
-
-- Supports Ethereum and Bitcoin blockchains
-- Creation of blockchain accounts
-- Address validation with private key
-- Regeneration of an address (public key) from private key 
-- Backup of private keys flash drive
-- Signing of coin transfer transaction
-- Signing of smart contract transaction, including multisignature transactions
-- Batch signing
-- Broadcast of multiple transactions
+- Supports Ethereum and Bitcoin blockchains, cryptocurrency and smart contracts
+- Offline creation of blockchain accounts
+- Offline address validation with private key
+- Offline regeneration of an address (public key) from the private key 
+- Offline backup of private keys flash drive
+- Offline signing of coin transfer transaction
+- Offline signing of smart contract transaction, including multisignature transactions
+- Batch transaction operations, e.g. mass paymentsin cryptocurrency
+- Broadcast
 
 __Our general design guideline is: as long as private keys are generated and handled offline and physically secured, your assets are safe__
 
@@ -47,16 +43,16 @@ __Our general design guideline is: as long as private keys are generated and han
 ![alt text](https://github.com/exiliontech/walletcs-app/blob/master/diagram.png "Hiigh-level diagram")
 
 ## Components
-**WalletCS Web Application**
+### WalletCS Web Application
 WalletCS Web Application is used to create and broadcast transactions and transaction batches.
-URL: https://app.walletcs.com
-Testnet URL: https://testnet.walletcs.com
+> URL: https://app.walletcs.com
+> Testnet URL: https://testnet.walletcs.com
 
-**WalletCS Offline Application**
+### WalletCS Offline Application
 WalletCS Offline Application is used to generate accounts, sign transactions and perform other offline operations.
 This applicaiton is designed to be installed on the offline computer.
 
-### Offline computer hardware requirements
+#### Offline computer hardware requirements
 - Linux OS
 - At least 100MB hard drive space
 - At least 1GB RAM
@@ -67,12 +63,14 @@ __Contact us about dedicated devices at sales@exilion.com__
 
 ## Installation
 1. Build from the source or download the application from www.walletcs.com to the flash drive. 
+
 **Important**: 
 - check the url and SSL certificate to make sure you are downloading from the right site.
 - verify GPG signature to ensure download integrity
 3. Install application on the offline computer that will be used for offline operations
 
-**Important**: Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
+**Important**: 
+Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
 
 ## Creating an Account
 To create an account, open WalletCS Offline Application on the offline computer, click “Create account”, and follow the instructions. 
