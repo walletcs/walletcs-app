@@ -1,6 +1,11 @@
 # WalletCS
 A cold storage system that enables secure handling of blockchain assets.
 
+> - Main site:   https://www.walletcs.com
+> - Web app :    https://app.walletcs.com
+> - Testnet app: https://testnet.walletcs.com
+
+
 **Table of contents**
 
 [Features](https://github.com/walletcs/walletcs-app/blob/master/README.md#features)
@@ -45,8 +50,6 @@ __Our general design guideline is: as long as private keys are generated and han
 ## Components
 ### WalletCS Web Application
 WalletCS Web Application is used to create and broadcast transactions and transaction batches.
-> URL: https://app.walletcs.com
-> Testnet URL: https://testnet.walletcs.com
 
 ### WalletCS Offline Application
 WalletCS Offline Application is used to generate accounts, sign transactions and perform other offline operations.
