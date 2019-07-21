@@ -3,40 +3,34 @@ WalletCS is a cold storage system that enables secure handling of blockchain ass
 
 **Table of contents**
 
-[Features](https://github.com/exiliontech/walletcs-app/blob/master/README.md#features)
+[Features](https://github.com/walletcs/walletcs-app/blob/master/README.md#features)
 
-[Components](https://github.com/exiliontech/walletcs-app/blob/master/README.md#components)
+[Components](https://github.com/walletcs/walletcs-app/blob/master/README.md#components)
 
-[Hardware requirements](https://github.com/exiliontech/walletcs-app/blob/master/README.md#offline-computer-hardware-requirements)
+[Hardware requirements](https://github.com/walletcs/walletcs-app/blob/master/README.md#offline-computer-hardware-requirements)
 
-[Installation](https://github.com/exiliontech/walletcs-app/blob/master/README.md#Installation)
+[Installation](https://github.com/walletcs/walletcs-app/blob/master/README.md#Installation)
 
-[FAQ](https://github.com/exiliontech/walletcs-app/blob/master/README.md#FAQ)
+[FAQ](https://github.com/walletcs/walletcs-app/blob/master/README.md#FAQ)
 
-[Creating an account](https://github.com/exiliontech/walletcs-app/blob/master/README.md#creating-an-account)
+[Creating an account](https://github.com/walletcs/walletcs-app/blob/master/README.md#creating-an-account)
 
-[Support](https://github.com/exiliontech/walletcs-app/blob/master/README.md#getting-support)
+[Support](https://github.com/walletcs/walletcs-app/blob/master/README.md#getting-support)
+
+
+## Overview
+
+WalletCS is a cold storage-based security platform for blockchain assets.
+In WalletCS system, your private keys are generated and handled in the offline, "air-gapped" environment which is never connected to the internet.
+Features like smart contract support and batch transactions make WalletCS suitable for enterprise-grade environments.
+
+> WalletCS secure cold storage system. 
+> It is designed to be installed on the offline computer.
+> WalletCS Offline Application is used to generate accounts, sign transactions and perform other offline operations.
+
 
 ## Features
-- Supports Ethereum and Bitcoin blockchains
-- Complete offline key management
 
-# walletcs-app
-Overview
-========
-WalletCS Offline Application is a part of WalletCS secure cold storage system. 
-It is designed to be installed on offline ccomputer.
-WalletCS Offline Application is used to generate accounts, sign transactions and perform other offline operations.
-
-Offline computer hardware requirements
-============
-- Linux OS
-- At least 100MB hard drive space
-- At least 1GB RAM
-- USB drive
-
-Features
-========
 - Supports Ethereum and Bitcoin blockchains
 - Creation of blockchain accounts
 - Address validation with private key
@@ -45,7 +39,7 @@ Features
 - Signing of coin transfer transaction
 - Signing of smart contract transaction, including multisignature transactions
 - Batch signing
-- Broadcast
+- Broadcast of multiple transactions
 
 __Our general design guideline is: as long as private keys are generated and handled offline and physically secured, your assets are safe__
 
@@ -55,35 +49,37 @@ __Our general design guideline is: as long as private keys are generated and han
 ## Components
 **WalletCS Web Application**
 WalletCS Web Application is used to create and broadcast transactions and transaction batches.
-This application runs at app.walletcs.com
-testnet version of an app is available at testnet.walletcs.com
+URL: https://app.walletcs.com
+Testnet URL: https://testnet.walletcs.com
 
 **WalletCS Offline Application**
 WalletCS Offline Application is used to generate accounts, sign transactions and perform other offline operations.
 This applicaiton is designed to be installed on the offline computer.
 
-## Offline computer hardware requirements
-- Linux OS. Tested with Ubuntu 18 
+### Offline computer hardware requirements
+- Linux OS
 - At least 100MB hard drive space
 - At least 1GB RAM
 - USB drive
+- Make sure network adapters are disconnected or disabled
 
-Contact us about dedicated devices at sales@exilion.com
+__Contact us about dedicated devices at sales@exilion.com__
 
 ## Installation
-1. Build from source or download the application from www.walletcs.com to the flash drive. 
-**Important**: check the url and SSL certificate to make sure you are downloading from the right site.
-2. We strongly recommend to verify SHA-256 hash of the downloaded file
+1. Build from the source or download the application from www.walletcs.com to the flash drive. 
+**Important**: 
+- check the url and SSL certificate to make sure you are downloading from the right site.
+- verify GPG signature to ensure download integrity
 3. Install application on the offline computer that will be used for offline operations
 
 **Important**: Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
 
 ## Creating an Account
 To create an account, open WalletCS Offline Application on the offline computer, click “Create account”, and follow the instructions. 
-Blockchain account is represented by Private key and address.
+Blockchain account is represented by Private key and the address.
  
 **Private key** is secret and must be stored stored in physically secure and safe location. Flash drive with private key should never be inserted to any device that is currently online or will be online in the future, e.g. it will be used only with our offline computer. 
-It is a good idea to clearly mark Private key flash drive.
+It is a good idea to always clearly mark Private key flash drive.
 
 **Address** can be used online. For example, address can be provided to another party to transfer coins to.
 Following creation of the Account, we highly recommend validating your key and address and creating a backup copy of a Private keys flash drive using WalletCS Offline App.
@@ -120,23 +116,16 @@ Click “Validate account” on WalletCS Offline Application and follow the inst
 ## Backing up flash drive
 
 Click “Backup Private Keys” on WalletCS Offline Application and follow the instructions.
+We recommend keeping backup flash drive at a secure alternative location.
 
 **Important**: 
 - While it is technically possible to create a copy of the flash drive using online computer, we strongly recommend secure copy using WalletCS Offline Application to avoid online exposure of your private keys.
 - Clearly mark private key drive so you don't use it accidentaly for any other purpose
 
 ## FAQ
+TODO:
 
 ## Getting support
-If you experience a problem, please create an issue [here](https://github.com/ExilionTechnologies/walletcs-app/issues)
+If you experience a problem, please create an issue [here](https://github.com/walletcs/walletcs-app/issues)
 
-We will be happy to help you with customization and integration! Contact us at sales@exilion.com
-=======
-- Signinf of smart contract transaction
-- Batch signing
-
-
-Installation
-=====
-1. Build or download the application to the flash drive
-2. Install application on the offline computer that will be used for offline operations
+We will be happy to assist you with customization and integration! Contact us at sales@exilion.com
