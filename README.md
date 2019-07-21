@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # WalletCS
 WalletCS is a cold storage system that enables secure handling of blockchain assets.
 
@@ -21,7 +20,7 @@ WalletCS is a cold storage system that enables secure handling of blockchain ass
 ## Features
 - Supports Ethereum and Bitcoin blockchains
 - Complete offline key management
-=======
+
 # walletcs-app
 Overview
 ========
@@ -39,13 +38,11 @@ Offline computer hardware requirements
 Features
 ========
 - Supports Ethereum and Bitcoin blockchains
->>>>>>> Create README.md
 - Creation of blockchain accounts
 - Address validation with private key
 - Regeneration of an address (public key) from private key 
 - Backup of private keys flash drive
 - Signing of coin transfer transaction
-<<<<<<< HEAD
 - Signing of smart contract transaction, including multisignature transactions
 - Batch signing
 - Broadcast
@@ -143,4 +140,3 @@ Installation
 =====
 1. Build or download the application to the flash drive
 2. Install application on the offline computer that will be used for offline operations
->>>>>>> Create README.md
