@@ -1,5 +1,5 @@
 # WalletCS
-A cold storage system that enables secure handling of blockchain assets.
+A cold storage system for secure handling of the blockchain assets.
 
 > - Main site:   https://www.walletcs.com
 > - Web app :    https://app.walletcs.com
