@@ -110,12 +110,17 @@ Following creation of the Account, we highly recommend validating your key and a
 
 ## Batch operations
 file csv format:
+
 address,amount
 
 Example:
+
 address,amount
+
 0x0000000000000000000000000000000000000000,0.01
+
 0x0000000000000000000000000000000000000001,1
+
 ...
 
 ## Validating account and regenerating addresses
