@@ -109,15 +109,13 @@ Following creation of the Account, we highly recommend validating your key and a
 5. go back to app.walletcs.com, click “Broadcast Transaction” button and upload  signed transaction file from “Transactions” flash drive. Once you verify transaction details, click “Broadcast” to broadcast transactions. 
 
 ## Batch operations
-file csv format:
+file csv format:  
+address,amount  
 
-address,amount
-
-Example:
-
-address,amount
-0x0000000000000000000000000000000000000000,0.01
-0x0000000000000000000000000000000000000001,1
+Example:  
+address,amount  
+0x0000000000000000000000000000000000000000,0.01  
+0x0000000000000000000000000000000000000001,1  
 ...
 
 ## Validating account and regenerating addresses
