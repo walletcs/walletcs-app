@@ -1,0 +1,8 @@
+osx job:
+  stage:
+    - build
+  tags:
+    - macos-shell
+  script:
+    - yarn
+    - yarn package
