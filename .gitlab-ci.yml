@@ -2,8 +2,7 @@ stages:
   - build
 
 osx_job:
-  stage:
-    - build
+  stage: build
   tags:
     - macos-shell
   script:
