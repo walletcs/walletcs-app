@@ -1,4 +1,7 @@
-osx job:
+stages:
+  - build
+
+osx_job:
   stage:
     - build
   tags:
@@ -6,3 +9,5 @@ osx job:
   script:
     - yarn
     - yarn package
+  only:
+    - master
