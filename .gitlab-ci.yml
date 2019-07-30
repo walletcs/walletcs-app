@@ -4,7 +4,7 @@ stages:
 osx_job:
   stage: build
   tags:
-    - macos-shell
+    - osx
   script:
     - yarn
     - yarn package
