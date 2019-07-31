@@ -19,7 +19,7 @@ osx_job:
 windows_job:
   stage: build
   tags:
-    - windows
+    - Windows
   script:
     - yarn
     - yarn package && aws s3 sync release/ s3://walletcs-app-builds/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*" --include "*.exe"
