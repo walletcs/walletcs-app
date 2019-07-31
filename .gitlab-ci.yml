@@ -22,7 +22,8 @@ windows_job:
     - Windows
   script:
     - yarn
-    - yarn package && aws s3 sync release/ s3://walletcs-app-builds/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*" --include "*.exe"
+    - yarn package
+    - aws s3 sync release/ s3://walletcs-app-builds/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*" --include "*.exe"
 
   only:
     - master
