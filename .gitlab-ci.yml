@@ -21,6 +21,7 @@ windows_job:
   tags:
     - Windows
   script:
+    - npm install --global --production windows-build-tools
     - npm install
     - npm run package
     - aws s3 sync release/ s3://walletcs-app-builds/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*" --include "*.exe"
