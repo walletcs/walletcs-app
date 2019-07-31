@@ -24,6 +24,7 @@ windows_job:
     - npm install
     - npm run package
     - aws s3 sync release/ s3://walletcs-app-builds/ --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "*" --include "*.exe"
-
+  variables:
+    GIT_SSL_NO_VERIFY: 'true'
   only:
     - master
