@@ -109,10 +109,10 @@ Following creation of the Account, we highly recommend validating your key and a
 5. go back to app.walletcs.com, click “Broadcast Transaction” button and upload  signed transaction file from “Transactions” flash drive. Once you verify transaction details, click “Broadcast” to broadcast transactions.
 
 ## Single transaction bitcoin:
-csv file format:
-address,address_type,amount,change,
-mfaEV17ReZSubrJ8ohPWB5PQq...,from,,true,
-mfaEV17ReZSubrJ8ohPWB5PQq...,to,0.001,,
+csv file format:  
+address,address_type,amount,change,  
+mfaEV17ReZSubrJ8ohPWB5PQq...,from,,true,  
+mfaEV17ReZSubrJ8ohPWB5PQq...,to,0.001,,  
 
 ## Batch operations
 csv file format:  
