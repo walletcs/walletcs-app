@@ -12,7 +12,6 @@ import Button from '../Button';
 import Table from '../Table';
 
 import { setTransactions, setTransactionToSign, setRawTransactions } from '../../actions/account';
-import { TRANSACTION_PREFIX } from '../../utils/constants';
 import { getTransactionType } from '../../utils/helpers';
 
 import styles from '../App/index.css';
@@ -39,7 +38,6 @@ class SelectTransaction extends Component {
     }
 
     const files = dir
-      .filter(file => file.startsWith(TRANSACTION_PREFIX))
       .map((file) => {
         let transaction = {};
 
@@ -48,6 +46,10 @@ class SelectTransaction extends Component {
         } catch (error) {
           console.error(`error while reading ${drive}/${file}`);
           console.error(error);
+          return null;
+        }
+
+        if (!transaction.transactions) {
           return null;
         }
 

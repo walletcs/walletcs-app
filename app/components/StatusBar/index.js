@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
+import appInfo from '../../../app.json';
+
 import styles from '../App/index.css';
 
 const StatusBar = ({ online, drives }) => {
@@ -55,6 +57,10 @@ const StatusBar = ({ online, drives }) => {
       <div className={styles.statusWidget}>
         Drives:
         <div style={{ display: 'inline', marginLeft: 2 }}>{driveStatus}</div>
+      </div>
+      <div className={styles.statusWidget}>
+        Version:
+        <div style={{ display: 'inline', marginLeft: 2 }}>{appInfo.version}</div>
       </div>
     </div>
   );

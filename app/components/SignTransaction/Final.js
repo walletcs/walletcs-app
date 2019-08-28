@@ -11,7 +11,7 @@ import Button from '../Button';
 import { resetAccount } from '../../actions/account';
 import { writeFile } from '../../utils/helpers';
 
-import { SIGNED_TRANSACTION_PREFIX, TRANSACTION_PREFIX } from '../../utils/constants';
+import { SIGNED_TRANSACTION_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.css';
 
@@ -52,7 +52,6 @@ class Final extends Component {
 
           if (trForSign) {
             const signData = omit(trForSign, 'key', 'extra');
-            console.log('HERE', tr);
 
             try {
               if (trForSign.extra.blockchain === 'BTC') {
@@ -92,7 +91,7 @@ class Final extends Component {
         transactions: signedTransactionsData.map(t => t.object),
       };
 
-      const filename = fullTransaction.file.replace(TRANSACTION_PREFIX, '').replace(/\(d?\)/, '');
+      const filename = fullTransaction.file.replace(/\(d?\)/, '');
 
       const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`;
 
