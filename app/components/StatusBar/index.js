@@ -11,33 +11,27 @@ import styles from '../App/index.css';
 const StatusBar = ({ online, drives }) => {
   let driveStatus = [];
 
-  if (drives.privateDrive) {
-    driveStatus.push(
-      <span key={shortid.generate()} className={styles.redStatusLabel}>
-        private keys
-      </span>,
-    );
-  }
-
-  if (drives.publicDrive) {
+  drives.map((d) => {
     if (driveStatus.length) {
       driveStatus.push(<span>|</span>);
     }
 
-    driveStatus.push(
-      <span key={shortid.generate()} className={styles.greenStatusLabel}>
-        public
-      </span>,
-    );
-  }
-
-  if (drives.emptyDrive) {
-    if (driveStatus.length) {
-      driveStatus.push(<span>|</span>);
+    if (d.driveType === 'privateDrive') {
+      driveStatus.push(
+        <span key={shortid.generate()} className={styles.redStatusLabel}>
+          private keys
+        </span>,
+      );
+    } else if (d.driveType === 'publicDrive') {
+      driveStatus.push(
+        <span key={shortid.generate()} className={styles.greenStatusLabel}>
+          public
+        </span>,
+      );
+    } else {
+      driveStatus.push(<span key={shortid.generate()}>unknown</span>);
     }
-
-    driveStatus.push(<span key={shortid.generate()}>unknown</span>);
-  }
+  });
 
   if (!driveStatus.length) {
     driveStatus = [<span key={shortid.generate()}>none</span>];
@@ -46,7 +40,7 @@ const StatusBar = ({ online, drives }) => {
   return (
     <div className={styles.statusBar}>
       <div className={styles.statusWidget}>
-        Network status:
+        <b>Network status:</b>
         {' '}
         {online ? (
           <span className={styles.redStatusLabel}>online</span>
@@ -55,11 +49,11 @@ const StatusBar = ({ online, drives }) => {
         )}
       </div>
       <div className={styles.statusWidget}>
-        Drives:
+        <b>Drives:</b>
         <div style={{ display: 'inline', marginLeft: 2 }}>{driveStatus}</div>
       </div>
       <div className={styles.statusWidget}>
-        Version:
+        <b>Version:</b>
         <div style={{ display: 'inline', marginLeft: 2 }}>{appInfo.version}</div>
       </div>
     </div>
@@ -67,17 +61,18 @@ const StatusBar = ({ online, drives }) => {
 };
 
 StatusBar.propTypes = {
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  drives: PropTypes.arrayOf(
+    PropTypes.shape({
+      driveType: PropTypes.string,
+      path: PropTypes.string,
+    }),
+  ),
   online: PropTypes.bool,
 };
 
 StatusBar.defaultProps = {
   online: true,
-  drives: {},
+  drives: [],
 };
 
 const mapStateToProps = state => ({

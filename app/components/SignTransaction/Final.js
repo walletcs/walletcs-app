@@ -6,6 +6,7 @@ import { EtherTransaction, BitcoinTransaction } from 'walletcs/src/index';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
 import hash from 'object-hash';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 import { resetAccount } from '../../actions/account';
@@ -36,10 +37,9 @@ class Final extends Component {
   getTransactions = () => this.props.transactions.filter(t => t.key.privateKey) || [];
 
   signTransactions = async () => {
-    const { drives, rawTransactions } = this.props;
-
-    const drive = drives.emptyDrive || drives.publicDrive;
+    const { activeDrive, rawTransactions } = this.props;
     const transactions = this.getTransactions();
+    const { path } = activeDrive;
 
     rawTransactions.forEach(async (fullTransaction) => {
       const { transaction } = fullTransaction;
@@ -93,9 +93,9 @@ class Final extends Component {
 
       const filename = fullTransaction.file.replace(/\(d?\)/, '');
 
-      const path = `${drive}/${SIGNED_TRANSACTION_PREFIX}${filename}`;
+      const filePath = `${path}/${SIGNED_TRANSACTION_PREFIX}${filename}`;
 
-      writeFile(path, signedTransaction);
+      writeFile(filePath, signedTransaction);
     });
 
     this.setState({ signed: true });
@@ -114,7 +114,7 @@ class Final extends Component {
     }
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           {signedTransactions.length ? (
             <Fragment>
@@ -148,17 +148,15 @@ transactions
             Done
           </Button>
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
 
 Final.propTypes = {
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   onCancel: PropTypes.func.isRequired,
   rawTransactions: PropTypes.array,
   resetAccountAction: PropTypes.func.isRequired,
@@ -168,11 +166,10 @@ Final.propTypes = {
 Final.defaultProps = {
   transactions: [],
   rawTransactions: [],
-  drives: {},
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
   transactions: state.account.transactions,
   transactionsToSign: state.account.transactionsToSign,
   rawTransactions: state.account.rawTransactions,

@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 /* eslint-disable react/forbid-prop-types */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
 import { EtherTransactionDecoder, representEthTx, representBtcTx } from 'walletcs/src/index';
+import Fade from 'react-reveal/Fade';
 
 import PropTypes from 'prop-types';
 import hash from 'object-hash';
@@ -24,15 +25,15 @@ class SelectTransaction extends Component {
   setupTransactions = () => {
     let dir = [];
     const {
-      drives,
+      activeDrive = {},
       setTransactionsAction,
       setRawTransactionsAction,
       setTransactionToSignAction,
     } = this.props;
-    const drive = drives.publicDrive || drives.emptyDrive;
+    const { path } = activeDrive;
 
     try {
-      dir = fs.readdirSync(drive) || [];
+      dir = fs.readdirSync(path) || [];
     } catch (error) {
       console.error(error);
     }
@@ -42,9 +43,9 @@ class SelectTransaction extends Component {
         let transaction = {};
 
         try {
-          transaction = JSON.parse(fs.readFileSync(`${drive}/${file}`, 'utf-8'));
+          transaction = JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf-8'));
         } catch (error) {
-          console.error(`error while reading ${drive}/${file}`);
+          console.error(`error while reading ${path}/${file}`);
           console.error(error);
           return null;
         }
@@ -139,7 +140,7 @@ class SelectTransaction extends Component {
     });
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           {isKeysExists ? (
             <Table
@@ -159,7 +160,7 @@ class SelectTransaction extends Component {
             </Button>
           )}
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
@@ -170,23 +171,20 @@ SelectTransaction.propTypes = {
   setRawTransactionsAction: PropTypes.func.isRequired,
   setTransactionToSignAction: PropTypes.func.isRequired,
   setTransactionsAction: PropTypes.func.isRequired,
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   transactions: PropTypes.array,
   transactionsToSign: PropTypes.array,
 };
 
 SelectTransaction.defaultProps = {
-  drives: {},
   transactions: [],
   transactionsToSign: [],
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
   transactions: state.account.transactions,
   transactionsToSign: state.account.transactionsToSign,
 });

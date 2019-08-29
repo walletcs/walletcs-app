@@ -1,7 +1,8 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 
@@ -16,16 +17,16 @@ class Final extends Component {
   }
 
   backupPrivateKeys = () => {
-    const { drives, keys } = this.props;
+    const { activeDrive = {}, keys } = this.props;
+    const { path } = activeDrive;
 
-    const { emptyDrive } = drives;
     const keysForRestore = keys;
 
     keysForRestore.forEach((k) => {
       const { account, privateKeyParsedData } = k;
-      const path = `${emptyDrive}/${PRIVATE_KEY_PREFIX}${account}.json`;
+      const filePath = `${path}/${PRIVATE_KEY_PREFIX}${account}.json`;
 
-      writeFile(path, privateKeyParsedData);
+      writeFile(filePath, privateKeyParsedData);
     });
   };
 
@@ -33,7 +34,7 @@ class Final extends Component {
     const { onCancel } = this.props;
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           <div className={styles.message}>
             You have successfully backed up your drive with private key
@@ -44,29 +45,26 @@ class Final extends Component {
             Done
           </Button>
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
 
 Final.propTypes = {
   onCancel: PropTypes.func.isRequired,
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   keys: PropTypes.array,
 };
 
 Final.defaultProps = {
-  drives: {},
   keys: [],
 };
 
 const mapStateToProps = state => ({
   keys: state.account.keys,
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
 });
 
 export default connect(mapStateToProps)(Final);

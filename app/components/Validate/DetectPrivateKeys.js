@@ -1,10 +1,11 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-console */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
 import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 import Table from '../Table';
@@ -21,15 +22,15 @@ class DetectPrivateKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { drives, setPrivateKeysAction } = this.props;
-    const { privateDrive } = drives;
+    const { activeDrive, setPrivateKeysAction } = this.props;
+    const { path } = activeDrive;
 
-    if (!privateDrive) {
+    if (!path) {
       return;
     }
 
     try {
-      dir = fs.readdirSync(privateDrive) || [];
+      dir = fs.readdirSync(path) || [];
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +44,7 @@ class DetectPrivateKeys extends Component {
         let keyBlockchain;
 
         try {
-          const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          const privateKeyData = fs.readFileSync(`${path}/${file}`, 'utf-8');
           const privateKeyParsedData = JSON.parse(privateKeyData) || {};
           privateKey = privateKeyParsedData.key;
           keyNetwork = privateKeyParsedData.network;
@@ -81,7 +82,7 @@ class DetectPrivateKeys extends Component {
     }));
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           {isKeysExists ? (
             <Table data={data} headers={['NAME', 'ADDRESS', 'NETWORK']} />
@@ -97,7 +98,7 @@ class DetectPrivateKeys extends Component {
             </Button>
           )}
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
@@ -106,22 +107,19 @@ DetectPrivateKeys.propTypes = {
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   setPrivateKeysAction: PropTypes.func.isRequired,
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   keys: PropTypes.array,
 };
 
 DetectPrivateKeys.defaultProps = {
-  drives: {},
   keys: [],
 };
 
 const mapStateToProps = state => ({
   keys: state.account.keys,
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
 });
 
 const mapDispatchToProps = dispatch => ({

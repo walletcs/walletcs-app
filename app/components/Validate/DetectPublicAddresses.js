@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 /* eslint-disable react/forbid-prop-types */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
 import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 import Checkbox from '../Checkbox';
@@ -33,13 +34,12 @@ class DetectPublicAddresses extends Component {
   restorePublicKeys = () => {
     const { generate } = this.state;
     const {
-      publicKeys, drives, setGeneratedFlagAction, next,
+      publicKeys, activeDrive, setGeneratedFlagAction, next,
     } = this.props;
+    const { path } = activeDrive;
 
     if (generate) {
       const keysForGenerate = publicKeys.filter(f => !f.found);
-      const { publicDrive, emptyDrive } = drives;
-      const drive = publicDrive || emptyDrive;
 
       keysForGenerate.forEach((k) => {
         let address;
@@ -55,8 +55,8 @@ class DetectPublicAddresses extends Component {
         }
 
         const { account } = k;
-        const path = `${drive}/${PUBLIC_KEY_PREFIX}${account}.txt`;
-        writeFile(path, address, { txt: true });
+        const filePath = `${path}/${PUBLIC_KEY_PREFIX}${account}.txt`;
+        writeFile(filePath, address, { txt: true });
       });
     }
 
@@ -66,12 +66,11 @@ class DetectPublicAddresses extends Component {
 
   setupPublicKeys = () => {
     let publicKeysFiles = [];
-    const { setPublicKeysAction, drives, keys } = this.props;
-    const { publicDrive, emptyDrive } = drives;
-    const drive = publicDrive || emptyDrive;
+    const { setPublicKeysAction, activeDrive, keys } = this.props;
+    const { path } = activeDrive;
 
     try {
-      publicKeysFiles = fs.readdirSync(drive) || [];
+      publicKeysFiles = fs.readdirSync(path) || [];
     } catch (error) {
       console.error(error);
     }
@@ -82,7 +81,7 @@ class DetectPublicAddresses extends Component {
         let res;
 
         try {
-          res = fs.readFileSync(`${drive}/${pkfile}`, 'utf-8');
+          res = fs.readFileSync(`${path}/${pkfile}`, 'utf-8');
         } catch (error) {
           console.error(error);
         }
@@ -114,7 +113,7 @@ class DetectPublicAddresses extends Component {
     const isGenerateNeedeed = keys.some(k => !k.found);
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
           <div className={styles.generateCheckboxContainer}>
@@ -133,7 +132,7 @@ class DetectPublicAddresses extends Component {
             Next
           </Button>
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
@@ -143,17 +142,14 @@ DetectPublicAddresses.propTypes = {
   onCancel: PropTypes.func.isRequired,
   setGeneratedFlagAction: PropTypes.func.isRequired,
   setPublicKeysAction: PropTypes.func.isRequired,
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   keys: PropTypes.array,
   publicKeys: PropTypes.array,
 };
 
 DetectPublicAddresses.defaultProps = {
-  drives: {},
   keys: [],
   publicKeys: [],
 };
@@ -161,7 +157,7 @@ DetectPublicAddresses.defaultProps = {
 const mapStateToProps = state => ({
   publicKeys: state.account.publicKeys,
   keys: state.account.keys,
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
 });
 
 const mapDispatchToProps = dispatch => ({

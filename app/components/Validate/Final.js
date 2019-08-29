@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 
@@ -13,7 +14,7 @@ const Final = ({ publicKeys, onCancel, generatedFlag }) => {
   const accounts = generatedFlag ? publicKeys.filter(f => !f.found) : [];
 
   return (
-    <Fragment>
+    <Fade>
       <div className={styles.contentWrapper}>
         {accounts.length ? (
           <Fragment>
@@ -35,7 +36,7 @@ PUBLIC ADDRESSES generated:
           Done
         </Button>
       </div>
-    </Fragment>
+    </Fade>
   );
 };
 

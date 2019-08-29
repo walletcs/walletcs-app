@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import { RadioGroup, Radio } from 'react-radio-group';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import { setAccountName, setAddress } from '../../actions/account';
-import { resetDrives } from '../../actions/drive';
+import { resetActiveDrive } from '../../actions/drive';
 import { writeFile } from '../../utils/helpers';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
@@ -58,10 +59,7 @@ class GeneratePrivate extends Component {
     const { blockchain, network } = this.state;
 
     if (blockchain === 'ETH') {
-      const pair = EtherKeyPair.generatePair();
-
-      addressValue = pair.address;
-      privateKeyValue = pair.privateKey;
+      [addressValue, privateKeyValue] = EtherKeyPair.generatePair();
     } else {
       const pair = BitcoinCheckPair.generatePair(network);
 
@@ -73,19 +71,18 @@ class GeneratePrivate extends Component {
 
   savePrivateKey = async () => {
     const { addressName, network, blockchain } = this.state;
-    const { setAddressAction, resetDrivesAction } = this.props;
+    const { setAddressAction, resetActiveDriveAction } = this.props;
 
     if (!addressName) {
       return false;
     }
 
     this.setState({ error: null, loadingMsg: 'Generating private key...' });
-    const { drives } = this.props;
-    const { privateDrive, emptyDrive } = drives;
+    const { activeDrive = {} } = this.props;
 
     const res = await this.generatePair();
 
-    const path = `${privateDrive || emptyDrive}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
+    const path = `${activeDrive.path}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
 
     try {
       writeFile(path, {
@@ -102,7 +99,7 @@ class GeneratePrivate extends Component {
     }
 
     setAddressAction(res.addressValue, network);
-    resetDrivesAction();
+    resetActiveDriveAction();
     this.setState({ loadingMsg: null });
 
     return true;
@@ -116,7 +113,7 @@ class GeneratePrivate extends Component {
     const showNext = blockchain === 'BTC' ? !!network : !!blockchain;
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           <div className={styles.inputWrapper}>
             <div className={styles.label}>Account name</div>
@@ -182,38 +179,35 @@ class GeneratePrivate extends Component {
             </Fragment>
           )}
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
 
 GeneratePrivate.propTypes = {
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   inputaddressName: PropTypes.string,
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  resetDrivesAction: PropTypes.func.isRequired,
+  resetActiveDriveAction: PropTypes.func.isRequired,
   setAccountNameAction: PropTypes.func.isRequired,
   setAddressAction: PropTypes.func.isRequired,
 };
 
 GeneratePrivate.defaultProps = {
-  drives: {},
   inputaddressName: '',
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
 });
 
 const mapDispatchToProps = dispatch => ({
   setAccountNameAction: name => dispatch(setAccountName(name)),
   setAddressAction: (address, network) => dispatch(setAddress(address, network)),
-  resetDrivesAction: path => dispatch(resetDrives(path)),
+  resetActiveDriveAction: () => dispatch(resetActiveDrive()),
 });
 
 export default connect(

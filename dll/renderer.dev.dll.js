@@ -315,6 +315,18 @@ eval("module.exports = react-redux;\n\n//# sourceURL=webpack://renderer/external
 
 /***/ }),
 
+/***/ "react-reveal":
+/*!*******************************!*\
+  !*** external "react-reveal" ***!
+  \*******************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+eval("module.exports = react-reveal;\n\n//# sourceURL=webpack://renderer/external_%22react-reveal%22?");
+
+/***/ }),
+
 /***/ "react-router":
 /*!*******************************!*\
   !*** external "react-router" ***!
