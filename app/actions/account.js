@@ -13,6 +13,11 @@ export const setAddress = (address, network) => ({
   },
 });
 
+export const setPassphrase = payload => ({
+  type: 'SET_PASSPHRASE',
+  payload,
+});
+
 export const setPrivateKeys = keys => ({
   type: 'SET_PRIVATE_KEYS',
   payload: {

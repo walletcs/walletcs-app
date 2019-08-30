@@ -19,26 +19,32 @@ import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 import styles from '../App/index.css';
 
 class DetectPublicAddresses extends Component {
-  state = { generate: true };
+  state = { generateAddreses: true, generateXpubs: false };
 
   componentWillMount() {
     this.setupPublicKeys();
   }
 
   onGenerateChange = () => {
-    const { generate } = this.state;
+    const { generateAddreses } = this.state;
 
-    this.setState({ generate: !generate });
+    this.setState({ generateAddreses: !generateAddreses });
   };
 
+  onGenerateXpubsChange = () => {
+    const { generateXpubs } = this.state;
+
+    this.setState({ generateXpubs: !generateXpubs });
+  }
+
   restorePublicKeys = () => {
-    const { generate } = this.state;
+    const { generateAddreses } = this.state;
     const {
       publicKeys, activeDrive, setGeneratedFlagAction, next,
     } = this.props;
     const { path } = activeDrive;
 
-    if (generate) {
+    if (generateAddreses) {
       const keysForGenerate = publicKeys.filter(f => !f.found);
 
       keysForGenerate.forEach((k) => {
@@ -60,7 +66,7 @@ class DetectPublicAddresses extends Component {
       });
     }
 
-    setGeneratedFlagAction(generate);
+    setGeneratedFlagAction(generateAddreses);
     next();
   };
 
@@ -99,7 +105,7 @@ class DetectPublicAddresses extends Component {
 
   render() {
     const { onCancel, publicKeys } = this.props;
-    const { generate } = this.state;
+    const { generateAddreses, generateXpubs } = this.state;
 
     const keys = publicKeys || [];
     const data = keys.map((item) => {
@@ -119,11 +125,18 @@ class DetectPublicAddresses extends Component {
           <div className={styles.generateCheckboxContainer}>
             {isGenerateNeedeed && (
               <Checkbox
-                checked={generate}
+                checked={generateAddreses}
                 onChange={this.onGenerateChange}
-                label="Generate missing keys"
+                label="Generate missing addresses"
               />
             )}
+          </div>
+          <div className={styles.generateCheckboxContainer}>
+            <Checkbox
+              checked={generateXpubs}
+              onChange={this.onGenerateXpubsChange}
+              label="Generate xPUBs"
+            />
           </div>
         </div>
         <div className={styles.rowControls}>

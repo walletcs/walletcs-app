@@ -291,6 +291,18 @@ eval("module.exports = react-hot-loader;\n\n//# sourceURL=webpack://renderer/ext
 
 /***/ }),
 
+/***/ "react-modal":
+/*!******************************!*\
+  !*** external "react-modal" ***!
+  \******************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+eval("module.exports = react-modal;\n\n//# sourceURL=webpack://renderer/external_%22react-modal%22?");
+
+/***/ }),
+
 /***/ "react-radio-group":
 /*!************************************!*\
   !*** external "react-radio-group" ***!

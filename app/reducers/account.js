@@ -22,6 +22,12 @@ const accountReducer = (state = initialState, action) => {
         address: action.payload.address,
         network: action.payload.network,
       };
+    case 'SET_PASSPHRASE':
+      return {
+        ...state,
+        usePassphrase: action.payload.usePassphrase,
+        recoveryPassphrase: action.payload.recoveryPassphrase,
+      };
     case 'SET_PRIVATE_KEYS':
       return {
         ...state,

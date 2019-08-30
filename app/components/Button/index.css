@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.smButton {
+  height: 48px;
+}
+
 .primary {
   background-color: #26cd58;
 }
