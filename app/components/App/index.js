@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import MenuItem from '../MenuItem';
 import Account from '../Account';
@@ -74,18 +75,20 @@ export default class App extends Component {
 
   renderMenu = () => (
     <div className={styles.row}>
-      <MenuItem icon={generateIcon} onClick={() => this.setAccountScreen()}>
-        Generate Account
-      </MenuItem>
-      <MenuItem icon={backupIcon} onClick={() => this.setBackupScreen()}>
-        Backup Private Key Drive
-      </MenuItem>
-      <MenuItem icon={validateIcon} onClick={() => this.setValidateScreen()}>
-        Validate / Generate Address
-      </MenuItem>
-      <MenuItem primary icon={signIcon} onClick={() => this.setSignTransactionScreen()}>
-        Sign Transaction
-      </MenuItem>
+      <Fade>
+        <MenuItem icon={generateIcon} onClick={() => this.setAccountScreen()}>
+          Generate Account
+        </MenuItem>
+        <MenuItem icon={backupIcon} onClick={() => this.setBackupScreen()}>
+          Backup Private Key Drive
+        </MenuItem>
+        <MenuItem icon={validateIcon} onClick={() => this.setValidateScreen()}>
+          Validate / Generate Address
+        </MenuItem>
+        <MenuItem primary icon={signIcon} onClick={() => this.setSignTransactionScreen()}>
+          Sign Transaction
+        </MenuItem>
+      </Fade>
     </div>
   );
 

@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 
 import styles from '../App/index.css';
 
 const Final = ({ accountName, onCancel, onValidate }) => (
-  <Fragment>
+  <Fade>
     <div className={styles.contentWrapper}>
       <div
         style={{
@@ -38,7 +39,7 @@ const Final = ({ accountName, onCancel, onValidate }) => (
       </Button>
       <Button onClick={onCancel}>Done</Button>
     </div>
-  </Fragment>
+  </Fade>
 );
 
 Final.propTypes = {

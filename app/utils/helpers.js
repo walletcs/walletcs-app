@@ -9,12 +9,14 @@ export const getDrives = async () => {
   const drivesList = await drivelist.list();
 
   const drives = drivesList.filter(item => item.isUSB);
-  const result = {};
-
-  drives
+  const result = drives
     .map((driveItem) => {
       let dir = [];
       const { path } = driveItem.mountpoints[0] || {};
+
+      if (driveItem.system) {
+        return null;
+      }
 
       if (path) {
         try {
@@ -36,10 +38,7 @@ export const getDrives = async () => {
 
       return { path, driveType: rawDriveType || 'emptyDrive' };
     })
-    .filter(f => !!f)
-    .forEach((d) => {
-      result[d.driveType] = d.path;
-    });
+    .filter(f => !!f);
 
   return result;
 };

@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 /* eslint-disable react/forbid-prop-types */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 
@@ -19,11 +20,11 @@ class CopyKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { drives, setPrivateKeysAction } = this.props;
-    const { privateDrive } = drives;
+    const { activeDrive = {}, setPrivateKeysAction } = this.props;
+    const { path } = activeDrive;
 
     try {
-      dir = fs.readdirSync(privateDrive) || [];
+      dir = fs.readdirSync(path) || [];
     } catch (error) {
       console.error(error);
     }
@@ -34,7 +35,7 @@ class CopyKeys extends Component {
         let privateKeyParsedData;
 
         try {
-          const privateKeyData = fs.readFileSync(`${privateDrive}/${file}`, 'utf-8');
+          const privateKeyData = fs.readFileSync(`${path}/${file}`, 'utf-8');
           privateKeyParsedData = JSON.parse(privateKeyData) || {};
         } catch (error) {
           console.error(error);
@@ -53,7 +54,7 @@ class CopyKeys extends Component {
     const { onCancel, next } = this.props;
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           <div className={styles.insertPrivate}>Private Key flash drive copied</div>
         </div>
@@ -63,29 +64,23 @@ class CopyKeys extends Component {
             Next
           </Button>
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
 
 CopyKeys.propTypes = {
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
   setPrivateKeysAction: PropTypes.func.isRequired,
-};
-
-CopyKeys.defaultProps = {
-  drives: {},
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
   keys: state.account.keys,
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
 });
 
 const mapDispatchToProps = dispatch => ({

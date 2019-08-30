@@ -20,7 +20,7 @@ body {
 }
 
 .flexHeader {
-  padding: 45px 0;
+  padding: 39px 0;
   background-color: #010d17;
 }
 
@@ -270,4 +270,46 @@ body {
 .radio:hover input:checked + span:after {
   -webkit-transform: scale(0.4);
   transform: scale(0.4);
+}
+
+.modalOverlay {
+  opacity: 0;
+  transition: opacity 500ms ease;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(47, 47, 47, 0.73);
+}
+
+.modalOverlayAfterOpen {
+  opacity: 1;
+}
+
+.modalContent {
+  position: absolute;
+  top: 160px;
+  left: 140px;
+  right: 140px;
+  bottom: 180px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recoveryPassphraseTextarea {
+  resize: none;
+  flex: 1;
+  color: #010d17;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  font-family: Arial;
+  width: 100%;
 }

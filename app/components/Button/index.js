@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import styles from './index.css';
 
 const Button = ({
-  primary, className, children, onClick,
+  primary, className, children, onClick, size,
 }) => (
   <div
     className={cx(
@@ -15,6 +15,7 @@ const Button = ({
       {
         [styles.primary]: primary,
         [styles.default]: !primary,
+        [styles.smButton]: size === 'sm',
       },
       className,
     )}
@@ -39,11 +40,13 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
   primary: PropTypes.bool,
+  size: PropTypes.string,
 };
 
 Button.defaultProps = {
   className: '',
   primary: false,
+  size: 'md',
 };
 
 export default Button;

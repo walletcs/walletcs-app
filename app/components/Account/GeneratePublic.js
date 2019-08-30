@@ -3,11 +3,12 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 
 import { writeFile } from '../../utils/helpers';
-import { resetDrives } from '../../actions/drive';
+import { resetActiveDrive } from '../../actions/drive';
 
 import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 
@@ -20,13 +21,12 @@ class GeneratePublic extends Component {
 
   savePublicKey = () => {
     const {
-      resetDrivesAction, next, drives, account,
+      next, activeDrive = {}, account, resetActiveDriveAction,
     } = this.props;
-    const { publicDrive, emptyDrive } = drives;
     const { address, name } = account;
 
     this.setState({ loadingMsg: 'Calculating public key...' });
-    const path = `${publicDrive || emptyDrive}/${PUBLIC_KEY_PREFIX}${name}.txt`;
+    const path = `${activeDrive.path}/${PUBLIC_KEY_PREFIX}${name}.txt`;
 
     try {
       writeFile(path, address, { txt: true });
@@ -34,7 +34,7 @@ class GeneratePublic extends Component {
       const extraPath = path.replace('.txt', '').concat(`-${Date.now()}.txt`);
       writeFile(extraPath, address, { txt: true });
     }
-    resetDrivesAction();
+    resetActiveDriveAction();
     next();
   };
 
@@ -48,7 +48,7 @@ class GeneratePublic extends Component {
     const addrname = 'addr-' + name + '.txt';
 
     return (
-      <Fragment>
+      <Fade>
         <div className={styles.contentWrapper}>
           <div>
             <div className={styles.infoText}>
@@ -72,7 +72,7 @@ class GeneratePublic extends Component {
         </div>
         <div className={styles.rowControls}>
           {loadingMsg ? (
-            <div>{loadingMsg}</div>
+            <div style={{ margin: 'auto', marginBottom: 65 }}>{loadingMsg}</div>
           ) : (
             <Fragment>
               <Button onClick={onCancel}>Cancel</Button>
@@ -82,35 +82,32 @@ class GeneratePublic extends Component {
             </Fragment>
           )}
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
 
 GeneratePublic.propTypes = {
   account: PropTypes.object,
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  resetDrivesAction: PropTypes.func.isRequired,
+  resetActiveDriveAction: PropTypes.func.isRequired,
 };
 
 GeneratePublic.defaultProps = {
   account: {},
-  drives: {},
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
   account: state.account,
 });
 
 const mapDispatchToProps = dispatch => ({
-  resetDrivesAction: path => dispatch(resetDrives(path)),
+  resetActiveDriveAction: () => dispatch(resetActiveDrive()),
 });
 
 export default connect(

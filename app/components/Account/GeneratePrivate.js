@@ -6,9 +6,12 @@ import { connect } from 'react-redux';
 import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import { RadioGroup, Radio } from 'react-radio-group';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
+import Modal from 'react-modal';
+import cx from 'classnames';
 
-import { setAccountName, setAddress } from '../../actions/account';
-import { resetDrives } from '../../actions/drive';
+import { setAccountName, setAddress, setPassphrase } from '../../actions/account';
+import { resetActiveDrive } from '../../actions/drive';
 import { writeFile } from '../../utils/helpers';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
@@ -16,12 +19,16 @@ import Button from '../Button';
 
 import styles from '../App/index.css';
 
+Modal.setAppElement('#root');
+
 class GeneratePrivate extends Component {
   state = {
     addressName: '',
     blockchain: null,
     loadingMsg: null,
     error: null,
+    modalIsOpen: false,
+    usePassphrase: false,
   };
 
   handleChange = (addressName) => {
@@ -58,10 +65,7 @@ class GeneratePrivate extends Component {
     const { blockchain, network } = this.state;
 
     if (blockchain === 'ETH') {
-      const pair = EtherKeyPair.generatePair();
-
-      addressValue = pair.address;
-      privateKeyValue = pair.privateKey;
+      [addressValue, privateKeyValue] = EtherKeyPair.generatePair();
     } else {
       const pair = BitcoinCheckPair.generatePair(network);
 
@@ -72,25 +76,27 @@ class GeneratePrivate extends Component {
   };
 
   savePrivateKey = async () => {
-    const { addressName, network, blockchain } = this.state;
-    const { setAddressAction, resetDrivesAction } = this.props;
+    const {
+      addressName, network, blockchain, usePassphrase, recoveryPassphrase,
+    } = this.state;
+    const { setAddressAction, resetActiveDriveAction, setPassphraseAction } = this.props;
 
     if (!addressName) {
       return false;
     }
 
     this.setState({ error: null, loadingMsg: 'Generating private key...' });
-    const { drives } = this.props;
-    const { privateDrive, emptyDrive } = drives;
+    const { activeDrive = {} } = this.props;
 
     const res = await this.generatePair();
 
-    const path = `${privateDrive || emptyDrive}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
+    const path = `${activeDrive.path}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
+    const selectedNetwork = blockchain === 'ETH' ? 'ETH' : network;
 
     try {
       writeFile(path, {
         key: res.privateKeyValue,
-        network: blockchain === 'ETH' ? 'ETH' : network,
+        network: selectedNetwork,
         blockchain,
       });
     } catch (_) {
@@ -101,22 +107,80 @@ class GeneratePrivate extends Component {
       return false;
     }
 
-    setAddressAction(res.addressValue, network);
-    resetDrivesAction();
+    setPassphraseAction({
+      usePassphrase,
+      recoveryPassphrase: 'TEST', // ADD here generated mnemonic if it's needed
+    });
+    setAddressAction(res.addressValue, selectedNetwork);
+    resetActiveDriveAction();
     this.setState({ loadingMsg: null });
 
     return true;
   };
 
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ modalOverlayShown: false, modalIsOpen: false });
+  };
+
+  handleChangePassphrase = (e) => {
+    this.setState({ recoveryPassphrase: e.target.value });
+  };
+
+  savePassphrase = () => {
+    this.setState({ modalIsOpen: false, usePassphrase: true });
+  };
+
+  resetPassphrase = () => {
+    this.closeModal();
+    this.setState({ usePassphrase: false, recoveryPassphrase: '' });
+  };
+
+  handleOpenModal = () => {
+    this.setState({ modalOverlayShown: true });
+  };
+
   render() {
     const {
-      loadingMsg, addressName, blockchain, network, error,
+      loadingMsg,
+      addressName,
+      blockchain,
+      network,
+      error,
+      modalIsOpen,
+      usePassphrase,
+      modalOverlayShown,
     } = this.state;
     const { inputaddressName, onCancel } = this.props;
     const showNext = blockchain === 'BTC' ? !!network : !!blockchain;
 
     return (
-      <Fragment>
+      <Fade>
+        <Modal
+          isOpen={modalIsOpen}
+          closeTimeoutMS={500}
+          onRequestClose={this.closeModal}
+          onAfterOpen={this.handleOpenModal}
+          overlayClassName={cx(styles.modalOverlay, {
+            [styles.modalOverlayAfterOpen]: modalOverlayShown,
+          })}
+          className={styles.modalContent}
+        >
+          <h2 style={{ textAlign: 'center' }}>Restore key from passphrase</h2>
+          <textarea
+            onChange={this.handleChangePassphrase}
+            className={styles.recoveryPassphraseTextarea}
+          />
+          <div className={styles.rowControls}>
+            <Button size="sm" onClick={this.resetPassphrase}>Reset and cancel</Button>
+            <Button size="sm" onClick={this.savePassphrase} primary>
+              Use passphrase
+            </Button>
+          </div>
+        </Modal>
         <div className={styles.contentWrapper}>
           <div className={styles.inputWrapper}>
             <div className={styles.label}>Account name</div>
@@ -166,6 +230,9 @@ class GeneratePrivate extends Component {
               </div>
             )}
           </div>
+          <div style={{ width: 230 }}>
+            <Button onClick={this.openModal}>Recovery from passphrase</Button>
+          </div>
         </div>
         <div>{error}</div>
         <div className={styles.rowControls}>
@@ -176,44 +243,43 @@ class GeneratePrivate extends Component {
               <Button onClick={onCancel}>Cancel</Button>
               {showNext && (
                 <Button onClick={this.onSave} primary>
-                  Save private key
+                  {usePassphrase ? 'Restore private key' : 'Save private key'}
                 </Button>
               )}
             </Fragment>
           )}
         </div>
-      </Fragment>
+      </Fade>
     );
   }
 }
 
 GeneratePrivate.propTypes = {
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  activeDrive: PropTypes.shape({
+    path: PropTypes.string,
+  }).isRequired,
   inputaddressName: PropTypes.string,
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  resetDrivesAction: PropTypes.func.isRequired,
+  resetActiveDriveAction: PropTypes.func.isRequired,
   setAccountNameAction: PropTypes.func.isRequired,
   setAddressAction: PropTypes.func.isRequired,
+  setPassphraseAction: PropTypes.func.isRequired,
 };
 
 GeneratePrivate.defaultProps = {
-  drives: {},
   inputaddressName: '',
 };
 
 const mapStateToProps = state => ({
-  drives: state.drive.drives,
+  activeDrive: state.drive.activeDrive,
 });
 
 const mapDispatchToProps = dispatch => ({
   setAccountNameAction: name => dispatch(setAccountName(name)),
   setAddressAction: (address, network) => dispatch(setAddress(address, network)),
-  resetDrivesAction: path => dispatch(resetDrives(path)),
+  setPassphraseAction: data => dispatch(setPassphrase(data)),
+  resetActiveDriveAction: () => dispatch(resetActiveDrive()),
 });
 
 export default connect(

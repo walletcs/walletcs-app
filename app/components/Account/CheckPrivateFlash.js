@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
+import DriveSelector from '../DriveSelector';
 import FlashToDeviceIndicator from '../FlashToDeviceIndicator';
+import { setActiveDrive } from '../../actions/drive';
 
 import privateFlash from '../../assets/private_flash.png';
 import device from '../../assets/Device.png';
@@ -11,48 +14,72 @@ import styles from '../App/index.css';
 
 const CheckPrivateFlash = (props) => {
   const {
-    drives, next, onlyPrivate, onCancel,
+    drives, next, onlyPrivate, onCancel, setActiveDriveAction,
   } = props;
-  const drive = onlyPrivate ? drives.privateDrive : drives.privateDrive || drives.emptyDrive;
 
-  if (drive) {
+  let filteredDrives = [];
+
+  if (drives) {
+    filteredDrives = onlyPrivate
+      ? drives.filter(d => d.driveType === 'privateDrive')
+      : drives.filter(d => ['privateDrive', 'emptyDrive'].includes(d.driveType));
+  }
+
+  const chooseDrive = (path) => {
+    setActiveDriveAction(path);
     next();
+  };
+
+  if (filteredDrives.length === 1) {
+    chooseDrive(filteredDrives[0].path);
   }
 
   return (
-    <Fragment>
+    <Fade>
       <div className={styles.contentWrapper}>
-        <div className={styles.icons}>
-          <img src={privateFlash} className={styles.icon} alt="" />
-          <FlashToDeviceIndicator flash="private" />
-          <img src={device} className={styles.icon} alt="" />
-        </div>
-        <div className={styles.insertPrivate}>
-          Insert
-          {' '}
-          <span className={styles.private}>Private</span>
-          {' '}
+        {filteredDrives.length >= 1 ? (
+          <DriveSelector
+            drives={filteredDrives}
+            onCheckDrive={chooseDrive}
+            title="Please choose private key drive"
+          />
+        ) : (
+          <>
+            <div className={styles.icons}>
+              <img src={privateFlash} className={styles.icon} alt="" />
+              <FlashToDeviceIndicator flash="private" />
+              <img src={device} className={styles.icon} alt="" />
+            </div>
+            <div className={styles.insertPrivate}>
+              Insert
+              {' '}
+              <span className={styles.private}>Private</span>
+              {' '}
 key flash drive
-        </div>
+            </div>
+          </>
+        )}
+        <Button onClick={onCancel}>Cancel</Button>
       </div>
-      <Button onClick={onCancel}>Cancel</Button>
-    </Fragment>
+    </Fade>
   );
 };
 
 CheckPrivateFlash.propTypes = {
-  drives: PropTypes.shape({
-    emptyDrive: PropTypes.string,
-    publicDrive: PropTypes.string,
-    privateDrive: PropTypes.string,
-  }),
+  drives: PropTypes.arrayOf(
+    PropTypes.shape({
+      driveType: PropTypes.string,
+      path: PropTypes.string,
+    }),
+  ),
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  setActiveDriveAction: PropTypes.func.isRequired,
   onlyPrivate: PropTypes.bool,
 };
 
 CheckPrivateFlash.defaultProps = {
-  drives: {},
+  drives: [],
   onlyPrivate: false,
 };
 
@@ -60,4 +87,11 @@ const mapStateToProps = state => ({
   drives: state.drive.drives,
 });
 
-export default connect(mapStateToProps)(CheckPrivateFlash);
+const mapDispatchToProps = dispatch => ({
+  setActiveDriveAction: path => dispatch(setActiveDrive(path)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CheckPrivateFlash);
