@@ -5,9 +5,11 @@ import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
-const ShowPassphrase = ({ next, recoveryPassphrase, usePassphrase }) => {
+const ShowPassphrase = ({
+  next, recoveryPassphrase, usePassphrase, accountName,
+}) => {
   if (usePassphrase) {
     next();
   }
@@ -16,11 +18,21 @@ const ShowPassphrase = ({ next, recoveryPassphrase, usePassphrase }) => {
     <Fade>
       <div className={styles.contentWrapper}>
         <div style={{ minWidth: 350 }}>
-          <div style={{ marginBottom: 10 }}>Generated passphrase</div>
+          <div style={{ marginBottom: 10 }}>{`Passphrase for account ${accountName}`}</div>
           <textarea disabled className={styles.recoveryPassphraseTextarea}>
             {recoveryPassphrase}
           </textarea>
-          <div className={styles.recommend}>We highly recommend to keep it secure</div>
+          <ul>
+            <li className={styles.passphrasePoint}>
+              Keep passphrase as secure as private key
+            </li>
+            <li className={styles.passphrasePoint}>
+              Never store electronically, including photograph
+            </li>
+            <li className={styles.passphrasePoint}>
+              We recommend handwriting passphrase on the piece of paper
+            </li>
+          </ul>
         </div>
       </div>
       <div className={styles.rowControls}>
@@ -36,11 +48,13 @@ ShowPassphrase.propTypes = {
   recoveryPassphrase: PropTypes.string.isRequired,
   next: PropTypes.func.isRequired,
   usePassphrase: PropTypes.bool.isRequired,
+  accountName: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
   recoveryPassphrase: state.account.name,
   usePassphrase: state.account.usePassphrase,
+  accountName: state.account.name,
 });
 
 export default connect(mapStateToProps)(ShowPassphrase);

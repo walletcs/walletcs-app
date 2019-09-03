@@ -12,7 +12,9 @@ export const getDrives = async () => {
   const result = drives
     .map((driveItem) => {
       let dir = [];
-      const { path } = driveItem.mountpoints[0] || {};
+      const { mountpoints } = driveItem;
+      const { path, label } = mountpoints[0] || {};
+      const description = `${path} ${label ? `(${label})` : ''}`;
 
       if (driveItem.system) {
         return null;
@@ -36,7 +38,7 @@ export const getDrives = async () => {
         rawDriveType = 'privateDrive';
       }
 
-      return { path, driveType: rawDriveType || 'emptyDrive' };
+      return { path, driveType: rawDriveType || 'emptyDrive', description };
     })
     .filter(f => !!f);
 

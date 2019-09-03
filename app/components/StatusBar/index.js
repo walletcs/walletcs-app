@@ -6,7 +6,7 @@ import shortid from 'shortid';
 
 import appInfo from '../../../app.json';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 const StatusBar = ({ online, drives }) => {
   let driveStatus = [];

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/forbid-prop-types */
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import { RadioGroup, Radio } from 'react-radio-group';
@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-modal';
 import cx from 'classnames';
+import { toast } from 'react-toastify';
 
 import { setAccountName, setAddress, setPassphrase } from '../../actions/account';
 import { resetActiveDrive } from '../../actions/drive';
@@ -17,7 +18,7 @@ import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
 import Button from '../Button';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 Modal.setAppElement('#root');
 
@@ -43,11 +44,17 @@ class GeneratePrivate extends Component {
     this.setState({ network });
   };
 
+  handlePassphraseModeChange = (val) => {
+    const usePassphrase = val === 'passphrase';
+    this.setState({ usePassphrase, modalIsOpen: usePassphrase });
+  }
+
   onSave = async () => {
-    const { blockchain, addressName } = this.state;
+    const { addressName } = this.state;
     const { setAccountNameAction, next } = this.props;
 
-    if (!blockchain || !addressName) {
+    if (!addressName) {
+      toast.warn('Account name is required!');
       return;
     }
 
@@ -230,8 +237,24 @@ class GeneratePrivate extends Component {
               </div>
             )}
           </div>
-          <div style={{ width: 230 }}>
-            <Button onClick={this.openModal}>Recovery from passphrase</Button>
+          <div className={styles.radioGroup}>
+            <div style={{ flex: 1 }}>
+              <div className={styles.label}>Key:</div>
+              <RadioGroup
+                name="usePassphrase"
+                selectedValue={usePassphrase ? 'passphrase' : 'new'}
+                onChange={this.handlePassphraseModeChange}
+              >
+                <label className={styles.radio}>
+                  <Radio value="new" />
+                  <span>Generate new key</span>
+                </label>
+                <label className={styles.radio}>
+                  <Radio value="passphrase" />
+                  <span>Restore from passphrase</span>
+                </label>
+              </RadioGroup>
+            </div>
           </div>
         </div>
         <div>{error}</div>
@@ -239,14 +262,14 @@ class GeneratePrivate extends Component {
           {loadingMsg ? (
             <div style={{ margin: 'auto', marginBottom: 65 }}>{loadingMsg}</div>
           ) : (
-            <Fragment>
+            <>
               <Button onClick={onCancel}>Cancel</Button>
               {showNext && (
                 <Button onClick={this.onSave} primary>
-                  {usePassphrase ? 'Restore private key' : 'Save private key'}
+                  Save private key
                 </Button>
               )}
-            </Fragment>
+            </>
           )}
         </div>
       </Fade>

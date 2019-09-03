@@ -14,7 +14,7 @@ import { writeFile } from '../../utils/helpers';
 
 import { SIGNED_TRANSACTION_PREFIX } from '../../utils/constants';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 class Final extends Component {
   state = {

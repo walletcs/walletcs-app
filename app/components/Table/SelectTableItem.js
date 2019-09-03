@@ -6,7 +6,7 @@ import shortid from 'shortid';
 
 import Checkbox from '../Checkbox';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 export default class SelectTableItem extends Component {
   constructor(props) {

@@ -8,7 +8,7 @@ import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 
 import Button from '../Button';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 const Final = ({ publicKeys, onCancel, generatedFlag }) => {
   const accounts = generatedFlag ? publicKeys.filter(f => !f.found) : [];

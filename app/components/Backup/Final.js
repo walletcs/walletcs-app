@@ -9,7 +9,7 @@ import Button from '../Button';
 import { writeFile } from '../../utils/helpers';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 class Final extends Component {
   componentWillMount() {

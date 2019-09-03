@@ -11,7 +11,7 @@ import { setActiveDrive } from '../../actions/drive';
 import emptyDrive from '../../assets/empty_drive.png';
 import device from '../../assets/Device.png';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 const CheckEmptyFlash = (props) => {
   const {

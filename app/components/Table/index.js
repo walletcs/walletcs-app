@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import SelectTableItem from './SelectTableItem';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 const Table = ({ headers, onCheck, data }) => {
   const isCheckboxNeeded = !!onCheck;

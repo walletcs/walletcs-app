@@ -15,7 +15,7 @@ import Table from '../Table';
 import { setTransactions, setTransactionToSign, setRawTransactions } from '../../actions/account';
 import { getTransactionType } from '../../utils/helpers';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 class SelectTransaction extends Component {
   componentWillMount() {

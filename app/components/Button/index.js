@@ -4,7 +4,7 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 const Button = ({
   primary, className, children, onClick, size,

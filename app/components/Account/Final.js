@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 const Final = ({ accountName, onCancel, onValidate }) => (
   <Fade>

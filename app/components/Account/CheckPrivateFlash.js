@@ -10,7 +10,7 @@ import { setActiveDrive } from '../../actions/drive';
 
 import privateFlash from '../../assets/private_flash.png';
 import device from '../../assets/Device.png';
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 const CheckPrivateFlash = (props) => {
   const {
@@ -41,7 +41,7 @@ const CheckPrivateFlash = (props) => {
           <DriveSelector
             drives={filteredDrives}
             onCheckDrive={chooseDrive}
-            title="Please choose private key drive"
+            title="Choose drive to store your private key"
           />
         ) : (
           <>

@@ -11,7 +11,7 @@ import Button from '../Button';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 import { setPrivateKeys } from '../../actions/account';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 class CopyKeys extends Component {
   componentWillMount() {

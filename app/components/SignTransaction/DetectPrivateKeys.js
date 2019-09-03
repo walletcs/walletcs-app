@@ -13,7 +13,7 @@ import Table from '../Table';
 import { setTransactions } from '../../actions/account';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 class DetectPrivateKeys extends Component {
   componentWillMount() {

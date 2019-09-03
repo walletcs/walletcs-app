@@ -11,7 +11,7 @@ import { setActiveDrive } from '../../actions/drive';
 import device from '../../assets/Device.png';
 import transactionFlash from '../../assets/transaction_drive.png';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 const CheckTransactionFlash = ({
   drives, onCancel, next, setActiveDriveAction,

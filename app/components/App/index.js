@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
+import { ToastContainer } from 'react-toastify';
 
 import MenuItem from '../MenuItem';
 import Account from '../Account';
@@ -19,7 +20,8 @@ import backupIcon from '../../assets/backup_icon.png';
 import validateIcon from '../../assets/validate_icon.png';
 import signIcon from '../../assets/sign_icon.png';
 
-import styles from './index.css';
+import 'react-toastify/dist/ReactToastify.css';
+import styles from './index.module.css';
 
 const Logo = () => <img src={walletcsLogo} alt="" />;
 
@@ -129,6 +131,17 @@ export default class App extends Component {
           <div className={styles.footer}>
             <StatusBar online={online} />
           </div>
+          <ToastContainer
+            position="bottom-left"
+            autoClose={4000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnVisibilityChange={false}
+            draggable
+            pauseOnHover
+          />
         </div>
       </Provider>
     );

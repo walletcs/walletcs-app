@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 export default class StepHandler extends Component {
   state = {

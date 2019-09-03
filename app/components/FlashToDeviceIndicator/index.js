@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-import styles from './index.css';
+import styles from './index.module.css';
 
 class FlashToDeviceIndicator extends Component {
   state = { active: 0 };

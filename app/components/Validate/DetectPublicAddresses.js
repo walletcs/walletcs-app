@@ -16,7 +16,7 @@ import { setPublicKeys, setGeneratedFlag } from '../../actions/account';
 
 import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
 
-import styles from '../App/index.css';
+import styles from '../App/index.module.css';
 
 class DetectPublicAddresses extends Component {
   state = { generateAddreses: true, generateXpubs: false };
