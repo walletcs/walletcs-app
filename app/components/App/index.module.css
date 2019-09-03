@@ -196,6 +196,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .statusWidget {
@@ -324,4 +327,10 @@ body {
 
 .passphrasePoint {
   padding: 8px 0px;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

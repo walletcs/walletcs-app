@@ -8,13 +8,13 @@ const drivelist = require('drivelist');
 export const getDrives = async () => {
   const drivesList = await drivelist.list();
 
-  const drives = drivesList.filter(item => item.isUSB);
+  const drives = drivesList.filter(item => item.isUSB && !item.error && item.size > 0);
   const result = drives
     .map((driveItem) => {
       let dir = [];
-      const { mountpoints } = driveItem;
-      const { path, label } = mountpoints[0] || {};
-      const description = `${path} ${label ? `(${label})` : ''}`;
+      const { mountpoints, description } = driveItem;
+      const { path } = mountpoints[0] || {};
+      const driveLabel = description.includes(path) ? description : `${description} (${path})`; // fix for windows/linux cases
 
       if (driveItem.system) {
         return null;
@@ -38,7 +38,7 @@ export const getDrives = async () => {
         rawDriveType = 'privateDrive';
       }
 
-      return { path, driveType: rawDriveType || 'emptyDrive', description };
+      return { path, driveType: rawDriveType || 'emptyDrive', description: driveLabel };
     })
     .filter(f => !!f);
 

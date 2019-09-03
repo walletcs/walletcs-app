@@ -39,7 +39,7 @@ const CheckPublicFlash = (props) => {
           <DriveSelector
             drives={filteredDrives}
             onCheckDrive={chooseDrive}
-            title="Choose drive to store your public key"
+            title="Select public key drive"
           />
         ) : (
           <>

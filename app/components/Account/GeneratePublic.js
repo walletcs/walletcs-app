@@ -72,7 +72,7 @@ class GeneratePublic extends Component {
             <Checkbox
               checked={generateXpubs}
               onChange={this.onGenerateXpubsChange}
-              label="Generate xPUBs"
+              label="Store xpub. xpub is used to generate additional addresses for the account"
             />
           </div>
           <div

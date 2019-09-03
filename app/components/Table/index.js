@@ -11,8 +11,8 @@ const Table = ({ headers, onCheck, data }) => {
   const isCheckboxNeeded = !!onCheck;
 
   return (
-    <table style={{ width: '100%' }}>
-      <tbody>
+    <table style={{ width: '100%', display: 'inherit' }}>
+      <tbody style={{ width: '100%' }}>
         <tr className={styles.tableRow}>
           {isCheckboxNeeded && (
             <td className={cx(styles.tableCell, styles.tableHeader, styles.tableCheckbox)} />

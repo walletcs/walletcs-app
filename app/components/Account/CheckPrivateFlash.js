@@ -41,7 +41,7 @@ const CheckPrivateFlash = (props) => {
           <DriveSelector
             drives={filteredDrives}
             onCheckDrive={chooseDrive}
-            title="Choose drive to store your private key"
+            title="Select private key drive"
           />
         ) : (
           <>

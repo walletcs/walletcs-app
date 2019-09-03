@@ -132,7 +132,7 @@ export default class App extends Component {
             <StatusBar online={online} />
           </div>
           <ToastContainer
-            position="bottom-left"
+            position="top-left"
             autoClose={4000}
             hideProgressBar
             newestOnTop={false}

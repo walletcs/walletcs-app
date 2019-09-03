@@ -122,6 +122,8 @@ class DetectPublicAddresses extends Component {
       <Fade>
         <div className={styles.contentWrapper}>
           <Table data={data} headers={['ACCOUNT', 'ADDRESS', 'FOUND']} />
+        </div>
+        <div className={styles.checkboxes}>
           <div className={styles.generateCheckboxContainer}>
             {isGenerateNeedeed && (
               <Checkbox
@@ -135,7 +137,7 @@ class DetectPublicAddresses extends Component {
             <Checkbox
               checked={generateXpubs}
               onChange={this.onGenerateXpubsChange}
-              label="Generate xPUBs"
+              label="Store xpub. xpub is used to generate additional addresses for the account"
             />
           </div>
         </div>

@@ -30,15 +30,12 @@ export default merge.smart(baseConfig, {
 
   module: {
     rules: [
-      // Extract all .global.css to style.css as is
       {
-        test: /\.global\.css$/,
+        test: /^.*\.css$/,
+        exclude: /\.module\.css$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: './'
-            }
+            loader: 'style-loader'
           },
           {
             loader: 'css-loader',
@@ -48,19 +45,19 @@ export default merge.smart(baseConfig, {
           }
         ]
       },
-      // Pipe other styles through css modules and append to style.css
       {
-        test: /^((?!\.global).)*\.css$/,
+        test: /\.module\.css$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: 'style-loader'
           },
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[name]__[local]__[hash:base64:5]',
-              sourceMap: true
+              sourceMap: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]__[hash:base64:5]'
             }
           }
         ]
