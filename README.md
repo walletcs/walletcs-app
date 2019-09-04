@@ -1,5 +1,5 @@
 # WalletCS
-A cold storage system for secure handling of the blockchain assets.
+Cold-storage based security suite for blockchain assets
 
 > - Main site:   https://www.walletcs.com
 > - Web app :    https://app.walletcs.com
@@ -162,6 +162,9 @@ We recommend keeping backup flash drive at a secure alternative physical locatio
    - With WalletCS you store only flash drive offline. There is no need to keep the device securely stored.
    - WalletCS supports smart contracts.
    - WalletCS is customizable.
+**How do I check balance on my account**
+  When you have created an account, WalletCS created a public address for you and stored on public address flash drive.
+  Use it in public explorers, like [blockexplorer.com](https://blockexplorer.com/) for BTC or [etherscan.io](https://etherscan.io/) for    ETH to check your balance.
 
 ## Getting support
 If you experience a problem, please create an issue [here](https://github.com/walletcs/walletcs-app/issues)
