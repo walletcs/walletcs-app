@@ -69,17 +69,14 @@ This applicaiton is designed to be installed on the offline computer.
 
 1. Build from the source or download the application from www.walletcs.com to the flash drive. 
 
-   ...**Important**: 
-  
-   ... - check the url and SSL certificate to make sure you are downloading from the right site.
-   
-   ... - verify GPG signature to ensure download integrity
+   **Important**: 
+   - check the url and SSL certificate to make sure you are downloading from the right site.
+   - verify GPG signature to ensure download integrity
 
 2. Install application on the offline computer that will be used for offline operations
   
-  ... **Important**: 
-  
-  ... Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
+   **Important**: 
+   Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
 
 ## Creating an Account
 To create an account, open WalletCS Offline Application on the offline computer, click “Create account”, and follow the instructions. 
@@ -103,20 +100,17 @@ Following creation of the Account, we highly recommend validating your key and a
 
 ## Transferring coins or tokens and invoking smart contract methods
 1. Fill a form at [app.walletcs.com](https://app.walletcs.com): 
-..* For Coin Transfer: specify address and amount to transfer 
-..* For Smart Contract Transaction: choose method to execute, specify parameters 
+   For Coin Transfer: specify address and amount to transfer
+   For Smart Contract Transaction: choose method to execute, specify parameters 
 
 2. Download unsigned transaction to the flash drive. Let’s call it “Transactions” drive.
 
 3. Insert “Transactions” flash drive with unsigned transaction  to the offline computer, where WalletCS Offline Application is installed.
 
 4. Click “Sign transaction”. WalletCS Offline App will ask you to:
-   
-   ..* insert your Private Key flash drive
-   
-   ..* check transfer / method details and sign your transaction
-   
-   ..* insert “Transactions” flash drive to save signed transaction.  
+   - Insert your Private Key flash drive
+   - Check transfer / method details and sign your transaction
+   - Insert “Transactions” flash drive to save signed transaction.  
 
 5. go back to [app.walletcs.com](https://app.walletcs.com), click “Broadcast Transaction” button and upload  signed transaction file from “Transactions” flash drive. Once you verify transaction details, click “Broadcast” to broadcast transactions.
 
@@ -161,18 +155,13 @@ We recommend keeping backup flash drive at a secure alternative physical locatio
 - Clearly mark private key drive so you don't use it accidentaly for any other purpose
 
 ## FAQ
-* **Why should I trust WalletCS**
-   
-   ..* You do not. We encourage you to examine source code and build from source or verify GPG signatures of binary files
+**Why should I trust WalletCS**  
+  You do not. We encourage you to examine source code and build from source or verify GPG signatures of binary files
 
-* **How WalletDS is different from hardware wallets**
-
-   ..* With WalletCS you store only flash drive offline. There is no need to keep the device securely stored.
-
-   ..* WalletCS supports smart contracts. 
-   
-   ..* WalletCS is customizable.
-
+**How WalletDS is different from hardware wallets**
+   - With WalletCS you store only flash drive offline. There is no need to keep the device securely stored.
+   - WalletCS supports smart contracts.
+   - WalletCS is customizable.
 
 ## Getting support
 If you experience a problem, please create an issue [here](https://github.com/walletcs/walletcs-app/issues)
