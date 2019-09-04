@@ -69,13 +69,17 @@ This applicaiton is designed to be installed on the offline computer.
 
 1. Build from the source or download the application from www.walletcs.com to the flash drive. 
 
-...**Important**: 
-... - check the url and SSL certificate to make sure you are downloading from the right site.
-... - verify GPG signature to ensure download integrity
+   ...**Important**: 
+  
+   ... - check the url and SSL certificate to make sure you are downloading from the right site.
+   
+   ... - verify GPG signature to ensure download integrity
 
 2. Install application on the offline computer that will be used for offline operations
-... **Important**: 
-... Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
+  
+  ... **Important**: 
+  
+  ... Do not connect your offline computer to the internet as long as it is being used for signing offline transactions.
 
 ## Creating an Account
 To create an account, open WalletCS Offline Application on the offline computer, click “Create account”, and follow the instructions. 
@@ -107,9 +111,12 @@ Following creation of the Account, we highly recommend validating your key and a
 3. Insert “Transactions” flash drive with unsigned transaction  to the offline computer, where WalletCS Offline Application is installed.
 
 4. Click “Sign transaction”. WalletCS Offline App will ask you to:
-..* insert your Private Key flash drive
-..* check transfer / method details and sign your transaction
-..* insert “Transactions” flash drive to save signed transaction.  
+   
+   ..* insert your Private Key flash drive
+   
+   ..* check transfer / method details and sign your transaction
+   
+   ..* insert “Transactions” flash drive to save signed transaction.  
 
 5. go back to [app.walletcs.com](https://app.walletcs.com), click “Broadcast Transaction” button and upload  signed transaction file from “Transactions” flash drive. Once you verify transaction details, click “Broadcast” to broadcast transactions.
 
@@ -155,12 +162,16 @@ We recommend keeping backup flash drive at a secure alternative physical locatio
 
 ## FAQ
 * **Why should I trust WalletCS**
-..* You do not. We encourage you to examine source code and build from source or verify GPG signatures of binary files
+   
+   ..* You do not. We encourage you to examine source code and build from source or verify GPG signatures of binary files
 
 * **How WalletDS is different from hardware wallets**
-..* With WalletCS you store only flash drive offline. There is no need to keep the device securely stored.
-..* WalletCS supports smart contracts. 
-..* WalletCS is customizable.
+
+   ..* With WalletCS you store only flash drive offline. There is no need to keep the device securely stored.
+
+   ..* WalletCS supports smart contracts. 
+   
+   ..* WalletCS is customizable.
 
 
 ## Getting support
