@@ -128,11 +128,16 @@ Order of inputs is important. When constructing transaction, WalletCS iterates t
 For example, let's consider following input:
 
 From:
+
 _3Er5EKhLNqaq1tKHH5g91tq6yC6PvDM8DE_
+
 _3E6tXnuXnapWfJWspsitd2BFUC27Gswfxk_
 
+
 To:
+
 _3CiHdL6KmCpPBL93QJ6PcNovWpBnDVwaTH_ amount: 0.1 
+
 _3DfTLsfGCnzejVc6iYbWjnYBXXbxyA33DL_ amount: 0.5
 
 In the example above, to collect total of BTC 0.6 walletcs will first take all available funds from _3Er5EK..._, and the reminder from _3E6tX..._. If balances on both input adresses do not have at least BTC 0.6, transaction will not be generated.
