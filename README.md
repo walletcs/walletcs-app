@@ -20,7 +20,15 @@ Cold-storage based security suite for blockchain assets
 
 [Creating an account](https://github.com/walletcs/walletcs-app/blob/master/README.md#creating-an-account)
 
+[Transferring coins or tokens and invoking smart contract methods](https://github.com/walletcs/walletcs-app/blob/master/README.md#transferring-coins-or-tokens-and-invoking-smart-contract-methods)
+
+[Constructing a bitcoin transaction](https://github.com/walletcs/walletcs-app/blob/master/README.md#constructing-a-bitcoin-transaction)
+
+[FAQ](https://github.com/walletcs/walletcs-app/blob/master/README.md#faq)
+
 [Support](https://github.com/walletcs/walletcs-app/blob/master/README.md#getting-support)
+
+[Enterprise features](https://github.com/walletcs/walletcs-app/blob/master/README.md#enterprise-features)
 
 
 ## Overview
@@ -41,7 +49,6 @@ Features like support of smart contracts and batch transactions make WalletCS su
 - Offline backup of private keys flash drive
 - Offline signing of coin transfer transaction
 - Offline signing of smart contract transaction, including multisignature transactions
-- Batch transaction operations, e.g. mass payments in cryptocurrency
 - Broadcast transaction signed offline
 - Supports Bitcoin Testnet and Ethereum Rinkeby blockchains
 
@@ -114,33 +121,22 @@ Following creation of the Account, we highly recommend validating your key and a
 
 5. go back to [app.walletcs.com](https://app.walletcs.com), click “Broadcast Transaction” button and upload  signed transaction file from “Transactions” flash drive. Once you verify transaction details, click “Broadcast” to broadcast transactions.
 
-## Batch operations
-To construct complex transaction featuring inputs and outputs, you have an option to upload a csv file
+## Constructing a bitcoin transaction
+You have an option to create complex bitcoin transaction that contains multiple inputs and outputs.
 
-### Bitcoin csv file format
-https://app.walletcs.com/bitcoin/single
+Order of inputs is important. When constructing transaction, WalletCS iterates through "from" addresses to collect necessary amount. 
+For example, let's consider following input:
 
-| address | address_type | amount | change   |
-| ---------------------------- | ------| ----- | -------- |
-| 3Er5EKhLNqaq1tKHH5g91tq6yC6PvDM8DE |  from |       |          |
-| 3E6tXnuXnapWfJWspsitd2BFUC27Gswfxk |  from |       |  true    |
-| 3CiHdL6KmCpPBL93QJ6PcNovWpBnDVwaTH |  to   | 0.1 |          |
-| 3DfTLsfGCnzejVc6iYbWjnYBXXbxyA33DL |  to   | 0.5 |          |
+From:
+_3Er5EKhLNqaq1tKHH5g91tq6yC6PvDM8DE_
+_3E6tXnuXnapWfJWspsitd2BFUC27Gswfxk_
 
-- specify only one change address
-- order is important. When constructing transaction, WalletCS iterates through "from" addresses to collect necessary amount. 
+To:
+_3CiHdL6KmCpPBL93QJ6PcNovWpBnDVwaTH_ amount: 0.1 
+_3DfTLsfGCnzejVc6iYbWjnYBXXbxyA33DL_ amount: 0.5
+
 In the example above, to collect total of BTC 0.6 walletcs will first take all available funds from _3Er5EK..._, and the reminder from _3E6tX..._. If balances on both input adresses do not have at least BTC 0.6, transaction will not be generated.
-
-### Batch transaction Ethereum operations
-https://app.walletcs.com/ether/contract/batch
-
-For Ethereum batch transaction, enter source address online on the form and upload csv file with destination addresses and amounts:
-
-
-| address | amount |
-| -------------------------------------------| --------|
-| 0x323e0df78eef962e425959dbdb0e7cb82e19cb67 |  0.01   |
-| 0xdc97c8a2aeb281af14a755d8f6b0c6bd7debbdf7 |  1      |
+if address _3Er5EK..._ contains more than BTC 0.6, nothing will be taken from the second address _3E6tX..._.
 
 
 ## Validating account and regenerating addresses
@@ -168,5 +164,12 @@ We recommend keeping backup flash drive at a secure alternative physical locatio
 
 ## Getting support
 If you experience a problem, please create an issue [here](https://github.com/walletcs/walletcs-app/issues)
+
+## Enterprise features
+Wallet CS Enterprise Integration Suite is a product designed to integrate your enterprise with the blockchain.
+- Mass address generation and management
+- Secure Batch transaction operations, e.g. mass payments in cryptocurrency
+- Multisignature operations for Bitcoin and Ethereum
+- Transaction reporting and verification
 
 We will be happy to assist you with customization and integration! Contact us at sales@exilion.com
