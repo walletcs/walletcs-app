@@ -9,10 +9,9 @@
 </p>
 Cold-storage based security suite for blockchain assets
 
-> - Main site:   https://www.walletcs.com [![Website walletcs.com](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://www.walletcs.com/)
-
-> - Web app :    https://app.walletcs.com
-> - Testnet app: https://testnet.walletcs.com
+> - Main site: https://www.walletcs.com [![Website walletcs.com](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://www.walletcs.com/)
+> - Web app : https://app.walletcs.com [![Website app.walletcs.com](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://app.walletcs.com/)
+> - Testnet app: https://testnet.walletcs.com [![Website testnet.walletcs.com](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://testnet.walletcs.com/)
 
 
 **Table of contents**
