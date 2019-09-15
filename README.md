@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://gitlab.com/walletcs/walletcs-app/commits/master">
-        <img alt="pipeline status" src="https://gitlab.com/walletcs/walletcs-app/badges/master/pipeline.svg" /></a>
+        <img alt="build status" src="https://gitlab.com/walletcs/walletcs-app/badges/master/pipeline.svg" /></a>
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
     <a href="#backers" alt="Backers on Open Collective">
