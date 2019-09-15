@@ -1,4 +1,4 @@
-# WalletCS ![version](https://img.shields.io/badge/version-1.0.2-blue) [![GitHub license](https://img.shields.io/github/licensewalletcs/walletcs-app.svg)](https://github.com/walletcs/walletcs-app/blob/master/LICENSE)
+# WalletCS ![version](https://img.shields.io/badge/version-1.0.2-blue) [![GitHub license](https://img.shields.io/github/license/walletcs/walletcs-app.svg)](https://github.com/walletcs/walletcs-app/blob/master/LICENSE)
 
 <p align="center">
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
