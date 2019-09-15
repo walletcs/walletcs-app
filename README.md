@@ -1,5 +1,7 @@
-# WalletCS ![version](https://img.shields.io/badge/version-1.2.3-blue)
+# WalletCS ![version](https://img.shields.io/badge/version-1.0.2-blue)
 <p align="center">
+    <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
     <a href="#backers" alt="Backers on Open Collective">
