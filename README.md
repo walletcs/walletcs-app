@@ -1,4 +1,4 @@
-# WalletCS ![GitHub package.json version](https://img.shields.io/github/package-json/v/walletcs/walletcs-app) [![GitHub license](https://img.shields.io/github/license/walletcs/walletcs-app.svg)](https://github.com/walletcs/walletcs-app/blob/master/LICENSE) [![pipeline status](https://gitlab.com/walletcs/walletcs-app/badges/master/pipeline.svg)](https://gitlab.com/walletcs/walletcs-app/commits/master)
+# WalletCS ![GitHub package.json version](https://img.shields.io/github/package-json/v/walletcs/walletcs-app) [![GitHub license](https://img.shields.io/github/license/walletcs/walletcs-app.svg)](https://github.com/walletcs/walletcs-app/blob/master/LICENSE) [![Pipeline status](https://gitlab.com/walletcs/walletcs-app/badges/master/pipeline.svg)](https://gitlab.com/walletcs/walletcs-app/commits/master)
 
 <p align="center">
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
