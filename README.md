@@ -1,16 +1,11 @@
 # WalletCS
 <p align="center">
-    <a href="https://github.com/badges/shields/graphs/contributors" alt="Contributors">
+    <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
     <a href="#backers" alt="Backers on Open Collective">
         <img src="https://img.shields.io/opencollective/backers/shields" /></a>
-    <a href="https://github.com/badges/shields/pulse" alt="Activity">
+    <a href="https://github.com/walletcs/walletcs-app/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/badges/shields" /></a>
-    <a href="https://circleci.com/gh/badges/shields/tree/master">
-        <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status"></a>
-    <a href="https://circleci.com/gh/badges/daily-tests">
-        <img src="https://img.shields.io/circleci/project/github/badges/daily-tests?label=service%20tests"
-            alt="service-test status"></a>
 </p>
 Cold-storage based security suite for blockchain assets
 
