@@ -2,8 +2,6 @@
 <p align="center">
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
-    <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
     <a href="#backers" alt="Backers on Open Collective">
         <img src="https://img.shields.io/opencollective/backers/shields" /></a>
     <a href="https://github.com/walletcs/walletcs-app/pulse" alt="Activity">
@@ -11,7 +9,8 @@
 </p>
 Cold-storage based security suite for blockchain assets
 
-> - Main site:   https://www.walletcs.com
+> - Main site:   https://www.walletcs.com [![Website walletcs.com](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://www.walletcs.com/)
+
 > - Web app :    https://app.walletcs.com
 > - Testnet app: https://testnet.walletcs.com
 
