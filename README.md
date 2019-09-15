@@ -1,4 +1,5 @@
-# WalletCS ![version](https://img.shields.io/badge/version-1.0.2-blue)
+# WalletCS ![version](https://img.shields.io/badge/version-1.0.2-blue) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
 <p align="center">
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
