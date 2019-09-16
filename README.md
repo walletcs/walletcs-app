@@ -4,8 +4,6 @@
     <img alt="Gitlab pipeline status (self-hosted)" src="https://img.shields.io/gitlab/pipeline/walletcs/walletcs-app?gitlab_url=https%3A%2F%2Fgitlab.com">
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
-    <a href="#backers" alt="Backers on Open Collective">
-        <img src="https://img.shields.io/opencollective/backers/shields" /></a>
     <a href="https://github.com/walletcs/walletcs-app/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/m/badges/shields" /></a>
 </p>
