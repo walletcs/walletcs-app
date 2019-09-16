@@ -1,7 +1,7 @@
 # WalletCS ![GitHub package.json version](https://img.shields.io/github/package-json/v/walletcs/walletcs-app) [![GitHub license](https://img.shields.io/github/license/walletcs/walletcs-app.svg)](https://github.com/walletcs/walletcs-app/blob/master/LICENSE)
 
 <p align="center">
-    <img alt="Gitlab pipeline status (self-hosted)" src="https://img.shields.io/gitlab/pipeline/walletcs/walletcs-app?gitlab_url=https%3A%2F%2Fgitlab.com">
+    <a href="https://gitlab.com/walletcs/walletcs-app/commits/master"><img alt="pipeline status" src="https://gitlab.com/walletcs/walletcs-app/badges/master/pipeline.svg" /></a>
     <a href="https://github.com/walletcs/walletcs-app/graphs/contributors" alt="Contributors">
         <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/walletcs/walletcs-app"></a>
     <a href="https://github.com/walletcs/walletcs-app/pulse" alt="Activity">
