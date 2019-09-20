@@ -52,7 +52,7 @@ ShowPassphrase.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  recoveryPassphrase: state.account.name,
+  recoveryPassphrase: state.account.recoveryPassphrase,
   usePassphrase: state.account.usePassphrase,
   accountName: state.account.name,
 });

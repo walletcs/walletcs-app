@@ -5,10 +5,11 @@ export const setAccountName = name => ({
   },
 });
 
-export const setAddress = (address, network) => ({
+export const setAddress = (address, xpub, network) => ({
   type: 'SET_ADDRESS',
   payload: {
     address,
+    xpub,
     network,
   },
 });

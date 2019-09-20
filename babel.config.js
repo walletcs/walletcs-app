@@ -10,10 +10,10 @@ const productionPlugins = [
   // babel-preset-react-optimize
   require('@babel/plugin-transform-react-constant-elements'),
   require('@babel/plugin-transform-react-inline-elements'),
-  require('babel-plugin-transform-react-remove-prop-types')
+  require('babel-plugin-transform-react-remove-prop-types'),
 ];
 
-module.exports = api => {
+module.exports = (api) => {
   // see docs about api at https://babeljs.io/docs/en/config-files#apicache
 
   const development = api.env(developmentEnvironments);
@@ -24,11 +24,12 @@ module.exports = api => {
         require('@babel/preset-env'),
         {
           targets: { electron: require('electron/package.json').version },
-          useBuiltIns: 'usage'
-        }
+          useBuiltIns: 'usage',
+          corejs: 2,
+        },
       ],
       require('@babel/preset-flow'),
-      [require('@babel/preset-react'), { development }]
+      [require('@babel/preset-react'), { development }],
     ],
     plugins: [
       // Stage 0
@@ -40,11 +41,11 @@ module.exports = api => {
       [require('@babel/plugin-proposal-optional-chaining'), { loose: false }],
       [
         require('@babel/plugin-proposal-pipeline-operator'),
-        { proposal: 'minimal' }
+        { proposal: 'minimal' },
       ],
       [
         require('@babel/plugin-proposal-nullish-coalescing-operator'),
-        { loose: false }
+        { loose: false },
       ],
       require('@babel/plugin-proposal-do-expressions'),
 
@@ -61,7 +62,7 @@ module.exports = api => {
       [require('@babel/plugin-proposal-class-properties'), { loose: true }],
       require('@babel/plugin-proposal-json-strings'),
 
-      ...(development ? developmentPlugins : productionPlugins)
-    ]
+      ...(development ? developmentPlugins : productionPlugins),
+    ],
   };
 };

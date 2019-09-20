@@ -3,7 +3,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
+import { EtherWalletHD, BitcoinWalletHD } from '@exiliontech/walletcs';
 import { RadioGroup, Radio } from 'react-radio-group';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
@@ -30,6 +30,7 @@ class GeneratePrivate extends Component {
     error: null,
     modalIsOpen: false,
     usePassphrase: false,
+    recoveryPassphraseValid: true,
   };
 
   handleChange = (addressName) => {
@@ -46,6 +47,7 @@ class GeneratePrivate extends Component {
 
   handlePassphraseModeChange = (val) => {
     const usePassphrase = val === 'passphrase';
+
     this.setState({ usePassphrase, modalIsOpen: usePassphrase });
   }
 
@@ -66,26 +68,28 @@ class GeneratePrivate extends Component {
     }
   };
 
-  generatePair = () => {
-    let addressValue;
-    let privateKeyValue;
+  generateXData = async (recoveryPassphrase) => {
+    let wallet;
     const { blockchain, network } = this.state;
 
     if (blockchain === 'ETH') {
-      [addressValue, privateKeyValue] = EtherKeyPair.generatePair();
+      wallet = new EtherWalletHD();
     } else {
-      const pair = BitcoinCheckPair.generatePair(network);
-
-      [addressValue, privateKeyValue] = pair;
+      wallet = new BitcoinWalletHD(network);
     }
 
-    return new Promise(resolve => resolve({ addressValue, privateKeyValue }));
+    const data = await wallet.getFromMnemonic(recoveryPassphrase);
+    const singleAddress = wallet.getAddressFromXpub(data.xPub, 0);
+
+    return new Promise(resolve => resolve({ ...data, singleAddress }));
   };
 
   savePrivateKey = async () => {
     const {
-      addressName, network, blockchain, usePassphrase, recoveryPassphrase,
+      addressName, network, blockchain, usePassphrase,
     } = this.state;
+
+    let { recoveryPassphrase } = this.state;
     const { setAddressAction, resetActiveDriveAction, setPassphraseAction } = this.props;
 
     if (!addressName) {
@@ -95,14 +99,19 @@ class GeneratePrivate extends Component {
     this.setState({ error: null, loadingMsg: 'Generating private key...' });
     const { activeDrive = {} } = this.props;
 
-    const res = await this.generatePair();
+    if (!usePassphrase) {
+      recoveryPassphrase = blockchain === 'ETH' ? EtherWalletHD.generateMnemonic() : BitcoinWalletHD.generateMnemonic();
+    }
+
+    const { xPrv, xPriv, xPub, singleAddress } = await this.generateXData(recoveryPassphrase);
 
     const path = `${activeDrive.path}/${PRIVATE_KEY_PREFIX}${addressName}.json`;
     const selectedNetwork = blockchain === 'ETH' ? 'ETH' : network;
 
     try {
       writeFile(path, {
-        key: res.privateKeyValue,
+        xPrv: xPrv || xPriv, // holy shit
+        xPub,
         network: selectedNetwork,
         blockchain,
       });
@@ -116,9 +125,10 @@ class GeneratePrivate extends Component {
 
     setPassphraseAction({
       usePassphrase,
-      recoveryPassphrase: 'TEST', // ADD here generated mnemonic if it's needed
+      recoveryPassphrase,
     });
-    setAddressAction(res.addressValue, selectedNetwork);
+
+    setAddressAction(singleAddress, xPub, selectedNetwork);
     resetActiveDriveAction();
     this.setState({ loadingMsg: null });
 
@@ -138,12 +148,18 @@ class GeneratePrivate extends Component {
   };
 
   savePassphrase = () => {
-    this.setState({ modalIsOpen: false, usePassphrase: true });
+    const { blockchain, recoveryPassphrase } = this.state;
+    const validateFunc = blockchain === 'ETH' ? EtherWalletHD.validateMnemonic : BitcoinWalletHD.validateMnemonic;
+    if (!validateFunc(recoveryPassphrase)) {
+      this.setState({ recoveryPassphraseValid: false });
+    } else {
+      this.setState({ modalIsOpen: false, usePassphrase: true, recoveryPassphraseValid: true });
+    }
   };
 
   resetPassphrase = () => {
     this.closeModal();
-    this.setState({ usePassphrase: false, recoveryPassphrase: '' });
+    this.setState({ usePassphrase: false, recoveryPassphrase: null });
   };
 
   handleOpenModal = () => {
@@ -160,6 +176,7 @@ class GeneratePrivate extends Component {
       modalIsOpen,
       usePassphrase,
       modalOverlayShown,
+      recoveryPassphraseValid,
     } = this.state;
     const { inputaddressName, onCancel } = this.props;
     const showNext = blockchain === 'BTC' ? !!network : !!blockchain;
@@ -181,6 +198,7 @@ class GeneratePrivate extends Component {
             onChange={this.handleChangePassphrase}
             className={styles.recoveryPassphraseTextarea}
           />
+          {!recoveryPassphraseValid && <div style={{ margin: 5, textAlign: 'center', color: 'red' }}>Recovery passphrase is not valid</div>}
           <div className={styles.rowControls}>
             <Button size="sm" onClick={this.resetPassphrase}>Reset and cancel</Button>
             <Button size="sm" onClick={this.savePassphrase} primary>

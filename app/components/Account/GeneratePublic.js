@@ -11,9 +11,11 @@ import Checkbox from '../Checkbox';
 import { writeFile } from '../../utils/helpers';
 import { resetActiveDrive } from '../../actions/drive';
 
-import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
+import { PUBLIC_KEY_PREFIX, XPUB_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.module.css';
+
+const getExtraPath = path => path.replace('.txt', '').concat(`-${Date.now()}.txt`);
 
 class GeneratePublic extends Component {
   state = {
@@ -28,20 +30,32 @@ class GeneratePublic extends Component {
   }
 
   savePublicKey = () => {
+    const { generateXpubs } = this.state;
     const {
       next, activeDrive = {}, account, resetActiveDriveAction,
     } = this.props;
-    const { address, name } = account;
+    const { address, name, xpub } = account;
 
     this.setState({ loadingMsg: 'Calculating public key...' });
     const path = `${activeDrive.path}/${PUBLIC_KEY_PREFIX}${name}.txt`;
+    const xPubPath = `${activeDrive.path}/${XPUB_PREFIX}${name}.txt`;
+    const extraPath = getExtraPath(path);
+    const xPubExtraPath = getExtraPath(xPubPath);
 
     try {
       writeFile(path, address, { txt: true });
     } catch (error) {
-      const extraPath = path.replace('.txt', '').concat(`-${Date.now()}.txt`);
       writeFile(extraPath, address, { txt: true });
     }
+
+    if (generateXpubs) {
+      try {
+        writeFile(xPubPath, xpub, { txt: true });
+      } catch (error) {
+        writeFile(xPubExtraPath, xpub, { txt: true });
+      }
+    }
+
     resetActiveDriveAction();
     next();
   };

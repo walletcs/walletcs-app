@@ -50,7 +50,9 @@ export const writeFile = (path, data, options = {}) => {
 
   try {
     const dataToWrite = options.txt ? data : JSON.stringify(data);
-    fd = fs.openSync(path, 'wx+');
+    const mode = options.appendFile ? 'w+' : 'wx+';
+
+    fd = fs.openSync(path, mode);
     fs.writeFileSync(path, dataToWrite, { flag: 'rs+' });
   } catch (error) {
     console.error(error);

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import fs from 'fs';
 import { connect } from 'react-redux';
-import { EtherTransactionDecoder, representEthTx, representBtcTx } from 'walletcs/src/index';
+import { JSONParser } from '@exiliontech/walletcs';
 import Fade from 'react-reveal/Fade';
 
 import PropTypes from 'prop-types';
@@ -13,7 +13,6 @@ import Button from '../Button';
 import Table from '../Table';
 
 import { setTransactions, setTransactionToSign, setRawTransactions } from '../../actions/account';
-import { getTransactionType } from '../../utils/helpers';
 
 import styles from '../App/index.module.css';
 
@@ -27,7 +26,6 @@ class SelectTransaction extends Component {
     const {
       activeDrive = {},
       setTransactionsAction,
-      setRawTransactionsAction,
       setTransactionToSignAction,
     } = this.props;
     const { path } = activeDrive;
@@ -39,71 +37,40 @@ class SelectTransaction extends Component {
     }
 
     const files = dir
-      .map((file) => {
-        let transaction = {};
+      .flatMap((file) => {
+        let transactions = [];
+        let fileType;
 
         try {
-          transaction = JSON.parse(fs.readFileSync(`${path}/${file}`, 'utf-8'));
+          const fileData = fs.readFileSync(`${path}/${file}`, 'utf-8');
+          transactions = JSONParser.parseFile(fileData);
+          fileType = JSONParser.getType(fileData);
         } catch (error) {
           console.error(`error while reading ${path}/${file}`);
           console.error(error);
           return null;
         }
 
-        if (!transaction.transactions) {
-          return null;
-        }
+        return transactions.map((transaction) => {
+          const result = {
+            file,
+            fileType,
+            transaction,
+          };
 
-        return {
-          transaction,
-          file,
-        };
+          const trHash = hash(result);
+
+          setTransactionToSignAction(trHash, true);
+
+          return {
+            ...result,
+            trHash,
+          };
+        });
       })
       .filter(t => !!t);
 
-    const data = [];
-
-    files.forEach((element) => {
-      element.transaction.transactions.forEach((tr) => {
-        let contractObj = {};
-        let method = { name: 'transfer' };
-
-        if (tr.contract) {
-          contractObj = (element.transaction.contracts || []).find(c => c.contract === tr.contract) || {};
-
-          if (contractObj.abi) {
-            try {
-              EtherTransactionDecoder.addABI(contractObj.abi);
-              method = EtherTransactionDecoder.decodeMethodContract(tr.transaction.data);
-            } catch (error) {
-              console.error(error);
-            }
-          }
-        }
-
-        const trType = getTransactionType(tr);
-        const filename = `${element.file} (${tr.transaction.nonce || ''})`;
-        const trHash = hash(tr.transaction);
-
-        data.push({
-          ...tr.transaction,
-          extra: {
-            pub_key: element.transaction.pub_key,
-            file: element.file,
-            filename,
-            blockchain: trType,
-            network: tr.network,
-            method: method.name,
-            hash: trHash,
-          },
-        });
-
-        setTransactionToSignAction(trHash, true);
-      });
-    });
-
-    setTransactionsAction(data);
-    setRawTransactionsAction(files);
+    setTransactionsAction(files);
   };
 
   checkTransaction = (data, checked) => {
@@ -120,24 +87,12 @@ class SelectTransaction extends Component {
     const isKeysExists = !!transactions.length;
     const isTransactionsToSign = !!transactionsToSign.length;
 
-    const data = transactions.map((tr) => {
-      let trAmount;
-
-      if (tr.extra.blockchain === 'ETH') {
-        const normalizedTransaction = representEthTx(tr);
-        trAmount = normalizedTransaction.value;
-      } else {
-        const normalizedTransaction = representBtcTx(tr);
-        trAmount = normalizedTransaction.amount;
-      }
-
-      return {
-        id: tr.extra.hash,
-        checked: true,
-        flex: [0.8, 0.75, 0.8, 1, 0.9],
-        fields: [tr.extra.file, tr.extra.network, tr.to, tr.extra.method, trAmount],
-      };
-    });
+    const data = transactions.map(tr => ({
+      id: tr.trHash,
+      checked: true,
+      // flex: [0.8, 0.75, 0.8, 1, 0.9],
+      fields: [tr.file, tr.fileType, tr.transaction.to, tr.transaction.methodName],
+    }));
 
     return (
       <Fade>
@@ -145,7 +100,7 @@ class SelectTransaction extends Component {
           {isKeysExists ? (
             <Table
               data={data}
-              headers={['FILE', 'NETWORK', 'TO', 'METHOD', 'AMOUNT']}
+              headers={['FILE', 'FILE TYPE', 'TO', 'METHOD']}
               onCheck={this.checkTransaction}
             />
           ) : (

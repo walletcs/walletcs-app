@@ -20,6 +20,7 @@ const accountReducer = (state = initialState, action) => {
       return {
         ...state,
         address: action.payload.address,
+        xpub: action.payload.xpub,
         network: action.payload.network,
       };
     case 'SET_PASSPHRASE':

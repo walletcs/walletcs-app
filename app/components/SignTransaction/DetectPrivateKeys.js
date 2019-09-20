@@ -2,15 +2,13 @@
 /* eslint-disable no-console */
 import React, { Component } from 'react';
 import fs from 'fs';
-import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 
 import Button from '../Button';
-import Table from '../Table';
 
-import { setTransactions } from '../../actions/account';
+import { setPrivateKeys } from '../../actions/account';
 import { PRIVATE_KEY_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.module.css';
@@ -22,7 +20,7 @@ class DetectPrivateKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { activeDrive } = this.props;
+    const { activeDrive, setPrivateKeysAction } = this.props;
     const { path } = activeDrive;
 
     try {
@@ -34,87 +32,39 @@ class DetectPrivateKeys extends Component {
     const privateKeys = dir
       .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
       .map((file) => {
-        let privateKey;
-        let keyNetwork;
+        let privateKeyParsedData;
 
         try {
           const privateKeyData = fs.readFileSync(`${path}/${file}`, 'utf-8');
-          const privateKeyParsedData = JSON.parse(privateKeyData) || {};
-          privateKey = privateKeyParsedData.key;
-          keyNetwork = privateKeyParsedData.network;
+          privateKeyParsedData = JSON.parse(privateKeyData) || {};
         } catch (error) {
           console.error(error);
         }
 
-        return { privateKey, keyNetwork };
+        return privateKeyParsedData;
       })
       .filter(f => !!f);
 
-    const { transactions, transactionsToSign, setTransactionsAction } = this.props;
-
-    const transactionsWithKeys = transactions
-      .filter(t => transactionsToSign.includes(t.extra.hash))
-      .map((transaction) => {
-        const privateKey = privateKeys.find((k) => {
-          let key;
-
-          try {
-            key = EtherKeyPair.checkPair(transaction.extra.pub_key, k.privateKey);
-          } catch (error) {
-            console.log('Invalid ether key pair');
-          }
-
-          if (!key) {
-            try {
-              key = BitcoinCheckPair.checkPair(
-                transaction.extra.pub_key,
-                k.privateKey,
-                k.keyNetwork,
-              );
-            } catch (error) {
-              console.log('Invalid bitcoin key pair');
-            }
-          }
-
-          return key;
-        });
-
-        return {
-          ...transaction,
-          key: {
-            privateKey,
-            foundKey: privateKey ? 'Yes' : 'No',
-          },
-        };
-      });
-
-    setTransactionsAction(transactionsWithKeys);
+    setPrivateKeysAction(privateKeys);
   };
 
   render() {
-    const { transactions = [], next, onCancel } = this.props;
-
-    const isTransactionsExists = transactions.some(t => (t.key || {}).privateKey);
-    const data = transactions.map(tr => ({
-      fields: [tr.extra.filename, (tr.key || {}).foundKey],
-    }));
+    const { privateKeys = [], next, onCancel } = this.props;
 
     return (
       <Fade>
         <div className={styles.contentWrapper}>
-          {isTransactionsExists ? (
-            <Table data={data} headers={['FILE', 'KEY FOUND']} />
+          {privateKeys.length ? (
+            <div className={styles.message}>{`Found ${privateKeys.length} private keys`}</div>
           ) : (
             <div className={styles.message}>Private keys for signing transactions not found</div>
           )}
         </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
-          {isTransactionsExists && (
-            <Button onClick={next} primary>
-              Sign
-            </Button>
-          )}
+          <Button onClick={next} primary>
+            Sign
+          </Button>
         </div>
       </Fade>
     );
@@ -124,27 +74,25 @@ class DetectPrivateKeys extends Component {
 DetectPrivateKeys.propTypes = {
   next: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
-  setTransactionsAction: PropTypes.func.isRequired,
+  setPrivateKeysAction: PropTypes.func.isRequired,
   activeDrive: PropTypes.shape({
     path: PropTypes.string,
   }).isRequired,
-  transactions: PropTypes.array,
-  transactionsToSign: PropTypes.array,
+  privateKeys: PropTypes.array,
 };
 
 DetectPrivateKeys.defaultProps = {
-  transactions: [],
-  transactionsToSign: [],
+  privateKeys: [],
 };
 
 const mapStateToProps = state => ({
   activeDrive: state.drive.activeDrive,
   transactions: state.account.transactions,
-  transactionsToSign: state.account.transactionsToSign,
+  privateKeys: state.account.keys,
 });
 
 const mapDispatchToProps = dispatch => ({
-  setTransactionsAction: keys => dispatch(setTransactions(keys)),
+  setPrivateKeysAction: keys => dispatch(setPrivateKeys(keys)),
 });
 
 export default connect(

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
-import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
+import { EtherWalletHD, BitcoinWalletHD } from '@exiliontech/walletcs';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 
@@ -14,7 +14,7 @@ import Table from '../Table';
 import { writeFile } from '../../utils/helpers';
 import { setPublicKeys, setGeneratedFlag } from '../../actions/account';
 
-import { PUBLIC_KEY_PREFIX } from '../../utils/constants';
+import { PUBLIC_KEY_PREFIX, XPUB_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.module.css';
 
@@ -38,7 +38,7 @@ class DetectPublicAddresses extends Component {
   }
 
   restorePublicKeys = () => {
-    const { generateAddreses } = this.state;
+    const { generateAddreses, generateXpubs } = this.state;
     const {
       publicKeys, activeDrive, setGeneratedFlagAction, next,
     } = this.props;
@@ -48,21 +48,33 @@ class DetectPublicAddresses extends Component {
       const keysForGenerate = publicKeys.filter(f => !f.found);
 
       keysForGenerate.forEach((k) => {
-        let address;
+        let wallet;
 
         try {
           if (k.keyBlockchain === 'ETH') {
-            address = EtherKeyPair.recoveryPublicKey(k.privateKey);
+            wallet = new EtherWalletHD();
           } else {
-            address = BitcoinCheckPair.recoveryPublicKey(k.privateKey, k.keyNetwork);
+            wallet = new BitcoinWalletHD(k.keyNetwork);
           }
         } catch (error) {
           console.log('Invalid public key');
         }
 
+        const { address } = wallet.getAddressWithPrivateFromXprv(k.xPrv, 0);
+
         const { account } = k;
         const filePath = `${path}/${PUBLIC_KEY_PREFIX}${account}.txt`;
         writeFile(filePath, address, { txt: true });
+      });
+    }
+
+    if (generateXpubs) {
+      publicKeys.forEach((k) => {
+        const filePath = `${path}/${XPUB_PREFIX}${k.account}.txt`;
+
+        if (!fs.existsSync(filePath)) {
+          writeFile(filePath, k.xPub, { txt: true });
+        }
       });
     }
 

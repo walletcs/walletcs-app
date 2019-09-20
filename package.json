@@ -1,7 +1,7 @@
 {
   "name": "walletcs",
   "productName": "WalletCS",
-  "version": "1.0.14",
+  "version": "1.1.0",
   "description": "WalletCS desktop offline client",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -22,7 +22,7 @@
     "package-linux": "yarn build && electron-builder build --linux",
     "package-win": "yarn build && electron-builder build --win --x64",
     "package-win32": "yarn build && electron-builder build --win --ia32",
-    "postinstall": "yarn flow-typed && electron-builder install-app-deps package.json && yarn build-dll",
+    "postinstall": "yarn build-dll",
     "postlint-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{*{js,jsx,json},babelrc,eslintrc,prettierrc,stylelintrc}'",
     "postlint-styles-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{css,scss}'",
     "precommit": "lint-staged",
@@ -55,8 +55,7 @@
       "app/app.html",
       "app/main.prod.js",
       "app/main.prod.js.map",
-      "package.json",
-      "resources/icon.jpg"
+      "package.json"
     ],
     "dmg": {
       "contents": [
@@ -215,7 +214,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
+    "babel-register": "^6.26.0",
     "classnames": "^2.2.6",
+    "core-js": "2",
     "devtron": "^1.4.0",
     "drivelist": "^8.0.6",
     "electron-debug": "^2.0.0",
@@ -241,7 +242,7 @@
     "redux-thunk": "^2.3.0",
     "shortid": "^2.2.14",
     "source-map-support": "^0.5.9",
-    "walletcs": "^1.1.0"
+    "@exiliontech/walletcs": "^2.0.13"
   },
   "devEngines": {
     "node": ">=7.x",

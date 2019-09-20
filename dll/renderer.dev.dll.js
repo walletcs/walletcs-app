@@ -99,6 +99,18 @@ eval("module.exports = __webpack_require__;\n\n//# sourceURL=webpack://renderer/
 
 /***/ }),
 
+/***/ "@exiliontech/walletcs":
+/*!****************************************!*\
+  !*** external "@exiliontech/walletcs" ***!
+  \****************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+eval("module.exports = @exiliontech/walletcs;\n\n//# sourceURL=webpack://renderer/external_%22@exiliontech/walletcs%22?");
+
+/***/ }),
+
 /***/ "@fortawesome/fontawesome-free":
 /*!************************************************!*\
   !*** external "@fortawesome/fontawesome-free" ***!
@@ -111,6 +123,18 @@ eval("module.exports = @fortawesome/fontawesome-free;\n\n//# sourceURL=webpack:/
 
 /***/ }),
 
+/***/ "babel-register":
+/*!*********************************!*\
+  !*** external "babel-register" ***!
+  \*********************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+eval("module.exports = babel-register;\n\n//# sourceURL=webpack://renderer/external_%22babel-register%22?");
+
+/***/ }),
+
 /***/ "classnames":
 /*!*****************************!*\
   !*** external "classnames" ***!
@@ -120,6 +144,18 @@ eval("module.exports = @fortawesome/fontawesome-free;\n\n//# sourceURL=webpack:/
 /***/ (function(module, exports) {
 
 eval("module.exports = classnames;\n\n//# sourceURL=webpack://renderer/external_%22classnames%22?");
+
+/***/ }),
+
+/***/ "core-js":
+/*!**************************!*\
+  !*** external "core-js" ***!
+  \**************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+eval("module.exports = core-js;\n\n//# sourceURL=webpack://renderer/external_%22core-js%22?");
 
 /***/ }),
 
@@ -420,18 +456,6 @@ eval("module.exports = shortid;\n\n//# sourceURL=webpack://renderer/external_%22
 /***/ (function(module, exports) {
 
 eval("module.exports = source-map-support;\n\n//# sourceURL=webpack://renderer/external_%22source-map-support%22?");
-
-/***/ }),
-
-/***/ "walletcs":
-/*!***************************!*\
-  !*** external "walletcs" ***!
-  \***************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-eval("module.exports = walletcs;\n\n//# sourceURL=webpack://renderer/external_%22walletcs%22?");
 
 /***/ })
 

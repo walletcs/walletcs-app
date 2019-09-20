@@ -2,11 +2,12 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { EtherTransaction, BitcoinTransaction } from 'walletcs/src/index';
-import omit from 'lodash.omit';
+import { EtherWalletHD, BitcoinWalletHD } from '@exiliontech/walletcs';
+// import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
-import hash from 'object-hash';
+// import hash from 'object-hash';
 import Fade from 'react-reveal/Fade';
+import fs from 'fs';
 
 import Button from '../Button';
 import { resetAccount } from '../../actions/account';
@@ -16,10 +17,16 @@ import { SIGNED_TRANSACTION_PREFIX } from '../../utils/constants';
 
 import styles from '../App/index.module.css';
 
+const FILE_TYPES = {
+  ether: 'ETHFileTx',
+  bitcoin: 'BTCFileTx',
+};
+
 class Final extends Component {
   state = {
     signed: false,
     error: null,
+    transactionFiles: [],
   };
 
   componentWillMount = () => {
@@ -33,77 +40,77 @@ class Final extends Component {
     onCancel();
   };
 
-  // eslint-disable-next-line react/destructuring-assignment
-  getTransactions = () => this.props.transactions.filter(t => t.key.privateKey) || [];
+  // splitTransactionsByFiles = transactions =>
 
   signTransactions = async () => {
-    const { activeDrive, rawTransactions } = this.props;
-    const transactions = this.getTransactions();
+    const {
+      activeDrive, xkeys, transactions, approved,
+    } = this.props;
     const { path } = activeDrive;
 
-    rawTransactions.forEach(async (fullTransaction) => {
-      const { transaction } = fullTransaction;
+    const ETHprvs = xkeys.filter(k => k.blockchain === 'ETH');
+    const BTCprvs = xkeys.filter(k => k.blockchain === 'BTC');
 
-      const signedTransactionsData = await Promise.all(
-        transaction.transactions.map(async (tr) => {
-          const trForSign = transactions.find(t => t.extra.hash === hash(tr.transaction));
+    const approvedTransactions = transactions.filter(t => approved.includes(t.trHash));
 
-          let signature;
+    const signedTransactions = await Promise.all(approvedTransactions.map(async (transactionObj) => {
+      const isTransactionEther = transactionObj.fileType === FILE_TYPES.ether;
+      const xprvsForTransaction = isTransactionEther ? ETHprvs : BTCprvs;
 
-          if (trForSign) {
-            const signData = omit(trForSign, 'key', 'extra');
+      const tmp = await Promise.all(xprvsForTransaction.map(async (key) => {
+        let wallet;
+        const {
+          xPrv, network, xPub, blockchain,
+        } = key;
 
-            try {
-              if (trForSign.extra.blockchain === 'BTC') {
-                signature = await BitcoinTransaction.sign(
-                  trForSign.key.privateKey.privateKey,
-                  signData,
-                  trForSign.key.privateKey.keyNetwork,
-                );
-              } else {
-                signature = await EtherTransaction.sign(
-                  trForSign.key.privateKey.privateKey,
-                  signData,
-                );
-              }
-            } catch (error) {
-              console.error(error);
-              this.setState({ error });
-            }
-          }
+        if (isTransactionEther) {
+          wallet = new EtherWalletHD();
+        } else {
+          wallet = new BitcoinWalletHD(network);
+        }
 
-          if (signature) {
-            return { object: { ...tr, transaction: signature }, signed: true };
-          }
+        const address = wallet.getAddressFromXpub(xPub, 0);
+        const res = await wallet.signTransactionByxPriv(xPrv, transactionObj.transaction, [address]);
+        return {
+          sign: res, ...transactionObj, network, blockchain,
+        };
+      }));
+      return tmp;
+    }));
 
-          return { object: tr, signed: false };
-        }),
-      );
+    const normalizedSignedTransactions = [].concat.apply([], signedTransactions);
+    const transactionToSign = normalizedSignedTransactions.filter(t => !!t.sign);
 
-      const isSignedExists = signedTransactionsData.some(t => t.signed);
+    const transactionFiles = {};
 
-      if (!isSignedExists) {
-        return;
+    transactionToSign.forEach((item) => {
+      if (!transactionFiles[item.file]) {
+        transactionFiles[item.file] = {
+          currency: item.blockchain,
+          network: item.blockchain === 'BTC' ? item.network : 'homestead',
+          transactions: [],
+        };
       }
 
-      const signedTransaction = {
-        ...fullTransaction.transaction,
-        transactions: signedTransactionsData.map(t => t.object),
-      };
-
-      const filename = fullTransaction.file.replace(/\(d?\)/, '');
-
-      const filePath = `${path}/${SIGNED_TRANSACTION_PREFIX}${filename}`;
-
-      writeFile(filePath, signedTransaction);
+      transactionFiles[item.file].transactions.push(item.sign);
     });
 
-    this.setState({ signed: true });
+    Object.keys(transactionFiles).forEach((f) => {
+      let filePath = `${path}/${SIGNED_TRANSACTION_PREFIX}${f}`;
+
+      if (fs.existsSync(filePath)) {
+        filePath = `${path}/${Date.now()}-${SIGNED_TRANSACTION_PREFIX}${f}`;
+      }
+
+      writeFile(filePath, transactionFiles[f]);
+    });
+
+    this.setState({ signed: true, transactionFiles });
   };
 
   render() {
-    const signedTransactions = this.getTransactions();
-    const { signed, error } = this.state;
+    const { signed, error, transactionFiles } = this.state;
+    const transactionFileNames = Object.keys(transactionFiles);
 
     if (!signed) {
       return (
@@ -116,7 +123,7 @@ class Final extends Component {
     return (
       <Fade>
         <div className={styles.contentWrapper}>
-          {signedTransactions.length ? (
+          {transactionFileNames.length ? (
             <Fragment>
               {error ? (
                 <div className={styles.message}>
@@ -129,12 +136,12 @@ class Final extends Component {
                   <div className={styles.message}>
                     You have successfully signed
                     {' '}
-                    {signedTransactions.length}
+                    {transactionFileNames.length}
                     {' '}
 transactions
                   </div>
-                  {signedTransactions.map(item => (
-                    <div className={styles.message}>{item.file}</div>
+                  {transactionFileNames.map(item => (
+                    <div className={styles.message}>{item}</div>
                   ))}
                 </Fragment>
               )}
@@ -158,21 +165,23 @@ Final.propTypes = {
     path: PropTypes.string,
   }).isRequired,
   onCancel: PropTypes.func.isRequired,
-  rawTransactions: PropTypes.array,
+  xkeys: PropTypes.array,
   resetAccountAction: PropTypes.func.isRequired,
   transactions: PropTypes.array,
+  approved: PropTypes.array,
 };
 
 Final.defaultProps = {
   transactions: [],
-  rawTransactions: [],
+  xkeys: [],
+  approved: [],
 };
 
 const mapStateToProps = state => ({
   activeDrive: state.drive.activeDrive,
   transactions: state.account.transactions,
-  transactionsToSign: state.account.transactionsToSign,
-  rawTransactions: state.account.rawTransactions,
+  approved: state.account.transactionsToSign,
+  xkeys: state.account.keys,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs';
-import { EtherKeyPair, BitcoinCheckPair } from 'walletcs/src/index';
+import { EtherWalletHD, BitcoinWalletHD } from '@exiliontech/walletcs';
 import PropTypes from 'prop-types';
 import Fade from 'react-reveal/Fade';
 
@@ -38,30 +38,35 @@ class DetectPrivateKeys extends Component {
     const res = dir
       .filter(file => file.startsWith(PRIVATE_KEY_PREFIX))
       .map((file) => {
-        let privateKey;
-        let publicKey;
+        let xPrv;
+        let xPub;
+        let keyData;
         let keyNetwork;
         let keyBlockchain;
 
         try {
           const privateKeyData = fs.readFileSync(`${path}/${file}`, 'utf-8');
           const privateKeyParsedData = JSON.parse(privateKeyData) || {};
-          privateKey = privateKeyParsedData.key;
+          xPrv = privateKeyParsedData.xPrv;
+          xPub = privateKeyParsedData.xPub;
           keyNetwork = privateKeyParsedData.network;
           keyBlockchain = privateKeyParsedData.blockchain;
+          let wallet;
 
           if (keyBlockchain === 'ETH') {
-            publicKey = EtherKeyPair.recoveryPublicKey(privateKey);
+            wallet = new EtherWalletHD();
           } else {
-            publicKey = BitcoinCheckPair.recoveryPublicKey(privateKey, keyNetwork);
+            wallet = new BitcoinWalletHD(keyNetwork);
           }
+          keyData = wallet.getAddressWithPrivateFromXprv(xPrv, 0);
         } catch (error) {
           console.error(error);
         }
 
         return {
-          privateKey,
-          publicKey,
+          xPrv,
+          xPub,
+          publicKey: keyData.address,
           keyNetwork,
           keyBlockchain,
           account: file.replace(PRIVATE_KEY_PREFIX, '').replace('.json', ''),

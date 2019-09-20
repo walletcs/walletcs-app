@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
-import appInfo from '../../../app.json';
+import appInfo from '../../../package.json';
 
 import styles from '../App/index.module.css';
 
 const StatusBar = ({ online, drives }) => {
   let driveStatus = [];
 
-  drives.map((d) => {
+  drives.map((d, i) => {
     if (driveStatus.length) {
-      driveStatus.push(<span>|</span>);
+      driveStatus.push(<span key={i}>|</span>);
     }
 
     if (d.driveType === 'privateDrive') {
