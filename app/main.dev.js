@@ -67,6 +67,9 @@ app.on('ready', async () => {
     width: 1024,
     height: 728,
     icon: path.join(__dirname, '../resources/icon.jpg'),
+    webPreferences: {
+      nodeIntegration: true,
+    },
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);

@@ -2,3 +2,6 @@ node_modules/
 release/
 app/dist/
 .idea/
+app/main.dev.js
+app/main.prod.js
+app/main.prod.js.map
