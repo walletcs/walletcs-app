@@ -57,10 +57,16 @@ class Final extends Component {
       const isTransactionEther = transactionObj.fileType === FILE_TYPES.ether;
       const xprvsForTransaction = isTransactionEther ? ETHprvs : BTCprvs;
 
+      const { transaction } = transactionObj;
+      const { from } = transaction;
+      const uniqFrom = from.filter((value, index, self) => (self.indexOf(value) === index));
+
       const tmp = await Promise.all(xprvsForTransaction.map(async (key) => {
         let wallet;
+        let sign = null;
+
         const {
-          xPrv, network, xPub, blockchain,
+          xPrv, network, blockchain,
         } = key;
 
         if (isTransactionEther) {
@@ -69,10 +75,14 @@ class Final extends Component {
           wallet = new BitcoinWalletHD(network);
         }
 
-        const address = wallet.getAddressFromXpub(xPub, 0);
-        const res = await wallet.signTransactionByxPriv(xPrv, transactionObj.transaction, [address]);
+        try {
+          sign = await wallet.signTransactionByxPriv(xPrv, transaction, uniqFrom);
+        } catch (error) {
+          console.error(error);
+        }
+
         return {
-          sign: res, ...transactionObj, network, blockchain,
+          ...transactionObj, network, blockchain, sign,
         };
       }));
       return tmp;
