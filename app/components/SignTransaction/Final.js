@@ -59,7 +59,7 @@ class Final extends Component {
 
       const { transaction } = transactionObj;
       const { from } = transaction;
-      const uniqFrom = from.filter((value, index, self) => (self.indexOf(value) === index));
+      const uniqFrom = from.map(f => f.address).filter((value, index, self) => (self.indexOf(value) === index));
 
       const tmp = await Promise.all(xprvsForTransaction.map(async (key) => {
         let wallet;

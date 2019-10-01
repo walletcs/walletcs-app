@@ -91,7 +91,7 @@ class SelectTransaction extends Component {
       id: tr.trHash,
       checked: true,
       // flex: [0.8, 0.75, 0.8, 1, 0.9],
-      fields: [tr.file, tr.fileType, tr.transaction.to, tr.transaction.methodName],
+      fields: [tr.file, tr.fileType, tr.transaction.to.map(t => t.address).join(','), tr.transaction.methodName],
     }));
 
     return (

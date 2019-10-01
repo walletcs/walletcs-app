@@ -994,10 +994,10 @@
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
-"@exiliontech/walletcs@^2.0.13":
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/@exiliontech/walletcs/-/walletcs-2.0.14.tgz#869b1cbf039b3279e19fbe5bc9a7527b13819cca"
-  integrity sha512-y5Zi9bj48PI/KIEKnECaNbywCMkrmEmbGv9RTohJta9joRm4fj5uPoz48z6i+xSEL52RJ3U4i9h3JNZCLbWqhw==
+"@exiliontech/walletcs@^2.0.21":
+  version "2.0.21"
+  resolved "https://registry.yarnpkg.com/@exiliontech/walletcs/-/walletcs-2.0.21.tgz#3ef3efbd995f1ad752ebd643dab703d38d357fcb"
+  integrity sha512-BLUNdsjwye2Dxo3T+XGuXAh64NcMm2AW4jESgzdzQJW6JWDhRIXGWGcCYYtwephTl/YJt8tqcRhf9wJKyfIcMw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.3.0"
     abi-decoder "^1.2.0"
