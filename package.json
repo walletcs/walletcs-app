@@ -1,7 +1,7 @@
 {
   "name": "walletcs",
   "productName": "WalletCS",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "WalletCS desktop offline client",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -210,7 +210,7 @@
     "yarn": "^1.12.3"
   },
   "dependencies": {
-    "@exiliontech/walletcs": "^2.0.21",
+    "@exiliontech/walletcs": "^2.0.23",
     "@fortawesome/fontawesome-free": "^5.5.0",
     "babel-register": "^6.26.0",
     "classnames": "^2.2.6",
