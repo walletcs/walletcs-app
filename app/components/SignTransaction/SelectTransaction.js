@@ -87,12 +87,23 @@ class SelectTransaction extends Component {
     const isKeysExists = !!transactions.length;
     const isTransactionsToSign = !!transactionsToSign.length;
 
-    const data = transactions.map(tr => ({
-      id: tr.trHash,
-      checked: true,
-      // flex: [0.8, 0.75, 0.8, 1, 0.9],
-      fields: [tr.file, tr.fileType, tr.transaction.to.map(t => t.address).join(','), tr.transaction.methodName],
-    }));
+    const data = transactions.map((tr) => {
+      let addresses = '';
+      const { to } = tr.transaction;
+
+      if (Array.isArray(to)) {
+        addresses = to.map(t => t.address).join(',');
+      } else {
+        addresses = to;
+      }
+
+      return {
+        id: tr.trHash,
+        checked: true,
+        // flex: [0.8, 0.75, 0.8, 1, 0.9],
+        fields: [tr.file, tr.fileType, addresses, tr.transaction.methodName],
+      };
+    });
 
     return (
       <Fade>

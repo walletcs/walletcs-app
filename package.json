@@ -210,7 +210,7 @@
     "yarn": "^1.12.3"
   },
   "dependencies": {
-    "@exiliontech/walletcs": "^2.0.24",
+    "@exiliontech/walletcs": "^2.0.25",
     "@fortawesome/fontawesome-free": "^5.5.0",
     "babel-register": "^6.26.0",
     "classnames": "^2.2.6",

@@ -60,9 +60,14 @@ class Final extends Component {
       const { transaction } = transactionObj;
       const { from } = transaction;
 
-      const uniqFrom = from.filter((value, index, self) => (self.indexOf(value) === index));
+      let uniqFrom = from;
 
-      const tmp = await Promise.all(xprvsForTransaction.map(async (key) => {
+      if (isTransactionEther) {
+        uniqFrom = from.map(obj => obj.address);
+      }
+      uniqFrom = uniqFrom.filter((value, index, self) => (self.indexOf(value) === index));
+
+      const res = await Promise.all(xprvsForTransaction.map(async (key) => {
         let wallet;
         let sign = null;
 
@@ -86,7 +91,8 @@ class Final extends Component {
           ...transactionObj, network, blockchain, sign,
         };
       }));
-      return tmp;
+
+      return res;
     }));
 
     const normalizedSignedTransactions = [].concat.apply([], signedTransactions);
