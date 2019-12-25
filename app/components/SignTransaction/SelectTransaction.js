@@ -40,10 +40,13 @@ class SelectTransaction extends Component {
       .flatMap((file) => {
         let transactions = [];
         let fileType;
+        let contracts = [];
 
         try {
           const fileData = fs.readFileSync(`${path}/${file}`, 'utf-8');
+          const temp = JSON.parse(fileData);
           transactions = JSONParser.parseFile(fileData);
+          contracts = temp.contracts;
           fileType = JSONParser.getType(fileData);
         } catch (error) {
           console.error(`error while reading ${path}/${file}`);
@@ -65,6 +68,7 @@ class SelectTransaction extends Component {
           return {
             ...result,
             trHash,
+            contracts,
           };
         });
       })

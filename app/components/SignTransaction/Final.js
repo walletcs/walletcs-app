@@ -58,14 +58,12 @@ class Final extends Component {
       const xprvsForTransaction = isTransactionEther ? ETHprvs : BTCprvs;
 
       const { transaction } = transactionObj;
-      const { from } = transaction;
-
-      let uniqFrom = from;
+      let { from } = transaction;
 
       if (isTransactionEther) {
-        uniqFrom = from.map(obj => obj.address);
+        from = Array.isArray(from) ? from.map(obj => obj.address) : [from];
       }
-      uniqFrom = uniqFrom.filter((value, index, self) => (self.indexOf(value) === index));
+      const uniqFrom = from.filter((value, index, self) => (self.indexOf(value) === index));
 
       const res = await Promise.all(xprvsForTransaction.map(async (key) => {
         let wallet;
@@ -87,6 +85,8 @@ class Final extends Component {
           console.error(error);
         }
 
+        console.warn(transactionObj);
+
         return {
           ...transactionObj, network, blockchain, sign,
         };
@@ -106,6 +106,7 @@ class Final extends Component {
           currency: item.blockchain,
           network: item.blockchain === 'BTC' ? item.network : 'homestead',
           transactions: [],
+          contracts: item.contracts,
         };
       }
 
