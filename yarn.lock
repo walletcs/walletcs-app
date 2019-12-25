@@ -1001,10 +1001,10 @@
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
-"@exiliontech/walletcs@^2.0.23":
-  version "2.0.23"
-  resolved "https://registry.yarnpkg.com/@exiliontech/walletcs/-/walletcs-2.0.23.tgz#06a466650ef3b6a60082bbbc2d13d60141dd2fe0"
-  integrity sha512-5J+v+7pebtJKr/e8l3ADurGNHcrGLxaThE844S2pt4YXx4BIagk2S5AIBT9ND/CqVxAouQvPKz6e9Dng6QduYQ==
+"@exiliontech/walletcs@^2.0.26":
+  version "2.0.26"
+  resolved "https://registry.yarnpkg.com/@exiliontech/walletcs/-/walletcs-2.0.26.tgz#7aab969ddfbd24c6dc8fa00657540c91334c869a"
+  integrity sha512-sE29IutClfs/lKFVz7Sc2dfBs+535sIGEqX4GQpENIwwPMBQLPAkGKracvxbDeiZrtRyOM59Nw6TRDnflGaeIw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.3.0"
     "@babel/runtime" "^7.6.3"
@@ -1014,6 +1014,7 @@
     bip39 "^3.0.2"
     bitcoinjs-lib "^5.0.1"
     bitcore-lib "^8.6.0"
+    clone-deep "^4.0.1"
     ethers "^4.0.25"
     extends-classes "^1.0.5"
     lodash "^4.17.15q"
