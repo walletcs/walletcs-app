@@ -269,7 +269,7 @@ class GeneratePrivate extends Component {
                 </label>
                 <label className={styles.radio}>
                   <Radio value="passphrase" />
-                  <span>Restore from passphrase</span>
+                  <span>{usePassphrase ? 'Passphrase set' : 'Restore from passphrase'}</span>
                 </label>
               </RadioGroup>
             </div>

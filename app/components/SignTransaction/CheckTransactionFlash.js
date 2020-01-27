@@ -38,7 +38,7 @@ const CheckTransactionFlash = ({
           <DriveSelector
             drives={filteredDrives}
             onCheckDrive={chooseDrive}
-            title="Please choose private key drive"
+            title="Choose drive where unsigned transactions are stored"
           />
         ) : (
           <>

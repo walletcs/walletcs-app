@@ -20,7 +20,7 @@ class DetectPrivateKeys extends Component {
 
   setupPrivateKeys = () => {
     let dir = [];
-    const { activeDrive, setPrivateKeysAction } = this.props;
+    const { activeDrive, setPrivateKeysAction, next } = this.props;
     const { path } = activeDrive;
 
     try {
@@ -46,25 +46,23 @@ class DetectPrivateKeys extends Component {
       .filter(f => !!f);
 
     setPrivateKeysAction(privateKeys);
+    next();
   };
 
   render() {
-    const { privateKeys = [], next, onCancel } = this.props;
+    const { privateKeys = [], onCancel } = this.props;
 
     return (
       <Fade>
         <div className={styles.contentWrapper}>
           {privateKeys.length ? (
-            <div className={styles.message}>{`Found ${privateKeys.length} private keys`}</div>
+            <div className={styles.message}>Search for private keys</div>
           ) : (
             <div className={styles.message}>Private keys for signing transactions not found</div>
           )}
         </div>
         <div className={styles.rowControls}>
           <Button onClick={onCancel}>Cancel</Button>
-          <Button onClick={next} primary>
-            Sign
-          </Button>
         </div>
       </Fade>
     );
